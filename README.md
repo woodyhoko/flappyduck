@@ -1,3 +1,1 @@
-# flappyduck
-===
-USC CSCI 526
+# flappy-duck

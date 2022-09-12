@@ -8,13 +8,14 @@ public class score_board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.GetComponent<TMPro.TextMeshProUGUI>().text = "Score : " + ScoreManager.sscore.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey){
+        if (Input.anyKeyDown){
+            ScoreManager.sscore = 0;
             SceneManager.LoadScene("demo");
         }
     }

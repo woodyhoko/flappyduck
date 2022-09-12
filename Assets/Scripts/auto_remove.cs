@@ -15,7 +15,8 @@ public class auto_remove : MonoBehaviour
     void Update()
     {
         if(transform.position.z < -20){
-            score_text.text = (int.Parse(score_text.text) + 1).ToString();
+            ScoreManager.sscore++;
+            score_text.text = "Score : " + ScoreManager.sscore.ToString();
             Destroy(gameObject);
         }
     }

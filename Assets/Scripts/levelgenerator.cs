@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class levelgenerator : MonoBehaviour
 {
+    public GameObject bigger;
+    public GameObject smaller;
+    public GameObject longger;
+    public GameObject faster;
     public GameObject pipe;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +24,7 @@ public class levelgenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+   
         float randomNumber = Random.Range(0, 1f);
         if (randomNumber > 0.990f){
         GameObject ppipe = (GameObject)Instantiate (pipe);
@@ -28,5 +33,24 @@ public class levelgenerator : MonoBehaviour
         Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
         m_Rigidbody.velocity = new Vector3(0,0,-15f);
         }
+        else if(randomNumber < 0.004f)
+        {    
+            GameObject food;
+            if (randomNumber<0.001f)
+            {
+                food = Instantiate(bigger);
+            }
+            else if(randomNumber < 0.002f)
+                food = Instantiate(smaller);
+            else if(randomNumber < 0.003f)
+                food = Instantiate(longger);
+            else
+                food = Instantiate(faster);
+            food.transform.rotation = Quaternion.identity;
+            food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
+            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
+        
     }
 }

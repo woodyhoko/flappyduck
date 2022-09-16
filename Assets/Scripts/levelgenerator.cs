@@ -9,6 +9,8 @@ public class levelgenerator : MonoBehaviour
     public GameObject longger;
     public GameObject faster;
     public GameObject pipe;
+    //public GameObject player;
+    //public GameObject star;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,6 @@ public class levelgenerator : MonoBehaviour
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
-        
+
     }
 }

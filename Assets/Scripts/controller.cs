@@ -6,6 +6,7 @@ public class controller : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     public GameObject star;
+    public float starRotateSpeed = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,8 @@ public class controller : MonoBehaviour
         // if(Input.GetKeyDown(KeyCode.A)){
         //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
         // }
-        if(Input.GetKeyDown(KeyCode.Space)){
+        star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.Space)){
             // transform.position = transform.position + new Vector3(0, 1.5f, 0);
             m_Rigidbody.velocity = new Vector3(0,5.0f,0);
         }
@@ -46,9 +48,9 @@ public class controller : MonoBehaviour
         }
         if (collider.gameObject.tag == "faster")
         {
-            //each time becomes 1.2 * original
-            //not work
-            //star.transform.RotateAround(transform.position, Vector3.up, 200 * Time.deltaTime);
+            // originally rotate at 1 degree/sec
+
+            starRotateSpeed += 20;
             Destroy(collider.gameObject);
         }
         if (collider.gameObject.tag == "longger")

@@ -8,6 +8,7 @@ public class levelgenerator : MonoBehaviour
     public GameObject smaller;
     public GameObject longger;
     public GameObject faster;
+    public GameObject shooter;
     public GameObject pipe;
     //public GameObject player;
     //public GameObject star;
@@ -52,6 +53,13 @@ public class levelgenerator : MonoBehaviour
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
+        if (randomNumber > 0.004f && randomNumber < 0.005f){
+            GameObject food;
+            food = Instantiate(shooter);
+            food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
+            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -20f);
         }
 
     }

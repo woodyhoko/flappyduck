@@ -20,4 +20,12 @@ public class auto_remove : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "bullet")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

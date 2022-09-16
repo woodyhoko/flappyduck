@@ -9,6 +9,8 @@ TagManager:
   - faster
   - longger
   - pipe
+  - shooter
+  - bullet
   layers:
   - Default
   - TransparentFX

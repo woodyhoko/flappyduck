@@ -6,7 +6,12 @@ public class controller : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     public GameObject star;
+    public GameObject bullet;
     public float starRotateSpeed;
+
+    private bool shoot = false;
+    private int shoot_freq = 40;
+    private int shoot_timestep = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +34,17 @@ public class controller : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.RightArrow)){
             transform.position = transform.position + new Vector3(0.08f, 0 ,0);    
+        }
+        if(shoot){
+            print("check");
+           shoot_timestep ++;
+           if (shoot_timestep%shoot_freq == 0){
+                GameObject bul;
+                bul = Instantiate(bullet);
+                bul.transform.position = transform.position + new Vector3(0, 0, 1f);
+                Rigidbody m_Rigidbody = bul.GetComponent<Rigidbody>();
+                m_Rigidbody.velocity = new Vector3(0, 0, 10f);
+           }
         }
     }
     private void OnTriggerEnter(Collider collider)
@@ -58,6 +74,10 @@ public class controller : MonoBehaviour
             //each time becomes 0.8 * original
             star.transform.localScale += new Vector3(0,0.2f,0);
             Destroy(collider.gameObject);
+        }
+        if (collider.gameObject.tag == "shooter")
+        {
+            shoot = true;
         }
     }
     //private void OnCollisionEnter(Collision collision)

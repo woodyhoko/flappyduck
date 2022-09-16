@@ -21,6 +21,7 @@ public class rotate : MonoBehaviour
         if (collider.gameObject.tag == "pipe")
         {
             Destroy(collider.gameObject);
+            ScoreManager.sscore++;
         }
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class levelgenerator : MonoBehaviour
 {
     public GameObject pipe;
+    public GameObject food;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,14 @@ public class levelgenerator : MonoBehaviour
         ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
         Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
         m_Rigidbody.velocity = new Vector3(0,0,-15f);
+        }
+        else if(randomNumber < 0.0005f)
+        {
+            GameObject ffood = (GameObject)Instantiate(food);
+            ffood.transform.rotation = Quaternion.identity;
+            ffood.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
+            Rigidbody m_Rigidbody = ffood.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
     }
 }

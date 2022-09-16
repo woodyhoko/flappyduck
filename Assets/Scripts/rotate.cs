@@ -14,7 +14,7 @@ public class rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.RotateAround(player.transform.position, Vector3.up, 50 * Time.deltaTime);
+        //transform.RotateAround(player.transform.position, Vector3.up, 50 * Time.deltaTime);
     }
     private void OnTriggerEnter(Collider collider)
     {

@@ -6,7 +6,7 @@ public class controller : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     public GameObject star;
-    public float starRotateSpeed = 1;
+    public float starRotateSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +48,7 @@ public class controller : MonoBehaviour
         }
         if (collider.gameObject.tag == "faster")
         {
-            // originally rotate at 1 degree/sec
+            // originally rotate at 30 degree/sec
 
             starRotateSpeed += 20;
             Destroy(collider.gameObject);

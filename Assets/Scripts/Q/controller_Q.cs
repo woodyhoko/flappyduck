@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class controller : MonoBehaviour
+public class controller_Q : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
+    public float height= 4.0f;
+    float lastPressTime = 0.0f;
+    public static bool have_power = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,18 @@ public class controller : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.RightArrow)){
             transform.position = transform.position + new Vector3(0.08f, 0 ,0);    
+        }
+
+        //add Q
+        if(Input.GetKey(KeyCode.Q))
+        {
+            //h = height / 2
+            if (have_power)
+            {
+                have_power = false;
+                transform.position = new Vector3(-transform.position.x, height - transform.position.y, transform.position.z);
+                lastPressTime = Time.time;
+            }
         }
 
     }

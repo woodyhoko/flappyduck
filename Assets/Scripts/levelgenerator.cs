@@ -10,7 +10,8 @@ public class levelgenerator : MonoBehaviour
     public GameObject faster;
     public GameObject shooter;
     public GameObject pipe;
-    //public GameObject player;
+	public GameObject invisible;
+    //public GameObject player; 
     //public GameObject star;
     // Start is called before the first frame update
     void Start()
@@ -61,6 +62,15 @@ public class levelgenerator : MonoBehaviour
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -20f);
         }
+
+        if (randomNumber > 0.004f && randomNumber < 0.01f){
+            GameObject food;
+            food = Instantiate(invisible);
+            food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
+            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -20f);
+        }
+
 
     }
 }

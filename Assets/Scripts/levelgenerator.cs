@@ -55,7 +55,7 @@ public class levelgenerator : MonoBehaviour
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
-        if (randomNumber > 0.004f && randomNumber < 0.01f){
+        if (randomNumber > 0.004f && randomNumber < 0.005f){
             GameObject food;
             food = Instantiate(shooter);
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
@@ -63,7 +63,7 @@ public class levelgenerator : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -20f);
         }
 
-        if (randomNumber > 0.004f && randomNumber < 0.01f){
+        if (randomNumber > 0.005f && randomNumber < 0.01f){
             GameObject food;
             food = Instantiate(invisible);
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);

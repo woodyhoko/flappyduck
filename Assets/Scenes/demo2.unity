@@ -391,6 +391,7 @@ GameObject:
   - component: {fileID: 359913202}
   - component: {fileID: 359913201}
   - component: {fileID: 359913200}
+  - component: {fileID: 359913206}
   m_Layer: 0
   m_Name: shooter
   m_TagString: shooter
@@ -504,6 +505,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &359913206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359913199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cd7fa0c36ffe84eb71991f807b8c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &526718873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,6 +1703,7 @@ MonoBehaviour:
   faster: {fileID: 348246692}
   shooter: {fileID: 359913199}
   pipe: {fileID: 1590029960}
+  invisible: {fileID: 0}
 --- !u!1 &1909181280
 GameObject:
   m_ObjectHideFlags: 0

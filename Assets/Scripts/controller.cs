@@ -10,8 +10,10 @@ public class controller : MonoBehaviour
     public float starRotateSpeed;
 
     private bool shoot = false;
-    private int shoot_freq = 10;
+    private int shoot_freq = 100;
     private int shoot_timestep = 0;
+
+    private bool jump = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +21,19 @@ public class controller : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)){
+            jump = true;
+        }
+    }
     void FixedUpdate()
     {
         // if(Input.GetKeyDown(KeyCode.A)){
         //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
         // }
         star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (jump){
+            jump = false;
             // transform.position = transform.position + new Vector3(0, 1.5f, 0);
             m_Rigidbody.velocity = new Vector3(0,5.0f,0);
         }

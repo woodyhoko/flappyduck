@@ -78,7 +78,9 @@ public class controller : MonoBehaviour
         if (collider.gameObject.tag == "shooter")
         {
             shoot = true;
-            shoot_freq/=2 ;
+            if(shoot_freq >= 2){
+                shoot_freq/=2 ;
+            }
         }
     }
     //private void OnCollisionEnter(Collision collision)

@@ -10,7 +10,7 @@ public class controller : MonoBehaviour
     public float starRotateSpeed;
 
     private bool shoot = false;
-    private int shoot_freq = 100;
+    private int shoot_freq = 10;
     private int shoot_timestep = 0;
     // Start is called before the first frame update
     void Start()
@@ -81,6 +81,16 @@ public class controller : MonoBehaviour
             if(shoot_freq >= 2){
                 shoot_freq/=2 ;
             }
+        }
+
+        if (collider.gameObject.tag == "invisible")
+        {
+            Destroy(collider.gameObject);
+            Physics.IgnoreLayerCollision(6, 7, true);
+            Invoke ("EnableCollider", 5f);
+        }
+        void  EnableCollider () {
+            Physics.IgnoreLayerCollision(6, 7, false);
         }
     }
     //private void OnCollisionEnter(Collision collision)

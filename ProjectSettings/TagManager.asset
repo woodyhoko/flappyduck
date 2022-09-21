@@ -12,6 +12,8 @@ TagManager:
   - shooter
   - bullet
   - invisible
+  - Plane
+  - Rock
   layers:
   - Default
   - TransparentFX

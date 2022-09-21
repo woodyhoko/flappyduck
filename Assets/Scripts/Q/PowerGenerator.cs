@@ -15,7 +15,7 @@ public class PowerGenerator : MonoBehaviour
     void Update()
     {
         float randomNumber = Random.Range(0, 1f);
-        if (randomNumber > 0.999f)
+        if (randomNumber > 0.99f)
         {
             GameObject pp = (GameObject)Instantiate(power);
             //ppipe.transform.rotation = Quaternion.identity;

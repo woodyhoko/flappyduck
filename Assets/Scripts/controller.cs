@@ -59,24 +59,25 @@ public class controller : MonoBehaviour
         if (collider.gameObject.tag == "smaller")
         {
             //each time becomes 0.8 * original
-            transform.localScale = transform.localScale * 0.8f;
             Destroy(collider.gameObject);
+            transform.localScale = transform.localScale * 0.8f;
         }
         if (collider.gameObject.tag == "faster")
         {
             // originally rotate at 30 degree/sec
 
-            starRotateSpeed += 20;
             Destroy(collider.gameObject);
+            starRotateSpeed += 20;
         }
         if (collider.gameObject.tag == "longger")
         {
             //each time becomes 0.8 * original
-            star.transform.localScale += new Vector3(0,0.2f,0);
             Destroy(collider.gameObject);
+            star.transform.localScale += new Vector3(0,0.2f,0);
         }
         if (collider.gameObject.tag == "shooter")
         {
+            Destroy(collider.gameObject);
             shoot = true;
             if(shoot_freq >= 2){
                 shoot_freq/=2 ;

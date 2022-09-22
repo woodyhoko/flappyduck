@@ -10,7 +10,7 @@ public class controller : MonoBehaviour
     public float starRotateSpeed;
 
     private bool shoot = false;
-    private int shoot_freq = 100;
+    private int shoot_freq = 150;
     private int shoot_timestep = 0;
 
     private bool jump = false;
@@ -87,8 +87,9 @@ public class controller : MonoBehaviour
         {
             Destroy(collider.gameObject);
             shoot = true;
-            if(shoot_freq >= 2){
-                shoot_freq/=2 ;
+            if(shoot_freq >= 5){
+                shoot_freq*=4;
+                shoot_freq/=5;
             }
         }
 

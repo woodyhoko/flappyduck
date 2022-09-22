@@ -11,6 +11,7 @@ public class levelgenerator : MonoBehaviour
     public GameObject shooter;
     public GameObject pipe;
 	public GameObject invisible;
+    private int difficulty = 0;
     //public GameObject player; 
     //public GameObject star;
     // Start is called before the first frame update
@@ -30,7 +31,7 @@ public class levelgenerator : MonoBehaviour
     {
    
         float randomNumber = Random.Range(0, 1f);
-        if (randomNumber > 0.990f){
+        if (randomNumber > 0.995f-0.001f*difficulty*3){
         GameObject ppipe = (GameObject)Instantiate (pipe);
         ppipe.transform.rotation = Quaternion.identity;
         ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
@@ -54,6 +55,7 @@ public class levelgenerator : MonoBehaviour
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+            difficulty++;
         }
         if (randomNumber > 0.004f && randomNumber < 0.005f){
             GameObject food;
@@ -61,6 +63,7 @@ public class levelgenerator : MonoBehaviour
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -20f);
+            difficulty++;
         }
 
         if (randomNumber > 0.005f && randomNumber < 0.01f){
@@ -69,6 +72,7 @@ public class levelgenerator : MonoBehaviour
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -20f);
+            difficulty++;
         }
 
 

@@ -13,7 +13,13 @@ public class CheckDie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y < -10) {
+        if(transform.position.y < -10 || transform.position.z < -10 || transform.position.x < -6 || transform.position.x > 6) {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+    }
+    private void OnTriggerEnter(Collider collider)
+    {
+        if(collider.gameObject.tag == "ceil"){
             FindObjectOfType<GameManager>().EndGame();
         }
     }

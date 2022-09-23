@@ -25,7 +25,7 @@ public class levelgenerator : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
    
         float randomNumber = Random.Range(0, 1f);

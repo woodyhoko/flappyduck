@@ -36,7 +36,7 @@ public class controller : MonoBehaviour
             transform.position = transform.position + new Vector3(0.08f, 0 ,0);    
         }
         if(shoot){
-            print("check");
+           // print("check");
            shoot_timestep ++;
            if (shoot_timestep%shoot_freq == 0){
                 GameObject bul;

@@ -33,8 +33,8 @@ public class controller : MonoBehaviour
         // if(Input.GetKeyDown(KeyCode.A)){
         //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
         // }
-        // star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed * Time.deltaTime);
-        star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
+         star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed * Time.deltaTime);
+        //star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
         if (jump){
             jump = false;
             // transform.position = transform.position + new Vector3(0, 1.5f, 0);

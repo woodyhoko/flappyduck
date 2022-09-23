@@ -15,6 +15,7 @@ TagManager:
   - Plane
   - Rock
   - ceil
+  - star
   layers:
   - Default
   - TransparentFX

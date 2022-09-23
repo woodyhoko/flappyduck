@@ -29,49 +29,40 @@ public class levelgenerator : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-   
+
         float randomNumber = Random.Range(0, 1f);
-        if (randomNumber > 0.995f-0.001f*difficulty*3){
-        GameObject ppipe = (GameObject)Instantiate (pipe);
-        ppipe.transform.rotation = Quaternion.identity;
-        ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
-        Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
-        m_Rigidbody.velocity = new Vector3(0,0,-15f);
+        //level 1: 0.03
+        if (randomNumber > 0.995f - 0.005f * difficulty * 3)
+        {
+            GameObject ppipe = (GameObject)Instantiate(pipe);
+            ppipe.transform.rotation = Quaternion.identity;
+            ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
+            Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
-        else if(randomNumber < 0.004f)
-        {    
+        else if (randomNumber < 0.02f)
+        {
             GameObject food;
-            if (randomNumber<0.001f)
+            if (randomNumber < 0.0025f)
             {
                 food = Instantiate(bigger);
             }
-            else if(randomNumber < 0.002f)
+            else if (randomNumber < 0.005f)
                 food = Instantiate(smaller);
-            else if(randomNumber < 0.003f)
+            else if (randomNumber < 0.0075f)
                 food = Instantiate(longger);
-            else
+            else if (randomNumber < 0.01f)
                 food = Instantiate(faster);
+            else if (randomNumber < 0.0125f)
+                food = Instantiate(shooter);
+            //else if (randomNumber < 0.015f)
+            else
+                food = Instantiate(invisible);
+
             food.transform.rotation = Quaternion.identity;
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
-            difficulty++;
-        }
-        if (randomNumber > 0.004f && randomNumber < 0.005f){
-            GameObject food;
-            food = Instantiate(shooter);
-            food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
-            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-            m_Rigidbody.velocity = new Vector3(0, 0, -20f);
-            difficulty++;
-        }
-
-        if (randomNumber > 0.005f && randomNumber < 0.01f){
-            GameObject food;
-            food = Instantiate(invisible);
-            food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
-            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-            m_Rigidbody.velocity = new Vector3(0, 0, -20f);
             difficulty++;
         }
     }

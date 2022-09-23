@@ -18,10 +18,9 @@ public class rotate : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "pipe")
-        {
-            Destroy(collider.gameObject);
-            ScoreManager.sscore++;
-        }
+       // if (collider.gameObject.tag == "pipe")
+        //{
+            //Destroy(collider.gameObject); ScoreManager.sscore++;
+        //}
     }
 }

@@ -763,7 +763,7 @@ MonoBehaviour:
   duckMaterial: {fileID: 2100000, guid: 7132ce07b40b7b841859bd36efcc012c, type: 2}
   star: {fileID: 1992883130}
   bullet: {fileID: 1482989147}
-  starRotateSpeed: 0
+  starRotateSpeed: 50
 --- !u!114 &526718880
 MonoBehaviour:
   m_ObjectHideFlags: 0

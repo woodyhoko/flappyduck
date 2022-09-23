@@ -36,10 +36,15 @@ public class pipe : MonoBehaviour
             //Debug.Log(healthSystem.GetHealth());
             if (healthSystem.GetHealth() <= 0)
             {
-                Destroy(this);
+                Destroy(gameObject);
                 Destroy(healthBar);
             }
 
+        }
+        if (collider.gameObject.tag == "star")
+        {
+            Destroy(gameObject);
+            Destroy(healthBar);
         }
     }
 }

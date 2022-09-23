@@ -23,7 +23,7 @@ public class pipe : MonoBehaviour
     void FixedUpdate()
     {
         healthBar.transform.SetParent(Canvas.transform);
-        healthBar.transform.position = this.transform.position + new Vector3(0,1f,0);
+        healthBar.transform.position = this.transform.position + new Vector3(0,1.2f,0);
     }
 
     private void OnTriggerEnter(Collider collider)

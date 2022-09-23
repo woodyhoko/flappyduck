@@ -32,7 +32,7 @@ public class levelgenerator : MonoBehaviour
 
         float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
-        if (randomNumber > 0.995f - 0.005f * difficulty * 3)
+        if (randomNumber > 0.99f - difficulty*0.005f)
         {
             GameObject ppipe = (GameObject)Instantiate(pipe);
             ppipe.transform.rotation = Quaternion.identity;
@@ -40,20 +40,20 @@ public class levelgenerator : MonoBehaviour
             Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
-        else if (randomNumber < 0.02f)
+        else if (randomNumber < 0.012f)
         {
             GameObject food;
-            if (randomNumber < 0.0025f)
+            if (randomNumber < 0.0020f)
             {
                 food = Instantiate(bigger);
             }
-            else if (randomNumber < 0.005f)
+            else if (randomNumber < 0.004f)
                 food = Instantiate(smaller);
-            else if (randomNumber < 0.0075f)
+            else if (randomNumber < 0.006f)
                 food = Instantiate(longger);
-            else if (randomNumber < 0.01f)
+            else if (randomNumber < 0.008f)
                 food = Instantiate(faster);
-            else if (randomNumber < 0.0125f)
+            else if (randomNumber < 0.01f)
                 food = Instantiate(shooter);
             //else if (randomNumber < 0.015f)
             else

@@ -14,6 +14,7 @@ TagManager:
   - invisible
   - Plane
   - Rock
+  - ceil
   layers:
   - Default
   - TransparentFX

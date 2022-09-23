@@ -5,6 +5,7 @@ using UnityEngine;
 public class controller : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
+    public Material duckMaterial;
     public GameObject star;
     public GameObject bullet;
     public float starRotateSpeed;
@@ -14,6 +15,7 @@ public class controller : MonoBehaviour
     private int shoot_timestep = 0;
 
     private bool jump = false;
+    private int invi_remaining_time = 30;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,8 @@ public class controller : MonoBehaviour
         // if(Input.GetKeyDown(KeyCode.A)){
         //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
         // }
-        star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed * Time.deltaTime);
+        // star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed * Time.deltaTime);
+        star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
         if (jump){
             jump = false;
             // transform.position = transform.position + new Vector3(0, 1.5f, 0);
@@ -54,6 +57,12 @@ public class controller : MonoBehaviour
                 m_Rigidbody.velocity = new Vector3(0, 0, 10f);
            }
         }
+        if(invi_remaining_time > 0){
+            invi_remaining_time--;
+            if(invi_remaining_time <= 0){
+                EnableCollider ();
+            }
+        }
     }
     private void OnTriggerEnter(Collider collider)
     {
@@ -75,7 +84,7 @@ public class controller : MonoBehaviour
             // originally rotate at 30 degree/sec
 
             Destroy(collider.gameObject);
-            starRotateSpeed += 20;
+            starRotateSpeed += 5;
         }
         if (collider.gameObject.tag == "longger")
         {
@@ -97,11 +106,18 @@ public class controller : MonoBehaviour
         {
             Destroy(collider.gameObject);
             Physics.IgnoreLayerCollision(6, 7, true);
-            Invoke ("EnableCollider", 5f);
+            Color tempCol = GetComponent<Renderer>().material.color;
+            tempCol.a = .5f;
+            GetComponent<Renderer>().material.color = tempCol;
+            invi_remaining_time = 100;
+            // Invoke ("EnableCollider", 5f);
         }
-        void  EnableCollider () {
-            Physics.IgnoreLayerCollision(6, 7, false);
-        }
+    }
+    private void  EnableCollider () {
+        Color tempCol = GetComponent<Renderer>().material.color;
+        tempCol.a = 1f;
+        GetComponent<Renderer>().material.color = tempCol;
+        Physics.IgnoreLayerCollision(6, 7, false);
     }
     //private void OnCollisionEnter(Collision collision)
    //{

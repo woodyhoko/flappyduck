@@ -74,7 +74,5 @@ public class levelgenerator : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -20f);
             difficulty++;
         }
-
-
     }
 }

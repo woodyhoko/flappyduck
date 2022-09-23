@@ -5,7 +5,7 @@ using UnityEngine;
 public class auto_remove_bullet : MonoBehaviour
 {
     // Start is called before the first frame update
-    public TMPro.TextMeshProUGUI score_text;
+    public float bullet_damage = 50;
     void Start()
     {
         

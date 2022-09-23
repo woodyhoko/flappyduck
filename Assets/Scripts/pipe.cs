@@ -5,46 +5,50 @@ using UnityEngine.UI;
 
 public class pipe : MonoBehaviour
 {
-    public GameObject healthBarUI;
-    public Canvas Canvas;
-    GameObject healthBar;
-    //public HealthBar hb;
-    HealthSystem healthSystem;
+    // public GameObject healthBarUI;
+    // public Canvas Canvas;
+    pipeHealth pipeHealth = new pipeHealth();
+
     // Start is called before the first frame update
     void Start()
-    {  
-      
-      healthSystem = new(100f);
-      //hb.Setup(healthSystem);
-      healthBar = (GameObject)Instantiate(healthBarUI);
+    {
+        // HealthSystem = new(100f);
+        // healthBarUI = (GameObject)Instantiate(healthBarUI);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        healthBar.transform.SetParent(Canvas.transform);
-        healthBar.transform.position = this.transform.position + new Vector3(0,1.2f,0);
+        // healthBar.transform.SetParent(Canvas.transform);
+        // healthBar.transform.position = this.transform.position + new Vector3(0,1.2f,0);
+    }
+
+    public void SetHealth(float max_health){
+        pipeHealth.init(max_health);
+    }
+
+    private void OnCollisionEnter(Collision collision){
+        if(collision.gameObject.tag == "bullet")
+        {
+            //Debug.Log("get hit by bullet");
+            // healthSystem.Damage(20);
+            pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
+            //Debug.Log(healthSystem.GetHealth());
+            if (!pipeHealth.CheckDie())
+            {
+                print("hihihi");
+                Destroy(collision.gameObject);
+            }
+            // Destroy(gameObject);
+
+        }
     }
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject.tag== "bullet")
-        {
-            //Debug.Log("get hit by bullet");
-            healthSystem.Damage(20);
-            healthBar.transform.localScale -= new Vector3(0.25f,0,0);
-            //Debug.Log(healthSystem.GetHealth());
-            if (healthSystem.GetHealth() <= 0)
-            {
-                Destroy(gameObject);
-                Destroy(healthBar);
-            }
-
-        }
         if (collider.gameObject.tag == "star")
         {
             Destroy(gameObject);
-            Destroy(healthBar);
         }
     }
 }

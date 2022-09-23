@@ -35,6 +35,7 @@ public class levelgenerator : MonoBehaviour
         if (randomNumber > 0.99f - difficulty*0.005f)
         {
             GameObject ppipe = (GameObject)Instantiate(pipe);
+            ppipe.GetComponent<pipe>().SetHealth(100f);
             ppipe.transform.rotation = Quaternion.identity;
             ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
             Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();

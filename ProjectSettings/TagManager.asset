@@ -11,6 +11,10 @@ TagManager:
   - pipe
   - shooter
   - bullet
+  - invisible
+  - Plane
+  - Rock
+  - ceil
   layers:
   - Default
   - TransparentFX
@@ -18,8 +22,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - pipe
+  - player
   - 
   - 
   - 

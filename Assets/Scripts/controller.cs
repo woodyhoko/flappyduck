@@ -5,13 +5,17 @@ using UnityEngine;
 public class controller : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
+    public Material duckMaterial;
     public GameObject star;
     public GameObject bullet;
     public float starRotateSpeed;
 
     private bool shoot = false;
-    private int shoot_freq = 100;
+    private int shoot_freq = 150;
     private int shoot_timestep = 0;
+
+    private bool jump = false;
+    private int invi_remaining_time = 30;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +23,20 @@ public class controller : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)){
+            jump = true;
+        }
+    }
     void FixedUpdate()
     {
         // if(Input.GetKeyDown(KeyCode.A)){
         //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
         // }
-        star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.Space)){
+        // star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed * Time.deltaTime);
+        star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
+        if (jump){
+            jump = false;
             // transform.position = transform.position + new Vector3(0, 1.5f, 0);
             m_Rigidbody.velocity = new Vector3(0,5.0f,0);
         }
@@ -46,6 +57,12 @@ public class controller : MonoBehaviour
                 m_Rigidbody.velocity = new Vector3(0, 0, 10f);
            }
         }
+        if(invi_remaining_time > 0){
+            invi_remaining_time--;
+            if(invi_remaining_time <= 0){
+                EnableCollider ();
+            }
+        }
     }
     private void OnTriggerEnter(Collider collider)
     {
@@ -59,27 +76,48 @@ public class controller : MonoBehaviour
         if (collider.gameObject.tag == "smaller")
         {
             //each time becomes 0.8 * original
-            transform.localScale = transform.localScale * 0.8f;
             Destroy(collider.gameObject);
+            transform.localScale = transform.localScale * 0.8f;
         }
         if (collider.gameObject.tag == "faster")
         {
             // originally rotate at 30 degree/sec
 
-            starRotateSpeed += 20;
             Destroy(collider.gameObject);
+            starRotateSpeed += 5;
         }
         if (collider.gameObject.tag == "longger")
         {
             //each time becomes 0.8 * original
-            star.transform.localScale += new Vector3(0,0.2f,0);
             Destroy(collider.gameObject);
+            star.transform.localScale += new Vector3(0,0.2f,0);
         }
         if (collider.gameObject.tag == "shooter")
         {
+            Destroy(collider.gameObject);
             shoot = true;
-            shoot_freq/=2 ;
+            if(shoot_freq >= 5){
+                shoot_freq*=4;
+                shoot_freq/=5;
+            }
         }
+
+        if (collider.gameObject.tag == "invisible")
+        {
+            Destroy(collider.gameObject);
+            Physics.IgnoreLayerCollision(6, 7, true);
+            Color tempCol = GetComponent<Renderer>().material.color;
+            tempCol.a = .5f;
+            GetComponent<Renderer>().material.color = tempCol;
+            invi_remaining_time = 100;
+            // Invoke ("EnableCollider", 5f);
+        }
+    }
+    private void  EnableCollider () {
+        Color tempCol = GetComponent<Renderer>().material.color;
+        tempCol.a = 1f;
+        GetComponent<Renderer>().material.color = tempCol;
+        Physics.IgnoreLayerCollision(6, 7, false);
     }
     //private void OnCollisionEnter(Collision collision)
    //{

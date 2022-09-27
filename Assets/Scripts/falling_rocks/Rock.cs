@@ -20,7 +20,9 @@ public class Rock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player") {
+        if(other.tag == "Player")
+        {
+            ScoreManager.killedByRock = true;
             FindObjectOfType<GameManager>().EndGame();
         }
         else if(other.tag == "Plane") {

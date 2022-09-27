@@ -71,6 +71,7 @@ public class controller : MonoBehaviour
             //each time becomes 1.2 * original
             Destroy(collider.gameObject);
             transform.localScale = transform.localScale * 1.2f;
+            ScoreManager.biggerCube++;
             
         }
         if (collider.gameObject.tag == "smaller")
@@ -78,6 +79,7 @@ public class controller : MonoBehaviour
             //each time becomes 0.8 * original
             Destroy(collider.gameObject);
             transform.localScale = transform.localScale * 0.8f;
+            ScoreManager.smallerCube++;
         }
         if (collider.gameObject.tag == "faster")
         {
@@ -85,12 +87,14 @@ public class controller : MonoBehaviour
 
             Destroy(collider.gameObject);
             starRotateSpeed += 5;
+            ScoreManager.faster++;
         }
         if (collider.gameObject.tag == "longger")
         {
             //each time becomes 0.8 * original
             Destroy(collider.gameObject);
             star.transform.localScale += new Vector3(0,0.2f,0);
+            ScoreManager.longer++;
         }
         if (collider.gameObject.tag == "shooter")
         {
@@ -100,6 +104,7 @@ public class controller : MonoBehaviour
                 shoot_freq*=4;
                 shoot_freq/=5;
             }
+            ScoreManager.shooter++;
         }
 
         if (collider.gameObject.tag == "invisible")
@@ -111,6 +116,7 @@ public class controller : MonoBehaviour
             GetComponent<Renderer>().material.color = tempCol;
             invi_remaining_time = 100;
             // Invoke ("EnableCollider", 5f);
+            ScoreManager.invisible++;
         }
     }
     private void  EnableCollider () {

@@ -10,7 +10,8 @@ public class levelgenerator : MonoBehaviour
     public GameObject faster;
     public GameObject shooter;
     public GameObject pipe;
-	public GameObject invisible;
+    public GameObject wall;
+    public GameObject invisible;
     private int difficulty = 0;
     //public GameObject player; 
     //public GameObject star;
@@ -32,14 +33,38 @@ public class levelgenerator : MonoBehaviour
 
         float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
-        if (randomNumber > 0.99f - difficulty*0.005f)
+        if (randomNumber > 0.99f)
         {
-            GameObject ppipe = (GameObject)Instantiate(pipe);
-            ppipe.GetComponent<pipe>().SetHealth(100f);
-            ppipe.transform.rotation = Quaternion.identity;
-            ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
-            Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
-            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+            float wallRandom = Random.Range(0, 1f);
+            float heightRandom = Random.Range(0, 1f);
+            if (randomNumber > 0.995f)
+            {
+                GameObject ppipe = (GameObject)Instantiate(pipe);
+                ppipe.GetComponent<pipe>().SetHealth(100f);
+                ppipe.transform.localScale = new Vector3(1+wallRandom,0.5f + heightRandom, 1);
+                ppipe.transform.rotation = Quaternion.identity;
+                ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
+                Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
+                m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+            }
+            else
+            {
+                GameObject ppipe = (GameObject)Instantiate(wall);
+                ppipe.GetComponent<pipe>().SetHealth(100f);
+                if (wallRandom > 0.5)
+                {
+                    ppipe.transform.localScale = new Vector3(2.5f, 2, 0.5f);
+                    ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1f, 36);
+                }
+                else
+                {
+                    ppipe.transform.position = new Vector3(Random.Range(-5, 5f),0.8f, 36);
+                }
+                ppipe.transform.rotation = Quaternion.identity;
+ 
+                Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
+                m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+            }
         }
         else if (randomNumber < 0.012f)
         {

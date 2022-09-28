@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using UnityEditor;
 public class ScoreManager : MonoBehaviour {
     public static int sscore = 0;
 	
@@ -10,4 +13,15 @@ public class ScoreManager : MonoBehaviour {
 	public static int invisible = 0;
 	public static bool killedByRock = false;
 	
+	public static float startTime;
+	
+
+	void Start()
+	{
+		startTime = Time.time;
+	}
+
+	void Update()
+	{
+	}
 }

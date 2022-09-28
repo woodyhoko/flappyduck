@@ -6,10 +6,35 @@
   <component name="ChangeListManager">
     <list default="true" id="847f8ec6-fa7a-4122-a610-f2fdb74127c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ScoreManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SendToGoogle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SendToGoogle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/controller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/falling_rocks/Rock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/falling_rocks/Rock.cs" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../score_board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../score_board.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/Build/WebGL Builds.data.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/Build/WebGL Builds.framework.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/Build/WebGL Builds.loader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/Build/WebGL Builds.wasm.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/GUID.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/ProjectVersion.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/StreamingAssets/UnityServicesProjectConfiguration.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/TemplateData/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/TemplateData/fullscreen-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/TemplateData/progress-bar-empty-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/TemplateData/progress-bar-empty-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/TemplateData/progress-bar-full-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/TemplateData/progress-bar-full-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/TemplateData/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/TemplateData/unity-logo-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/TemplateData/unity-logo-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/TemplateData/webgl-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/dependencies.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WebGL Builds/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../webgl_sharing" beforeDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +93,11 @@
       <workItem from="1663394321142" duration="76000" />
       <workItem from="1663394658905" duration="3000" />
       <workItem from="1663394670816" duration="260000" />
+<<<<<<< Updated upstream
       <workItem from="1664248072041" duration="6837000" />
+=======
+      <workItem from="1663971476126" duration="750000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System;
 using System.Globalization;
+using UnityEngine.UI;
+using UnityEditor;
 
 public class SendToGoogle : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class SendToGoogle : MonoBehaviour
 	private int _longer;
 	private int _invisible;
 	private int _shooting;
+
+	private float t;
     
     private void Awake()
     {
@@ -65,6 +69,8 @@ public class SendToGoogle : MonoBehaviour
             else
             {
                 Debug.Log("Form upload complete!");
+                t = Time.time - ScoreManager.startTime;
+                Debug.Log(t.ToString());
             }
         }
     }

@@ -41,7 +41,7 @@ public class controller : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0,5.0f,0);
         }
         if(Input.GetKey(KeyCode.LeftArrow)){
-            transform.position = transform.position + new Vector3(-0.08f, 0 ,0);    
+            transform.position = transform.position + new Vector3(-0.08f, 0 ,0); 
         }
         if(Input.GetKey(KeyCode.RightArrow)){
             transform.position = transform.position + new Vector3(0.08f, 0 ,0);    

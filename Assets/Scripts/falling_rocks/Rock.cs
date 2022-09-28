@@ -26,22 +26,15 @@ public class Rock : MonoBehaviour
         
     }
 
-    // private void OnCollisionEnter(Collision collision){
-    //     if(collision.gameObject.tag == "Plane"){
-    //         Invoke("DestroyFallingRock", 1f);
-    //     }
-    // }
-    private void DestroyFallingRock(){
-        Destroy(gameObject);
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            ScoreManager.killedByRock = true;
+            FindObjectOfType<GameManager>().EndGame();
+        }
+        else if(other.tag == "Plane") {
+            Destroy(gameObject);
+        }
     }
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     // if(other.tag == "Player") {
-    //     //     FindObjectOfType<GameManager>().EndGame();
-    //     // }
-    //     // else 
-    //     if(other.tag == "Plane") {
-    //         Destroy(gameObject);
-    //     }
-    // }
 }

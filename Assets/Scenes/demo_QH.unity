@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 4
+  forward_limit: 4
   ceilling: 4
 --- !u!114 &13972562
 MonoBehaviour:
@@ -900,6 +901,7 @@ MonoBehaviour:
   faster: {fileID: 0}
   shooter: {fileID: 0}
   pipe: {fileID: 540841989}
+  wall: {fileID: 0}
   invisible: {fileID: 0}
 --- !u!4 &600235056
 Transform:

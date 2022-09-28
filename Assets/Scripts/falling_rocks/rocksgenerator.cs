@@ -19,10 +19,12 @@ public class rocksgenerator : MonoBehaviour
         float randomNumber = Random.Range(0, 1f);
         if (randomNumber < 0.005f){
             GameObject newrock = (GameObject)Instantiate (rock);
+            newrock.GetComponent<Rock>().clone = true;
             newrock.transform.position = new Vector3(Random.Range(-5, 5f), 16, player.transform.position.z);
 
-            GameObject fall_obj = (GameObject)Instantiate (fall);
-            fall_obj.transform.parent = newrock.transform;
+            // GameObject fall_obj = (GameObject)Instantiate (fall);
+            // newrock.GetComponent<Fall>().clone = true;
+            // fall_obj.transform.parent = newrock.transform;
         }
     }
 }

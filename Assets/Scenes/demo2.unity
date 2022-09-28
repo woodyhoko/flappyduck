@@ -1256,7 +1256,7 @@ GameObject:
   - component: {fileID: 887509174}
   - component: {fileID: 887509173}
   - component: {fileID: 887509172}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -1291,6 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcb44bbf74434d228a22e561b1a743f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clone: 0
 --- !u!65 &887509174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1299,7 +1300,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887509171}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1830,7 +1831,7 @@ GameObject:
   - component: {fileID: 1440525039}
   - component: {fileID: 1440525038}
   - component: {fileID: 1440525037}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ceiling
   m_TagString: ceil
   m_Icon: {fileID: 0}
@@ -1930,7 +1931,7 @@ GameObject:
   - component: {fileID: 1461062239}
   - component: {fileID: 1461062238}
   - component: {fileID: 1461062237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1966,6 +1967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reminder: {fileID: 1772727902}
   rb: {fileID: 1461062238}
+  clone: 0
 --- !u!54 &1461062238
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2784,7 +2786,7 @@ GameObject:
   - component: {fileID: 1772727905}
   - component: {fileID: 1772727904}
   - component: {fileID: 1772727903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reminder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2803,6 +2805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb0a90404988475d9c3e9cd28ec81a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clone: 0
 --- !u!65 &1772727904
 BoxCollider:
   m_ObjectHideFlags: 0

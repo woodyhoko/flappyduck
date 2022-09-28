@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class controller_Q : MonoBehaviour
 {
-    Rigidbody m_Rigidbody;
+    public static Rigidbody m_Rigidbody;
     public float height= 4.0f;
     float lastPressTime = 0.0f;
     public static bool have_power = false;
 
     bool larger_gravity = false;
     bool reversed_gravity = false;
+    public static bool move_forward = false;
+    public float forward_limit = 4.0f;
 
     public float ceilling = 4.0f;
 
@@ -46,6 +48,17 @@ public class controller_Q : MonoBehaviour
         }
 
 
+        if (move_forward)
+        {
+            Debug.Log("z: " + transform.position.z);
+            move_forward = !move_forward;
+            if (transform.position.z < forward_limit)
+            {
+                m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 2.0f);
+            }
+        }
+
+
         //add or cancel gravity
         if (Input.GetKey(KeyCode.W))
         {
@@ -53,7 +66,7 @@ public class controller_Q : MonoBehaviour
         }
 
         //reverse gravity
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (reversed_gravity)
             {

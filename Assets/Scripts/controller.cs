@@ -13,9 +13,17 @@ public class controller : MonoBehaviour
     private bool shoot = false;
     private int shoot_freq = 150;
     private int shoot_timestep = 0;
+    private float move_forward_limit = 4.0f;
 
     private bool jump = false;
     private int invi_remaining_time = 30;
+
+    // Gravity, reversed gravity, move forward
+    private bool larger_gravity = false;
+    private bool reversed_gravity = false;
+    public static bool move_forward = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +34,22 @@ public class controller : MonoBehaviour
     void Update() {
         if (Input.GetKeyDown(KeyCode.Space)){
             jump = true;
+            if ((4.0f - transform.position.y) < 0.7f)
+            {
+                jump = false;
+            }
         }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            larger_gravity = !larger_gravity;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            reversed_gravity = !reversed_gravity;
+        }
+
+        
+
     }
     void FixedUpdate()
     {
@@ -35,12 +58,53 @@ public class controller : MonoBehaviour
         // }
          star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed * Time.deltaTime);
         //star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
+
+        //set ceiling on jump
+        
+
         if (jump){
             jump = false;
             // transform.position = transform.position + new Vector3(0, 1.5f, 0);
-            m_Rigidbody.velocity = new Vector3(0,5.0f,0);
+            //m_Rigidbody.velocity = new Vector3(0,5.0f,0);
+            
+            if (larger_gravity)
+            {
+                m_Rigidbody.velocity = new Vector3(0, 3.0f, 0);
+            }
+            else
+            {
+                m_Rigidbody.velocity = new Vector3(0, 5.0f, 0);
+            }
         }
-        if(Input.GetKey(KeyCode.LeftArrow)){
+
+        //reversed gravity
+        if (reversed_gravity)
+        {
+            Physics.gravity = new Vector3(0, 1.0f, 0);
+            //reversed_gravity = !reversed_gravity;
+        }
+        else
+        {
+            Physics.gravity = new Vector3(0, -9.8f, 0);
+            //reversed_gravity = !reversed_gravity;
+        }
+
+        //move forward
+        if (move_forward)
+        {
+            //Debug.Log("z: " + transform.position.z);
+            if (transform.position.z < move_forward_limit)
+            {
+                m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 2.0f);
+            }
+            //m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 2.0f);
+            move_forward = false;
+        }
+
+
+
+
+        if (Input.GetKey(KeyCode.LeftArrow)){
             transform.position = transform.position + new Vector3(-0.08f, 0 ,0); 
         }
         if(Input.GetKey(KeyCode.RightArrow)){

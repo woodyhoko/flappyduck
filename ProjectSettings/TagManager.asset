@@ -16,6 +16,7 @@ TagManager:
   - Rock
   - ceil
   - star
+  - water
   layers:
   - Default
   - TransparentFX

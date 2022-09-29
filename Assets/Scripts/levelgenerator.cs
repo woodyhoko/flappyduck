@@ -13,6 +13,7 @@ public class levelgenerator : MonoBehaviour
     public GameObject wall;
     public GameObject invisible;
     public GameObject move_forward;
+    public GameObject water;
     private int difficulty = 0;
     //public GameObject player; 
     //public GameObject star;
@@ -48,6 +49,14 @@ public class levelgenerator : MonoBehaviour
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
+            else if ((randomNumber < 0.995f )&&(randomNumber > 0.990f))
+            {
+                GameObject watero = (GameObject)Instantiate(water);
+                watero.transform.rotation = Quaternion.identity;
+                watero.transform.position = new Vector3(Random.Range(-5, 5f), 0, 36);
+                Rigidbody m_Rigidbody = watero.GetComponent<Rigidbody>();
+                m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+            }
             else
             {
                 GameObject ppipe = (GameObject)Instantiate(wall);
@@ -67,28 +76,26 @@ public class levelgenerator : MonoBehaviour
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
         }
-        else if (randomNumber < 0.012f)
+        else  if (randomNumber < 0.014f)
         {
             GameObject food;
             if (randomNumber < 0.0020f)
             {
                 food = Instantiate(bigger);
             }
-            else if (randomNumber < 0.004f)
+            else if ((randomNumber < 0.002f) && (randomNumber < 0.004f))
                 food = Instantiate(smaller);
-            else if (randomNumber < 0.006f)
+            else if ((randomNumber < 0.004f) && (randomNumber < 0.006f))
                 food = Instantiate(longger);
-            else if (randomNumber < 0.008f)
+            else if ((randomNumber < 0.006f) && (randomNumber < 0.008f))
                 food = Instantiate(faster);
-            else if (randomNumber < 0.01f)
+            else if ((randomNumber < 0.008f) && (randomNumber < 0.01f))
                 food = Instantiate(shooter);
             //else if (randomNumber < 0.015f)
-            else if (randomNumber < 0.012f)
-                food = Instantiate(move_forward);
-            else
+            else if ((randomNumber < 0.01f) && (randomNumber < 0.012f))
                 food = Instantiate(invisible);
-
-
+            else
+                food = Instantiate(move_forward);
             food.transform.rotation = Quaternion.identity;
             food.transform.Rotate(0, 90, 0); // for showing icons in right view
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
@@ -98,3 +105,4 @@ public class levelgenerator : MonoBehaviour
         }
     }
 }
+

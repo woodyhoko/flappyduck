@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour {
 	public static int longer = 0;
 	public static int invisible = 0;
 	public static bool killedByRock = false;
-	
+	public static bool killedByWater = false;
 	public static float startTime;
 	
 

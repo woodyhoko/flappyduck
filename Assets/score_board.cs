@@ -16,7 +16,7 @@ public class score_board : MonoBehaviour
     {
         if (Input.anyKeyDown){
             ScoreManager.sscore = 0;
-            SceneManager.LoadScene("hp system");
+            SceneManager.LoadScene("demo2");
         }
     }
 }

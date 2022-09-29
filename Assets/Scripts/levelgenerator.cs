@@ -86,6 +86,7 @@ public class levelgenerator : MonoBehaviour
                 food = Instantiate(invisible);
 
             food.transform.rotation = Quaternion.identity;
+            food.transform.Rotate(0, 90, 0); // for showing icons in right view
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);

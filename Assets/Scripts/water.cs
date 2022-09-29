@@ -23,7 +23,9 @@ public class water : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Debug.Log("get hit by water");
+            ScoreManager.killedByRock = true;
             Destroy(collision.gameObject);
+            FindObjectOfType<GameManager>().EndGame();
             }
             // Destroy(gameObject);
 

@@ -2759,6 +2759,8 @@ MonoBehaviour:
   pipe: {fileID: 1590029960}
   wall: {fileID: 1795752818}
   invisible: {fileID: 162276700}
+  move_forward: {fileID: 0}
+  water: {fileID: 0}
 --- !u!114 &1721641364
 MonoBehaviour:
   m_ObjectHideFlags: 0

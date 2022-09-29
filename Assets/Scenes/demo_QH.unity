@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 367508849}
   - component: {fileID: 367508848}
   - component: {fileID: 367508847}
+  - component: {fileID: 367508854}
   m_Layer: 0
   m_Name: Power
   m_TagString: Untagged
@@ -295,7 +296,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367508846}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6926702f638f8462b88f45b0cdf47f6f, type: 3}
   m_Name: 
@@ -409,6 +410,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &367508854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367508846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cd7fa0c36ffe84eb71991f807b8c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &440694135
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +916,7 @@ MonoBehaviour:
   pipe: {fileID: 540841989}
   wall: {fileID: 0}
   invisible: {fileID: 0}
+  move_forward: {fileID: 0}
 --- !u!4 &600235056
 Transform:
   m_ObjectHideFlags: 0
@@ -1099,7 +1113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1373629409
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class levelgenerator : MonoBehaviour
     public GameObject pipe;
     public GameObject wall;
     public GameObject invisible;
+    public GameObject move_forward;
     private int difficulty = 0;
     //public GameObject player; 
     //public GameObject star;
@@ -82,8 +83,11 @@ public class levelgenerator : MonoBehaviour
             else if (randomNumber < 0.01f)
                 food = Instantiate(shooter);
             //else if (randomNumber < 0.015f)
+            else if (randomNumber < 0.012f)
+                food = Instantiate(move_forward);
             else
                 food = Instantiate(invisible);
+
 
             food.transform.rotation = Quaternion.identity;
             food.transform.Rotate(0, 90, 0); // for showing icons in right view

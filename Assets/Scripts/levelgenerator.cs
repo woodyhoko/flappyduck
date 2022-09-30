@@ -34,18 +34,18 @@ public class levelgenerator : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
-        if (randomNumber > 0.97f)
+        if (randomNumber > 0.975f - difficulty * 0.0001f)
         {
+            Physics.IgnoreLayerCollision(6, 10, true);
             float wallRandom = Random.Range(0, 1f);
             float heightRandom = Random.Range(0, 2f);
             if (randomNumber > 0.98f)
             {
                 GameObject ppipe = (GameObject)Instantiate(pipe);
                 ppipe.GetComponent<pipe>().SetHealth(100f);
-                ppipe.transform.localScale = new Vector3(1+wallRandom,0.5f + heightRandom, 1);
+                ppipe.transform.localScale = new Vector3(0.7f+2*wallRandom,0.5f + heightRandom, 0.7f + 2*wallRandom);
                 ppipe.transform.rotation = Quaternion.identity;
                 ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();

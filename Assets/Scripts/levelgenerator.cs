@@ -34,28 +34,28 @@ public class levelgenerator : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
-        if (randomNumber > 0.99f)
+        if (randomNumber > 0.975f - difficulty * 0.0001f)
         {
+            Physics.IgnoreLayerCollision(6, 10, true);
             float wallRandom = Random.Range(0, 1f);
-            float heightRandom = Random.Range(0, 1f);
-            if (randomNumber > 0.995f)
+            float heightRandom = Random.Range(0, 2f);
+            if (randomNumber > 0.98f)
             {
                 GameObject ppipe = (GameObject)Instantiate(pipe);
                 ppipe.GetComponent<pipe>().SetHealth(100f);
-                ppipe.transform.localScale = new Vector3(1+wallRandom,0.5f + heightRandom, 1);
+                ppipe.transform.localScale = new Vector3(0.7f+2*wallRandom,0.5f + heightRandom, 0.7f + 2*wallRandom);
                 ppipe.transform.rotation = Quaternion.identity;
                 ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
-            else if ((randomNumber < 0.995f )&&(randomNumber > 0.990f))
+            else if (randomNumber>0.975)
             {
                 GameObject watero = (GameObject)Instantiate(water);
                 watero.transform.rotation = Quaternion.identity;
-                watero.transform.position = new Vector3(Random.Range(-5, 5f), 0, 36);
+                watero.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 Rigidbody m_Rigidbody = watero.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }

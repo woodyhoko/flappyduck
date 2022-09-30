@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Material/move_forward.mat.meta
 guid: 9e2e4f460b57c4e52867ae11269e6711
 NativeFormatImporter:
+========
+guid: e917d3a65fec59141b59d746c16b740f
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> 071f0737d557bccc5be8447a8b18cd8fccc84d0c:Assets/Material/Materials.meta
   externalObjects: {}
   mainObjectFileID: 2100000
   userData: 

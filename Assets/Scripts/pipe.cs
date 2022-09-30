@@ -13,6 +13,8 @@ public class pipe : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Physics.IgnoreLayerCollision(6, 10, true);
+        Physics.IgnoreLayerCollision(6, 6, true);
         // HealthSystem = new(100f);
         // healthBarUI = (GameObject)Instantiate(healthBarUI);
     }

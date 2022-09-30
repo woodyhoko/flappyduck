@@ -37,11 +37,11 @@ public class levelgenerator : MonoBehaviour
 
         float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
-        if (randomNumber > 0.99f)
+        if (randomNumber > 0.97f)
         {
             float wallRandom = Random.Range(0, 1f);
-            float heightRandom = Random.Range(0, 1f);
-            if (randomNumber > 0.995f)
+            float heightRandom = Random.Range(0, 2f);
+            if (randomNumber > 0.98f)
             {
                 GameObject ppipe = (GameObject)Instantiate(pipe);
                 ppipe.GetComponent<pipe>().SetHealth(100f);
@@ -51,7 +51,7 @@ public class levelgenerator : MonoBehaviour
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
-            else if ((randomNumber < 0.995f )&&(randomNumber > 0.990f))
+            else if (randomNumber>0.975)
             {
                 GameObject watero = (GameObject)Instantiate(water);
                 watero.transform.rotation = Quaternion.identity;

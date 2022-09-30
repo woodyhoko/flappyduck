@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class levelgenerator : MonoBehaviour
 {
+    public GameObject player;
     public GameObject bigger;
     public GameObject smaller;
     public GameObject longger;
     public GameObject faster;
     public GameObject shooter;
     public GameObject pipe;
+    public GameObject rock;
     public GameObject wall;
     public GameObject invisible;
     public GameObject move_forward;
@@ -75,6 +77,14 @@ public class levelgenerator : MonoBehaviour
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
+        }
+        else if (randomNumber > 0.987f){
+            GameObject obj = (GameObject)Instantiate (rock);
+            obj.GetComponent<rock>().clone = true;
+            // obj.transform.SetParent(this.transform);
+            obj.transform.position = new Vector3(Random.Range(-5.5f, 5.5f), 10, player.transform.position.z);
+            obj.transform.rotation = new Quaternion(Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f));
+            
         }
         else  if (randomNumber < 0.014f)
         {

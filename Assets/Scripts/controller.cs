@@ -56,8 +56,8 @@ public class controller : MonoBehaviour
         // if(Input.GetKeyDown(KeyCode.A)){
         //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
         // }
-         star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed * Time.deltaTime);
-        //star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
+        star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed);
+        // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
 
         //set ceiling on jump
         
@@ -150,7 +150,7 @@ public class controller : MonoBehaviour
             // originally rotate at 30 degree/sec
 
             Destroy(collider.gameObject);
-            starRotateSpeed += 5;
+            starRotateSpeed += .8f;
             ScoreManager.faster++;
         }
         if (collider.gameObject.tag == "longger")

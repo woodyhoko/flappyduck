@@ -8,6 +8,7 @@ public class pipe : MonoBehaviour
     // public GameObject healthBarUI;
     // public Canvas Canvas;
     pipeHealth pipeHealth = new pipeHealth();
+    public TMPro.TextMeshProUGUI score_text;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,6 @@ public class pipe : MonoBehaviour
             //Debug.Log(healthSystem.GetHealth());
             if (!pipeHealth.CheckDie())
             {
-                print("hihihi");
                 Destroy(collision.gameObject);
             }
             // Destroy(gameObject);
@@ -48,6 +48,8 @@ public class pipe : MonoBehaviour
     {
         if (collider.gameObject.tag == "star")
         {
+            ScoreManager.sscore++;
+            score_text.text = "Score : " + ScoreManager.sscore.ToString();
             Destroy(gameObject);
         }
     }

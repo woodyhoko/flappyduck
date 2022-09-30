@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gameover.unity
     guid: 11ec3801ef0b1114abd0d287c9f69b05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/demo.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/init.unity
     guid: 87af0c325125a0b4993374fe9deffb57
   - enabled: 1

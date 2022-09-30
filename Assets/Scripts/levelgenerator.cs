@@ -55,7 +55,7 @@ public class levelgenerator : MonoBehaviour
             {
                 GameObject watero = (GameObject)Instantiate(water);
                 watero.transform.rotation = Quaternion.identity;
-                watero.transform.position = new Vector3(Random.Range(-5, 5f), 0, 36);
+                watero.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 Rigidbody m_Rigidbody = watero.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }

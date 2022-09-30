@@ -16,6 +16,7 @@ public class controller : MonoBehaviour
     private float move_forward_limit = 4.0f;
 
     private bool jump = false;
+    private int jump_numb = 0;
     private int invi_remaining_time = 30;
 
     // Gravity, reversed gravity, move forward
@@ -32,13 +33,24 @@ public class controller : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        
         if (Input.GetKeyDown(KeyCode.Space)){
-            jump = true;
+
+            if (jump_numb > 0)
+            {
+                jump = true;
+                jump_numb -= 1;
+            }
+            
+            /*
             if ((4.0f - transform.position.y) < 0.7f)
             {
                 jump = false;
             }
+            */
         }
+        
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             larger_gravity = !larger_gravity;
@@ -51,6 +63,8 @@ public class controller : MonoBehaviour
         
 
     }
+
+
     void FixedUpdate()
     {
         // if(Input.GetKeyDown(KeyCode.A)){
@@ -60,13 +74,14 @@ public class controller : MonoBehaviour
         // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
 
         //set ceiling on jump
-        
 
-        if (jump){
+        
+        if (jump)
+        {
             jump = false;
             // transform.position = transform.position + new Vector3(0, 1.5f, 0);
             //m_Rigidbody.velocity = new Vector3(0,5.0f,0);
-            
+
             if (larger_gravity)
             {
                 m_Rigidbody.velocity = new Vector3(0, 3.0f, 0);
@@ -76,6 +91,7 @@ public class controller : MonoBehaviour
                 m_Rigidbody.velocity = new Vector3(0, 5.0f, 0);
             }
         }
+        
 
         //reversed gravity
         if (reversed_gravity)
@@ -95,8 +111,11 @@ public class controller : MonoBehaviour
             //Debug.Log("z: " + transform.position.z);
             if (transform.position.z < move_forward_limit)
             {
-                m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 2.0f);
+                m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
             }
+
+            Debug.Log("z: " + transform.position.z);
+
             //m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 2.0f);
             move_forward = false;
         }
@@ -128,6 +147,7 @@ public class controller : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "bigger")
@@ -171,6 +191,12 @@ public class controller : MonoBehaviour
             ScoreManager.shooter++;
         }
 
+        if (collider.gameObject.tag == "move_forward")
+        {
+            Destroy(collider.gameObject);
+            move_forward = true;
+        }
+
         if (collider.gameObject.tag == "invisible")
         {
             Destroy(collider.gameObject);
@@ -189,17 +215,28 @@ public class controller : MonoBehaviour
         GetComponent<Renderer>().material.color = tempCol;
         Physics.IgnoreLayerCollision(6, 7, false);
     }
-    //private void OnCollisionEnter(Collision collision)
-   //{
-        //if (collision.gameObject.tag == "pipe")
-        //{
-            //if player is bigger than (2,2,2) (After eating 4 Bigger foods)
-          //  if(transform.localScale.x>2)
-          //  {
-           //     Debug.Log(collision.gameObject);
-           //     Destroy(collision.gameObject);
-           // }
 
-        //}
-   // }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Plane")
+        {
+            jump_numb = 2;
+
+        }
+    }
+
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //if (collision.gameObject.tag == "pipe")
+    //{
+    //if player is bigger than (2,2,2) (After eating 4 Bigger foods)
+    //  if(transform.localScale.x>2)
+    //  {
+    //     Debug.Log(collision.gameObject);
+    //     Destroy(collision.gameObject);
+    // }
+
+    //}
+    // }
 }

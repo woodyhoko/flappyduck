@@ -17,6 +17,7 @@ TagManager:
   - ceil
   - star
   - water
+  - move_forward
   layers:
   - Default
   - TransparentFX

@@ -13,12 +13,12 @@ public class ScoreManager : MonoBehaviour {
 	public static int invisible = 0;
 	public static bool killedByRock = false;
 	public static bool killedByWater = false;
-	public static float startTime;
+	public static float startTime = Time.time;
 	
 
 	void Start()
 	{
-		startTime = Time.time;
+		// startTime = Time.time;
 	}
 
 	void Update()

@@ -16,6 +16,7 @@ public class score_board : MonoBehaviour
     {
         if (Input.anyKeyDown){
             ScoreManager.sscore = 0;
+            ScoreManager.startTime = Time.time;
             SceneManager.LoadScene("demo2");
         }
     }

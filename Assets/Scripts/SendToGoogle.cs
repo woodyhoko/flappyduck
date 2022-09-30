@@ -20,7 +20,7 @@ public class SendToGoogle : MonoBehaviour
 	private int _invisible;
 	private int _shooting;
 
-	private float t;
+	private float _playtime;
     
     private void Awake()
     {
@@ -32,6 +32,7 @@ public class SendToGoogle : MonoBehaviour
     public void Send()
     {
         // Assign variables
+        _playtime = Time.time - ScoreManager.startTime;
         _testInt = ScoreManager.sscore;
         _testBoolean = ScoreManager.killedByRock;
         _bigger = ScoreManager.biggerCube;
@@ -41,11 +42,14 @@ public class SendToGoogle : MonoBehaviour
 		_invisible = ScoreManager.invisible;
 		_shooting = ScoreManager.shooter;
         StartCoroutine(Post(_sessionID.ToString(), _testInt.ToString(), _testBoolean.ToString(), _bigger.ToString(),
-		_smaller.ToString(), _shooting.ToString(), _faster.ToString(), _longer.ToString(), _invisible.ToString()));
+		_smaller.ToString(), _shooting.ToString(), _faster.ToString(), _longer.ToString(), _invisible.ToString(),
+		_playtime.ToString("f2")));
+        Debug.Log(_playtime);
+        
     }
 
     private IEnumerator Post(string sessionID, string testInt, string testBool, string bigger, string smaller, string shooting,
-		string faster, string longer, string invisible)
+		string faster, string longer, string invisible, string playtime)
     {
         WWWForm form = new WWWForm();
         form.AddField("entry.694322186", sessionID);
@@ -57,6 +61,7 @@ public class SendToGoogle : MonoBehaviour
 		form.AddField("entry.397715220", faster);
 		form.AddField("entry.453491236", longer);
 		form.AddField("entry.33886605", invisible);
+		form.AddField("entry.210980662", playtime);
         
         // Send responses and verify result
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
@@ -69,8 +74,6 @@ public class SendToGoogle : MonoBehaviour
             else
             {
                 Debug.Log("Form upload complete!");
-                t = Time.time - ScoreManager.startTime;
-                Debug.Log(t.ToString());
             }
         }
     }

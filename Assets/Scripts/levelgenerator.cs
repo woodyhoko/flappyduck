@@ -36,7 +36,7 @@ public class levelgenerator : MonoBehaviour
     {
         float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
-        if (randomNumber > 0.975f - difficulty * 0.0001f)
+        if (randomNumber > 0.97f - difficulty * 0.0001f)
         {
             Physics.IgnoreLayerCollision(6, 10, true);
             float wallRandom = Random.Range(0, 1f);

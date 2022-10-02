@@ -46,7 +46,7 @@ public class levelgenerator : MonoBehaviour
                 GameObject ppipe = (GameObject)Instantiate(pipe);
                 ppipe.GetComponent<pipe>().SetHealth(100f);
                 ppipe.transform.localScale = new Vector3(0.7f+2*wallRandom,0.5f + heightRandom, 0.7f + 2*wallRandom);
-                ppipe.transform.rotation = Quaternion.identity;
+                // ppipe.transform.rotation = Quaternion.identity;
                 ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);

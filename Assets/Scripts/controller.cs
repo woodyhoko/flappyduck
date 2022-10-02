@@ -170,7 +170,7 @@ public class controller : MonoBehaviour
             // originally rotate at 30 degree/sec
 
             Destroy(collider.gameObject);
-            starRotateSpeed += .8f;
+            starRotateSpeed *= 1.5f;
             ScoreManager.faster++;
         }
         if (collider.gameObject.tag == "longger")

@@ -17,6 +17,7 @@ public class controller : MonoBehaviour
 
     private bool jump = false;
     private int jump_numb = 0;
+    private float jump_height = 5.0f;
     private int invi_remaining_time = 30;
 
     // Gravity, reversed gravity, move forward
@@ -40,6 +41,11 @@ public class controller : MonoBehaviour
             {
                 jump = true;
                 jump_numb -= 1;
+            }
+            if (reversed_gravity)
+            {
+                jump_numb = 2;
+                jump = true;
             }
             
             /*
@@ -73,15 +79,41 @@ public class controller : MonoBehaviour
         star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed);
         // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
 
-        //set ceiling on jump
+        //set jumping limit
+        if (larger_gravity)
+        {
+            jump_height = 3.0f;
+        }
+        else
+        {
+            jump_height = 5.0f;
+        }
 
-        
+        //reversed gravity
+        if (reversed_gravity)
+        {
+            Physics.gravity = new Vector3(0, 9.8f, 0);
+            //jump = true;
+            if (jump_height > 0)
+            {
+                jump_height = jump_height * (-1.0f);
+            }
+        }
+        else
+        {
+            Physics.gravity = new Vector3(0, -9.8f, 0);
+            if (jump_height < 0)
+            {
+                jump_height = jump_height * (-1.0f);
+            }
+        }
+
         if (jump)
         {
             jump = false;
-            // transform.position = transform.position + new Vector3(0, 1.5f, 0);
-            //m_Rigidbody.velocity = new Vector3(0,5.0f,0);
+            
 
+            /*
             if (larger_gravity)
             {
                 m_Rigidbody.velocity = new Vector3(0, 3.0f, 0);
@@ -90,20 +122,17 @@ public class controller : MonoBehaviour
             {
                 m_Rigidbody.velocity = new Vector3(0, 5.0f, 0);
             }
+            //m_Rigidbody.AddForce(0, -9.8f, 0, ForceMode.Force);
+            */
+            
+            Debug.Log("gravity: " + Physics.gravity);
+            Debug.Log("jumping: " + transform.position);
+            Debug.Log("jumping height: " + jump_height);
+            m_Rigidbody.velocity = new Vector3(0, jump_height, 0);
         }
         
 
-        //reversed gravity
-        if (reversed_gravity)
-        {
-            Physics.gravity = new Vector3(0, 1.0f, 0);
-            //reversed_gravity = !reversed_gravity;
-        }
-        else
-        {
-            Physics.gravity = new Vector3(0, -9.8f, 0);
-            //reversed_gravity = !reversed_gravity;
-        }
+        
 
         //move forward
         if (move_forward)

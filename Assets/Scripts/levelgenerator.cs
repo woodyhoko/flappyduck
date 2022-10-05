@@ -15,6 +15,10 @@ public class levelgenerator : MonoBehaviour
     public GameObject wall;
     public GameObject invisible;
     public GameObject move_forward;
+    public GameObject gravity;
+    public GameObject reversed_gravity;
+    public GameObject small_gravity;
+    public GameObject large_gravity;
     public GameObject water;
     private int difficulty = 0;
     //public GameObject player; 
@@ -86,7 +90,7 @@ public class levelgenerator : MonoBehaviour
             obj.transform.rotation = new Quaternion(Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f));
             
         }
-        else  if (randomNumber < 0.014f)
+        else  if (randomNumber < 0.018f)
         {
             GameObject food;
             if (randomNumber < 0.0020f)
@@ -104,8 +108,24 @@ public class levelgenerator : MonoBehaviour
             //else if (randomNumber < 0.015f)
             else if ((randomNumber < 0.01f) && (randomNumber < 0.012f))
                 food = Instantiate(invisible);
-            else
+            else if ((randomNumber < 0.012f) && (randomNumber < 0.014f))
                 food = Instantiate(move_forward);
+            else if ((randomNumber < 0.014f) && (randomNumber < 0.016f))
+            {
+                if (controller.reversed_gravity)
+                    food = Instantiate(gravity);
+                else
+                    food = Instantiate(reversed_gravity);
+            }
+            else
+            {
+                if (controller.larger_gravity)
+                    food = Instantiate(small_gravity);
+                else
+                    food = Instantiate(large_gravity);
+            }
+                    
+                
             food.transform.rotation = Quaternion.identity;
             food.transform.Rotate(0, 90, 0); // for showing icons in right view
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);

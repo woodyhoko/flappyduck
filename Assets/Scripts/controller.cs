@@ -21,8 +21,8 @@ public class controller : MonoBehaviour
     private int invi_remaining_time = 30;
 
     // Gravity, reversed gravity, move forward
-    private bool larger_gravity = false;
-    private bool reversed_gravity = false;
+    public static bool larger_gravity = false;
+    public static bool reversed_gravity = false;
     public static bool move_forward = false;
 
 
@@ -30,6 +30,9 @@ public class controller : MonoBehaviour
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+        larger_gravity = false;
+        reversed_gravity = false;
+        move_forward = false;
     }
 
     // Update is called once per frame
@@ -42,29 +45,21 @@ public class controller : MonoBehaviour
                 jump = true;
                 jump_numb -= 1;
             }
+
+            // No limit on jumping on reversed gravity
+            /*
             if (reversed_gravity)
             {
                 jump_numb = 2;
                 jump = true;
             }
-            
-            /*
-            if ((4.0f - transform.position.y) < 0.7f)
-            {
-                jump = false;
-            }
             */
+            
+           
         }
         
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            larger_gravity = !larger_gravity;
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            reversed_gravity = !reversed_gravity;
-        }
+        
 
         
 
@@ -93,7 +88,8 @@ public class controller : MonoBehaviour
         if (reversed_gravity)
         {
             Physics.gravity = new Vector3(0, 9.8f, 0);
-            //jump = true;
+            //set unlimited jumping under reversed gravity environment
+            jump_numb = 2;
             if (jump_height > 0)
             {
                 jump_height = jump_height * (-1.0f);
@@ -224,6 +220,18 @@ public class controller : MonoBehaviour
         {
             Destroy(collider.gameObject);
             move_forward = true;
+        }
+
+        if (collider.gameObject.tag == "gravity")
+        {
+            Destroy(collider.gameObject);
+            reversed_gravity = !reversed_gravity;
+        }
+
+        if (collider.gameObject.tag == "gravity_size")
+        {
+            Destroy(collider.gameObject);
+            larger_gravity = !larger_gravity;
         }
 
         if (collider.gameObject.tag == "invisible")

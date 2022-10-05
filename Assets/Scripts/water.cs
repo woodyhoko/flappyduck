@@ -6,6 +6,7 @@ public class water : MonoBehaviour
 {
     // Rigidbody rb;
     public bool clone = false;
+    public TMPro.TextMeshProUGUI score_text;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +24,7 @@ public class water : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Debug.Log("get hit by water");
-            ScoreManager.killedByRock = true;
-            Destroy(collision.gameObject);
+            ScoreManager.killedByWater= true;
             FindObjectOfType<GameManager>().EndGame();
             }
             // Destroy(gameObject);

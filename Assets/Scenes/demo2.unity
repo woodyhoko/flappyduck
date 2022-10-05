@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2477,7 +2477,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1721641362}
   - component: {fileID: 1721641363}
-  - component: {fileID: 1721641364}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -2528,18 +2527,6 @@ MonoBehaviour:
   small_gravity: {fileID: 1975345322}
   large_gravity: {fileID: 502583036}
   water: {fileID: 1950439626}
---- !u!114 &1721641364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721641360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1795752818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2973,7 +2960,6 @@ GameObject:
   - component: {fileID: 1950439628}
   - component: {fileID: 1950439627}
   - component: {fileID: 1950439633}
-  - component: {fileID: 1950439632}
   m_Layer: 0
   m_Name: water
   m_TagString: water
@@ -3075,18 +3061,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1950439632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950439626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9cd7fa0c36ffe84eb71991f807b8c35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1950439633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3100,6 +3074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clone: 0
+  score_text: {fileID: 0}
 --- !u!1 &1975345322
 GameObject:
   m_ObjectHideFlags: 0

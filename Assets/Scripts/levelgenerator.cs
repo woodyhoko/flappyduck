@@ -55,10 +55,9 @@ public class levelgenerator : MonoBehaviour
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
-            else if (randomNumber>0.975)
+            else if (randomNumber>0.975 && randomNumber < 0.98f)
             {
                 GameObject watero = (GameObject)Instantiate(water);
-                watero.transform.rotation = Quaternion.identity;
                 watero.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 Rigidbody m_Rigidbody = watero.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);

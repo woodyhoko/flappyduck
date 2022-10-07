@@ -15,11 +15,8 @@ public class levelgenerator : MonoBehaviour
     public GameObject wall;
     public GameObject invisible;
     public GameObject move_forward;
-    public GameObject gravity;
-    public GameObject reversed_gravity;
-    public GameObject small_gravity;
-    public GameObject large_gravity;
-    public GameObject water;
+    public GameObject portal;
+    public GameObject water; public GameObject text;
     private int difficulty = 0;
     //public GameObject player; 
     //public GameObject star;
@@ -40,7 +37,7 @@ public class levelgenerator : MonoBehaviour
     {
         float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
-        if (randomNumber > 0.97f - difficulty * 0.0001f)
+        if (randomNumber > 0.975f - difficulty * 0.0001f)
         {
             Physics.IgnoreLayerCollision(6, 10, true);
             float wallRandom = Random.Range(0, 1f);
@@ -48,17 +45,17 @@ public class levelgenerator : MonoBehaviour
             if (randomNumber > 0.98f)
             {
                 GameObject ppipe = (GameObject)Instantiate(pipe);
-                ppipe.GetComponent<pipe>().SetHealth(100f);
+                //ppipe.GetComponent<pipe>().SetHealth(100f);
                 ppipe.transform.localScale = new Vector3(0.7f+2*wallRandom,0.5f + heightRandom, 0.7f + 2*wallRandom);
-                // ppipe.transform.rotation = Quaternion.identity;
+                ppipe.transform.rotation = Quaternion.identity;
                 ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
-            else if (randomNumber>0.975f && randomNumber < 0.98f)
+            else if (randomNumber>0.975)
             {
-                Debug.Log("spawn water");
                 GameObject watero = (GameObject)Instantiate(water);
+                watero.transform.rotation = Quaternion.identity;
                 watero.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 Rigidbody m_Rigidbody = watero.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
@@ -66,7 +63,7 @@ public class levelgenerator : MonoBehaviour
             else
             {
                 GameObject ppipe = (GameObject)Instantiate(wall);
-                ppipe.GetComponent<pipe>().SetHealth(100f);
+                //ppipe.GetComponent<pipe>().SetHealth(100f);
                 if (wallRandom > 0.5)
                 {
                     ppipe.transform.localScale = new Vector3(2.5f, 2, 0.5f);
@@ -81,8 +78,9 @@ public class levelgenerator : MonoBehaviour
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
+            
         }
-        else if (randomNumber > 0.987f){
+        else if (randomNumber > 0.970f){
             GameObject obj = (GameObject)Instantiate (rock);
             obj.GetComponent<rock>().clone = true;
             // obj.transform.SetParent(this.transform);
@@ -90,7 +88,7 @@ public class levelgenerator : MonoBehaviour
             obj.transform.rotation = new Quaternion(Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f));
             
         }
-        else  if (randomNumber < 0.018f)
+        else  if (randomNumber < 0.014f)
         {
             GameObject food;
             if (randomNumber < 0.0020f)
@@ -108,30 +106,22 @@ public class levelgenerator : MonoBehaviour
             //else if (randomNumber < 0.015f)
             else if ((randomNumber < 0.01f) && (randomNumber < 0.012f))
                 food = Instantiate(invisible);
-            else if ((randomNumber < 0.012f) && (randomNumber < 0.014f))
-                food = Instantiate(move_forward);
-            else if ((randomNumber < 0.014f) && (randomNumber < 0.016f))
-            {
-                if (controller.reversed_gravity)
-                    food = Instantiate(gravity);
-                else
-                    food = Instantiate(reversed_gravity);
-            }
             else
-            {
-                if (controller.larger_gravity)
-                    food = Instantiate(small_gravity);
-                else
-                    food = Instantiate(large_gravity);
-            }
-                    
-                
+                food = Instantiate(move_forward);
             food.transform.rotation = Quaternion.identity;
             food.transform.Rotate(0, 90, 0); // for showing icons in right view
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
+
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             difficulty++;
+        }
+        else if (randomNumber < 0.015f)
+        {
+            GameObject p = (GameObject)Instantiate(portal);
+            p.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);
+            Rigidbody m_Rigidbody = p.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
     }
 }

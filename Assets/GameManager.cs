@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
         }
     }
     void Restart(){
+        if (GlobalData.Instance != null)
+            GlobalData.Instance.destroy();
         SceneManager.LoadScene("gameover");
         // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

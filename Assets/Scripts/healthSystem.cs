@@ -24,6 +24,6 @@ public class HealthSystem
         health -= attack;
         if (health < 0)
             health = 0;
-        if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
+        //if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
     }
 }

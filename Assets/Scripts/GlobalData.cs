@@ -30,5 +30,9 @@ public class GlobalData : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-  
+    public void destroy()
+    {
+        Destroy(gameObject);
+    }
+
 }

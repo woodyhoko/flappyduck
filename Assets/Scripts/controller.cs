@@ -87,7 +87,7 @@ public class controller : MonoBehaviour
                 GlobalData.Instance.choosen_powerCard = true;
                 power_card.SetActive(false);
                 Time.timeScale = 1f;
-                GlobalData.Instance.move_speed += 0.04f;
+                GlobalData.Instance.move_speed += 0.06f;
             }
         }
 
@@ -216,9 +216,19 @@ public class controller : MonoBehaviour
         }
         if (collider.gameObject.tag == "portal")
         {
+            float randomNumber = Random.Range(0, 1f);
+            if(randomNumber<0.5f)
+            {  
+                GlobalData.Instance.world_speed = 1.3f;
+                SceneManager.LoadScene("ice_world");
+            }
+            else
+            {
+                GlobalData.Instance.world_speed = 0.7f;
+                SceneManager.LoadScene("mud_world");
+            }
             //each time becomes 1.2 * original
-            SceneManager.LoadScene("ice_world");
-            GlobalData.Instance.world_speed = 0.8f;
+
         }
         if (GlobalData.Instance.ate < GlobalData.Instance.update_max_limit)
         {

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class controller : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
@@ -19,13 +19,20 @@ public class controller : MonoBehaviour
     private int jump_numb = 0;
     private float jump_height = 5.0f;
     private int invi_remaining_time = 30;
+    public float move_speed = 0.08f;
 
     // Gravity, reversed gravity, move forward
     public static bool larger_gravity = false;
     public static bool reversed_gravity = false;
     public static bool move_forward = false;
 
+    private int update_max_limit = 6;
+    private int ate = 0;
+    public TMP_Text ateText;
+    public TMP_Text limitText;
 
+    private bool choosen_powerCard = false;
+    public GameObject power_card;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +40,7 @@ public class controller : MonoBehaviour
         larger_gravity = false;
         reversed_gravity = false;
         move_forward = false;
+        Time.timeScale = 0f;
     }
 
     // Update is called once per frame
@@ -57,21 +65,47 @@ public class controller : MonoBehaviour
             
            
         }
-        
 
-        
 
-        
+        if (!choosen_powerCard)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                choosen_powerCard = true;
+                power_card.SetActive(false);
+                update_max_limit = 9;
+                Time.timeScale = 1f;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                choosen_powerCard = true;
+                power_card.SetActive(false);
+                Time.timeScale = 1f;
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                choosen_powerCard = true;
+                power_card.SetActive(false);
+                Time.timeScale = 1f;
+                move_speed += 0.04f;
+            }
+            limitText.text = "eat limitation: " + update_max_limit;
+
+        }
+
+
 
     }
 
 
     void FixedUpdate()
     {
-        // if(Input.GetKeyDown(KeyCode.A)){
-        //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
-        // }
-        star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed);
+        
+
+            // if(Input.GetKeyDown(KeyCode.A)){
+            //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
+            // }
+            star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed);
         // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
 
         //set jumping limit
@@ -149,10 +183,10 @@ public class controller : MonoBehaviour
 
 
         if (Input.GetKey(KeyCode.LeftArrow)){
-            transform.position = transform.position + new Vector3(-0.08f, 0 ,0); 
+            transform.position = transform.position + new Vector3(-move_speed, 0 ,0); 
         }
         if(Input.GetKey(KeyCode.RightArrow)){
-            transform.position = transform.position + new Vector3(0.08f, 0 ,0);    
+            transform.position = transform.position + new Vector3(move_speed, 0 ,0);    
         }
         if(shoot){
            // print("check");
@@ -175,75 +209,90 @@ public class controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "bigger")
+        if (ate < update_max_limit)
         {
-            //each time becomes 1.2 * original
-            Destroy(collider.gameObject);
-            transform.localScale = transform.localScale * 1.2f;
-            ScoreManager.biggerCube++;
-            
-        }
-        if (collider.gameObject.tag == "smaller")
-        {
-            //each time becomes 0.8 * original
-            Destroy(collider.gameObject);
-            transform.localScale = transform.localScale * 0.8f;
-            ScoreManager.smallerCube++;
-        }
-        if (collider.gameObject.tag == "faster")
-        {
-            // originally rotate at 30 degree/sec
+            if (collider.gameObject.tag == "bigger")
+            {
+                //each time becomes 1.2 * original
+                Destroy(collider.gameObject);
+                transform.localScale = transform.localScale * 1.2f;
+                ScoreManager.biggerCube++;
+                ate++;
 
-            Destroy(collider.gameObject);
-            starRotateSpeed *= 1.5f;
-            ScoreManager.faster++;
-        }
-        if (collider.gameObject.tag == "longger")
-        {
-            //each time becomes 0.8 * original
-            Destroy(collider.gameObject);
-            star.transform.localScale += new Vector3(0,0.2f,0);
-            ScoreManager.longer++;
-        }
-        if (collider.gameObject.tag == "shooter")
-        {
-            Destroy(collider.gameObject);
-            shoot = true;
-            if(shoot_freq >= 5){
-                shoot_freq*=4;
-                shoot_freq/=5;
+
             }
-            ScoreManager.shooter++;
-        }
+            if (collider.gameObject.tag == "smaller")
+            {
+                //each time becomes 0.8 * original
+                Destroy(collider.gameObject);
+                transform.localScale = transform.localScale * 0.8f;
+                ScoreManager.smallerCube++;
+                ate++;
+            }
+            if (collider.gameObject.tag == "faster")
+            {
+                // originally rotate at 30 degree/sec
 
-        if (collider.gameObject.tag == "move_forward")
-        {
-            Destroy(collider.gameObject);
-            move_forward = true;
-        }
+                Destroy(collider.gameObject);
+                starRotateSpeed *= 1.5f;
+                ScoreManager.faster++;
+                ate++;
+            }
+            if (collider.gameObject.tag == "longger")
+            {
+                //each time becomes 0.8 * original
+                Destroy(collider.gameObject);
+                star.transform.localScale += new Vector3(0, 0.2f, 0);
+                ScoreManager.longer++;
+                ate++;
+            }
+            if (collider.gameObject.tag == "shooter")
+            {
+                Destroy(collider.gameObject);
+                shoot = true;
+                if (shoot_freq >= 5)
+                {
+                    shoot_freq *= 4;
+                    shoot_freq /= 5;
+                }
+                ScoreManager.shooter++;
+                ate++;
+            }
 
-        if (collider.gameObject.tag == "gravity")
-        {
-            Destroy(collider.gameObject);
-            reversed_gravity = !reversed_gravity;
-        }
+            if (collider.gameObject.tag == "move_forward")
+            {
+                Destroy(collider.gameObject);
+                move_forward = true;
+                ate++;
+            }
 
-        if (collider.gameObject.tag == "gravity_size")
-        {
-            Destroy(collider.gameObject);
-            larger_gravity = !larger_gravity;
-        }
+            if (collider.gameObject.tag == "gravity")
+            {
+                Destroy(collider.gameObject);
+                reversed_gravity = !reversed_gravity;
+                ate++;
+            }
 
-        if (collider.gameObject.tag == "invisible")
-        {
-            Destroy(collider.gameObject);
-            Physics.IgnoreLayerCollision(6, 7, true);
-            Color tempCol = GetComponent<Renderer>().material.color;
-            tempCol.a = .5f;
-            GetComponent<Renderer>().material.color = tempCol;
-            invi_remaining_time = 100;
-            // Invoke ("EnableCollider", 5f);
-            ScoreManager.invisible++;
+            if (collider.gameObject.tag == "gravity_size")
+            {
+                Destroy(collider.gameObject);
+                larger_gravity = !larger_gravity;
+                ate++;
+            }
+
+            if (collider.gameObject.tag == "invisible")
+            {
+                Destroy(collider.gameObject);
+                Physics.IgnoreLayerCollision(6, 7, true);
+                Color tempCol = GetComponent<Renderer>().material.color;
+                tempCol.a = .5f;
+                GetComponent<Renderer>().material.color = tempCol;
+                invi_remaining_time = 100;
+                // Invoke ("EnableCollider", 5f);
+                ScoreManager.invisible++;
+                ate++;
+            }
+            ateText.text = "ate:" + ate.ToString();
         }
     }
     private void  EnableCollider () {

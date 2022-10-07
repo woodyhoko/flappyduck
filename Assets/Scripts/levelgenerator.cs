@@ -15,7 +15,7 @@ public class levelgenerator : MonoBehaviour
     public GameObject wall;
     public GameObject invisible;
     public GameObject move_forward;
-    public GameObject water;
+    public GameObject water; public GameObject text;
     private int difficulty = 0;
     //public GameObject player; 
     //public GameObject star;
@@ -77,6 +77,7 @@ public class levelgenerator : MonoBehaviour
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
+            
         }
         else if (randomNumber > 0.987f){
             GameObject obj = (GameObject)Instantiate (rock);
@@ -109,6 +110,7 @@ public class levelgenerator : MonoBehaviour
             food.transform.rotation = Quaternion.identity;
             food.transform.Rotate(0, 90, 0); // for showing icons in right view
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
+
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             difficulty++;

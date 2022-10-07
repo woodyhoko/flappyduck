@@ -217,10 +217,9 @@ public class controller : MonoBehaviour
         if (collider.gameObject.tag == "portal")
         {
             float randomNumber = Random.Range(0, 1f);
-            if(randomNumber<0.5f)
+            if(randomNumber<1f)
             {  
-                GlobalData.Instance.world_speed = 1.3f;
-                SceneManager.LoadScene("ice_world");
+                SceneManager.LoadScene("small_world");
             }
             else
             {

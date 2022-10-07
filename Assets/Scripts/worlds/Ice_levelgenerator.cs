@@ -20,6 +20,7 @@ public class Ice_levelgenerator : MonoBehaviour
 
     private int difficulty = 0;
     public float ws = 1.5f;
+
     //public GameObject player; 
     //public GameObject star;
     // Start is called before the first frame update

@@ -18,7 +18,7 @@ public class GlobalData : MonoBehaviour
     public float world_speed = 1f;
 
     private void Awake()
-   {
+    {
         // start of new code
         if (Instance != null)
         {
@@ -29,6 +29,6 @@ public class GlobalData : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-   }
+    }
   
 }

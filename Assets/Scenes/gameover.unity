@@ -232,7 +232,6 @@ GameObject:
   - component: {fileID: 321093056}
   - component: {fileID: 321093059}
   - component: {fileID: 321093058}
-  - component: {fileID: 321093057}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -260,22 +259,6 @@ RectTransform:
   m_AnchoredPosition: {x: -30, y: 110}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &321093057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321093055}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c26f81a81eb9542961af01335587fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: {fileID: 0}
-  die: {fileID: 0}
-  textt: {fileID: 0}
-  heading: {fileID: 0}
 --- !u!114 &321093058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,7 +367,6 @@ GameObject:
   - component: {fileID: 394027703}
   - component: {fileID: 394027706}
   - component: {fileID: 394027705}
-  - component: {fileID: 394027704}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -412,22 +394,6 @@ RectTransform:
   m_AnchoredPosition: {x: 630, y: -200}
   m_SizeDelta: {x: 800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &394027704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394027702}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c26f81a81eb9542961af01335587fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: {fileID: 0}
-  die: {fileID: 0}
-  textt: {fileID: 0}
-  heading: {fileID: 0}
 --- !u!114 &394027705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,7 +703,6 @@ GameObject:
   - component: {fileID: 813635861}
   - component: {fileID: 813635864}
   - component: {fileID: 813635863}
-  - component: {fileID: 813635862}
   m_Layer: 5
   m_Name: Die
   m_TagString: Untagged
@@ -765,22 +730,6 @@ RectTransform:
   m_AnchoredPosition: {x: 150, y: 10}
   m_SizeDelta: {x: 800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &813635862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813635860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c26f81a81eb9542961af01335587fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: {fileID: 0}
-  die: {fileID: 0}
-  textt: {fileID: 0}
-  heading: {fileID: 0}
 --- !u!114 &813635863
 MonoBehaviour:
   m_ObjectHideFlags: 0

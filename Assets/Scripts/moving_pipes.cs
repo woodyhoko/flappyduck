@@ -21,6 +21,6 @@ public class moving_pipes : MonoBehaviour
     {
         Vector3 mov = new Vector3 (obj.transform.position.x, Mathf.Sin(speedUpDown * Time.time) * distanceUpDown, obj.transform.position.z);
         obj.transform.position = mov;
-        Debug.Log(position);
+        //Debug.Log(position);
     }
 }

@@ -13,7 +13,7 @@ public class score_board : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         if (Input.anyKeyDown){
             ScoreManager.sscore = 0;
             ScoreManager.startTime = Time.time;

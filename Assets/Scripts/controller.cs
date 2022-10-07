@@ -11,7 +11,7 @@ public class controller : MonoBehaviour
     public float starRotateSpeed;
 
     private bool shoot = false;
-    private int shoot_freq = 150;
+    private int shoot_freq = 50;
     private int shoot_timestep = 0;
     private float move_forward_limit = 4.0f;
 

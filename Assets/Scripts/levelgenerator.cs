@@ -44,7 +44,7 @@ public class levelgenerator : MonoBehaviour
             if (randomNumber > 0.98f)
             {
                 GameObject ppipe = (GameObject)Instantiate(pipe);
-                ppipe.GetComponent<pipe>().SetHealth(100f);
+                //ppipe.GetComponent<pipe>().SetHealth(100f);
                 ppipe.transform.localScale = new Vector3(0.7f+2*wallRandom,0.5f + heightRandom, 0.7f + 2*wallRandom);
                 ppipe.transform.rotation = Quaternion.identity;
                 ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
@@ -62,7 +62,7 @@ public class levelgenerator : MonoBehaviour
             else
             {
                 GameObject ppipe = (GameObject)Instantiate(wall);
-                ppipe.GetComponent<pipe>().SetHealth(100f);
+                //ppipe.GetComponent<pipe>().SetHealth(100f);
                 if (wallRandom > 0.5)
                 {
                     ppipe.transform.localScale = new Vector3(2.5f, 2, 0.5f);
@@ -79,7 +79,7 @@ public class levelgenerator : MonoBehaviour
             }
             
         }
-        else if (randomNumber > 0.987f){
+        else if (randomNumber > 0.970f){
             GameObject obj = (GameObject)Instantiate (rock);
             obj.GetComponent<rock>().clone = true;
             // obj.transform.SetParent(this.transform);

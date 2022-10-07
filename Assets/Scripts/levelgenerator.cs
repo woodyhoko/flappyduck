@@ -16,6 +16,7 @@ public class levelgenerator : MonoBehaviour
     public GameObject invisible;
     public GameObject move_forward;
     public GameObject gravity;
+    public GameObject movingpipe;
     public GameObject reversed_gravity;
     public GameObject small_gravity;
     public GameObject large_gravity;
@@ -61,6 +62,14 @@ public class levelgenerator : MonoBehaviour
                 GameObject watero = (GameObject)Instantiate(water);
                 watero.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 Rigidbody m_Rigidbody = watero.GetComponent<Rigidbody>();
+                m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+            }
+            else if (randomNumber>0.97f && randomNumber < 0.975f)
+            {
+                GameObject movingpipeobj = (GameObject)Instantiate(movingpipe);
+                movingpipeobj.transform.localScale = new Vector3(0.3f+2*wallRandom,0.9f + heightRandom, 0.2f + 2*wallRandom);
+                movingpipeobj.transform.position = new Vector3(Random.Range(-5, 5f), .005f, 36);
+                Rigidbody m_Rigidbody = movingpipeobj.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
             else

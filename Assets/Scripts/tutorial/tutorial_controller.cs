@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class controller : MonoBehaviour
+public class tutorial_controller : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     public Material duckMaterial;
@@ -31,8 +31,6 @@ public class controller : MonoBehaviour
     public TMP_Text ateText;
     public TMP_Text limitText;
 
-    private bool choosen_powerCard = false;
-    public GameObject power_card;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +38,7 @@ public class controller : MonoBehaviour
         larger_gravity = false;
         reversed_gravity = false;
         move_forward = false;
-        Time.timeScale = 0f;
+        limitText.text = "eat limitation: " + update_max_limit;
     }
 
     // Update is called once per frame
@@ -52,61 +50,14 @@ public class controller : MonoBehaviour
             {
                 jump = true;
                 jump_numb -= 1;
-            }
-
-            // No limit on jumping on reversed gravity
-            /*
-            if (reversed_gravity)
-            {
-                jump_numb = 2;
-                jump = true;
-            }
-            */
-            
-           
+            }  
         }
-
-
-        if (!choosen_powerCard)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                choosen_powerCard = true;
-                power_card.SetActive(false);
-                update_max_limit = 9;
-                Time.timeScale = 1f;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                choosen_powerCard = true;
-                power_card.SetActive(false);
-                Time.timeScale = 1f;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                choosen_powerCard = true;
-                power_card.SetActive(false);
-                Time.timeScale = 1f;
-                move_speed += 0.04f;
-            }
-            limitText.text = "eat limitation: " + update_max_limit;
-        }
-
-
-
     }
 
 
     void FixedUpdate()
     {
-        
-
-            // if(Input.GetKeyDown(KeyCode.A)){
-            //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
-            // }
-            star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed);
-        // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
-
+         star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed);
         //set jumping limit
         if (larger_gravity)
         {
@@ -140,23 +91,6 @@ public class controller : MonoBehaviour
         if (jump)
         {
             jump = false;
-            
-
-            /*
-            if (larger_gravity)
-            {
-                m_Rigidbody.velocity = new Vector3(0, 3.0f, 0);
-            }
-            else
-            {
-                m_Rigidbody.velocity = new Vector3(0, 5.0f, 0);
-            }
-            //m_Rigidbody.AddForce(0, -9.8f, 0, ForceMode.Force);
-            */
-            
-            Debug.Log("gravity: " + Physics.gravity);
-            Debug.Log("jumping: " + transform.position);
-            Debug.Log("jumping height: " + jump_height);
             m_Rigidbody.velocity = new Vector3(0, jump_height, 0);
         }
         
@@ -212,7 +146,7 @@ public class controller : MonoBehaviour
         {
             if (collider.gameObject.tag == "bigger")
             {
-                //each time becomes 1.2 * original
+                //tutorial : each time becomes 1.2 * original
                 Destroy(collider.gameObject);
                 transform.localScale = transform.localScale * 1.2f;
                 ScoreManager.biggerCube++;
@@ -222,9 +156,9 @@ public class controller : MonoBehaviour
             }
             if (collider.gameObject.tag == "smaller")
             {
-                //each time becomes 0.8 * original
+                //tutorial : each time becomes 0.8 * original
                 Destroy(collider.gameObject);
-                transform.localScale = transform.localScale * 0.8f;
+                transform.localScale = transform.localScale * 0.9f;
                 ScoreManager.smallerCube++;
                 ate++;
             }
@@ -309,19 +243,4 @@ public class controller : MonoBehaviour
 
         }
     }
-
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //if (collision.gameObject.tag == "pipe")
-    //{
-    //if player is bigger than (2,2,2) (After eating 4 Bigger foods)
-    //  if(transform.localScale.x>2)
-    //  {
-    //     Debug.Log(collision.gameObject);
-    //     Destroy(collision.gameObject);
-    // }
-
-    //}
-    // }
 }

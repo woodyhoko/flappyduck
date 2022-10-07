@@ -15,7 +15,7 @@ public class pipe : MonoBehaviour
     {
         Physics.IgnoreLayerCollision(6, 10, true);
         Physics.IgnoreLayerCollision(6, 6, true);
-        healthSystem= new(600f);
+        healthSystem= new(400f);
         // healthBarUI = (GameObject)Instantiate(healthBarUI);
     }
 

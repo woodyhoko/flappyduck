@@ -26,7 +26,7 @@ public class tutorial_generate : MonoBehaviour
     void FixedUpdate()
     {
         GameObject food;
-        if (time == 630||time==840)
+        if (time == 530||time==840)
         {
             food = Instantiate(wall);
             food.transform.rotation = Quaternion.identity;
@@ -36,14 +36,14 @@ public class tutorial_generate : MonoBehaviour
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
-        else if(time==900) SceneManager.LoadScene("init");
-        else if (time == 600)
+        else if(time==1200) SceneManager.LoadScene("init");
+        else if (time == 580)
         {
             text.text = "";
             canvas.SetActive(true);
             PauseGame();
         }
-        else if (time % 120 == 0&&time!=600)
+        else if (time % 120 == 0&&time!=600 && time != 480&&time<=720)
         {
  
             if (time == 120)
@@ -61,11 +61,11 @@ public class tutorial_generate : MonoBehaviour
                 food = Instantiate(invisible);
                 text.text = "invisible";
             }
-            else if (time == 480)
-            {
-                food = Instantiate(move_forward);
-                text.text = "move forward";
-            }
+            //else if (time == 480)
+            //{
+              //  food = Instantiate(move_forward);
+              //  text.text = "move forward";
+            //}
             else if (time == 720)
             {
                 food = Instantiate(shooter);

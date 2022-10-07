@@ -17,11 +17,12 @@ public class controller : MonoBehaviour
 
     private bool jump = false;
     private int jump_numb = 0;
+    private float jump_height = 5.0f;
     private int invi_remaining_time = 30;
 
     // Gravity, reversed gravity, move forward
-    private bool larger_gravity = false;
-    private bool reversed_gravity = false;
+    public static bool larger_gravity = false;
+    public static bool reversed_gravity = false;
     public static bool move_forward = false;
 
 
@@ -29,6 +30,9 @@ public class controller : MonoBehaviour
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+        larger_gravity = false;
+        reversed_gravity = false;
+        move_forward = false;
     }
 
     // Update is called once per frame
@@ -41,24 +45,21 @@ public class controller : MonoBehaviour
                 jump = true;
                 jump_numb -= 1;
             }
-            
+
+            // No limit on jumping on reversed gravity
             /*
-            if ((4.0f - transform.position.y) < 0.7f)
+            if (reversed_gravity)
             {
-                jump = false;
+                jump_numb = 2;
+                jump = true;
             }
             */
+            
+           
         }
         
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            larger_gravity = !larger_gravity;
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            reversed_gravity = !reversed_gravity;
-        }
+        
 
         
 
@@ -73,15 +74,42 @@ public class controller : MonoBehaviour
         star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed);
         // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
 
-        //set ceiling on jump
+        //set jumping limit
+        if (larger_gravity)
+        {
+            jump_height = 3.0f;
+        }
+        else
+        {
+            jump_height = 5.0f;
+        }
 
-        
+        //reversed gravity
+        if (reversed_gravity)
+        {
+            Physics.gravity = new Vector3(0, 9.8f, 0);
+            //set unlimited jumping under reversed gravity environment
+            jump_numb = 2;
+            if (jump_height > 0)
+            {
+                jump_height = jump_height * (-1.0f);
+            }
+        }
+        else
+        {
+            Physics.gravity = new Vector3(0, -9.8f, 0);
+            if (jump_height < 0)
+            {
+                jump_height = jump_height * (-1.0f);
+            }
+        }
+
         if (jump)
         {
             jump = false;
-            // transform.position = transform.position + new Vector3(0, 1.5f, 0);
-            //m_Rigidbody.velocity = new Vector3(0,5.0f,0);
+            
 
+            /*
             if (larger_gravity)
             {
                 m_Rigidbody.velocity = new Vector3(0, 3.0f, 0);
@@ -90,20 +118,17 @@ public class controller : MonoBehaviour
             {
                 m_Rigidbody.velocity = new Vector3(0, 5.0f, 0);
             }
+            //m_Rigidbody.AddForce(0, -9.8f, 0, ForceMode.Force);
+            */
+            
+            Debug.Log("gravity: " + Physics.gravity);
+            Debug.Log("jumping: " + transform.position);
+            Debug.Log("jumping height: " + jump_height);
+            m_Rigidbody.velocity = new Vector3(0, jump_height, 0);
         }
         
 
-        //reversed gravity
-        if (reversed_gravity)
-        {
-            Physics.gravity = new Vector3(0, 1.0f, 0);
-            //reversed_gravity = !reversed_gravity;
-        }
-        else
-        {
-            Physics.gravity = new Vector3(0, -9.8f, 0);
-            //reversed_gravity = !reversed_gravity;
-        }
+        
 
         //move forward
         if (move_forward)
@@ -170,7 +195,7 @@ public class controller : MonoBehaviour
             // originally rotate at 30 degree/sec
 
             Destroy(collider.gameObject);
-            starRotateSpeed += .8f;
+            starRotateSpeed *= 1.5f;
             ScoreManager.faster++;
         }
         if (collider.gameObject.tag == "longger")
@@ -195,6 +220,18 @@ public class controller : MonoBehaviour
         {
             Destroy(collider.gameObject);
             move_forward = true;
+        }
+
+        if (collider.gameObject.tag == "gravity")
+        {
+            Destroy(collider.gameObject);
+            reversed_gravity = !reversed_gravity;
+        }
+
+        if (collider.gameObject.tag == "gravity_size")
+        {
+            Destroy(collider.gameObject);
+            larger_gravity = !larger_gravity;
         }
 
         if (collider.gameObject.tag == "invisible")

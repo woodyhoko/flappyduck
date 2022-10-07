@@ -18,6 +18,8 @@ TagManager:
   - star
   - water
   - move_forward
+  - gravity
+  - gravity_size
   layers:
   - Default
   - TransparentFX
@@ -29,7 +31,7 @@ TagManager:
   - player
   - rock
   - ceil
-  - 
+  - floor
   - 
   - 
   - 

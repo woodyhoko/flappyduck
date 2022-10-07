@@ -15,6 +15,7 @@ public class levelgenerator : MonoBehaviour
     public GameObject wall;
     public GameObject invisible;
     public GameObject move_forward;
+    public GameObject portal;
     public GameObject water; public GameObject text;
     private int difficulty = 0;
     //public GameObject player; 
@@ -114,6 +115,13 @@ public class levelgenerator : MonoBehaviour
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             difficulty++;
+        }
+        else if (randomNumber < 0.015f)
+        {
+            GameObject p = (GameObject)Instantiate(portal);
+            p.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);
+            Rigidbody m_Rigidbody = p.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
     }
 }

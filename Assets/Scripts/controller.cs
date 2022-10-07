@@ -2,45 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class controller : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     public Material duckMaterial;
     public GameObject star;
     public GameObject bullet;
-    public float starRotateSpeed;
 
-    private bool shoot = false;
-    private int shoot_freq = 50;
-    private int shoot_timestep = 0;
-    private float move_forward_limit = 4.0f;
 
     private bool jump = false;
     private int jump_numb = 0;
     private float jump_height = 5.0f;
     private int invi_remaining_time = 30;
-    public float move_speed = 0.08f;
 
     // Gravity, reversed gravity, move forward
     public static bool larger_gravity = false;
     public static bool reversed_gravity = false;
     public static bool move_forward = false;
+    private float speed;
 
-    private int update_max_limit = 6;
-    private int ate = 0;
     public TMP_Text ateText;
     public TMP_Text limitText;
-
-    private bool choosen_powerCard = false;
+    public int time = 0;
     public GameObject power_card;
     // Start is called before the first frame update
     void Start()
     {
+        speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
         m_Rigidbody = GetComponent<Rigidbody>();
         larger_gravity = false;
         reversed_gravity = false;
         move_forward = false;
-        Time.timeScale = 0f;
+        if (!GlobalData.Instance.choosen_powerCard)
+        {
+            power_card.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
+        ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
     }
 
     // Update is called once per frame
@@ -62,34 +63,32 @@ public class controller : MonoBehaviour
                 jump = true;
             }
             */
-            
-           
         }
 
 
-        if (!choosen_powerCard)
+        if (!GlobalData.Instance.choosen_powerCard)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                choosen_powerCard = true;
+                GlobalData.Instance.choosen_powerCard = true;
                 power_card.SetActive(false);
-                update_max_limit = 9;
+                GlobalData.Instance.update_max_limit = 9;
+                limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
                 Time.timeScale = 1f;
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                choosen_powerCard = true;
+                GlobalData.Instance.choosen_powerCard = true;
                 power_card.SetActive(false);
                 Time.timeScale = 1f;
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                choosen_powerCard = true;
+                GlobalData.Instance.choosen_powerCard = true;
                 power_card.SetActive(false);
                 Time.timeScale = 1f;
-                move_speed += 0.04f;
+                GlobalData.Instance.move_speed += 0.04f;
             }
-            limitText.text = "eat limitation: " + update_max_limit;
         }
 
 
@@ -99,12 +98,14 @@ public class controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        //time++;
+        //if(time>200) SceneManager.LoadScene("demo2");
 
-            // if(Input.GetKeyDown(KeyCode.A)){
-            //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
-            // }
-            star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed);
+
+        // if(Input.GetKeyDown(KeyCode.A)){
+        //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
+        // }
+        star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
         // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
 
         //set jumping limit
@@ -167,13 +168,12 @@ public class controller : MonoBehaviour
         if (move_forward)
         {
             //Debug.Log("z: " + transform.position.z);
-            if (transform.position.z < move_forward_limit)
+            if (transform.position.z < GlobalData.Instance.move_forward_limit)
             {
                 m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
             }
 
             Debug.Log("z: " + transform.position.z);
-
             //m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 2.0f);
             move_forward = false;
         }
@@ -182,15 +182,15 @@ public class controller : MonoBehaviour
 
 
         if (Input.GetKey(KeyCode.LeftArrow)){
-            transform.position = transform.position + new Vector3(-move_speed, 0 ,0); 
+            transform.position = transform.position + new Vector3(-speed, 0 ,0); 
         }
         if(Input.GetKey(KeyCode.RightArrow)){
-            transform.position = transform.position + new Vector3(move_speed, 0 ,0);    
+            transform.position = transform.position + new Vector3(speed, 0 ,0);    
         }
-        if(shoot){
-           // print("check");
-           shoot_timestep ++;
-           if (shoot_timestep%shoot_freq == 0){
+        if(GlobalData.Instance.shoot){
+            // print("check");
+            GlobalData.Instance.shoot_timestep ++;
+           if (GlobalData.Instance.shoot_timestep % GlobalData.Instance.shoot_freq == 0){
                 GameObject bul;
                 bul = Instantiate(bullet);
                 bul.transform.position = transform.position + new Vector3(0, 0, 1f);
@@ -208,7 +208,19 @@ public class controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (ate < update_max_limit)
+        if (collider.gameObject.tag == "portal_back")
+        {
+            //each time becomes 1.2 * original
+            SceneManager.LoadScene("demo2");
+            GlobalData.Instance.world_speed = 1f;
+        }
+        if (collider.gameObject.tag == "portal")
+        {
+            //each time becomes 1.2 * original
+            SceneManager.LoadScene("ice_world");
+            GlobalData.Instance.world_speed = 0.8f;
+        }
+        if (GlobalData.Instance.ate < GlobalData.Instance.update_max_limit)
         {
             if (collider.gameObject.tag == "bigger")
             {
@@ -216,7 +228,7 @@ public class controller : MonoBehaviour
                 Destroy(collider.gameObject);
                 transform.localScale = transform.localScale * 1.2f;
                 ScoreManager.biggerCube++;
-                ate++;
+                GlobalData.Instance.ate++;
 
 
             }
@@ -226,16 +238,15 @@ public class controller : MonoBehaviour
                 Destroy(collider.gameObject);
                 transform.localScale = transform.localScale * 0.8f;
                 ScoreManager.smallerCube++;
-                ate++;
+                GlobalData.Instance.ate++;
             }
             if (collider.gameObject.tag == "faster")
             {
                 // originally rotate at 30 degree/sec
-
                 Destroy(collider.gameObject);
-                starRotateSpeed *= 1.5f;
+                GlobalData.Instance.starRotateSpeed *= 1.5f;
                 ScoreManager.faster++;
-                ate++;
+                GlobalData.Instance.ate++;
             }
             if (collider.gameObject.tag == "longger")
             {
@@ -243,40 +254,40 @@ public class controller : MonoBehaviour
                 Destroy(collider.gameObject);
                 star.transform.localScale += new Vector3(0, 0.2f, 0);
                 ScoreManager.longer++;
-                ate++;
+                GlobalData.Instance.ate++;
             }
             if (collider.gameObject.tag == "shooter")
             {
                 Destroy(collider.gameObject);
-                shoot = true;
-                if (shoot_freq >= 5)
+                GlobalData.Instance.shoot = true;
+                if (GlobalData.Instance.shoot_freq >= 5)
                 {
-                    shoot_freq *= 4;
-                    shoot_freq /= 5;
+                    GlobalData.Instance.shoot_freq *= 4;
+                    GlobalData.Instance.shoot_freq /= 5;
                 }
                 ScoreManager.shooter++;
-                ate++;
+                GlobalData.Instance.ate++;
             }
 
             if (collider.gameObject.tag == "move_forward")
             {
                 Destroy(collider.gameObject);
                 move_forward = true;
-                ate++;
+                GlobalData.Instance.ate++;
             }
 
             if (collider.gameObject.tag == "gravity")
             {
                 Destroy(collider.gameObject);
                 reversed_gravity = !reversed_gravity;
-                ate++;
+                GlobalData.Instance.ate++;
             }
 
             if (collider.gameObject.tag == "gravity_size")
             {
                 Destroy(collider.gameObject);
                 larger_gravity = !larger_gravity;
-                ate++;
+                GlobalData.Instance.ate++;
             }
 
             if (collider.gameObject.tag == "invisible")
@@ -289,9 +300,9 @@ public class controller : MonoBehaviour
                 invi_remaining_time = 100;
                 // Invoke ("EnableCollider", 5f);
                 ScoreManager.invisible++;
-                ate++;
+                GlobalData.Instance.ate++;
             }
-            ateText.text = "ate:" + ate.ToString();
+            ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
         }
     }
     private void  EnableCollider () {

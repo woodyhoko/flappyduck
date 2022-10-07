@@ -36,7 +36,7 @@ public class tutorial_generate : MonoBehaviour
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
-        else if(time==1200) SceneManager.LoadScene("init");
+        else if(time==1000) SceneManager.LoadScene("gameover");
         else if (time == 580)
         {
             text.text = "";

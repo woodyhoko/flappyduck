@@ -44,7 +44,7 @@ public class score_board : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space)){
             ScoreManager.sscore = 0;
             ScoreManager.startTime = Time.time;
             SceneManager.LoadScene("tutorial");

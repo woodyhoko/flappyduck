@@ -36,7 +36,6 @@ public class pipe : MonoBehaviour
             //Debug.Log("get hit by bullet");
              healthSystem.Damage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
             //pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
-            Debug.Log(healthSystem.GetHealth());
             if (healthSystem.GetHealth().Equals(0f))
             {
                 Destroy(collision.gameObject);
@@ -57,18 +56,20 @@ public class pipe : MonoBehaviour
         if (collider.gameObject.tag == "bullet")
         {
             //Debug.Log("get hit by bullet");
-            healthSystem.Damage(collider.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
-            //pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
-            Debug.Log(healthSystem.GetHealth());
-            gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - healthSystem.GetHealthPercentage(), 0, 1), Mathf.Clamp(healthSystem.GetHealthPercentage(), 0, 1), 0, 0.5f);
-
-            if (healthSystem.GetHealth().Equals(0f))
+            if (gameObject != null && collider.gameObject != null)
             {
-                Destroy(collider.gameObject);
-                Destroy(gameObject);
-            }
-            // Destroy(gameObject);
+                healthSystem.Damage(collider.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
+                //pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
+                Debug.Log(healthSystem.GetHealth());
+                gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - healthSystem.GetHealthPercentage(), 0, 1), Mathf.Clamp(healthSystem.GetHealthPercentage(), 0, 1), 0, 0.5f);
 
+                if (healthSystem.GetHealth().Equals(0f))
+                {
+                    Destroy(collider.gameObject);
+                    Destroy(gameObject);
+                }
+                // Destroy(gameObject);
+            }
         }
     }
 }

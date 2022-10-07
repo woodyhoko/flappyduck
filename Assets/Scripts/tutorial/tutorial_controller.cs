@@ -151,8 +151,6 @@ public class tutorial_controller : MonoBehaviour
                 transform.localScale = transform.localScale * 1.2f;
                 ScoreManager.biggerCube++;
                 ate++;
-
-
             }
             if (collider.gameObject.tag == "smaller")
             {

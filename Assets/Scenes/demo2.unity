@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2595,6 +2595,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 1515629381}
+  speedUpDown: 20
+  distanceUpDown: 1
 --- !u!114 &1515629383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2865,8 +2867,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -273, y: 107}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -350, y: 107}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574870663
 MonoBehaviour:
@@ -2888,7 +2890,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eat Cubes
+  m_text: 'Eat Cubes
+
+    Red - bad effect'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3246,11 +3250,6 @@ MonoBehaviour:
   wall: {fileID: 1795752818}
   invisible: {fileID: 162276700}
   move_forward: {fileID: 490578847}
-  gravity: {fileID: 332700877}
-  movingpipe: {fileID: 1515629381}
-  reversed_gravity: {fileID: 1305852296}
-  small_gravity: {fileID: 1975345322}
-  large_gravity: {fileID: 502583036}
   water: {fileID: 1950439626}
 --- !u!1 &1721909095
 GameObject:

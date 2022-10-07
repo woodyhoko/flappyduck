@@ -14,12 +14,14 @@ public class CheckDie : MonoBehaviour
     void Update()
     {
         if(transform.position.y < -10 || transform.position.z < -10 || transform.position.x < -6 || transform.position.x > 6) {
+            ScoreManager.killedByBound = true;
             FindObjectOfType<GameManager>().EndGame();
         }
     }
     private void OnTriggerEnter(Collider collider)
     {
         if(collider.gameObject.tag == "ceil"){
+            ScoreManager.killedByCeil = true;
             FindObjectOfType<GameManager>().EndGame();
         }
     }

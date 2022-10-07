@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3411,9 +3411,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f41524dc094b4192a8dbfaa40595604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 1515629381}
-  speedUpDown: 20
+  speedUpDown: 10
   distanceUpDown: 1
+  score_text: {fileID: 1909677949}
 --- !u!114 &1515629383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4379,6 +4379,7 @@ MonoBehaviour:
   faster: {fileID: 348246692}
   shooter: {fileID: 359913199}
   pipe: {fileID: 1590029960}
+  movingpipe: {fileID: 1515629381}
   rock: {fileID: 887509171}
   wall: {fileID: 1795752818}
   invisible: {fileID: 162276700}

@@ -11,6 +11,7 @@ public class levelgenerator : MonoBehaviour
     public GameObject faster;
     public GameObject shooter;
     public GameObject pipe;
+    public GameObject movingpipe;
     public GameObject rock;
     public GameObject wall;
     public GameObject invisible;
@@ -37,7 +38,7 @@ public class levelgenerator : MonoBehaviour
     {
         float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
-        if (randomNumber > 0.975f - difficulty * 0.0001f)
+        if (randomNumber > 0.96f - difficulty * 0.0001f)
         {
             Physics.IgnoreLayerCollision(6, 10, true);
             float wallRandom = Random.Range(0, 1f);
@@ -52,12 +53,22 @@ public class levelgenerator : MonoBehaviour
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
-            else if (randomNumber>0.975)
+            else if (randomNumber>0.975f && randomNumber<0.98f)
             {
                 GameObject watero = (GameObject)Instantiate(water);
                 watero.transform.rotation = Quaternion.identity;
                 watero.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 Rigidbody m_Rigidbody = watero.GetComponent<Rigidbody>();
+                m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+            }
+            else if (randomNumber>0.96f && randomNumber<0.98f)
+            {
+                Debug.Log("Spawn moving pipe");
+                GameObject mpipeo = (GameObject)Instantiate(movingpipe);
+                mpipeo.transform.localScale = new Vector3(0.5f+2*wallRandom,0.8f + heightRandom, 0.3f + 2*wallRandom);
+                mpipeo.transform.rotation = Quaternion.identity;
+                mpipeo.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
+                Rigidbody m_Rigidbody = mpipeo.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
             else

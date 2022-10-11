@@ -18,6 +18,7 @@ public class CheckDie : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
         }
     }
+
     private void OnTriggerEnter(Collider collider)
     {
         if(collider.gameObject.tag == "ceil"){

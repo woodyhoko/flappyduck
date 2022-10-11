@@ -50,10 +50,10 @@ public class score_board : MonoBehaviour
             ScoreManager.startTime = Time.time;
             SceneManager.LoadScene("tutorial");
         }
-        else if (Input.anyKeyDown){
+        else if (Input.GetKeyDown(KeyCode.Return)){
             ScoreManager.sscore = 0;
             ScoreManager.startTime = Time.time;
-            SceneManager.LoadScene("demo2");
+            SceneManager.LoadScene("menu");
         }
     }
 }

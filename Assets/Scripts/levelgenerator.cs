@@ -18,6 +18,9 @@ public class levelgenerator : MonoBehaviour
     public GameObject move_forward;
     public GameObject portal;
     public GameObject water; public GameObject text;
+
+    public GameObject movingHori;
+    
     private int difficulty = 0;
     //public GameObject player; 
     //public GameObject star;
@@ -53,12 +56,22 @@ public class levelgenerator : MonoBehaviour
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
-            else if (randomNumber>0.975f && randomNumber<0.98f)
+            else if (randomNumber>0.95f && randomNumber<0.965f)
             {
                 GameObject watero = (GameObject)Instantiate(water);
                 watero.transform.rotation = Quaternion.identity;
                 watero.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 Rigidbody m_Rigidbody = watero.GetComponent<Rigidbody>();
+                m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+            } 
+            else if (randomNumber>0.975f && randomNumber<0.98f)
+            {
+                Debug.Log("horizontal moving");
+                GameObject movinghori = (GameObject)Instantiate(movingHori);
+                movinghori.transform.rotation = Quaternion.identity;
+                Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
+                movinghori.transform.rotation = Quaternion.identity;
+                movinghori.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
             else if (randomNumber>0.96f && randomNumber<0.98f)

@@ -5547,7 +5547,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1721641360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b38c9d1c1aceef349b926a79172aba2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d42de8cd1ec340e9834f602f8635462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 526718873}
@@ -5562,9 +5562,9 @@ MonoBehaviour:
   wall: {fileID: 1795752818}
   invisible: {fileID: 162276700}
   move_forward: {fileID: 490578847}
-  portal: {fileID: 1051381692}
+  portal: {fileID: 0}
   water: {fileID: 1950439626}
-  text: {fileID: 1416452661}
+  text: {fileID: 183150102}
   movingHori: {fileID: 141007411}
 --- !u!1 &1775848536
 GameObject:

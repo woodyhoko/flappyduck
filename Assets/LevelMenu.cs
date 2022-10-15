@@ -8,7 +8,7 @@ public class LevelMenu : MonoBehaviour
     public void level1()
     {
         Debug.Log("Level1");
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("level1smaller");
     }
 
     public void level2()

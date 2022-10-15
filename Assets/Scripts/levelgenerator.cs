@@ -19,7 +19,7 @@ public class levelgenerator : MonoBehaviour
     public GameObject portal;
     public GameObject water; public GameObject text;
 
-    public GameObject movingHori;
+    // public GameObject movingHori;
     
     private int difficulty = 0;
     //public GameObject player; 
@@ -64,7 +64,7 @@ public class levelgenerator : MonoBehaviour
                 Rigidbody m_Rigidbody = watero.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             } 
-            else if (randomNumber>0.975f && randomNumber<0.98f)
+            /*else if (randomNumber>0.975f && randomNumber<0.98f)
             {
                 Debug.Log("horizontal moving");
                 GameObject movinghori = (GameObject)Instantiate(movingHori);
@@ -73,7 +73,7 @@ public class levelgenerator : MonoBehaviour
                 movinghori.transform.rotation = Quaternion.identity;
                 movinghori.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
-            }
+            }*/
             else if (randomNumber>0.96f && randomNumber<0.98f)
             {
                 Debug.Log("Spawn moving pipe");

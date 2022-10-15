@@ -108,6 +108,8 @@ public class levelgeneratorLevel30 : MonoBehaviour
             Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
+
+
         
 
        

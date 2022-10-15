@@ -15,7 +15,7 @@ public class GlobalData : MonoBehaviour
     public int update_max_limit = 6;
     public int ate = 0;
     public bool choosen_powerCard = false;
-
+    public float plane_width = 10;
     public float world_speed = 1f;
 
 

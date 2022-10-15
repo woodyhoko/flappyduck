@@ -22,6 +22,7 @@ TagManager:
   - gravity_size
   - portal
   - portal_back
+  - star_upgrade
   layers:
   - Default
   - TransparentFX

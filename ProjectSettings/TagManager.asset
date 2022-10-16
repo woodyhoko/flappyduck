@@ -22,11 +22,8 @@ TagManager:
   - gravity_size
   - portal
   - portal_back
-<<<<<<< Updated upstream
   - star_upgrade
-=======
   - hori obstacle
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

@@ -19,7 +19,6 @@ public class levelgenerator : MonoBehaviour
     public GameObject move_forward;
     public GameObject portal;
     public GameObject water; public GameObject text;
-    private List<GameObject> stars = new List<GameObject>();
 
     // public GameObject movingHori;
     

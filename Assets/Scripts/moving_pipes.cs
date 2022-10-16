@@ -5,7 +5,7 @@ using UnityEngine;
 public class moving_pipes : MonoBehaviour
 {
     private Vector3 position;
-    public float speedUpDown = 20;
+    public float speedUpDown = 5;
     public float distanceUpDown = 1;
      // public GameObject healthBarUI;
     // public Canvas Canvas;

@@ -9,6 +9,7 @@ public class controller : MonoBehaviour
     Rigidbody m_Rigidbody;
     public Material duckMaterial;
     public GameObject star;
+    private List<GameObject> stars = new List<GameObject>();
     public GameObject bullet;
 
 
@@ -105,7 +106,10 @@ public class controller : MonoBehaviour
         // if(Input.GetKeyDown(KeyCode.A)){
         //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
         // }
-        star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
+        foreach(GameObject one_star in stars){
+            one_star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
+        }
+        // star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
         // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
 
         //set jumping limit
@@ -249,6 +253,18 @@ public class controller : MonoBehaviour
                 ScoreManager.smallerCube++;
                 GlobalData.Instance.ate++;
             }
+            if(collider.gameObject.tag == "star_upgrade"){
+                Destroy(collider.gameObject);
+                GameObject one_star  = Instantiate(star);
+                one_star.SetActive(true);
+                one_star.transform.SetParent(this.transform);
+                one_star.transform.localScale = new Vector3(.5f, GlobalData.Instance.star_size, 0.5f);
+                stars.Add(one_star);
+                float angle = 2f * Mathf.PI / (float)stars.Count;
+                for (int i = -1; ++i < stars.Count;){
+                    stars[i].transform.position = this.transform.position + new Vector3(Mathf.Cos(angle*i), 0, Mathf.Sin(angle*i));
+                }
+            }
             if (collider.gameObject.tag == "faster")
             {
                 // originally rotate at 30 degree/sec
@@ -261,7 +277,12 @@ public class controller : MonoBehaviour
             {
                 //each time becomes 0.8 * original
                 Destroy(collider.gameObject);
-                star.transform.localScale += new Vector3(0, 0.2f, 0);
+                GlobalData.Instance.star_size += 0.2f;
+                foreach(GameObject one_star in stars){
+                    one_star.transform.localScale = new Vector3(0.5f, GlobalData.Instance.star_size, 0.5f);
+                }
+                
+                // star.transform.localScale += new Vector3(0, 0.2f, 0);
                 ScoreManager.longer++;
                 GlobalData.Instance.ate++;
             }

@@ -7,6 +7,7 @@ public class levelgenerator : MonoBehaviour
     public GameObject player;
     public GameObject bigger;
     public GameObject smaller;
+    public GameObject star_upgrade;
     public GameObject longger;
     public GameObject faster;
     public GameObject shooter;
@@ -18,6 +19,7 @@ public class levelgenerator : MonoBehaviour
     public GameObject move_forward;
     public GameObject portal;
     public GameObject water; public GameObject text;
+    private List<GameObject> stars = new List<GameObject>();
 
     // public GameObject movingHori;
     
@@ -112,7 +114,7 @@ public class levelgenerator : MonoBehaviour
             obj.transform.rotation = new Quaternion(Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f));
             
         }
-        else  if (randomNumber < 0.014f)
+        else  if (randomNumber < 0.026f)
         {
             GameObject food;
             if (randomNumber < 0.0020f)
@@ -130,6 +132,8 @@ public class levelgenerator : MonoBehaviour
             //else if (randomNumber < 0.015f)
             else if ((randomNumber < 0.01f) && (randomNumber < 0.012f))
                 food = Instantiate(invisible);
+            else if ((randomNumber < 0.012f) && (randomNumber < 0.024f))
+                food = Instantiate(star_upgrade);
             else
                 food = Instantiate(move_forward);
             food.transform.rotation = Quaternion.identity;

@@ -17,6 +17,7 @@ public class GlobalData : MonoBehaviour
     public bool choosen_powerCard = false;
     public float plane_width = 10;
     public float world_speed = 1f;
+    public float star_size = 0.1f;
 
 
     private void Awake()

@@ -108,6 +108,7 @@ public class controller : MonoBehaviour
         // }
         foreach(GameObject one_star in stars){
             one_star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
+            one_star.transform.Rotate(new Vector3(0,0,0));
         }
         // star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
         // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);

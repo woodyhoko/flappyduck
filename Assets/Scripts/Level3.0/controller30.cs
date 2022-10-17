@@ -9,7 +9,7 @@ public class controller30 : MonoBehaviour
     Rigidbody m_Rigidbody;
     //public Material duckMaterial;
     //public GameObject star;
-    public GameObject bullet;
+    public GameObject bullet;    
 
 
     private bool jump = false;
@@ -37,7 +37,10 @@ public class controller30 : MonoBehaviour
         ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
         */
         ateText.text = "timer:" + timerValue.ToString();
+        Time.timeScale = 1;
     }
+
+
 
     // Update is called once per frame
     void Update() {
@@ -198,4 +201,25 @@ public class controller30 : MonoBehaviour
 
     //}
     // }
+
+    public void Menu_Button()
+    {
+        Time.timeScale = 1;
+        GlobalData.Instance.destroy();
+        SceneManager.LoadScene("menu");
+    }
+
+    public void Next_Level_Button()
+    {
+        Time.timeScale = 1;
+        GlobalData.Instance.destroy();
+        SceneManager.LoadScene("Level_3_1");
+    }
+
+    public void Replay_Button()
+    {
+        Time.timeScale = 1;
+        GlobalData.Instance.destroy();
+        SceneManager.LoadScene("Level_3_0");
+    }
 }

@@ -29,6 +29,7 @@ public class controller31 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
         m_Rigidbody = GetComponent<Rigidbody>();
 
@@ -156,7 +157,7 @@ public class controller31 : MonoBehaviour
                 
                 if (GlobalData.Instance.shoot_freq >= 5)
                 {
-                    GlobalData.Instance.shoot_freq *= 4;
+                    GlobalData.Instance.shoot_freq *= 3;
                     GlobalData.Instance.shoot_freq /= 5;
                 }
                 
@@ -198,4 +199,25 @@ public class controller31 : MonoBehaviour
 
     //}
     // }
+
+    public void Menu_Button()
+    {
+        Time.timeScale = 1;
+        GlobalData.Instance.destroy();
+        SceneManager.LoadScene("menu");
+    }
+
+    public void Next_Level_Button()
+    {
+        Time.timeScale = 1;
+        GlobalData.Instance.destroy();
+        SceneManager.LoadScene("Level_3_2");
+    }
+
+    public void Replay_Button()
+    {
+        Time.timeScale = 1;
+        GlobalData.Instance.destroy();
+        SceneManager.LoadScene("Level_3_1");
+    }
 }

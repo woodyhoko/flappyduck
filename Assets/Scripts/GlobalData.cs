@@ -38,4 +38,6 @@ public class GlobalData : MonoBehaviour
         Destroy(gameObject);
     }
 
+    
+
 }

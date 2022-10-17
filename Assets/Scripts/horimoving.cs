@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class horimoving : MonoBehaviour
 {
+    
+    public GameObject Canvas;
+    public TMP_Text title;
+    public GameObject replay;
 
     void Start()
     {
@@ -16,7 +21,11 @@ public class horimoving : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             // ScoreManager.killedByWater= true;
-            FindObjectOfType<GameManager>().EndGame();
+            // FindObjectOfType<GameManager>().EndGame();
+            Time.timeScale = 0;
+            Canvas.SetActive(true);
+            title.text = "Game Over";
+            replay.SetActive(true);
         }
         // Destroy(gameObject);
 

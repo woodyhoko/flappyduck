@@ -43,7 +43,22 @@ public class levelgeneratorLevel1 : MonoBehaviour
         if (start)
         {
             start = false;
+            GameObject movinghori = (GameObject)Instantiate(movingHori);
+            movinghori.transform.rotation = Quaternion.identity;
+            //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
+            movinghori.transform.position = new Vector3(-5f, .010f, 36);
+            Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                
+            GameObject movinghori2 = (GameObject)Instantiate(movingHori);
+            movinghori2.transform.rotation = Quaternion.identity;
+            movinghori2.transform.position = new Vector3(5f, .010f, 36);
+            Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
+            m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
+        }
 
+        if (timer == 300)
+        {
             GameObject food;
             food = Instantiate(smaller);
             food.transform.rotation = Quaternion.identity;
@@ -52,10 +67,9 @@ public class levelgeneratorLevel1 : MonoBehaviour
 
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
-
         }
 
-        if (timer == 300)
+        if (timer == 450)
         {
             Debug.Log(timer);
             GameObject movinghori = (GameObject)Instantiate(movingHori);
@@ -71,7 +85,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
             Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
             m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
         }
-        
+
         if (timer == 650)
         {
             GameObject movinghori = (GameObject)Instantiate(movingHori);

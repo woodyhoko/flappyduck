@@ -132,7 +132,6 @@ public class level1controller : MonoBehaviour
 
     public void Menu_Button()
     {
-        Debug.Log("here");
         Time.timeScale = 1;
         GlobalData.Instance.destroy();
         SceneManager.LoadScene("menu");
@@ -140,7 +139,6 @@ public class level1controller : MonoBehaviour
 
     public void Next_Level_Button()
     {
-        Debug.Log("here2");
         Time.timeScale = 1;
         GlobalData.Instance.destroy();
         SceneManager.LoadScene("Level_2_0");
@@ -148,7 +146,6 @@ public class level1controller : MonoBehaviour
 
     public void Replay_Button()
     {
-        Debug.Log("here3");
         Time.timeScale = 1;
         GlobalData.Instance.destroy();
         SceneManager.LoadScene("level1smaller");

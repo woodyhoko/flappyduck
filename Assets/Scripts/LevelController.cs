@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
+using TMPro;
 
-public class controller : MonoBehaviour
+public class LevelController : MonoBehaviour
 {
+
     Rigidbody m_Rigidbody;
     public Material duckMaterial;
     public GameObject star;
@@ -27,16 +28,19 @@ public class controller : MonoBehaviour
     public TMP_Text limitText;
     public int time = 0;
     public GameObject power_card;
+    public bool level;
 
     // properties for levels
-    public bool level;
     public GameObject Canvas;
     public GameObject replay;
     public GameObject next_level;
     public TMP_Text title;
-    public string this_Level_name = "Level1smaller"; // default value
-    public string next_Level_name = "Level1smaller";
+    public string this_Level_name = "Level_3_0";
+    public string next_Level_name = "Level_3_1";
     private float timer = 0;
+
+
+    // Update is called once per fra
 
     public void Menu_Button()
     {
@@ -49,14 +53,14 @@ public class controller : MonoBehaviour
     {
         Time.timeScale = 1;
         GlobalData.Instance.destroy();
-        SceneManager.LoadScene(next_Level_name);
+        SceneManager.LoadScene("Level_3_1");
     }
 
     public void Replay_Button()
     {
         Time.timeScale = 1;
         GlobalData.Instance.destroy();
-        SceneManager.LoadScene(this_Level_name);
+        SceneManager.LoadScene("Level_3_1");
     }
 
     // Start is called before the first frame update
@@ -84,7 +88,9 @@ public class controller : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if(level && this_Level_name != "Level1smaller") {
+        if(level) {
+            timer++;
+
             if (timer == 700)
             {
                 Time.timeScale = 0;
@@ -148,9 +154,6 @@ public class controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (level) {
-            timer++;
-        }
         //time++;
         //if(time>200) SceneManager.LoadScene("demo2");
 
@@ -199,7 +202,7 @@ public class controller : MonoBehaviour
         if (jump)
         {
             jump = false;
-            
+
 
             /*
             if (larger_gravity)
@@ -212,15 +215,15 @@ public class controller : MonoBehaviour
             }
             //m_Rigidbody.AddForce(0, -9.8f, 0, ForceMode.Force);
             */
-            
+
             Debug.Log("gravity: " + Physics.gravity);
             Debug.Log("jumping: " + transform.position);
             Debug.Log("jumping height: " + jump_height);
             m_Rigidbody.velocity = new Vector3(0, jump_height, 0);
         }
-        
 
-        
+
+
 
         //move forward
         if (move_forward)
@@ -240,10 +243,10 @@ public class controller : MonoBehaviour
 
 
         if (Input.GetKey(KeyCode.LeftArrow)){
-            transform.position = transform.position + new Vector3(-speed, 0 ,0); 
+            transform.position = transform.position + new Vector3(-speed, 0 ,0);
         }
         if(Input.GetKey(KeyCode.RightArrow)){
-            transform.position = transform.position + new Vector3(speed, 0 ,0);    
+            transform.position = transform.position + new Vector3(speed, 0 ,0);
         }
         if(GlobalData.Instance.shoot){
             // print("check");
@@ -276,7 +279,7 @@ public class controller : MonoBehaviour
         {
             float randomNumber = Random.Range(0, 1f);
             if(randomNumber<1f)
-            {  
+            {
                 SceneManager.LoadScene("small_world");
             }
             else
@@ -335,7 +338,7 @@ public class controller : MonoBehaviour
                 foreach(GameObject one_star in stars){
                     one_star.transform.localScale = new Vector3(0.5f, GlobalData.Instance.star_size, 0.5f);
                 }
-                
+
                 // star.transform.localScale += new Vector3(0, 0.2f, 0);
                 ScoreManager.longer++;
                 GlobalData.Instance.ate++;
@@ -406,19 +409,4 @@ public class controller : MonoBehaviour
 
         }
     }
-
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //if (collision.gameObject.tag == "pipe")
-    //{
-    //if player is bigger than (2,2,2) (After eating 4 Bigger foods)
-    //  if(transform.localScale.x>2)
-    //  {
-    //     Debug.Log(collision.gameObject);
-    //     Destroy(collision.gameObject);
-    // }
-
-    //}
-    // }
 }

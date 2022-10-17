@@ -23,7 +23,6 @@ public class CheckDie30 : MonoBehaviour
     {
         if(transform.position.y < -10 || transform.position.z < -10 || transform.position.x < -6 || transform.position.x > 6) {
             game_over();
-            
         }
     }
 

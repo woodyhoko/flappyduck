@@ -265,6 +265,8 @@ public class controller : MonoBehaviour
                 GlobalData.Instance.ate++;
             }
             if(collider.gameObject.tag == "star_upgrade"){
+                print("hi");
+                print(this);
                 Destroy(collider.gameObject);
                 GameObject one_star  = Instantiate(star);
                 one_star.SetActive(true);

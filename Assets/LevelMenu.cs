@@ -24,12 +24,12 @@ public class LevelMenu : MonoBehaviour
 
     public void level21()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level_2_1");
     }
 
     public void level22()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level_2_2");
     }
 
     public void level23()

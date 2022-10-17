@@ -20,7 +20,7 @@ public class LevelMenu : MonoBehaviour
     public void level3()
     {
         Debug.Log("Level3");
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Level_3_1");
     }
 
     public void level4()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using TMPro;
 using UnityEngine;
 
 public class levelgeneratorLevel31 : MonoBehaviour
@@ -14,8 +15,13 @@ public class levelgeneratorLevel31 : MonoBehaviour
     public GameObject text;
     public GameObject movingHori;
 
+    public GameObject Canvas;
+    public TMP_Text title;
+    public GameObject replay;
+    public GameObject next_level;
 
-    public float pip_pos_z = 30;
+
+    public float pip_pos_z = 45;
 
     private bool start = true;
     
@@ -55,7 +61,7 @@ public class levelgeneratorLevel31 : MonoBehaviour
             
         }
 
-        if (timer == 70 || timer == 140)
+        if (timer == 100)
         {
             GameObject food;
             food = Instantiate(shooter);
@@ -68,7 +74,7 @@ public class levelgeneratorLevel31 : MonoBehaviour
         }
 
 
-        if (timer == 350)
+        if (timer == 380)
         {
             float x = -3.5f;
 
@@ -86,7 +92,7 @@ public class levelgeneratorLevel31 : MonoBehaviour
 
 
             
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 8; i++)
             {
                 GameObject ppipe = (GameObject)Instantiate(pipe);
                 ppipe.transform.position = new Vector3(0f, 1f, pip_pos_z);
@@ -94,9 +100,18 @@ public class levelgeneratorLevel31 : MonoBehaviour
                 ppipe.transform.rotation = Quaternion.identity;
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
-                pip_pos_z += 5f;
+                pip_pos_z += 4f;
             }
 
+        }
+
+        if (timer == 700)
+        {
+            Time.timeScale = 0;
+            Canvas.SetActive(true);
+            title.text = "Level Passed";
+            replay.SetActive(false);
+            //next_level.SetActive(true);
         }
 
 

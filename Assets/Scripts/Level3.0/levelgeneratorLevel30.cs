@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class levelgeneratorLevel30 : MonoBehaviour
 {
@@ -13,6 +15,12 @@ public class levelgeneratorLevel30 : MonoBehaviour
     public GameObject water;
     public GameObject text;
     public GameObject movingHori;
+
+    public GameObject Canvas;
+    public TMP_Text title;
+    public GameObject replay;
+    public GameObject next_level;
+
 
     private bool start = true;
     
@@ -110,16 +118,24 @@ public class levelgeneratorLevel30 : MonoBehaviour
         }
 
 
-        
+        if (timer == 700)
+        {
+            Time.timeScale = 0;
+            Canvas.SetActive(true);
+            title.text = "Level Passed";
+            replay.SetActive(false);
+            next_level.SetActive(true);
 
-       
+        }
 
-        
-        
-        
-        
 
-        
+
+
+
+
+
+
+
         /*
         float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
@@ -222,5 +238,7 @@ public class levelgeneratorLevel30 : MonoBehaviour
         */
 
     }
+
+    
 }
 

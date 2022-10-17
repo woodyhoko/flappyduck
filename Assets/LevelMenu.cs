@@ -5,34 +5,51 @@ using UnityEngine.SceneManagement;
 
 public class LevelMenu : MonoBehaviour
 {
-    public void level1()
+    public void level10()
     {
-        Debug.Log("Level1");
+        Debug.Log("Level10");
         SceneManager.LoadScene("level1smaller");
     }
 
-    public void level2()
+    public void level11()
     {
-        Debug.Log("Level2");
-        SceneManager.LoadScene("Level2");
+        // Debug.Log("Level11");
+        SceneManager.LoadScene("Level1");
     }
 
-    public void level3()
+    public void level20()
     {
-        Debug.Log("Level3");
+        SceneManager.LoadScene("Level_2_0");
+    }
+
+    public void level21()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void level22()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void level23()
+    {
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void level30()
+    {
         SceneManager.LoadScene("Level_3_0");
     }
 
-    public void level4()
+    public void level31()
     {
-        Debug.Log("Level4");
-        SceneManager.LoadScene("Level4");
+        SceneManager.LoadScene("Level_3_1");
     }
 
-    public void level5()
+    public void level32()
     {
-        Debug.Log("Level5");
-        SceneManager.LoadScene("Level5");
+        SceneManager.LoadScene("Level1");
     }
 
     public void level_endless()

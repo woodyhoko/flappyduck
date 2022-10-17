@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class levelgeneratorLevel1 : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
     public GameObject wall;
     public GameObject movingpipe;
     public GameObject rock;
+    
     /*public GameObject longger;
     public GameObject faster;
     public GameObject shooter;
@@ -19,18 +21,17 @@ public class levelgeneratorLevel1 : MonoBehaviour
     public GameObject invisible;
     public GameObject move_forward;*/
     public GameObject portal;
-    public GameObject water; public GameObject text;
+    public GameObject text;
 
     public GameObject movingHori;
 
-    private int time = 0;
-    private bool first = false;
-    private bool second = false;
-
-    private bool first_smaller = false;
+    private int timer; 
+    private bool start = true;
     
-    private int difficulty = 0;
-    
+    public GameObject Canvas;
+    public TMP_Text title;
+    public GameObject replay;
+    public GameObject next_level;
     void Start()
     {
     }
@@ -38,7 +39,79 @@ public class levelgeneratorLevel1 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float randomNumber = Random.Range(0, 1f);
+        timer++;
+        if (start)
+        {
+            start = false;
+
+            GameObject food;
+            food = Instantiate(smaller);
+            food.transform.rotation = Quaternion.identity;
+            food.transform.Rotate(0, 90, 0); // for showing icons in right view
+            food.transform.position = new Vector3(Random.Range(-5, 5f), 2, 36);
+
+            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+
+        }
+
+        if (timer == 300)
+        {
+            Debug.Log(timer);
+            GameObject movinghori = (GameObject)Instantiate(movingHori);
+            movinghori.transform.rotation = Quaternion.identity;
+            //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
+            movinghori.transform.position = new Vector3(-3f, .010f, 36);
+            Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                
+            GameObject movinghori2 = (GameObject)Instantiate(movingHori);
+            movinghori2.transform.rotation = Quaternion.identity;
+            movinghori2.transform.position = new Vector3(3f, .010f, 36);
+            Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
+            m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
+        }
+        
+        if (timer == 650)
+        {
+            GameObject movinghori = (GameObject)Instantiate(movingHori);
+            movinghori.transform.rotation = Quaternion.identity;
+            //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
+            movinghori.transform.position = new Vector3(-5f, .010f, 36);
+            Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                
+            GameObject movinghori2 = (GameObject)Instantiate(movingHori);
+            movinghori2.transform.rotation = Quaternion.identity;
+            movinghori2.transform.position = new Vector3(5f, .010f, 36);
+            Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
+            m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
+        }
+        
+        if (timer == 550)
+        {
+            GameObject food;
+            food = Instantiate(bigger);
+            food.transform.rotation = Quaternion.identity;
+            food.transform.Rotate(0, 90, 0); // for showing icons in right view
+            food.transform.position = new Vector3(Random.Range(-5, 5f), 2, 36);
+
+            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
+        
+        if (timer == 850)
+        {
+            Debug.Log(timer);
+            Time.timeScale = 0;
+            Canvas.SetActive(true);
+            title.text = "Level Passed";
+            replay.SetActive(false);
+            next_level.SetActive(true);
+
+        }
+        
+        /*float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
         if (randomNumber > 0.96f - difficulty * 0.0001f)
         {
@@ -56,7 +129,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);*/
            // }
             // if (randomNumber>0.95f && randomNumber<0.965f)
-            if (time < 30 && first_smaller == false)
+            /*if (time < 30 && first_smaller == false)
             {
                 GameObject food;
                 food = Instantiate(smaller);
@@ -88,9 +161,9 @@ public class levelgeneratorLevel1 : MonoBehaviour
                 movinghori.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);*/
-            }
+            //}
             // else if (randomNumber>0.96f && randomNumber<0.98f)
-            else if (time > 100 && second == false)
+            /*else if (time > 100 && second == false)
             {
                 Debug.Log(time);
                 GameObject movinghori = (GameObject)Instantiate(movingHori);
@@ -125,7 +198,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
  
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);*/
-            }
+            /*}
             
         }
         else  if (randomNumber < 0.014f)
@@ -164,7 +237,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
 
-        time++;
+        time++;*/
     }
 }
 

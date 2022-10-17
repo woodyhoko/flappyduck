@@ -2493,7 +2493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -7587,7 +7586,7 @@ GameObject:
   - component: {fileID: 1950439629}
   - component: {fileID: 1950439628}
   - component: {fileID: 1950439627}
-  - component: {fileID: 1950439633}
+  - component: {fileID: 1950439632}
   m_Layer: 0
   m_Name: water
   m_TagString: water
@@ -7707,7 +7706,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1950439633
+--- !u!114 &1950439632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7716,7 +7715,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1950439626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d4b255e77dd4b3fb47a0c6b7b7d366, type: 3}
+  m_Script: {fileID: 11500000, guid: 78dd2f0700d4f42219a6635c828cdd3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clone: 0

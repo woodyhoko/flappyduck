@@ -5,7 +5,7 @@ using TMPro;
 
 public class CheckDie31 : MonoBehaviour
 {
-
+    public static CheckDie31 Instant;
     public GameObject Canvas;
     public TMP_Text title;
     public GameObject replay;
@@ -33,7 +33,7 @@ public class CheckDie31 : MonoBehaviour
         }
     }
 
-    void game_over()
+    public void game_over()
     {
         Time.timeScale = 0;
         Canvas.SetActive(true);

@@ -147,7 +147,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
             food = Instantiate(smaller);
             food.transform.rotation = Quaternion.identity;
             food.transform.Rotate(0, 90, 0); // for showing icons in right view
-            food.transform.position = new Vector3(Random.Range(-4, 4f), 1, 36);
+            food.transform.position = new Vector3(Random.Range(-3, 3f), 1, 36);
 
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
@@ -176,7 +176,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
             food = Instantiate(bigger);
             food.transform.rotation = Quaternion.identity;
             food.transform.Rotate(0, 90, 0); // for showing icons in right view
-            food.transform.position = new Vector3(Random.Range(-4, 4f), 1, 36);
+            food.transform.position = new Vector3(Random.Range(-4, 4f), 0, 36);
 
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
@@ -200,7 +200,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
             food = Instantiate(bigger);
             food.transform.rotation = Quaternion.identity;
             food.transform.Rotate(0, 90, 0); // for showing icons in right view
-            food.transform.position = new Vector3(Random.Range(-4, 4f), 1, 36);
+            food.transform.position = new Vector3(Random.Range(-4, 4f), 0, 36);
 
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);

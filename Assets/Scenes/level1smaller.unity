@@ -736,6 +736,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Canvas: {fileID: 0}
+  title: {fileID: 0}
+  replay: {fileID: 0}
 --- !u!1 &183150102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,7 +1615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1796,7 +1798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c0e4c36290841299a41c5ec6f24938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ateText: {fileID: 183150104}
   time: 0
 --- !u!114 &526718882
 MonoBehaviour:
@@ -3764,6 +3765,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Canvas: {fileID: 487442750}
+  title: {fileID: 1289897850}
+  replay: {fileID: 1327023471}
 --- !u!54 &1300335684
 Rigidbody:
   m_ObjectHideFlags: 0

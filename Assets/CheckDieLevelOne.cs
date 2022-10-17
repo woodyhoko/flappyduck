@@ -21,7 +21,7 @@ public class CheckDieLevelOne : MonoBehaviour
         
 
         if(transform.position.y < -10 || transform.position.z < -10 || transform.position.x < -6 || transform.position.x > 6) {
-            ScoreManager.killedByBound = true;
+            //ScoreManager.killedByBound = true;
             game_over();
         }
     }
@@ -29,7 +29,7 @@ public class CheckDieLevelOne : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         if(collider.gameObject.tag == "ceil"){
-            ScoreManager.killedByCeil = true;
+            //ScoreManager.killedByCeil = true;
             game_over();
         }
     }

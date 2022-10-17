@@ -12,17 +12,8 @@ public class levelgeneratorLevel1 : MonoBehaviour
     public GameObject wall;
     public GameObject movingpipe;
     public GameObject rock;
-    
-    /*public GameObject longger;
-    public GameObject faster;
-    public GameObject shooter;
-    public GameObject movingpipe;
-    public GameObject rock;
-    public GameObject invisible;
-    public GameObject move_forward;*/
     public GameObject portal;
     public GameObject text;
-
     public GameObject movingHori;
 
     private int timer; 
@@ -57,13 +48,41 @@ public class levelgeneratorLevel1 : MonoBehaviour
             m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
         }
 
+        if (timer == 150)
+        {
+            GameObject movinghori = (GameObject)Instantiate(movingHori);
+            movinghori.transform.rotation = Quaternion.identity;
+            //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
+            movinghori.transform.position = new Vector3(-3.5f, .010f, 36);
+            Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                
+            GameObject movinghori2 = (GameObject)Instantiate(movingHori);
+            movinghori2.transform.rotation = Quaternion.identity;
+            movinghori2.transform.position = new Vector3(3.5f, .010f, 36);
+            Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
+            m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
+        }
+
         if (timer == 300)
         {
             GameObject food;
             food = Instantiate(smaller);
             food.transform.rotation = Quaternion.identity;
             food.transform.Rotate(0, 90, 0); // for showing icons in right view
-            food.transform.position = new Vector3(Random.Range(-5, 5f), 2, 36);
+            food.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);
+
+            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
+        
+        if (timer == 400)
+        {
+            GameObject food;
+            food = Instantiate(smaller);
+            food.transform.rotation = Quaternion.identity;
+            food.transform.Rotate(0, 90, 0); // for showing icons in right view
+            food.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);
 
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
@@ -71,7 +90,6 @@ public class levelgeneratorLevel1 : MonoBehaviour
 
         if (timer == 450)
         {
-            Debug.Log(timer);
             GameObject movinghori = (GameObject)Instantiate(movingHori);
             movinghori.transform.rotation = Quaternion.identity;
             //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
@@ -85,8 +103,60 @@ public class levelgeneratorLevel1 : MonoBehaviour
             Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
             m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
         }
+        
+        if (timer == 500)
+        {
+            GameObject food;
+            food = Instantiate(smaller);
+            food.transform.rotation = Quaternion.identity;
+            food.transform.Rotate(0, 90, 0); // for showing icons in right view
+            food.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);
 
+            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
+
+        if (timer == 550)
+        {
+            GameObject movinghori = (GameObject)Instantiate(movingHori);
+            movinghori.transform.rotation = Quaternion.identity;
+            //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
+            movinghori.transform.position = new Vector3(-2.5f, .010f, 36);
+            Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                
+            GameObject movinghori2 = (GameObject)Instantiate(movingHori);
+            movinghori2.transform.rotation = Quaternion.identity;
+            movinghori2.transform.position = new Vector3(2.5f, .010f, 36);
+            Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
+            m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
+        }
+        
+        if (timer == 600)
+        {
+            GameObject food;
+            food = Instantiate(bigger);
+            food.transform.rotation = Quaternion.identity;
+            food.transform.Rotate(0, 90, 0); // for showing icons in right view
+            food.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);
+
+            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
+        
         if (timer == 650)
+        {
+            GameObject food;
+            food = Instantiate(bigger);
+            food.transform.rotation = Quaternion.identity;
+            food.transform.Rotate(0, 90, 0); // for showing icons in right view
+            food.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);
+
+            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
+        
+        if (timer == 700)
         {
             GameObject movinghori = (GameObject)Instantiate(movingHori);
             movinghori.transform.rotation = Quaternion.identity;
@@ -102,19 +172,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
             m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
         }
         
-        if (timer == 550)
-        {
-            GameObject food;
-            food = Instantiate(bigger);
-            food.transform.rotation = Quaternion.identity;
-            food.transform.Rotate(0, 90, 0); // for showing icons in right view
-            food.transform.position = new Vector3(Random.Range(-5, 5f), 2, 36);
-
-            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
-        }
-        
-        if (timer == 850)
+        if (timer == 900)
         {
             Debug.Log(timer);
             Time.timeScale = 0;

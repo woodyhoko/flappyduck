@@ -12,7 +12,6 @@ public class level1controller : MonoBehaviour
     private bool jump = false;
     private int jump_numb = 0;
     private float jump_height = 5.0f;
-    private int invi_remaining_time = 30;
 
     // Gravity, reversed gravity, move forward
     private float speed;
@@ -20,7 +19,7 @@ public class level1controller : MonoBehaviour
     private float timerValue = 0;
     
 
-    public TMP_Text ateText;
+    // public TMP_Text ateText;
     //public TMP_Text limitText;
     public int time = 0;
     // Start is called before the first frame update
@@ -28,12 +27,7 @@ public class level1controller : MonoBehaviour
     {
         speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
         m_Rigidbody = GetComponent<Rigidbody>();
-
-        /*
-        limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
-        ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
-        */
-        ateText.text = "timer:" + timerValue.ToString();
+        
         Time.timeScale = 1;
     }
 
@@ -58,7 +52,7 @@ public class level1controller : MonoBehaviour
     void FixedUpdate()
     {
         timerValue += Time.deltaTime;
-        ateText.text = "timer:" + timerValue.ToString();
+        // ateText.text = "timer:" + timerValue.ToString();
         //time++;
         //if(time>200) SceneManager.LoadScene("demo2");
 

@@ -2223,11 +2223,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duckMaterial: {fileID: 2100000, guid: 7132ce07b40b7b841859bd36efcc012c, type: 2}
   star: {fileID: 948402763}
+  stars: []
   bullet: {fileID: 1482989147}
   ateText: {fileID: 183150104}
   limitText: {fileID: 1574870663}
   time: 0
   power_card: {fileID: 1705328715}
+  level: 0
 --- !u!114 &526718880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3138,6 +3140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 526718873}
+  score_text: {fileID: 0}
 --- !u!136 &948402765
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6928,6 +6931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 526718873}
+  score_text: {fileID: 0}
 --- !u!1 &1998068072
 GameObject:
   m_ObjectHideFlags: 0

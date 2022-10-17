@@ -9,7 +9,7 @@ public class controller : MonoBehaviour
     Rigidbody m_Rigidbody;
     public Material duckMaterial;
     public GameObject star;
-    private List<GameObject> stars = new List<GameObject>();
+    public List<GameObject> stars = new List<GameObject>();
     public GameObject bullet;
 
 
@@ -28,6 +28,7 @@ public class controller : MonoBehaviour
     public TMP_Text limitText;
     public int time = 0;
     public GameObject power_card;
+    public bool level;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +37,11 @@ public class controller : MonoBehaviour
         larger_gravity = false;
         reversed_gravity = false;
         move_forward = false;
-        if (!GlobalData.Instance.choosen_powerCard)
+        if (!level && !GlobalData.Instance.choosen_powerCard)
         {
-            power_card.SetActive(true);
+            if(power_card != null){
+                power_card.SetActive(true);
+            }
             Time.timeScale = 0f;
         }
         if (limitText != null){
@@ -71,28 +74,30 @@ public class controller : MonoBehaviour
         }
 
 
-        if (!GlobalData.Instance.choosen_powerCard)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (power_card != null){
+            if (!GlobalData.Instance.choosen_powerCard)
             {
-                GlobalData.Instance.choosen_powerCard = true;
-                power_card.SetActive(false);
-                GlobalData.Instance.update_max_limit = 9;
-                limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
-                Time.timeScale = 1f;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                GlobalData.Instance.choosen_powerCard = true;
-                power_card.SetActive(false);
-                Time.timeScale = 1f;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                GlobalData.Instance.choosen_powerCard = true;
-                power_card.SetActive(false);
-                Time.timeScale = 1f;
-                GlobalData.Instance.move_speed += 0.06f;
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    GlobalData.Instance.choosen_powerCard = true;
+                    power_card.SetActive(false);
+                    GlobalData.Instance.update_max_limit = 9;
+                    limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
+                    Time.timeScale = 1f;
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    GlobalData.Instance.choosen_powerCard = true;
+                    power_card.SetActive(false);
+                    Time.timeScale = 1f;
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    GlobalData.Instance.choosen_powerCard = true;
+                    power_card.SetActive(false);
+                    Time.timeScale = 1f;
+                    GlobalData.Instance.move_speed += 0.06f;
+                }
             }
         }
 
@@ -112,7 +117,7 @@ public class controller : MonoBehaviour
         // }
         foreach(GameObject one_star in stars){
             // one_star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
-            one_star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
+            one_star.transform.RotateAround(transform.position, Vector3.up, -GlobalData.Instance.starRotateSpeed);
             one_star.transform.eulerAngles = new Vector3(0,0,0);
         }
         // star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);

@@ -2248,6 +2248,8 @@ GameObject:
   - component: {fileID: 526718878}
   - component: {fileID: 526718881}
   - component: {fileID: 526718882}
+  - component: {fileID: 526718884}
+  - component: {fileID: 526718883}
   m_Layer: 7
   m_Name: Cube
   m_TagString: Player
@@ -2357,7 +2359,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526718873}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64b5f56a7faab43a680a8ed05db3ac4f, type: 3}
   m_Name: 
@@ -2380,6 +2382,50 @@ MonoBehaviour:
   Canvas: {fileID: 746428515}
   title: {fileID: 975039634}
   replay: {fileID: 1870136006}
+--- !u!114 &526718883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526718873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5fc122910864e498dd264cb1bb84ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duckMaterial: {fileID: 0}
+  star: {fileID: 0}
+  stars: []
+  bullet: {fileID: 1482989147}
+  ateText: {fileID: 183150104}
+  limitText: {fileID: 0}
+  time: 0
+  power_card: {fileID: 0}
+  level: 1
+  Canvas: {fileID: 746428515}
+  replay: {fileID: 1870136006}
+  next_level: {fileID: 522200167}
+  title: {fileID: 975039634}
+  this_Level_name: Level_3_1
+  next_Level_name: menu
+--- !u!114 &526718884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526718873}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5488c6adc0ee24fa35f259eec144b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  islevel: 1
+  Canvas: {fileID: 746428515}
+  title: {fileID: 975039634}
+  replay: {fileID: 1870136006}
+  next_level: {fileID: 522200167}
 --- !u!1 &549761531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,8 +3863,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 50, y: 117}
-  m_SizeDelta: {x: -792, y: -422}
+  m_AnchoredPosition: {x: 46, y: 83}
+  m_SizeDelta: {x: -616.5507, y: -437.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975039634
 MonoBehaviour:

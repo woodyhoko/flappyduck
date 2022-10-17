@@ -1295,8 +1295,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 526718881}
-        m_TargetAssemblyTypeName: controller30, Assembly-CSharp
+      - m_Target: {fileID: 526718883}
+        m_TargetAssemblyTypeName: controller, Assembly-CSharp
         m_MethodName: Replay_Button
         m_Mode: 1
         m_Arguments:
@@ -2386,6 +2386,8 @@ GameObject:
   - component: {fileID: 526718878}
   - component: {fileID: 526718881}
   - component: {fileID: 526718882}
+  - component: {fileID: 526718883}
+  - component: {fileID: 526718884}
   m_Layer: 7
   m_Name: Cube
   m_TagString: Player
@@ -2495,7 +2497,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526718873}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0575c030c2b2a4f8199b512b89bd147c, type: 3}
   m_Name: 
@@ -2510,11 +2512,55 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526718873}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4867215b41eb47e4b60cd3359e77c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Canvas: {fileID: 1725161534}
+  title: {fileID: 506413007}
+  replay: {fileID: 226541796}
+  next_level: {fileID: 1254491040}
+--- !u!114 &526718883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526718873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5fc122910864e498dd264cb1bb84ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duckMaterial: {fileID: 0}
+  star: {fileID: 0}
+  stars: []
+  bullet: {fileID: 1482989147}
+  ateText: {fileID: 183150104}
+  limitText: {fileID: 0}
+  time: 0
+  power_card: {fileID: 0}
+  level: 1
+  Canvas: {fileID: 1725161534}
+  replay: {fileID: 226541796}
+  next_level: {fileID: 1254491040}
+  title: {fileID: 506413007}
+  this_Level_name: Level_3_0
+  next_Level_name: Level_3_1
+--- !u!114 &526718884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526718873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5488c6adc0ee24fa35f259eec144b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  islevel: 1
   Canvas: {fileID: 1725161534}
   title: {fileID: 506413007}
   replay: {fileID: 226541796}
@@ -3014,8 +3060,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 526718881}
-        m_TargetAssemblyTypeName: controller30, Assembly-CSharp
+      - m_Target: {fileID: 526718883}
+        m_TargetAssemblyTypeName: controller, Assembly-CSharp
         m_MethodName: Menu_Button
         m_Mode: 1
         m_Arguments:
@@ -4230,8 +4276,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 526718881}
-        m_TargetAssemblyTypeName: controller30, Assembly-CSharp
+      - m_Target: {fileID: 526718883}
+        m_TargetAssemblyTypeName: controller, Assembly-CSharp
         m_MethodName: Next_Level_Button
         m_Mode: 1
         m_Arguments:

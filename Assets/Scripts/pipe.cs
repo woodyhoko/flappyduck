@@ -47,14 +47,14 @@ public class pipe : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "star")
-        {
-            ScoreManager.sscore++;
-            if(score_text != null){
-                score_text.text = "Score : " + ScoreManager.sscore.ToString();
-            }
-            Destroy(gameObject);
-        }
+        // if (collider.gameObject.tag == "star")
+        // {
+        //     ScoreManager.sscore++;
+        //     if(score_text != null){
+        //         score_text.text = "Score : " + ScoreManager.sscore.ToString();
+        //     }
+        //     Destroy(gameObject);
+        // }
         if (collider.gameObject.tag == "bullet")
         {
             //Debug.Log("get hit by bullet");

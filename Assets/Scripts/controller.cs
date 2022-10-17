@@ -30,6 +30,38 @@ public class controller : MonoBehaviour
     public GameObject power_card;
     public bool level;
     // Start is called before the first frame update
+
+    // properties for levels
+    public bool level;
+    public GameObject Canvas;
+    public GameObject replay;
+    public GameObject next_level;
+    public TMP_Text title;
+    public string this_Level_name = "Level1smaller"; // default value
+    public string next_Level_name = "Level1smaller";
+    private float timer = 0;
+
+    public void Menu_Button()
+    {
+        Time.timeScale = 1;
+        GlobalData.Instance.destroy();
+        SceneManager.LoadScene("menu");
+    }
+
+    public void Next_Level_Button()
+    {
+        Time.timeScale = 1;
+        GlobalData.Instance.destroy();
+        SceneManager.LoadScene(next_Level_name);
+    }
+
+    public void Replay_Button()
+    {
+        Time.timeScale = 1;
+        GlobalData.Instance.destroy();
+        SceneManager.LoadScene(this_Level_name);
+    }
+
     void Start()
     {
         speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
@@ -54,7 +86,17 @@ public class controller : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        
+        if(level && this_Level_name != "Level1smaller") {
+            if (timer == 700)
+            {
+                Time.timeScale = 0;
+                Canvas.SetActive(true);
+                title.text = "Level Passed";
+                replay.SetActive(false);
+                next_level.SetActive(true);
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Space)){
 
             if (jump_numb > 0)
@@ -108,6 +150,9 @@ public class controller : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (level) {
+            timer++;
+        }
         //time++;
         //if(time>200) SceneManager.LoadScene("demo2");
 

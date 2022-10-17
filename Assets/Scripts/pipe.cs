@@ -50,7 +50,9 @@ public class pipe : MonoBehaviour
         if (collider.gameObject.tag == "star")
         {
             ScoreManager.sscore++;
-            score_text.text = "Score : " + ScoreManager.sscore.ToString();
+            if(score_text != null){
+                score_text.text = "Score : " + ScoreManager.sscore.ToString();
+            }
             Destroy(gameObject);
         }
         if (collider.gameObject.tag == "bullet")

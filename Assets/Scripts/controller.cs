@@ -41,8 +41,12 @@ public class controller : MonoBehaviour
             power_card.SetActive(true);
             Time.timeScale = 0f;
         }
-        limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
-        ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
+        if (limitText != null){
+            limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
+        }
+        if (ateText != null){
+            ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
+        }
     }
 
     // Update is called once per frame
@@ -334,7 +338,9 @@ public class controller : MonoBehaviour
                 ScoreManager.invisible++;
                 GlobalData.Instance.ate++;
             }
-            ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
+            if (ateText != null){
+                ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
+            }
         }
     }
     private void  EnableCollider () {

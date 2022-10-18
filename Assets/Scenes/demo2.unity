@@ -601,6 +601,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Canvas: {fileID: 0}
+  title: {fileID: 0}
+  replay: {fileID: 0}
 --- !u!23 &141007416
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2230,6 +2233,12 @@ MonoBehaviour:
   time: 0
   power_card: {fileID: 1705328715}
   level: 0
+  Canvas: {fileID: 0}
+  replay: {fileID: 0}
+  next_level: {fileID: 0}
+  title: {fileID: 0}
+  this_Level_name: Level1smaller
+  next_Level_name: Level1smaller
 --- !u!114 &526718880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2242,6 +2251,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df5488c6adc0ee24fa35f259eec144b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  islevel: 0
+  Canvas: {fileID: 0}
+  title: {fileID: 0}
+  replay: {fileID: 0}
+  next_level: {fileID: 0}
 --- !u!1 &549761531
 GameObject:
   m_ObjectHideFlags: 0

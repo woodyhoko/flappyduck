@@ -17,6 +17,8 @@ public class ScoreManager : MonoBehaviour {
 	public static bool killedByBound = false;
 	public static float startTime = Time.time;
 	
+	public static bool level1 = false;
+	
 
 	void Start()
 	{

@@ -9,27 +9,37 @@ public class LevelMenu : MonoBehaviour
     {
         Debug.Log("Level10");
         SceneManager.LoadScene("level1smaller");
+        ScoreManager.level1 = true;
+        ScoreManager.startTime = Time.time;
     }
 
     public void level11()
     {
         // Debug.Log("Level11");
         SceneManager.LoadScene("level1smaller");
+        ScoreManager.level1 = true;
+        ScoreManager.startTime = Time.time;
     }
 
     public void level20()
     {
         SceneManager.LoadScene("Level_2_0");
+        ScoreManager.level1 = false;
+        ScoreManager.startTime = Time.time;
     }
 
     public void level21()
     {
         SceneManager.LoadScene("Level_2_1");
+        ScoreManager.level1 = false;
+        ScoreManager.startTime = Time.time;
     }
 
     public void level22()
     {
         SceneManager.LoadScene("Level_2_2");
+        ScoreManager.level1 = false;
+        ScoreManager.startTime = Time.time;
     }
 
     public void level23()
@@ -40,11 +50,15 @@ public class LevelMenu : MonoBehaviour
     public void level30()
     {
         SceneManager.LoadScene("Level_3_0");
+        ScoreManager.level1 = false;
+        ScoreManager.startTime = Time.time;
     }
 
     public void level31()
     {
         SceneManager.LoadScene("Level_3_1");
+        ScoreManager.level1 = false;
+        ScoreManager.startTime = Time.time;
     }
 
     public void level32()
@@ -56,6 +70,8 @@ public class LevelMenu : MonoBehaviour
     {
         Debug.Log("Endless Run");
         SceneManager.LoadScene("demo2");
+        ScoreManager.level1 = false;
+        ScoreManager.startTime = Time.time;
     }
 
     public void QuitMenu()

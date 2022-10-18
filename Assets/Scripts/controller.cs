@@ -48,6 +48,7 @@ public class controller : MonoBehaviour
     public void Next_Level_Button()
     {
         Time.timeScale = 1;
+        ScoreManager.startTime = Time.time;
         GlobalData.Instance.destroy();
         SceneManager.LoadScene(next_Level_name);
     }
@@ -55,6 +56,7 @@ public class controller : MonoBehaviour
     public void Replay_Button()
     {
         Time.timeScale = 1;
+        ScoreManager.startTime = Time.time;
         GlobalData.Instance.destroy();
         SceneManager.LoadScene(this_Level_name);
     }

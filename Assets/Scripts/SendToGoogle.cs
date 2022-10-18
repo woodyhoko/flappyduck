@@ -21,6 +21,8 @@ public class SendToGoogle : MonoBehaviour
 	private int _shooting;
 	private bool _killedByWater;
 	private float _playtime;
+
+	private bool _level1;
     
     private void Awake()
     {
@@ -33,6 +35,7 @@ public class SendToGoogle : MonoBehaviour
     {
         // Assign variables
         _playtime = Time.time - ScoreManager.startTime;
+        ScoreManager.startTime = Time.time;
         _testInt = ScoreManager.sscore;
         _testBoolean = ScoreManager.killedByRock;
         _bigger = ScoreManager.biggerCube;
@@ -42,15 +45,16 @@ public class SendToGoogle : MonoBehaviour
 		_invisible = ScoreManager.invisible;
 		_shooting = ScoreManager.shooter;
 		_killedByWater = ScoreManager.killedByWater;
+		_level1 = ScoreManager.level1;
 			
 		StartCoroutine(Post(_sessionID.ToString(), _testInt.ToString(), _testBoolean.ToString(), _bigger.ToString(),
 		_smaller.ToString(), _shooting.ToString(), _faster.ToString(), _longer.ToString(), _invisible.ToString(),
-		_playtime.ToString("f2"), _killedByWater.ToString()));
+		_playtime.ToString("f2"), _killedByWater.ToString(), _level1.ToString()));
 
     }
 
     private IEnumerator Post(string sessionID, string testInt, string testBool, string bigger, string smaller, string shooting,
-		string faster, string longer, string invisible, string playtime, string killByWater)
+		string faster, string longer, string invisible, string playtime, string killByWater, string level1)
     {
         WWWForm form = new WWWForm();
         form.AddField("entry.694322186", sessionID);
@@ -64,6 +68,7 @@ public class SendToGoogle : MonoBehaviour
 		form.AddField("entry.33886605", invisible);
 		form.AddField("entry.210980662", playtime);
 		form.AddField("entry.713560671", killByWater);
+		form.AddField("entry.391653921", level1);
         
         // Send responses and verify result
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))

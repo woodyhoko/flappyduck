@@ -74,7 +74,9 @@ public class controller : MonoBehaviour
         //     }
         //     Time.timeScale = 0f;
         // }
-        power_card.SetActive(false);
+        if (power_card != null){
+            power_card.SetActive(false);
+        }
         if (limitText != null){
             limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
         }

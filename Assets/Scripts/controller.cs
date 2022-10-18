@@ -67,13 +67,14 @@ public class controller : MonoBehaviour
         larger_gravity = false;
         reversed_gravity = false;
         move_forward = false;
-        if (!level && !GlobalData.Instance.choosen_powerCard)
-        {
-            if(power_card != null){
-                power_card.SetActive(true);
-            }
-            Time.timeScale = 0f;
-        }
+        // if (!level && !GlobalData.Instance.choosen_powerCard)
+        // {
+        //     if(power_card != null){
+        //         power_card.SetActive(true);
+        //     }
+        //     Time.timeScale = 0f;
+        // }
+        power_card.SetActive(false);
         if (limitText != null){
             limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
         }

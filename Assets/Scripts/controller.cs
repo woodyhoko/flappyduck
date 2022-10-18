@@ -88,7 +88,7 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update() {
         if(level && this_Level_name == "Level_2_0") {
-            if (timer == 700)
+            if (timer == 1300)
             {
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
@@ -98,7 +98,7 @@ public class controller : MonoBehaviour
             }
         }
         if(level && this_Level_name == "Level_2_1") {
-            if (timer == 700)
+            if (timer == 1600)
             {
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
@@ -108,7 +108,7 @@ public class controller : MonoBehaviour
             }
         }
         if(level && this_Level_name == "Level_2_2") {
-            if (timer == 700)
+            if (timer == 1900)
             {
                 Time.timeScale = 0;
                 Canvas.SetActive(true);

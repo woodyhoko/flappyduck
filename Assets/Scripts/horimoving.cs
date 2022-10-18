@@ -18,15 +18,15 @@ public class horimoving : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("horizontal wall touched");
-        if(collision.gameObject.tag == "Player")
-        {
-            // ScoreManager.killedByWater= true;
-            // FindObjectOfType<GameManager>().EndGame();
-            Time.timeScale = 0;
-            Canvas.SetActive(true);
-            title.text = "Game Over";
-            replay.SetActive(true);
-        }
+        // if(collision.gameObject.tag == "Player")
+        // {
+        //     // ScoreManager.killedByWater= true;
+        //     // FindObjectOfType<GameManager>().EndGame();
+        //     Time.timeScale = 0;
+        //     Canvas.SetActive(true);
+        //     title.text = "Game Over";
+        //     replay.SetActive(true);
+        // }
         // Destroy(gameObject);
 
     }

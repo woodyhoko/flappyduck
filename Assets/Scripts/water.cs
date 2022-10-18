@@ -20,7 +20,6 @@ public class water : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Touched");
         if(collision.gameObject.tag == "Player")
         {
             Debug.Log("get hit by water");
@@ -28,7 +27,6 @@ public class water : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
             }
             // Destroy(gameObject);
-
         }
     
 }

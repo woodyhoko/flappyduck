@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
-public class tutorial_controller : MonoBehaviour
+public class tc : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     public Material duckMaterial;
@@ -58,11 +57,7 @@ public class tutorial_controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (transform.position.y < -10 || transform.position.z < -10 || transform.position.x < -6 || transform.position.x > 6)
-        {
-            SceneManager.LoadScene("gameover");
-        }
-            star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed);
+         star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed);
         //set jumping limit
         if (larger_gravity)
         {

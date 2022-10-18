@@ -750,7 +750,7 @@ MonoBehaviour:
   score: {fileID: 321093055}
   die: {fileID: 813635860}
   textt: {fileID: 394027702}
-  heading: {fileID: 0}
+  heading: {fileID: 1636116242}
 --- !u!1 &505407582
 GameObject:
   m_ObjectHideFlags: 0

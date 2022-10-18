@@ -16,7 +16,6 @@ public class pipe : MonoBehaviour
         Physics.IgnoreLayerCollision(6, 10, true);
         Physics.IgnoreLayerCollision(6, 6, true);
         healthSystem= new(400f);
-        // healthBarUI = (GameObject)Instantiate(healthBarUI);
     }
 
     // Update is called once per frame
@@ -40,21 +39,14 @@ public class pipe : MonoBehaviour
             {
                 Destroy(collision.gameObject);
             }
-            // Destroy(gameObject);
+
 
         }
     }
 
     private void OnTriggerEnter(Collider collider)
     {
-        // if (collider.gameObject.tag == "star")
-        // {
-        //     ScoreManager.sscore++;
-        //     if(score_text != null){
-        //         score_text.text = "Score : " + ScoreManager.sscore.ToString();
-        //     }
-        //     Destroy(gameObject);
-        // }
+
         if (collider.gameObject.tag == "bullet")
         {
             //Debug.Log("get hit by bullet");

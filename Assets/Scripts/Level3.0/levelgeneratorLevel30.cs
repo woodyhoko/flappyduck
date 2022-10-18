@@ -43,7 +43,7 @@ public class levelgeneratorLevel30 : MonoBehaviour
     void FixedUpdate()
     {
         timer++;
-        if (start)
+        if (start || timer == 230)
         {
 
             start = false;
@@ -68,6 +68,10 @@ public class levelgeneratorLevel30 : MonoBehaviour
                 GameObject ppipe = (GameObject)Instantiate(pipe);
                 ppipe.transform.position = new Vector3(x, 1f, 36);
                 ppipe.transform.localScale = new Vector3(1.5f, 2f, 1.5f);
+                if (i == 3)
+                {
+                    ppipe.transform.localScale = new Vector3(1.5f, 1f, 1.5f);
+                }
                 ppipe.transform.rotation = Quaternion.identity;
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
@@ -82,13 +86,13 @@ public class levelgeneratorLevel30 : MonoBehaviour
             float z = 36;
             for (int j = 0; j < 5; j++)
             {
-                z += 3;
+                z += 6;
                 float x = -4.5f;
                 if (j % 2 == 1)
                 {
-                    x -= 0.3f;
+                    x = -1.5f;
                 }
-                for (float i = 0; i < 8; i++)
+                for (float i = 0; i < 6; i++)
                 {
                     GameObject ppipe = (GameObject)Instantiate(movingpipe);
                     ppipe.transform.position = new Vector3(x, 1f, z);

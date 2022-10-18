@@ -87,7 +87,7 @@ public class controller : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if(level && this_Level_name != "Level1smaller") {
+        if(level && this_Level_name == "Level1smaller") {
             if (timer == 700)
             {
                 Time.timeScale = 0;

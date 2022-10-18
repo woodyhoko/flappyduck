@@ -105,14 +105,14 @@ public class levelgeneratorLevel31 : MonoBehaviour
 
         }
 
-        if (timer == 700)
-        {
-            Time.timeScale = 0;
-            Canvas.SetActive(true);
-            title.text = "Level Passed";
-            replay.SetActive(false);
-            //next_level.SetActive(true);
-        }
+        // if (timer == 700)
+        // {
+        //     Time.timeScale = 0;
+        //     Canvas.SetActive(true);
+        //     title.text = "Level Passed";
+        //     replay.SetActive(false);
+        //     //next_level.SetActive(true);
+        // }
 
 
 

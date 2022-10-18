@@ -34,7 +34,7 @@ public class CheckDie : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject.tag == "ceil"){
+        if(collider.gameObject.tag == "ceil" || collider.gameObject.tag == "water"){
             if(islevel) {
                 level_game_over();
             }

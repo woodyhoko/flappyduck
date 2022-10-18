@@ -87,7 +87,37 @@ public class controller : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if(level && this_Level_name == "Level1smaller") {
+        if(level && this_Level_name == "Level_2_0") {
+            if (timer == 700)
+            {
+                Time.timeScale = 0;
+                Canvas.SetActive(true);
+                title.text = "Level Passed";
+                replay.SetActive(false);
+                next_level.SetActive(true);
+            }
+        }
+        if(level && this_Level_name == "Level_2_1") {
+            if (timer == 700)
+            {
+                Time.timeScale = 0;
+                Canvas.SetActive(true);
+                title.text = "Level Passed";
+                replay.SetActive(false);
+                next_level.SetActive(true);
+            }
+        }
+        if(level && this_Level_name == "Level_2_2") {
+            if (timer == 700)
+            {
+                Time.timeScale = 0;
+                Canvas.SetActive(true);
+                title.text = "Level Passed";
+                replay.SetActive(false);
+                next_level.SetActive(true);
+            }
+        }
+        if(level && this_Level_name == "Level_3_0") {
             if (timer == 700)
             {
                 Time.timeScale = 0;
@@ -98,16 +128,6 @@ public class controller : MonoBehaviour
             }
         }
         if(level && this_Level_name == "Level_3_1") {
-            if (timer == 700)
-            {
-                Time.timeScale = 0;
-                Canvas.SetActive(true);
-                title.text = "Level Passed";
-                replay.SetActive(false);
-                next_level.SetActive(true);
-            }
-        }
-        if(level && this_Level_name != "Level1smaller") {
             if (timer == 700)
             {
                 Time.timeScale = 0;

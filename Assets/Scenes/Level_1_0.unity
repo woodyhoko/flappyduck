@@ -1680,7 +1680,6 @@ GameObject:
   - component: {fileID: 526718874}
   - component: {fileID: 526718878}
   - component: {fileID: 526718880}
-  - component: {fileID: 526718881}
   - component: {fileID: 526718883}
   - component: {fileID: 526718882}
   m_Layer: 7
@@ -1796,19 +1795,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84592757e2af4abc9be8c8858498d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &526718881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526718873}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c0e4c36290841299a41c5ec6f24938, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 0
 --- !u!114 &526718882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1834,7 +1820,7 @@ MonoBehaviour:
   replay: {fileID: 1327023471}
   next_level: {fileID: 899265504}
   title: {fileID: 1289897850}
-  this_Level_name: Level1smaller
+  this_Level_name: Level_1_0
   next_Level_name: Level_2_0
 --- !u!114 &526718883
 MonoBehaviour:

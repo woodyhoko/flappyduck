@@ -24,6 +24,8 @@ public class water : MonoBehaviour
         {
             Debug.Log("get hit by water");
             ScoreManager.killedByWater= true;
+            ScoreManager.killedByCeil = false;
+            ScoreManager.killedByBound = false;
             FindObjectOfType<GameManager>().EndGame();
             }
             // Destroy(gameObject);

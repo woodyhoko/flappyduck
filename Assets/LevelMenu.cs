@@ -8,8 +8,17 @@ public class LevelMenu : MonoBehaviour
     public void level10()
     {
         Debug.Log("Level10");
-        SceneManager.LoadScene("level1smaller");
+        SceneManager.LoadScene("Level_1_0");
         ScoreManager.level1 = true;
+		ScoreManager.level1Passed = false;
+		ScoreManager.level20 = false;
+		ScoreManager.level21 = false;
+		ScoreManager.level22 = false;
+		ScoreManager.level23 = false;
+		ScoreManager.level24 = false;
+		ScoreManager.level30 = false;
+		ScoreManager.level31 = false;
+
         ScoreManager.startTime = Time.time;
         ScoreManager.killedByRock = false;
         ScoreManager.killedByWater = false;
@@ -20,8 +29,16 @@ public class LevelMenu : MonoBehaviour
     public void level11()
     {
         // Debug.Log("Level11");
-        SceneManager.LoadScene("level1smaller");
+        SceneManager.LoadScene("Level_1_0");
         ScoreManager.level1 = true;
+		ScoreManager.level1Passed = false;
+		ScoreManager.level20 = false;
+		ScoreManager.level21 = false;
+		ScoreManager.level22 = false;
+		ScoreManager.level23 = false;
+		ScoreManager.level24 = false;
+		ScoreManager.level30 = false;
+		ScoreManager.level31 = false;
         ScoreManager.startTime = Time.time;
         ScoreManager.killedByRock = false;
         ScoreManager.killedByWater = false;
@@ -33,6 +50,14 @@ public class LevelMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level_2_0");
         ScoreManager.level1 = false;
+		ScoreManager.level20 = true;
+		ScoreManager.level20Passed = false;
+		ScoreManager.level21 = false;
+		ScoreManager.level22 = false;
+		ScoreManager.level23 = false;
+		ScoreManager.level24 = false;
+		ScoreManager.level30 = false;
+		ScoreManager.level31 = false;
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
@@ -45,6 +70,14 @@ public class LevelMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level_2_1");
         ScoreManager.level1 = false;
+		ScoreManager.level20 = false;
+		ScoreManager.level21 = true;
+		ScoreManager.level21Passed = false;
+		ScoreManager.level22 = false;
+		ScoreManager.level23 = false;
+		ScoreManager.level24 = false;
+		ScoreManager.level30 = false;
+		ScoreManager.level31 = false;
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
@@ -57,6 +90,15 @@ public class LevelMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level_2_2");
         ScoreManager.level1 = false;
+		ScoreManager.level20 = false;
+		ScoreManager.level21 = false;
+		ScoreManager.level22 = true;
+		ScoreManager.level22Passed = false;
+		ScoreManager.level23 = false;
+		ScoreManager.level24 = false;
+		ScoreManager.level30 = false;
+		ScoreManager.level31 = false;
+
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
@@ -69,6 +111,15 @@ public class LevelMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level_2_3");
         ScoreManager.level1 = false;
+		ScoreManager.level20 = false;
+		ScoreManager.level21 = false;
+		ScoreManager.level22 = false;
+		ScoreManager.level23 = true;
+		ScoreManager.level23Passed = false;
+		ScoreManager.level24 = false;
+		ScoreManager.level30 = false;
+		ScoreManager.level31 = false;
+
         ScoreManager.startTime = Time.time;
 
         ScoreManager.killedByRock = false;
@@ -81,6 +132,15 @@ public class LevelMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level_2_4");
         ScoreManager.level1 = false;
+		ScoreManager.level20 = false;
+		ScoreManager.level21 = false;
+		ScoreManager.level22 = false;
+		ScoreManager.level23 = false;
+		ScoreManager.level24 = true;
+		ScoreManager.level24Passed = false;
+		ScoreManager.level30 = false;
+		ScoreManager.level31 = false;
+
         ScoreManager.startTime = Time.time;
 
         ScoreManager.killedByRock = false;
@@ -93,6 +153,14 @@ public class LevelMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level_3_0");
         ScoreManager.level1 = false;
+		ScoreManager.level20 = false;
+		ScoreManager.level21 = false;
+		ScoreManager.level22 = false;
+		ScoreManager.level23 = false;
+		ScoreManager.level24 = false;
+		ScoreManager.level30 = true;
+		ScoreManager.level30Passed = false;
+		ScoreManager.level31 = false;
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
@@ -105,6 +173,14 @@ public class LevelMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level_3_1");
         ScoreManager.level1 = false;
+		ScoreManager.level20 = false;
+		ScoreManager.level21 = false;
+		ScoreManager.level22 = false;
+		ScoreManager.level23 = false;
+		ScoreManager.level24 = false;
+		ScoreManager.level30 = false;
+		ScoreManager.level31 = true;
+		ScoreManager.level31Passed = false;
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;

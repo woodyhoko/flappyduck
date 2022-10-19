@@ -34,8 +34,8 @@ public class controller : MonoBehaviour
     public GameObject replay;
     public GameObject next_level;
     public TMP_Text title;
-    public string this_Level_name = "Level1smaller"; // default value
-    public string next_Level_name = "Level1smaller";
+    public string this_Level_name = "Level_1_0"; // default value
+    public string next_Level_name = "Level_1_0";
     private float timer = 0;
 
     public void Menu_Button()
@@ -47,6 +47,29 @@ public class controller : MonoBehaviour
 
     public void Next_Level_Button()
     {
+        if (this_Level_name == "Level_1_0")
+        {
+        } else if (this_Level_name == "Level_2_0")
+        {
+        } else if (this_Level_name == "Level_2_1")
+        {
+            
+        } else if (this_Level_name == "Level_2_2")
+        {
+            
+        } else if (this_Level_name == "Level_2_3")
+        {
+            
+        } else if (this_Level_name == "Level_2_4")
+        {
+            
+        } else if (this_Level_name == "Level_3_0")
+        {
+            
+        } else if (this_Level_name == "Level_3_1")
+        {
+            
+        }
         Time.timeScale = 1;
         ScoreManager.startTime = Time.time;
         GlobalData.Instance.destroy();
@@ -94,12 +117,16 @@ public class controller : MonoBehaviour
         {
             if (timer == 900)
             {
+                ScoreManager.level1Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
+                
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 1.0  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
-                ScoreManager.level1Passed = true;
             }
         }
 
@@ -107,6 +134,11 @@ public class controller : MonoBehaviour
         {
             if (timer == 1200)
             {
+                ScoreManager.level20Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
+                
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 2.0  Passed";
@@ -118,6 +150,11 @@ public class controller : MonoBehaviour
         {
             if (timer == 1300)
             {
+                ScoreManager.level21Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
+                
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 2.1  Passed";
@@ -128,6 +165,10 @@ public class controller : MonoBehaviour
         if (level && this_Level_name == "Level_2_2") {
             if (timer == 1300)
             {
+                ScoreManager.level22Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 2.2  Passed";
@@ -138,6 +179,10 @@ public class controller : MonoBehaviour
         if(level && this_Level_name == "Level_2_3") {
             if (timer == 1600)
             {
+                ScoreManager.level23Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 2.3  Passed";
@@ -148,6 +193,10 @@ public class controller : MonoBehaviour
         if(level && this_Level_name == "Level_2_4") {
             if (timer == 1900)
             {
+                ScoreManager.level24Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 2.4  Passed";
@@ -158,6 +207,10 @@ public class controller : MonoBehaviour
         if(level && this_Level_name == "Level_3_0") {
             if (timer == 700)
             {
+                ScoreManager.level30Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 3.0  Passed";
@@ -168,6 +221,10 @@ public class controller : MonoBehaviour
         if(level && this_Level_name == "Level_3_1") {
             if (timer == 700)
             {
+                ScoreManager.level31Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 3.1  Passed";

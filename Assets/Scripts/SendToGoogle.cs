@@ -27,6 +27,27 @@ public class SendToGoogle : MonoBehaviour
 	private bool _killedByCeil;
 	private bool _killedByBound;
 	
+	private bool _level20;
+	private bool _level20Passed;
+	
+	private bool _level21;
+	private bool _level21Passed;
+	
+	private bool _level22;
+	private bool _level22Passed;
+	
+	private bool _level23;
+	private bool _level23Passed;
+	
+	private bool _level24;
+	private bool _level24Passed;
+	
+	private bool _level30;
+	private bool _level30Passed;
+	
+	private bool _level31;
+	private bool _level31Passed;
+	
     
     private void Awake()
     {
@@ -53,17 +74,35 @@ public class SendToGoogle : MonoBehaviour
 		_level1Passed = ScoreManager.level1Passed;
 		_killedByCeil = ScoreManager.killedByCeil;
 		_killedByBound = ScoreManager.killedByBound;
+		
+		_level20 = ScoreManager.level20;
+		_level20Passed = ScoreManager.level20Passed;
+		_level21 = ScoreManager.level21;
+		_level21Passed = ScoreManager.level21Passed;
+		_level22 = ScoreManager.level22;
+		_level22Passed = ScoreManager.level22Passed;
+		_level23 = ScoreManager.level23;
+		_level23Passed = ScoreManager.level23Passed;
+		_level24 = ScoreManager.level24;
+		_level24Passed = ScoreManager.level24Passed;
+		_level30 = ScoreManager.level30;
+		_level30Passed = ScoreManager.level30Passed;
+		_level31 = ScoreManager.level31;
+		_level31Passed = ScoreManager.level31Passed;
 			
 		StartCoroutine(Post(_sessionID.ToString(), _testInt.ToString(), _testBoolean.ToString(), _bigger.ToString(),
 		_smaller.ToString(), _shooting.ToString(), _faster.ToString(), _longer.ToString(), _invisible.ToString(),
 		_playtime.ToString("f2"), _killedByWater.ToString(), _level1.ToString(), _level1Passed.ToString(), _killedByCeil.ToString(),
-		_killedByBound.ToString()));
+		_killedByBound.ToString(), _level20.ToString(), _level20Passed.ToString(), _level21.ToString(), _level21Passed.ToString(),
+		_level22.ToString(), _level22Passed.ToString(), _level23.ToString(), _level23Passed.ToString() , _level24.ToString(), _level24Passed.ToString(),
+		_level30.ToString(), _level30Passed.ToString(), _level31.ToString(), _level31Passed.ToString()));
 
     }
 
     private IEnumerator Post(string sessionID, string testInt, string testBool, string bigger, string smaller, string shooting,
 		string faster, string longer, string invisible, string playtime, string killByWater, string level1, string level1Passed, string killedByCeil,
-		string killedByBound)
+		string killedByBound, string level20, string level20Passed, string level21, string level21Passed, string level22, string level22Passed,
+		string level23, string level23Passed, string level24, string level24Passed, string level30, string level30Passed, string level31, string level31Passed)
     {
         WWWForm form = new WWWForm();
         form.AddField("entry.694322186", sessionID);
@@ -80,7 +119,22 @@ public class SendToGoogle : MonoBehaviour
 		form.AddField("entry.391653921", level1);
 		form.AddField("entry.1194466425", level1Passed);
 		form.AddField("entry.944290667", killedByCeil);
-		form.AddField("entry.1076028124", killedByCeil);
+		form.AddField("entry.1076028124", killedByBound);
+		
+		form.AddField("entry.1915196900", level20);
+		form.AddField("entry.302430152", level20Passed);
+		form.AddField("entry.1149974626", level21);
+		form.AddField("entry.379091483", level21Passed);
+		form.AddField("entry.1257742777", level22);
+		form.AddField("entry.369368199", level22Passed);
+		form.AddField("entry.917567151", level23);
+		form.AddField("entry.436920548", level23Passed);
+		form.AddField("entry.1567845062", level24);
+		form.AddField("entry.2014221535", level24Passed);
+		form.AddField("entry.2136115158", level30);
+		form.AddField("entry.1961638159", level30Passed);
+		form.AddField("entry.1168613017", level31);
+		form.AddField("entry.1648856046", level31Passed);
         
         // Send responses and verify result
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))

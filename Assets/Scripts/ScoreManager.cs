@@ -18,9 +18,28 @@ public class ScoreManager : MonoBehaviour {
 	public static float startTime = Time.time;
 	
 	public static bool level1 = false;
-
 	public static bool level1Passed = false;
 	
+	public static bool level20 = false;
+	public static bool level20Passed = false;
+	
+	public static bool level21 = false;
+	public static bool level21Passed = false;
+	
+	public static bool level22 = false;
+	public static bool level22Passed = false;
+	
+	public static bool level23 = false;
+	public static bool level23Passed = false;
+	
+	public static bool level24 = false;
+	public static bool level24Passed = false;
+	
+	public static bool level30 = false;
+	public static bool level30Passed = false;
+	
+	public static bool level31 = false;
+	public static bool level31Passed = false;
 
 	void Start()
 	{

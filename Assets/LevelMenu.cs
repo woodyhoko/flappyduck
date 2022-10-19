@@ -67,7 +67,26 @@ public class LevelMenu : MonoBehaviour
 
     public void level23()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level_2_3");
+        ScoreManager.level1 = false;
+        ScoreManager.startTime = Time.time;
+
+        ScoreManager.killedByRock = false;
+        ScoreManager.killedByWater = false;
+        ScoreManager.killedByCeil = false;
+        ScoreManager.killedByBound = false;
+    }
+
+    public void level24()
+    {
+        SceneManager.LoadScene("Level_2_4");
+        ScoreManager.level1 = false;
+        ScoreManager.startTime = Time.time;
+
+        ScoreManager.killedByRock = false;
+        ScoreManager.killedByWater = false;
+        ScoreManager.killedByCeil = false;
+        ScoreManager.killedByBound = false;
     }
 
     public void level30()

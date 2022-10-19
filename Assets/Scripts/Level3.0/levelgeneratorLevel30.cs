@@ -43,7 +43,7 @@ public class levelgeneratorLevel30 : MonoBehaviour
     void FixedUpdate()
     {
         timer++;
-        if (start || timer == 230)
+        if (start)
         {
 
             start = false;
@@ -121,16 +121,17 @@ public class levelgeneratorLevel30 : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
 
-
+        /*
         if (timer == 700)
         {
             Time.timeScale = 0;
             Canvas.SetActive(true);
-            title.text = "Level Passed";
+            title.text = "Level 3.0  Passed";
             replay.SetActive(false);
             next_level.SetActive(true);
 
         }
+        */
 
 
 

@@ -221,7 +221,8 @@ public class levelgeneratorLevel1 : MonoBehaviour
             Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
             m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
         }
-        
+
+        /*
         if (timer == 900)
         {
             ScoreManager.level1Passed= true;
@@ -232,6 +233,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
             next_level.SetActive(true);
 
         }
+        */
         
         /*float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03

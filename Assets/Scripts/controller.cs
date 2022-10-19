@@ -90,13 +90,26 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update() {
 
+        if (level && this_Level_name == "Level_1_0")
+        {
+            if (timer == 900)
+            {
+                Time.timeScale = 0;
+                Canvas.SetActive(true);
+                title.text = "Level 1.0  Passed";
+                replay.SetActive(false);
+                next_level.SetActive(true);
+                ScoreManager.level1Passed = true;
+            }
+        }
+
         if (level && this_Level_name == "Level_2_0")
         {
             if (timer == 1200)
             {
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
-                title.text = "Level Passed";
+                title.text = "Level 2.0  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
             }
@@ -107,7 +120,7 @@ public class controller : MonoBehaviour
             {
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
-                title.text = "Level Passed";
+                title.text = "Level 2.1  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
             }
@@ -117,7 +130,7 @@ public class controller : MonoBehaviour
             {
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
-                title.text = "Level Passed";
+                title.text = "Level 2.2  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
             }
@@ -127,7 +140,7 @@ public class controller : MonoBehaviour
             {
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
-                title.text = "Level Passed";
+                title.text = "Level 2.3  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
             }
@@ -137,7 +150,7 @@ public class controller : MonoBehaviour
             {
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
-                title.text = "Level Passed";
+                title.text = "Level 2.4  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
             }
@@ -147,7 +160,7 @@ public class controller : MonoBehaviour
             {
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
-                title.text = "Level Passed";
+                title.text = "Level 3.0  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
             }
@@ -157,7 +170,7 @@ public class controller : MonoBehaviour
             {
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
-                title.text = "Level Passed";
+                title.text = "Level 3.1  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
             }

@@ -224,7 +224,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
         
         if (timer == 900)
         {
-            Debug.Log(timer);
+            ScoreManager.level1Passed= true;
             Time.timeScale = 0;
             Canvas.SetActive(true);
             title.text = "Level Passed";

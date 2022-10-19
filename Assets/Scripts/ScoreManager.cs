@@ -18,6 +18,8 @@ public class ScoreManager : MonoBehaviour {
 	public static float startTime = Time.time;
 	
 	public static bool level1 = false;
+
+	public static bool level1Passed = false;
 	
 
 	void Start()

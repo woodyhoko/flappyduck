@@ -11,6 +11,10 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene("level1smaller");
         ScoreManager.level1 = true;
         ScoreManager.startTime = Time.time;
+        ScoreManager.killedByRock = false;
+        ScoreManager.killedByWater = false;
+        ScoreManager.killedByCeil = false;
+        ScoreManager.killedByBound = false;
     }
 
     public void level11()
@@ -19,6 +23,10 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene("level1smaller");
         ScoreManager.level1 = true;
         ScoreManager.startTime = Time.time;
+        ScoreManager.killedByRock = false;
+        ScoreManager.killedByWater = false;
+        ScoreManager.killedByCeil = false;
+        ScoreManager.killedByBound = false;
     }
 
     public void level20()
@@ -26,6 +34,11 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene("Level_2_0");
         ScoreManager.level1 = false;
         ScoreManager.startTime = Time.time;
+        
+        ScoreManager.killedByRock = false;
+        ScoreManager.killedByWater = false;
+        ScoreManager.killedByCeil = false;
+        ScoreManager.killedByBound = false;
     }
 
     public void level21()
@@ -33,6 +46,11 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene("Level_2_1");
         ScoreManager.level1 = false;
         ScoreManager.startTime = Time.time;
+        
+        ScoreManager.killedByRock = false;
+        ScoreManager.killedByWater = false;
+        ScoreManager.killedByCeil = false;
+        ScoreManager.killedByBound = false;
     }
 
     public void level22()
@@ -40,6 +58,11 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene("Level_2_2");
         ScoreManager.level1 = false;
         ScoreManager.startTime = Time.time;
+        
+        ScoreManager.killedByRock = false;
+        ScoreManager.killedByWater = false;
+        ScoreManager.killedByCeil = false;
+        ScoreManager.killedByBound = false;
     }
 
     public void level23()
@@ -52,6 +75,11 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene("Level_3_0");
         ScoreManager.level1 = false;
         ScoreManager.startTime = Time.time;
+        
+        ScoreManager.killedByRock = false;
+        ScoreManager.killedByWater = false;
+        ScoreManager.killedByCeil = false;
+        ScoreManager.killedByBound = false;
     }
 
     public void level31()
@@ -59,6 +87,11 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene("Level_3_1");
         ScoreManager.level1 = false;
         ScoreManager.startTime = Time.time;
+        
+        ScoreManager.killedByRock = false;
+        ScoreManager.killedByWater = false;
+        ScoreManager.killedByCeil = false;
+        ScoreManager.killedByBound = false;
     }
 
     public void level32()
@@ -72,6 +105,11 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene("demo2");
         ScoreManager.level1 = false;
         ScoreManager.startTime = Time.time;
+        
+        ScoreManager.killedByRock = false;
+        ScoreManager.killedByWater = false;
+        ScoreManager.killedByCeil = false;
+        ScoreManager.killedByBound = false;
     }
 
     public void QuitMenu()
@@ -88,6 +126,13 @@ public class LevelMenu : MonoBehaviour
     public void GoTutorial()
     {
         SceneManager.LoadScene("tutorial");
+        ScoreManager.startTime = Time.time;
+        
+        ScoreManager.killedByRock = false;
+        ScoreManager.killedByWater = false;
+        ScoreManager.killedByCeil = false;
+        ScoreManager.killedByBound = false;
+        
     }
 
     // // Start is called before the first frame update

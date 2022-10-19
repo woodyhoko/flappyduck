@@ -49,26 +49,38 @@ public class controller : MonoBehaviour
     {
         if (this_Level_name == "Level_1_0")
         {
+            ScoreManager.level1 = false;
+            ScoreManager.level20 = true;
         } else if (this_Level_name == "Level_2_0")
         {
+            ScoreManager.level20 = false;
+            ScoreManager.level21 = true;
         } else if (this_Level_name == "Level_2_1")
         {
-            
+            ScoreManager.level21 = false;
+            ScoreManager.level22 = true;   
         } else if (this_Level_name == "Level_2_2")
         {
+            ScoreManager.level22 = false;
+            ScoreManager.level23 = true;
             
         } else if (this_Level_name == "Level_2_3")
         {
+            ScoreManager.level23 = false;
+            ScoreManager.level24 = true;
             
         } else if (this_Level_name == "Level_2_4")
         {
+            ScoreManager.level24 = false;
+            ScoreManager.level30 = true;
             
         } else if (this_Level_name == "Level_3_0")
         {
-            
+            ScoreManager.level30 = false;
+            ScoreManager.level31 = true;
         } else if (this_Level_name == "Level_3_1")
         {
-            
+            ScoreManager.level31 = false;
         }
         Time.timeScale = 1;
         ScoreManager.startTime = Time.time;

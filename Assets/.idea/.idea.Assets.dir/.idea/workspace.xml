@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ebf039e-50d1-45c1-a70e-7385917a7a36" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Assets.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assets.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckDie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CheckDie.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LevelMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LevelMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Level_1_0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Level_1_0.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Level_2_0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Level_2_0.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Level_2_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Level_2_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Level_2_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Level_2_2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Level_2_3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Level_2_3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Level_2_4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Level_2_4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Level_3_0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Level_3_0.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Level_3_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Level_3_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/ScoreManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/SendToGoogle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/SendToGoogle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/water.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/water.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +52,7 @@
       <updated>1663966580915</updated>
       <workItem from="1663966589838" duration="144000" />
       <workItem from="1665177426601" duration="22000" />
-      <workItem from="1666210581811" duration="6129000" />
+      <workItem from="1666210581811" duration="6405000" />
     </task>
     <servers />
   </component>

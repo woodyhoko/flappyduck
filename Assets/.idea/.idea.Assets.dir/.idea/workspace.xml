@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ebf039e-50d1-45c1-a70e-7385917a7a36" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Assets.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assets.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LevelMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LevelMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/ScoreManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/SendToGoogle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/SendToGoogle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/controller.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +56,7 @@
       <updated>1663966580915</updated>
       <workItem from="1663966589838" duration="144000" />
       <workItem from="1665177426601" duration="22000" />
-      <workItem from="1666210581811" duration="6405000" />
+      <workItem from="1666210581811" duration="7588000" />
     </task>
     <servers />
   </component>

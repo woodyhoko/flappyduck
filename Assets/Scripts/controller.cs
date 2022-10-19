@@ -47,6 +47,13 @@ public class controller : MonoBehaviour
 
     public void Next_Level_Button()
     {
+        ScoreManager.biggerCube = 0;
+        ScoreManager.smallerCube = 0;
+        ScoreManager.shooter = 0;
+        ScoreManager.faster = 0;
+        ScoreManager.longer = 0;
+        ScoreManager.invisible = 0;
+        ScoreManager.star_upgrade = 0;
         if (this_Level_name == "Level_1_0")
         {
             ScoreManager.level1 = false;
@@ -90,6 +97,13 @@ public class controller : MonoBehaviour
 
     public void Replay_Button()
     {
+        ScoreManager.biggerCube = 0;
+        ScoreManager.smallerCube = 0;
+        ScoreManager.shooter = 0;
+        ScoreManager.faster = 0;
+        ScoreManager.longer = 0;
+        ScoreManager.invisible = 0;
+        ScoreManager.star_upgrade = 0;
         Time.timeScale = 1;
         ScoreManager.startTime = Time.time;
         GlobalData.Instance.destroy();
@@ -458,6 +472,7 @@ public class controller : MonoBehaviour
                 GlobalData.Instance.ate++;
             }
             if(collider.gameObject.tag == "star_upgrade"){
+                ScoreManager.star_upgrade++;
                 Destroy(collider.gameObject);
                 GameObject one_star  = Instantiate(star);
                 one_star.SetActive(true);

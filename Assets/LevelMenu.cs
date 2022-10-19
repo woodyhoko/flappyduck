@@ -24,6 +24,14 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
+
+		ScoreManager.biggerCube = 0;
+		ScoreManager.smallerCube = 0;
+		ScoreManager.shooter = 0;
+		ScoreManager.faster = 0;
+		ScoreManager.longer = 0;
+		ScoreManager.invisible = 0;
+		ScoreManager.star_upgrade = 0;
     }
 
     public void level11()
@@ -44,6 +52,13 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
+		ScoreManager.biggerCube = 0;
+		ScoreManager.smallerCube = 0;
+		ScoreManager.shooter = 0;
+		ScoreManager.faster = 0;
+		ScoreManager.longer = 0;
+		ScoreManager.invisible = 0;
+		ScoreManager.star_upgrade = 0;
     }
 
     public void level20()
@@ -64,6 +79,14 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
+
+		ScoreManager.biggerCube = 0;
+		ScoreManager.smallerCube = 0;
+		ScoreManager.shooter = 0;
+		ScoreManager.faster = 0;
+		ScoreManager.longer = 0;
+		ScoreManager.invisible = 0;
+		ScoreManager.star_upgrade = 0;
     }
 
     public void level21()
@@ -84,6 +107,14 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
+
+		ScoreManager.biggerCube = 0;
+		ScoreManager.smallerCube = 0;
+		ScoreManager.shooter = 0;
+		ScoreManager.faster = 0;
+		ScoreManager.longer = 0;
+		ScoreManager.invisible = 0;
+		ScoreManager.star_upgrade = 0;
     }
 
     public void level22()
@@ -105,6 +136,14 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
+
+		ScoreManager.biggerCube = 0;
+		ScoreManager.smallerCube = 0;
+		ScoreManager.shooter = 0;
+		ScoreManager.faster = 0;
+		ScoreManager.longer = 0;
+		ScoreManager.invisible = 0;
+		ScoreManager.star_upgrade = 0;
     }
 
     public void level23()
@@ -126,6 +165,14 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
+
+		ScoreManager.biggerCube = 0;
+		ScoreManager.smallerCube = 0;
+		ScoreManager.shooter = 0;
+		ScoreManager.faster = 0;
+		ScoreManager.longer = 0;
+		ScoreManager.invisible = 0;
+		ScoreManager.star_upgrade = 0;
     }
 
     public void level24()
@@ -147,6 +194,14 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
+
+		ScoreManager.biggerCube = 0;
+		ScoreManager.smallerCube = 0;
+		ScoreManager.shooter = 0;
+		ScoreManager.faster = 0;
+		ScoreManager.longer = 0;
+		ScoreManager.invisible = 0;
+		ScoreManager.star_upgrade = 0;
     }
 
     public void level30()
@@ -167,6 +222,14 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
+
+		ScoreManager.biggerCube = 0;
+		ScoreManager.smallerCube = 0;
+		ScoreManager.shooter = 0;
+		ScoreManager.faster = 0;
+		ScoreManager.longer = 0;
+		ScoreManager.invisible = 0;
+		ScoreManager.star_upgrade = 0;
     }
 
     public void level31()
@@ -187,6 +250,14 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
+
+		ScoreManager.biggerCube = 0;
+		ScoreManager.smallerCube = 0;
+		ScoreManager.shooter = 0;
+		ScoreManager.faster = 0;
+		ScoreManager.longer = 0;
+		ScoreManager.invisible = 0;
+		ScoreManager.star_upgrade = 0;
     }
 
     public void level32()
@@ -199,12 +270,27 @@ public class LevelMenu : MonoBehaviour
         Debug.Log("Endless Run");
         SceneManager.LoadScene("demo2");
         ScoreManager.level1 = false;
+		ScoreManager.level20 = false;
+		ScoreManager.level21 = false;
+		ScoreManager.level22 = false;
+		ScoreManager.level23 = false;
+		ScoreManager.level24 = false;
+		ScoreManager.level30 = false;
+		ScoreManager.level31 = false;
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
+
+		ScoreManager.biggerCube = 0;
+		ScoreManager.smallerCube = 0;
+		ScoreManager.shooter = 0;
+		ScoreManager.faster = 0;
+		ScoreManager.longer = 0;
+		ScoreManager.invisible = 0;
+		ScoreManager.star_upgrade = 0;
     }
 
     public void QuitMenu()

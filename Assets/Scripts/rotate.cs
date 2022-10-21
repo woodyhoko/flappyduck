@@ -21,16 +21,21 @@ public class rotate : MonoBehaviour
     {
         if (collider.gameObject.tag == "pipe")
         {
-            Destroy(collider.gameObject);
-            ScoreManager.sscore++;
-            if(score_text != null){
-                score_text.text = "Score : " + ScoreManager.sscore.ToString();
-            }
-            this.GetComponentInParent<controller>().stars.Remove(gameObject);
-            Destroy(gameObject);
-            float angle = 2f * Mathf.PI / (float)this.GetComponentInParent<controller>().stars.Count;
-            for (int i = -1; ++i < this.GetComponentInParent<controller>().stars.Count;){
-                this.GetComponentInParent<controller>().stars[i].transform.position = this.GetComponentInParent<controller>().transform.position + new Vector3(Mathf.Cos(angle*i), 0, Mathf.Sin(angle*i));
+            if (collider != null)
+            {
+                Destroy(collider.gameObject);
+                ScoreManager.sscore++;
+                if (score_text != null)
+                {
+                    score_text.text = "Score : " + ScoreManager.sscore.ToString();
+                }
+                this.GetComponentInParent<controller>().stars.Remove(gameObject);
+                Destroy(gameObject);
+                float angle = 2f * Mathf.PI / (float)this.GetComponentInParent<controller>().stars.Count;
+                for (int i = -1; ++i < this.GetComponentInParent<controller>().stars.Count;)
+                {
+                    this.GetComponentInParent<controller>().stars[i].transform.position = this.GetComponentInParent<controller>().transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
+                }
             }
         }
     }

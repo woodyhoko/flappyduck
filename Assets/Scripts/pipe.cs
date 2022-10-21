@@ -10,12 +10,13 @@ public class pipe : MonoBehaviour
     //pipeHealth pipeHealth = new pipeHealth();
     public TMPro.TextMeshProUGUI score_text;
     HealthSystem healthSystem;
+    public float maxHealth = 400f;
     // Start is called before the first frame update
     void Start()
     {
         Physics.IgnoreLayerCollision(6, 10, true);
         Physics.IgnoreLayerCollision(6, 6, true);
-        healthSystem= new(400f);
+        healthSystem= new(maxHealth);
     }
 
     // Update is called once per frame

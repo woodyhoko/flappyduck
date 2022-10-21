@@ -2843,7 +2843,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 8c32b4609ca592d41a1af7069bb2d4f0, type: 3}
+  m_Texture: {fileID: 2800000, guid: 505bafd7d18ce964088780e782e7d4c9, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3428,7 +3428,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
-  maxHealth: 400
 --- !u!1 &1629166686
 GameObject:
   m_ObjectHideFlags: 0
@@ -3573,6 +3572,7 @@ MonoBehaviour:
   move_forward: {fileID: 490578847}
   portal: {fileID: 0}
   water: {fileID: 1950439626}
+  text: {fileID: 0}
 --- !u!114 &1721641364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3758,7 +3758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 8c32b4609ca592d41a1af7069bb2d4f0, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3162bd7e8947e3a4284f2085e09194b7, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3807,7 +3807,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
-  maxHealth: 400
 --- !u!54 &1795752821
 Rigidbody:
   m_ObjectHideFlags: 0

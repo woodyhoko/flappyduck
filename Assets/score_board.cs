@@ -22,16 +22,16 @@ public class score_board : MonoBehaviour
 
             score.GetComponent<TMPro.TextMeshProUGUI>().text = "Score : " + ScoreManager.sscore.ToString();
             if (ScoreManager.killedByWater) {
-                die.GetComponent<TMPro.TextMeshProUGUI>().text = "Be careful of silver traps!";
+                die.GetComponent<TMPro.TextMeshProUGUI>().text = "Game Over! Be careful of silver traps!";
             }
             else if (ScoreManager.killedByBound) {
-                die.GetComponent<TMPro.TextMeshProUGUI>().text = "Die from falling! ";
+                die.GetComponent<TMPro.TextMeshProUGUI>().text = "Game Over! Watch out you fell of the platform!";
             }
             else if (ScoreManager.killedByCeil) {
-                die.GetComponent<TMPro.TextMeshProUGUI>().text = "Weird gravity is dangerous..";
+                die.GetComponent<TMPro.TextMeshProUGUI>().text = "Game Over! Weird gravity is dangerous. Dont jump too High! ";
             }
             else if (ScoreManager.killedByRock) {
-                die.GetComponent<TMPro.TextMeshProUGUI>().text = "Killed by falling rocks!";
+                die.GetComponent<TMPro.TextMeshProUGUI>().text = "Game Over! Avoid Rocks !";
             }
         } else {
             score.SetActive(false);

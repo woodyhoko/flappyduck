@@ -23,6 +23,7 @@ public class rotate : MonoBehaviour
         {
             if (collider != null)
             {
+                GlobalData.Instance.star_num--;
                 Destroy(collider.gameObject);
                 ScoreManager.sscore++;
                 if (score_text != null)

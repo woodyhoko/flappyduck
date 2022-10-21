@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class levelgenerator : MonoBehaviour
+public class mud_levelgenerator : MonoBehaviour
 {
     public GameObject player;
     public GameObject bigger;
@@ -22,7 +22,7 @@ public class levelgenerator : MonoBehaviour
     //public GameObject text;
 
     // public GameObject movingHori;
-    
+
     private int difficulty = 0;
     //public GameObject player; 
     //public GameObject star;
@@ -43,7 +43,7 @@ public class levelgenerator : MonoBehaviour
     {
         float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
-         if (randomNumber > 0.995f)
+        if (randomNumber > 0.995f)
         {
             GameObject obj = (GameObject)Instantiate(rock);
             obj.GetComponent<rock>().clone = true;
@@ -61,20 +61,20 @@ public class levelgenerator : MonoBehaviour
             {
                 GameObject ppipe = (GameObject)Instantiate(pipe);
                 //ppipe.GetComponent<pipe>().SetHealth(100f);
-                ppipe.transform.localScale = new Vector3(0.7f+2*wallRandom,0.5f + heightRandom, 0.7f + 2*wallRandom);
+                ppipe.transform.localScale = new Vector3(0.7f + 2 * wallRandom, 0.5f + heightRandom, 0.7f + 2 * wallRandom);
                 ppipe.transform.rotation = Quaternion.identity;
                 ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
-            else if (randomNumber>0.95f && randomNumber<0.965f)
+            else if (randomNumber > 0.95f && randomNumber < 0.965f)
             {
                 GameObject watero = (GameObject)Instantiate(water);
                 watero.transform.rotation = Quaternion.identity;
                 watero.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 Rigidbody m_Rigidbody = watero.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
-            } 
+            }
             /*else if (randomNumber>0.975f && randomNumber<0.98f)
             {
                 Debug.Log("horizontal moving");
@@ -85,11 +85,11 @@ public class levelgenerator : MonoBehaviour
                 movinghori.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }*/
-            else if (randomNumber>0.96f && randomNumber<0.98f)
+            else if (randomNumber > 0.96f && randomNumber < 0.98f)
             {
                 Debug.Log("Spawn moving pipe");
                 GameObject mpipeo = (GameObject)Instantiate(movingpipe);
-                mpipeo.transform.localScale = new Vector3(0.5f+2*wallRandom,0.8f + heightRandom, 0.3f + 2*wallRandom);
+                mpipeo.transform.localScale = new Vector3(0.5f + 2 * wallRandom, 0.8f + heightRandom, 0.3f + 2 * wallRandom);
                 mpipeo.transform.rotation = Quaternion.identity;
                 mpipeo.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                 Rigidbody m_Rigidbody = mpipeo.GetComponent<Rigidbody>();
@@ -106,15 +106,15 @@ public class levelgenerator : MonoBehaviour
                 }
                 else
                 {
-                    ppipe.transform.position = new Vector3(Random.Range(-2, 2f),0.8f, 36);
+                    ppipe.transform.position = new Vector3(Random.Range(-2, 2f), 0.8f, 36);
                 }
                 ppipe.transform.rotation = Quaternion.identity;
- 
+
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
         }
-        else  if (randomNumber < 0.016f)
+        else if (randomNumber < 0.016f)
         {
             GameObject food;
             if (randomNumber < 0.0020f)
@@ -126,12 +126,12 @@ public class levelgenerator : MonoBehaviour
             else if ((randomNumber < 0.004f) && (randomNumber < 0.006f))
                 food = Instantiate(longger);
             else if ((randomNumber < 0.006f) && (randomNumber < 0.008f))
-                food = Instantiate(longger);
+                food = Instantiate(faster);
             else if ((randomNumber < 0.008f) && (randomNumber < 0.01f))
                 food = Instantiate(shooter);
             //else if (randomNumber < 0.015f)
             else if ((randomNumber < 0.01f) && (randomNumber < 0.012f))
-                food = Instantiate(star_upgrade);
+                food = Instantiate(invisible);
             else if ((randomNumber < 0.012f) && (randomNumber < 0.014f))
                 food = Instantiate(star_upgrade);
             else
@@ -144,7 +144,7 @@ public class levelgenerator : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             difficulty++;
         }
-        else if (randomNumber < 0.027f)
+        else if (randomNumber < 0.018)
         {
             GameObject p = (GameObject)Instantiate(portal);
             p.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);

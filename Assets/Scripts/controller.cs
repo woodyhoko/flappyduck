@@ -134,6 +134,19 @@ public class controller : MonoBehaviour
         if (ateText != null){
             ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
         }
+        for(int star_num_now=0; star_num_now < GlobalData.Instance.star_num; star_num_now++)
+        {
+            GameObject one_star = Instantiate(star);
+            one_star.SetActive(true);
+            one_star.transform.SetParent(this.transform);
+            one_star.transform.localScale = new Vector3(.5f, GlobalData.Instance.star_size, 0.5f);
+            stars.Add(one_star);
+            float angle = 2f * Mathf.PI / (float)stars.Count;
+            for (int i = -1; ++i < stars.Count;)
+            {
+                stars[i].transform.position = this.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
+            }
+        }
     }
 
     // Update is called once per frame
@@ -459,6 +472,7 @@ public class controller : MonoBehaviour
         if (level || !level) // shot term upgrade / down grade
         {
             if(collider.gameObject.tag == "star_upgrade"){
+                GlobalData.Instance.star_num++;
                 ScoreManager.star_upgrade++;
                 Destroy(collider.gameObject);
                 GameObject one_star  = Instantiate(star);

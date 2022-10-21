@@ -4948,7 +4948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515629381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50, y: -10, z: -16}
+  m_LocalPosition: {x: -50, y: -10, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7266,6 +7266,7 @@ MonoBehaviour:
   world_speed: 1
   star_size: 0.1
   world: 1
+  star_num: 0
 --- !u!1 &2060010965
 GameObject:
   m_ObjectHideFlags: 0

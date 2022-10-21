@@ -19,7 +19,7 @@ public class GlobalData : MonoBehaviour
     public float world_speed = 1f;
     public float star_size = 0.1f;
     public int world = 1;
-
+    public int star_num = 0;
     private void Awake()
     {
         // start of new code

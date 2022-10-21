@@ -4948,7 +4948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515629381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.391, y: -5.6, z: -7.57}
+  m_LocalPosition: {x: -50, y: -10, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5360,6 +5360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_text: {fileID: 1909677949}
+  maxHealth: 400
 --- !u!1 &1607069996
 GameObject:
   m_ObjectHideFlags: 0
@@ -5820,7 +5821,6 @@ MonoBehaviour:
   move_forward: {fileID: 490578847}
   portal: {fileID: 1051381692}
   water: {fileID: 1950439626}
-  text: {fileID: 1416452661}
 --- !u!1 &1775848536
 GameObject:
   m_ObjectHideFlags: 0
@@ -5939,6 +5939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_text: {fileID: 1909677949}
+  maxHealth: 400
 --- !u!114 &1795752820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6586,6 +6587,7 @@ GameObject:
   - component: {fileID: 1950439628}
   - component: {fileID: 1950439627}
   - component: {fileID: 1950439633}
+  - component: {fileID: 1950439634}
   m_Layer: 0
   m_Name: water
   m_TagString: water
@@ -6680,7 +6682,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950439626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.68, y: 0.1, z: -25.7}
+  m_LocalPosition: {x: 11.68, y: 0.1, z: -15}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6719,6 +6721,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clone: 0
   score_text: {fileID: 0}
+--- !u!114 &1950439634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950439626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cd7fa0c36ffe84eb71991f807b8c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1975345322
 GameObject:
   m_ObjectHideFlags: 0
@@ -7251,6 +7265,7 @@ MonoBehaviour:
   plane_width: 10
   world_speed: 1
   star_size: 0.1
+  world: 1
 --- !u!1 &2060010965
 GameObject:
   m_ObjectHideFlags: 0

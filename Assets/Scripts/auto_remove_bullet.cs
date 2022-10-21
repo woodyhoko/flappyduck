@@ -21,9 +21,9 @@ public class auto_remove_bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "water")
-        {
-            Destroy(gameObject);
-        }
+        //if (collider.gameObject.tag == "water")
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 }

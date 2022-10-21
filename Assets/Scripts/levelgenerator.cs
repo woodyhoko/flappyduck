@@ -126,12 +126,12 @@ public class levelgenerator : MonoBehaviour
             else if ((randomNumber < 0.004f) && (randomNumber < 0.006f))
                 food = Instantiate(longger);
             else if ((randomNumber < 0.006f) && (randomNumber < 0.008f))
-                food = Instantiate(longger);
+                food = Instantiate(faster);
             else if ((randomNumber < 0.008f) && (randomNumber < 0.01f))
                 food = Instantiate(shooter);
             //else if (randomNumber < 0.015f)
             else if ((randomNumber < 0.01f) && (randomNumber < 0.012f))
-                food = Instantiate(star_upgrade);
+                food = Instantiate(invisible);
             else if ((randomNumber < 0.012f) && (randomNumber < 0.014f))
                 food = Instantiate(star_upgrade);
             else
@@ -144,7 +144,7 @@ public class levelgenerator : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             difficulty++;
         }
-        else if (randomNumber < 0.027f)
+        else if (randomNumber < 0.017f)
         {
             GameObject p = (GameObject)Instantiate(portal);
             p.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);

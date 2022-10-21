@@ -12,13 +12,13 @@ public class GlobalData : MonoBehaviour
     public int shoot_timestep = 0;
     public float move_forward_limit = 4.0f;
     public float move_speed = 0.08f;
-    public int update_max_limit = 6;
+    public int update_max_limit = 12;
     public int ate = 0;
     public bool choosen_powerCard = false;
     public float plane_width = 10;
     public float world_speed = 1f;
     public float star_size = 0.1f;
-
+    public int world = 1;
 
     private void Awake()
     {

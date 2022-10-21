@@ -3543,7 +3543,7 @@ GameObject:
   - component: {fileID: 1051381693}
   m_Layer: 0
   m_Name: Plane (1)
-  m_TagString: portal
+  m_TagString: portal_back
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5771,6 +5771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1721641362}
   - component: {fileID: 1721641363}
+  - component: {fileID: 1721641364}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -5800,7 +5801,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721641360}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b38c9d1c1aceef349b926a79172aba2f, type: 3}
   m_Name: 
@@ -5820,7 +5821,34 @@ MonoBehaviour:
   move_forward: {fileID: 490578847}
   portal: {fileID: 1051381692}
   water: {fileID: 1950439626}
-  text: {fileID: 1416452661}
+--- !u!114 &1721641364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721641360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5913b84e9fd2b548a9eb0318bf04aa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 526718873}
+  bigger: {fileID: 1557440025}
+  smaller: {fileID: 975515784}
+  star_upgrade: {fileID: 361810098}
+  longger: {fileID: 312475518}
+  faster: {fileID: 348246692}
+  shooter: {fileID: 359913199}
+  pipe: {fileID: 1590029960}
+  movingpipe: {fileID: 1515629381}
+  rock: {fileID: 887509171}
+  wall: {fileID: 1795752818}
+  invisible: {fileID: 162276700}
+  move_forward: {fileID: 490578847}
+  portal: {fileID: 1051381692}
+  water: {fileID: 1950439626}
+  scale: 0.7
 --- !u!1 &1775848536
 GameObject:
   m_ObjectHideFlags: 0
@@ -7251,6 +7279,7 @@ MonoBehaviour:
   plane_width: 10
   world_speed: 1
   star_size: 0.1
+  world: 1
 --- !u!1 &2060010965
 GameObject:
   m_ObjectHideFlags: 0
@@ -7343,7 +7372,7 @@ Transform:
   m_GameObject: {fileID: 2060010965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 15}
-  m_LocalScale: {x: 1, y: 1, z: 5}
+  m_LocalScale: {x: 0.7, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

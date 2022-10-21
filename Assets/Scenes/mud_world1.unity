@@ -3543,7 +3543,7 @@ GameObject:
   - component: {fileID: 1051381693}
   m_Layer: 0
   m_Name: Plane (1)
-  m_TagString: portal
+  m_TagString: portal_back
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5820,7 +5820,6 @@ MonoBehaviour:
   move_forward: {fileID: 490578847}
   portal: {fileID: 1051381692}
   water: {fileID: 1950439626}
-  text: {fileID: 1416452661}
 --- !u!1 &1775848536
 GameObject:
   m_ObjectHideFlags: 0
@@ -7251,6 +7250,7 @@ MonoBehaviour:
   plane_width: 10
   world_speed: 1
   star_size: 0.1
+  world: 1
 --- !u!1 &2060010965
 GameObject:
   m_ObjectHideFlags: 0
@@ -7304,7 +7304,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62124998f65940848932d1d2ee281aba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

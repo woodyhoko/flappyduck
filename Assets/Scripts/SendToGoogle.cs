@@ -49,6 +49,8 @@ public class SendToGoogle : MonoBehaviour
 	private bool _level31Passed;
 
 	private int _star;
+
+	private bool _tutorial;
 	
     
     private void Awake()
@@ -93,13 +95,15 @@ public class SendToGoogle : MonoBehaviour
 		_level31Passed = ScoreManager.level31Passed;
 
 		_star = ScoreManager.star_upgrade;
+
+		_tutorial = ScoreManager.tutorial;
 			
 		StartCoroutine(Post(_sessionID.ToString(), _testInt.ToString(), _testBoolean.ToString(), _bigger.ToString(),
 		_smaller.ToString(), _shooting.ToString(), _faster.ToString(), _longer.ToString(), _invisible.ToString(),
 		_playtime.ToString("f2"), _killedByWater.ToString(), _level1.ToString(), _level1Passed.ToString(), _killedByCeil.ToString(),
 		_killedByBound.ToString(), _level20.ToString(), _level20Passed.ToString(), _level21.ToString(), _level21Passed.ToString(),
 		_level22.ToString(), _level22Passed.ToString(), _level23.ToString(), _level23Passed.ToString() , _level24.ToString(), _level24Passed.ToString(),
-		_level30.ToString(), _level30Passed.ToString(), _level31.ToString(), _level31Passed.ToString(), _star.ToString()));
+		_level30.ToString(), _level30Passed.ToString(), _level31.ToString(), _level31Passed.ToString(), _star.ToString(), _tutorial.ToString()));
 
     }
 
@@ -107,7 +111,7 @@ public class SendToGoogle : MonoBehaviour
 		string faster, string longer, string invisible, string playtime, string killByWater, string level1, string level1Passed, string killedByCeil,
 		string killedByBound, string level20, string level20Passed, string level21, string level21Passed, string level22, string level22Passed,
 		string level23, string level23Passed, string level24, string level24Passed, string level30, string level30Passed, string level31, string level31Passed,
-		string star)
+		string star, string tutorial)
     {
         WWWForm form = new WWWForm();
         form.AddField("entry.694322186", sessionID);
@@ -142,6 +146,7 @@ public class SendToGoogle : MonoBehaviour
 		form.AddField("entry.1648856046", level31Passed);
 		
 		form.AddField("entry.1079871274", star);
+		form.AddField("entry.2038159315", tutorial);
         
         // Send responses and verify result
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))

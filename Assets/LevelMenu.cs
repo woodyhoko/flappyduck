@@ -24,7 +24,7 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
-
+		ScoreManager.tutorial = false;
 		ScoreManager.biggerCube = 0;
 		ScoreManager.smallerCube = 0;
 		ScoreManager.shooter = 0;
@@ -47,6 +47,7 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.level24 = false;
 		ScoreManager.level30 = false;
 		ScoreManager.level31 = false;
+		ScoreManager.tutorial = false;
         ScoreManager.startTime = Time.time;
         ScoreManager.killedByRock = false;
         ScoreManager.killedByWater = false;
@@ -73,6 +74,7 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.level24 = false;
 		ScoreManager.level30 = false;
 		ScoreManager.level31 = false;
+		ScoreManager.tutorial = false;
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
@@ -101,6 +103,7 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.level24 = false;
 		ScoreManager.level30 = false;
 		ScoreManager.level31 = false;
+		ScoreManager.tutorial = false;
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
@@ -129,7 +132,7 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.level24 = false;
 		ScoreManager.level30 = false;
 		ScoreManager.level31 = false;
-
+		ScoreManager.tutorial = false;
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
@@ -158,7 +161,7 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.level24 = false;
 		ScoreManager.level30 = false;
 		ScoreManager.level31 = false;
-
+		ScoreManager.tutorial = false;
         ScoreManager.startTime = Time.time;
 
         ScoreManager.killedByRock = false;
@@ -187,7 +190,7 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.level24Passed = false;
 		ScoreManager.level30 = false;
 		ScoreManager.level31 = false;
-
+		ScoreManager.tutorial = false;
         ScoreManager.startTime = Time.time;
 
         ScoreManager.killedByRock = false;
@@ -216,6 +219,7 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.level30 = true;
 		ScoreManager.level30Passed = false;
 		ScoreManager.level31 = false;
+		ScoreManager.tutorial = false;
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
@@ -244,6 +248,7 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.level30 = false;
 		ScoreManager.level31 = true;
 		ScoreManager.level31Passed = false;
+		ScoreManager.tutorial = false;
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
@@ -277,6 +282,7 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.level24 = false;
 		ScoreManager.level30 = false;
 		ScoreManager.level31 = false;
+		ScoreManager.tutorial = false;
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
@@ -306,6 +312,7 @@ public class LevelMenu : MonoBehaviour
 
     public void GoTutorial()
     {
+	    Debug.Log("tutorialhere");
         SceneManager.LoadScene("tutorial");
         ScoreManager.startTime = Time.time;
         
@@ -313,6 +320,17 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
+        
+        ScoreManager.level1 = false;
+        ScoreManager.level20 = false;
+        ScoreManager.level21 = false;
+        ScoreManager.level22 = false;
+        ScoreManager.level23 = false;
+        ScoreManager.level24 = false;
+        ScoreManager.level30 = false;
+        ScoreManager.level31 = false;
+		ScoreManager.tutorial = true;
+        
         
     }
 

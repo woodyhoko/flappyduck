@@ -43,6 +43,8 @@ public class ScoreManager : MonoBehaviour {
 	
 	public static int star_upgrade = 0;
 
+	public static bool tutorial = false;
+
 	void Start()
 	{
 		// startTime = Time.time;

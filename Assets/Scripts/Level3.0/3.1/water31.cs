@@ -25,9 +25,7 @@ public class water31 : MonoBehaviour
         {
             Debug.Log("get hit by water");
             CheckDie31.Instant.game_over();
-            }
-            // Destroy(gameObject);
-
-        }
+         }
+     }
     
 }

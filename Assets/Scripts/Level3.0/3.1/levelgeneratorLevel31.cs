@@ -73,8 +73,25 @@ public class levelgeneratorLevel31 : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
 
+        if (timer == 150)
+        {
+            float x = -2.5f;
+            for (int i = 0; i < 2; i++)
+            {
+                GameObject ppipe = (GameObject)Instantiate(movingpipe);
+                ppipe.transform.position = new Vector3(x, 0f, 36);
+                ppipe.transform.localScale = new Vector3(1.5f, 2.5f, 1.5f);
+                ppipe.transform.Rotate(0f, 0, 90f);
+                //ppipe.transform.rotation = Quaternion.Euler(0, 90f, 0f);
+                Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
+                m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                //pip_pos_z += 4f;
+                x *= (-1);
+            }
+        }
 
-        if (timer == 380)
+
+        if (timer == 430)
         {
             float x = -3.5f;
 
@@ -104,6 +121,9 @@ public class levelgeneratorLevel31 : MonoBehaviour
             }
 
         }
+
+
+        
 
         // if (timer == 700)
         // {

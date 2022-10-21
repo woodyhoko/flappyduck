@@ -245,7 +245,7 @@ public class controller : MonoBehaviour
             }
         }
         if(level && this_Level_name == "Level_3_1") {
-            if (timer == 700)
+            if (timer == 1400)
             {
                 ScoreManager.level31Passed = true;
                 ScoreManager.killedByBound = false;

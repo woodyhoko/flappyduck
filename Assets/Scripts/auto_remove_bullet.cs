@@ -18,4 +18,12 @@ public class auto_remove_bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "water")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

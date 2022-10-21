@@ -18,7 +18,8 @@ public class levelgenerator : MonoBehaviour
     public GameObject invisible;
     public GameObject move_forward;
     public GameObject portal;
-    public GameObject water; public GameObject text;
+    public GameObject water;
+    //public GameObject text;
 
     // public GameObject movingHori;
     
@@ -42,6 +43,15 @@ public class levelgenerator : MonoBehaviour
     {
         float randomNumber = Random.Range(0, 1f);
         //level 1: 0.03
+         if (randomNumber > 0.995f)
+        {
+            GameObject obj = (GameObject)Instantiate(rock);
+            obj.GetComponent<rock>().clone = true;
+            // obj.transform.SetParent(this.transform);
+            obj.transform.position = new Vector3(Random.Range(-5.5f, 5.5f), 10, player.transform.position.z);
+            obj.transform.rotation = new Quaternion(Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f));
+
+        }
         if (randomNumber > 0.96f - difficulty * 0.0001f)
         {
             Physics.IgnoreLayerCollision(6, 10, true);
@@ -96,22 +106,13 @@ public class levelgenerator : MonoBehaviour
                 }
                 else
                 {
-                    ppipe.transform.position = new Vector3(Random.Range(-5, 5f),0.8f, 36);
+                    ppipe.transform.position = new Vector3(Random.Range(-2, 2f),0.8f, 36);
                 }
                 ppipe.transform.rotation = Quaternion.identity;
  
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             }
-            
-        }
-        else if (randomNumber > 0.970f){
-            GameObject obj = (GameObject)Instantiate (rock);
-            obj.GetComponent<rock>().clone = true;
-            // obj.transform.SetParent(this.transform);
-            obj.transform.position = new Vector3(Random.Range(-5.5f, 5.5f), 10, player.transform.position.z);
-            obj.transform.rotation = new Quaternion(Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f),Random.Range(-5.5f, 5.5f));
-            
         }
         else  if (randomNumber < 0.026f)
         {
@@ -143,7 +144,7 @@ public class levelgenerator : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             difficulty++;
         }
-        else if (randomNumber < 0.015f)
+        else if (randomNumber < 0.027f)
         {
             GameObject p = (GameObject)Instantiate(portal);
             p.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);

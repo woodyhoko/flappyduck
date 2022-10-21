@@ -51,6 +51,9 @@ public class canvas2 : MonoBehaviour
                 text.text = "you will meet different cubes in following levels";
                 break;
             case 7:
+                text.text = "You can only eat limited number of power cubes in endless mode";
+                break;
+            case 8:
                 SceneManager.LoadScene("gameover");
                 break;
         }

@@ -439,14 +439,19 @@ public class controller : MonoBehaviour
         if (collider.gameObject.tag == "portal")
         {
             float randomNumber = Random.Range(0, 1f);
-            if(randomNumber<1f)
-            {  
-                SceneManager.LoadScene("small_world");
+            if(randomNumber<0.3f)
+            {
+                GlobalData.Instance.world_speed = 1.3f;
+                SceneManager.LoadScene("ice_world1");
+            }
+            else if (randomNumber < 0.6f)
+            {
+                SceneManager.LoadScene("small_world1");
             }
             else
             {
                 GlobalData.Instance.world_speed = 0.7f;
-                SceneManager.LoadScene("mud_world");
+                SceneManager.LoadScene("mud_world1");
             }
             //each time becomes 1.2 * original
 
@@ -461,8 +466,8 @@ public class controller : MonoBehaviour
                 ScoreManager.biggerCube++;
                 GlobalData.Instance.ate++;
 
-
             }
+
             if (collider.gameObject.tag == "smaller")
             {
                 //each time becomes 0.8 * original

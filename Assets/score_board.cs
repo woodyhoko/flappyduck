@@ -48,9 +48,15 @@ public class score_board : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)){
             ScoreManager.sscore = 0;
             ScoreManager.startTime = Time.time;
-            SceneManager.LoadScene("tutorial");
+            Scene scene = SceneManager.GetActiveScene();
+            if (scene.name == "gameover"){
+                SceneManager.LoadScene("demo2");
+            }
+            else{
+                SceneManager.LoadScene(scene.name);
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Return)){
+        else if (Input.GetKeyDown(KeyCode.Escape)){
             ScoreManager.sscore = 0;
             ScoreManager.startTime = Time.time;
             SceneManager.LoadScene("menu");

@@ -203,7 +203,7 @@ public class controller : MonoBehaviour
             }
         }
         if(level && this_Level_name == "Level_2_3") {
-            if (timer == 1600)
+            if (timer == 1500)
             {
                 ScoreManager.level23Passed = true;
                 ScoreManager.killedByBound = false;
@@ -456,26 +456,8 @@ public class controller : MonoBehaviour
             //each time becomes 1.2 * original
 
         }
-        if (level || GlobalData.Instance.ate < GlobalData.Instance.update_max_limit)
+        if (level || !level) // shot term upgrade / down grade
         {
-            if (collider.gameObject.tag == "bigger")
-            {
-                //each time becomes 1.2 * original
-                Destroy(collider.gameObject);
-                transform.localScale = transform.localScale * 1.2f;
-                ScoreManager.biggerCube++;
-                GlobalData.Instance.ate++;
-
-            }
-
-            if (collider.gameObject.tag == "smaller")
-            {
-                //each time becomes 0.8 * original
-                Destroy(collider.gameObject);
-                transform.localScale = transform.localScale * 0.8f;
-                ScoreManager.smallerCube++;
-                GlobalData.Instance.ate++;
-            }
             if(collider.gameObject.tag == "star_upgrade"){
                 ScoreManager.star_upgrade++;
                 Destroy(collider.gameObject);
@@ -488,6 +470,38 @@ public class controller : MonoBehaviour
                 for (int i = -1; ++i < stars.Count;){
                     stars[i].transform.position = this.transform.position + new Vector3(Mathf.Cos(angle*i), 0, Mathf.Sin(angle*i));
                 }
+            }
+            if (collider.gameObject.tag == "invisible")
+            {
+                Destroy(collider.gameObject);
+                Physics.IgnoreLayerCollision(6, 7, true);
+                Color tempCol = GetComponent<Renderer>().material.color;
+                tempCol.a = .5f;
+                GetComponent<Renderer>().material.color = tempCol;
+                invi_remaining_time = 100;
+                // Invoke ("EnableCollider", 5f);
+                ScoreManager.invisible++;
+                // GlobalData.Instance.ate++;
+            }
+
+        }
+        if (level || GlobalData.Instance.ate < GlobalData.Instance.update_max_limit) // long term upgrade
+        {
+            if (collider.gameObject.tag == "bigger")
+            {
+                //each time becomes 1.2 * original
+                Destroy(collider.gameObject);
+                transform.localScale = transform.localScale * 1.2f;
+                ScoreManager.biggerCube++;
+                GlobalData.Instance.ate++;
+            }
+            if (collider.gameObject.tag == "smaller")
+            {
+                //each time becomes 0.8 * original
+                Destroy(collider.gameObject);
+                transform.localScale = transform.localScale * 0.8f;
+                ScoreManager.smallerCube++;
+                GlobalData.Instance.ate++;
             }
             if (collider.gameObject.tag == "faster")
             {
@@ -541,19 +555,6 @@ public class controller : MonoBehaviour
             {
                 Destroy(collider.gameObject);
                 larger_gravity = !larger_gravity;
-                GlobalData.Instance.ate++;
-            }
-
-            if (collider.gameObject.tag == "invisible")
-            {
-                Destroy(collider.gameObject);
-                Physics.IgnoreLayerCollision(6, 7, true);
-                Color tempCol = GetComponent<Renderer>().material.color;
-                tempCol.a = .5f;
-                GetComponent<Renderer>().material.color = tempCol;
-                invi_remaining_time = 100;
-                // Invoke ("EnableCollider", 5f);
-                ScoreManager.invisible++;
                 GlobalData.Instance.ate++;
             }
             if (ateText != null){

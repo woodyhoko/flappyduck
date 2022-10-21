@@ -937,7 +937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162276700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3, y: -44.6, z: 0}
+  m_LocalPosition: {x: 5.632, y: -44.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5360,6 +5360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_text: {fileID: 1909677949}
+  maxHealth: 400
 --- !u!1 &1607069996
 GameObject:
   m_ObjectHideFlags: 0
@@ -5820,7 +5821,6 @@ MonoBehaviour:
   move_forward: {fileID: 490578847}
   portal: {fileID: 1051381692}
   water: {fileID: 1950439626}
-  text: {fileID: 1416452661}
 --- !u!1 &1775848536
 GameObject:
   m_ObjectHideFlags: 0
@@ -5939,6 +5939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_text: {fileID: 1909677949}
+  maxHealth: 400
 --- !u!114 &1795752820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7251,6 +7252,7 @@ MonoBehaviour:
   plane_width: 10
   world_speed: 1
   star_size: 0.1
+  world: 1
 --- !u!1 &2060010965
 GameObject:
   m_ObjectHideFlags: 0

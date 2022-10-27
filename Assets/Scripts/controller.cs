@@ -271,6 +271,21 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
+        
+        if(level && this_Level_name == "Level_4_0") {
+            if (timer == 1400)
+            {
+               // ScoreManager.level41Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
+                Time.timeScale = 0;
+                Canvas.SetActive(true);
+                title.text = "Level 4.0  Passed";
+                replay.SetActive(false);
+                next_level.SetActive(true);
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Space)){
 

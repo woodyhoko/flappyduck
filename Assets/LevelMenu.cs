@@ -148,6 +148,35 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.invisible = 0;
 		ScoreManager.star_upgrade = 0;
     }
+    
+    public void level40()
+    {
+	    SceneManager.LoadScene("Level_4_0");
+	    ScoreManager.level1 = false;
+	    ScoreManager.level20 = false;
+	    ScoreManager.level21 = false;
+	    ScoreManager.level22 = false;
+	    ScoreManager.level22Passed = false;
+	    ScoreManager.level23 = false;
+	    ScoreManager.level24 = false;
+	    ScoreManager.level30 = false;
+	    ScoreManager.level31 = false;
+	    ScoreManager.tutorial = false;
+	    ScoreManager.startTime = Time.time;
+        
+	    ScoreManager.killedByRock = false;
+	    ScoreManager.killedByWater = false;
+	    ScoreManager.killedByCeil = false;
+	    ScoreManager.killedByBound = false;
+
+	    ScoreManager.biggerCube = 0;
+	    ScoreManager.smallerCube = 0;
+	    ScoreManager.shooter = 0;
+	    ScoreManager.faster = 0;
+	    ScoreManager.longer = 0;
+	    ScoreManager.invisible = 0;
+	    ScoreManager.star_upgrade = 0;
+    }
 
     public void level23()
     {

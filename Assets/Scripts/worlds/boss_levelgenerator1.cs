@@ -20,32 +20,37 @@ public class boss_levelgenerator1 : MonoBehaviour
     public GameObject water;
     public GameObject boss;
     public GameObject arm;
+    public int bossShow = 1000;
+    public GameObject progressBoard;
+    public GameObject progress;
+
     //public GameObject boss;
     GameObject obj;
     Rigidbody m_Rigidbody;
     public float scale = 1f;
     private int time = 0;
     private float speed = -12f;
+    RectTransform rt2;
     void Start()
     {
-
+        RectTransform rt = (RectTransform)progressBoard.transform;
+        rt2 = (RectTransform)progress.transform;
+        rt.sizeDelta = new Vector2(bossShow, 30f);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         time++;
-        if (time >1000)
+        if (time > bossShow)
         {    
-
-                   
             if(time==1001)
             {
                 obj = (GameObject)Instantiate(boss);
                 obj.transform.position = new Vector3(0, 5, 36); 
                 m_Rigidbody = obj.GetComponent<Rigidbody>();     
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
-
+                progressBoard.SetActive(false);
             }
 
             if (time == 1060)
@@ -61,10 +66,10 @@ public class boss_levelgenerator1 : MonoBehaviour
                     GameObject e2 = (GameObject)Instantiate(water);
                     //GameObject e3 = (GameObject)Instantiate(water);
                     GameObject e4 = (GameObject)Instantiate(water);
-                    e1.transform.position = new Vector3(-4f, 1, 10);
-                    e2.transform.position = new Vector3(0, 1, 15);
+                    e1.transform.position = new Vector3(-4f, .1f, 10);
+                    e2.transform.position = new Vector3(0, .1f, 15);
                     //e3.transform.position = new Vector3(2f, 1, 16);
-                    e4.transform.position = new Vector3(4f, 1, 20);
+                    e4.transform.position = new Vector3(4f, .1f, 20);
                     Rigidbody r1 = e1.GetComponent<Rigidbody>();
                     r1.velocity = new Vector3(0, 0, speed);
                     Rigidbody r2 = e2.GetComponent<Rigidbody>();
@@ -80,10 +85,10 @@ public class boss_levelgenerator1 : MonoBehaviour
                     GameObject e2 = (GameObject)Instantiate(water);
                     //GameObject e3 = (GameObject)Instantiate(water);
                     GameObject e4 = (GameObject)Instantiate(water);
-                    e1.transform.position = new Vector3(4, 1, 10);
-                    e2.transform.position = new Vector3(0, 1, 15);
+                    e1.transform.position = new Vector3(4, .1f, 10);
+                    e2.transform.position = new Vector3(0, .1f, 15);
                     //e3.transform.position = new Vector3(2f, 1, 16);
-                    e4.transform.position = new Vector3(-4f, 1, 20);
+                    e4.transform.position = new Vector3(-4f, .1f, 20);
                     Rigidbody r1 = e1.GetComponent<Rigidbody>();
                     r1.velocity = new Vector3(0, 0, speed);
                     Rigidbody r2 = e2.GetComponent<Rigidbody>();
@@ -111,6 +116,7 @@ public class boss_levelgenerator1 : MonoBehaviour
         }
         else
         {
+            rt2.sizeDelta = new Vector2(time, 30f);
             float randomNumber = Random.Range(0, 1f);
             //level 1: 0.03
             if (randomNumber > 0.997f)
@@ -146,10 +152,10 @@ public class boss_levelgenerator1 : MonoBehaviour
                     m_Rigidbody.velocity = new Vector3(0, 0, -15f);
                 }
             }
-            else if (randomNumber < 0.014f)
+            else if (randomNumber < 0.012f)
             {
                 GameObject food;
-                if (randomNumber < 0.005f)
+                if (randomNumber < 0.002f)
                 {
                     food = Instantiate(bigger);
                 }

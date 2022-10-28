@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class auto_remove_boss : MonoBehaviour
 {
-    private int time = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +13,9 @@ public class auto_remove_boss : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        time++;
-        if(time>200)
+        if (transform.position.x < -20|| transform.position.x > 20)
+        {
             Destroy(gameObject);
+        }
     }
 }

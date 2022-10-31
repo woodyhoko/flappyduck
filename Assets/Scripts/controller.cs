@@ -37,6 +37,7 @@ public class controller : MonoBehaviour
     public string this_Level_name = "Level_1_0"; // default value
     public string next_Level_name = "Level_1_0";
     private float timer = 0;
+    private bool fps_mode = false;
 
     public void Menu_Button()
     {
@@ -58,34 +59,41 @@ public class controller : MonoBehaviour
         {
             ScoreManager.level1 = false;
             ScoreManager.level20 = true;
-        } else if (this_Level_name == "Level_2_0")
+        }
+        else if (this_Level_name == "Level_2_0")
         {
             ScoreManager.level20 = false;
             ScoreManager.level21 = true;
-        } else if (this_Level_name == "Level_2_1")
+        }
+        else if (this_Level_name == "Level_2_1")
         {
             ScoreManager.level21 = false;
-            ScoreManager.level22 = true;   
-        } else if (this_Level_name == "Level_2_2")
+            ScoreManager.level22 = true;
+        }
+        else if (this_Level_name == "Level_2_2")
         {
             ScoreManager.level22 = false;
             ScoreManager.level23 = true;
-            
-        } else if (this_Level_name == "Level_2_3")
+
+        }
+        else if (this_Level_name == "Level_2_3")
         {
             ScoreManager.level23 = false;
             ScoreManager.level24 = true;
-            
-        } else if (this_Level_name == "Level_2_4")
+
+        }
+        else if (this_Level_name == "Level_2_4")
         {
             ScoreManager.level24 = false;
             ScoreManager.level30 = true;
-            
-        } else if (this_Level_name == "Level_3_0")
+
+        }
+        else if (this_Level_name == "Level_3_0")
         {
             ScoreManager.level30 = false;
             ScoreManager.level31 = true;
-        } else if (this_Level_name == "Level_3_1")
+        }
+        else if (this_Level_name == "Level_3_1")
         {
             ScoreManager.level31 = false;
         }
@@ -125,16 +133,19 @@ public class controller : MonoBehaviour
         //     }
         //     Time.timeScale = 0f;
         // }
-        if (power_card != null){
+        if (power_card != null)
+        {
             power_card.SetActive(false);
         }
-        if (limitText != null){
+        if (limitText != null)
+        {
             limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
         }
-        if (ateText != null){
+        if (ateText != null)
+        {
             ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
         }
-        for(int star_num_now=0; star_num_now < GlobalData.Instance.star_num; star_num_now++)
+        for (int star_num_now = 0; star_num_now < GlobalData.Instance.star_num; star_num_now++)
         {
             GameObject one_star = Instantiate(star);
             one_star.SetActive(true);
@@ -150,7 +161,8 @@ public class controller : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
 
         if (level && this_Level_name == "Level_1_0")
         {
@@ -160,7 +172,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                
+
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 1.0  Passed";
@@ -177,7 +189,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                
+
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 2.0  Passed";
@@ -193,7 +205,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                
+
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 2.1  Passed";
@@ -201,7 +213,8 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-        if (level && this_Level_name == "Level_2_2") {
+        if (level && this_Level_name == "Level_2_2")
+        {
             if (timer == 1300)
             {
                 ScoreManager.level22Passed = true;
@@ -215,7 +228,8 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-        if(level && this_Level_name == "Level_2_3") {
+        if (level && this_Level_name == "Level_2_3")
+        {
             if (timer == 1500)
             {
                 ScoreManager.level23Passed = true;
@@ -229,7 +243,8 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-        if(level && this_Level_name == "Level_2_4") {
+        if (level && this_Level_name == "Level_2_4")
+        {
             if (timer == 1900)
             {
                 ScoreManager.level24Passed = true;
@@ -243,7 +258,8 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-        if(level && this_Level_name == "Level_3_0") {
+        if (level && this_Level_name == "Level_3_0")
+        {
             if (timer == 700)
             {
                 ScoreManager.level30Passed = true;
@@ -257,7 +273,8 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-        if(level && this_Level_name == "Level_3_1") {
+        if (level && this_Level_name == "Level_3_1")
+        {
             if (timer == 1400)
             {
                 ScoreManager.level31Passed = true;
@@ -271,11 +288,12 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-        
-        if(level && this_Level_name == "Level_4_0") {
+
+        if (level && this_Level_name == "Level_4_0")
+        {
             if (timer == 1400)
             {
-               // ScoreManager.level41Passed = true;
+                // ScoreManager.level41Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
@@ -287,7 +305,8 @@ public class controller : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
 
             if (jump_numb > 0)
             {
@@ -306,7 +325,8 @@ public class controller : MonoBehaviour
         }
 
 
-        if (power_card != null){
+        if (power_card != null)
+        {
             if (!GlobalData.Instance.choosen_powerCard)
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -340,7 +360,8 @@ public class controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (level) {
+        if (level)
+        {
             timer++;
         }
         //time++;
@@ -350,10 +371,11 @@ public class controller : MonoBehaviour
         // if(Input.GetKeyDown(KeyCode.A)){
         //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
         // }
-        foreach(GameObject one_star in stars){
+        foreach (GameObject one_star in stars)
+        {
             // one_star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
             one_star.transform.RotateAround(transform.position, Vector3.up, -GlobalData.Instance.starRotateSpeed);
-            one_star.transform.eulerAngles = new Vector3(0,0,0);
+            one_star.transform.eulerAngles = new Vector3(0, 0, 0);
         }
         // star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
         // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
@@ -391,7 +413,7 @@ public class controller : MonoBehaviour
         if (jump)
         {
             jump = false;
-            
+
 
             /*
             if (larger_gravity)
@@ -404,15 +426,15 @@ public class controller : MonoBehaviour
             }
             //m_Rigidbody.AddForce(0, -9.8f, 0, ForceMode.Force);
             */
-            
+
             Debug.Log("gravity: " + Physics.gravity);
             Debug.Log("jumping: " + transform.position);
             Debug.Log("jumping height: " + jump_height);
             m_Rigidbody.velocity = new Vector3(0, jump_height, 0);
         }
-        
 
-        
+
+
 
         //move forward
         if (move_forward)
@@ -431,27 +453,33 @@ public class controller : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.LeftArrow)){
-            transform.position = transform.position + new Vector3(-speed, 0 ,0); 
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.position = transform.position + new Vector3(-speed, 0, 0);
         }
-        if(Input.GetKey(KeyCode.RightArrow)){
-            transform.position = transform.position + new Vector3(speed, 0 ,0);    
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.position = transform.position + new Vector3(speed, 0, 0);
         }
-        if(GlobalData.Instance.shoot){
+        if (GlobalData.Instance.shoot)
+        {
             // print("check");
-            GlobalData.Instance.shoot_timestep ++;
-           if (GlobalData.Instance.shoot_timestep % GlobalData.Instance.shoot_freq == 0){
+            GlobalData.Instance.shoot_timestep++;
+            if (GlobalData.Instance.shoot_timestep % GlobalData.Instance.shoot_freq == 0)
+            {
                 GameObject bul;
                 bul = Instantiate(bullet);
                 bul.transform.position = transform.position + new Vector3(0, 0, 1f);
                 Rigidbody m_Rigidbody = bul.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, 10f);
-           }
+            }
         }
-        if(invi_remaining_time > 0){
+        if (invi_remaining_time > 0)
+        {
             invi_remaining_time--;
-            if(invi_remaining_time <= 0){
-                EnableCollider ();
+            if (invi_remaining_time <= 0)
+            {
+                EnableCollider();
             }
         }
     }
@@ -467,7 +495,7 @@ public class controller : MonoBehaviour
         if (collider.gameObject.tag == "portal")
         {
             float randomNumber = Random.Range(0, 1f);
-            if(randomNumber<0.3f)
+            if (randomNumber < 0.3f)
             {
                 GlobalData.Instance.world_speed = 1.3f;
                 SceneManager.LoadScene("ice_world1");
@@ -486,18 +514,20 @@ public class controller : MonoBehaviour
         }
         if (level || !level) // shot term upgrade / down grade
         {
-            if(collider.gameObject.tag == "star_upgrade"){
+            if (collider.gameObject.tag == "star_upgrade")
+            {
                 GlobalData.Instance.star_num++;
                 ScoreManager.star_upgrade++;
                 Destroy(collider.gameObject);
-                GameObject one_star  = Instantiate(star);
+                GameObject one_star = Instantiate(star);
                 one_star.SetActive(true);
                 one_star.transform.SetParent(this.transform);
                 one_star.transform.localScale = new Vector3(.5f, GlobalData.Instance.star_size, 0.5f);
                 stars.Add(one_star);
                 float angle = 2f * Mathf.PI / (float)stars.Count;
-                for (int i = -1; ++i < stars.Count;){
-                    stars[i].transform.position = this.transform.position + new Vector3(Mathf.Cos(angle*i), 0, Mathf.Sin(angle*i));
+                for (int i = -1; ++i < stars.Count;)
+                {
+                    stars[i].transform.position = this.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
                 }
             }
             if (collider.gameObject.tag == "invisible")
@@ -545,10 +575,11 @@ public class controller : MonoBehaviour
                 //each time becomes 0.8 * original
                 Destroy(collider.gameObject);
                 GlobalData.Instance.star_size += 0.2f;
-                foreach(GameObject one_star in stars){
+                foreach (GameObject one_star in stars)
+                {
                     one_star.transform.localScale = new Vector3(0.5f, GlobalData.Instance.star_size, 0.5f);
                 }
-                
+
                 // star.transform.localScale += new Vector3(0, 0.2f, 0);
                 ScoreManager.longer++;
                 GlobalData.Instance.ate++;
@@ -572,6 +603,11 @@ public class controller : MonoBehaviour
                 move_forward = true;
                 GlobalData.Instance.ate++;
             }
+            if (collider.gameObject.tag == "fps")
+            {
+                Destroy(collider.gameObject);
+                fps_mode_change();
+            }
 
             if (collider.gameObject.tag == "gravity")
             {
@@ -586,12 +622,14 @@ public class controller : MonoBehaviour
                 larger_gravity = !larger_gravity;
                 GlobalData.Instance.ate++;
             }
-            if (ateText != null){
+            if (ateText != null)
+            {
                 ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
             }
         }
     }
-    private void  EnableCollider () {
+    private void EnableCollider()
+    {
         Color tempCol = GetComponent<Renderer>().material.color;
         tempCol.a = 1f;
         GetComponent<Renderer>().material.color = tempCol;
@@ -603,6 +641,13 @@ public class controller : MonoBehaviour
         if (collision.gameObject.tag == "Plane")
         {
             jump_numb = 2;
+
+        }
+    }
+    private void fps_mode_change()
+    {
+        if (!fps_mode)
+        {
 
         }
     }

@@ -3,7 +3,27 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - invisible
+  - gravity
+  - move_forward
+  - gravity_size
+  - Rock
+  - ceil
+  - pipe
+  - water
+  - star
+  - Plane
+  - longger
+  - faster
+  - shooter
+  - star_upgrade
+  - smaller
+  - portal_back
+  - bullet
+  - bigger
+  - portal
+  - fps
   layers:
   - Default
   - TransparentFX

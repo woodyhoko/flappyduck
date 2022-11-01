@@ -8,6 +8,7 @@ public class controller : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     public Material duckMaterial;
+    public GameObject main_camera;
     public GameObject star;
     public List<GameObject> stars = new List<GameObject>();
     public GameObject bullet;
@@ -38,6 +39,7 @@ public class controller : MonoBehaviour
     public string next_Level_name = "Level_1_0";
     private float timer = 0;
     private bool fps_mode = false;
+    private bool fps_mode_lock = false;
 
     public void Menu_Button()
     {
@@ -163,7 +165,10 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (fps_mode_lock)
+        {
+            main_camera.transform.position = this.transform.position;
+        }
         if (level && this_Level_name == "Level_1_0")
         {
             if (timer == 900)
@@ -360,6 +365,25 @@ public class controller : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!fps_mode_lock)
+        {
+            if (fps_mode && Vector3.Distance(main_camera.transform.position, this.transform.position) < 0.01)
+            {
+                fps_mode_lock = true;
+            }
+            if (fps_mode)
+            {
+                main_camera.transform.position = Vector3.Lerp(main_camera.transform.position, transform.position, 0.1f);
+                main_camera.transform.rotation = Quaternion.Lerp(main_camera.transform.rotation, Quaternion.Euler(new Vector3(0, 0, 0)), 0.1f);
+            }
+            else
+            {
+                main_camera.transform.position = Vector3.Lerp(main_camera.transform.position, new Vector3(0, 4.6f, -7.69f), 0.1f);
+                main_camera.transform.rotation = Quaternion.Lerp(main_camera.transform.rotation, Quaternion.Euler(32.725f, 0, 0), 0.1f);
+            }
+        }
+
+
         if (level)
         {
             timer++;
@@ -606,7 +630,11 @@ public class controller : MonoBehaviour
             if (collider.gameObject.tag == "fps")
             {
                 Destroy(collider.gameObject);
-                fps_mode_change();
+                fps_mode = !fps_mode;
+                if (!fps_mode)
+                {
+                    fps_mode_lock = false;
+                }
             }
 
             if (collider.gameObject.tag == "gravity")
@@ -641,13 +669,6 @@ public class controller : MonoBehaviour
         if (collision.gameObject.tag == "Plane")
         {
             jump_numb = 2;
-
-        }
-    }
-    private void fps_mode_change()
-    {
-        if (!fps_mode)
-        {
 
         }
     }

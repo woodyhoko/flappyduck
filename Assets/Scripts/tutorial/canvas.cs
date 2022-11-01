@@ -6,7 +6,6 @@ public class canvas : MonoBehaviour
 {
     public GameObject c; // canvas
     // Start is called before the first frame update
-    private int line = -1;
     void Start()
     {
         

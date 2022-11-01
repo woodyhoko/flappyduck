@@ -24,6 +24,8 @@ TagManager:
   - bigger
   - portal
   - fps
+  - Undefined
+  - enemy
   layers:
   - Default
   - TransparentFX

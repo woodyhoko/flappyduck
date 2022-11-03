@@ -367,7 +367,7 @@ public class controller : MonoBehaviour
     {
         if (!fps_mode_lock)
         {
-            if (fps_mode && Vector3.Distance(main_camera.transform.position, this.transform.position) < 0.01)
+            if (fps_mode && Vector3.Distance(main_camera.transform.position, this.transform.position) < 0.1)
             {
                 fps_mode_lock = true;
             }
@@ -510,11 +510,11 @@ public class controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject.tag == "enemy")
+        if (collider.gameObject.tag == "enemy")
         {
             Debug.Log("get hit by enemy");
             Destroy(collider.gameObject);
-       //     ScoreManager.killedByMovingEnemy= true;
+            //     ScoreManager.killedByMovingEnemy= true;
             FindObjectOfType<GameManager>().EndGame();
 
         }

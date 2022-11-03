@@ -20,6 +20,7 @@ public class GlobalData : MonoBehaviour
     public float star_size = 0.1f;
     public int world = 1;
     public int star_num = 0;
+    public int[] cloned_cubes = new int[] { 0, 0 };
     private void Awake()
     {
         // start of new code

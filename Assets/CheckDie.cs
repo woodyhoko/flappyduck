@@ -22,43 +22,62 @@ public class CheckDie : MonoBehaviour
     void Update()
     {
         if(transform.position.y < -10 || transform.position.z < -10 || transform.position.x < -6 || transform.position.x > 6) {
-            if(islevel) {
-				ScoreManager.killedByBound = true;
-				ScoreManager.killedByCeil = false;
-				ScoreManager.killedByWater = false;
-                level_game_over();
+            if (this.tag == "Player")
+            {
+                if(islevel)
+                {
+				    ScoreManager.killedByBound = true;
+				    ScoreManager.killedByCeil = false;
+				    ScoreManager.killedByWater = false;
+                    level_game_over();
+                }
+                else
+                {
+                    ScoreManager.killedByBound = true;
+				    ScoreManager.killedByCeil = false;
+				    ScoreManager.killedByWater = false;
+                    FindObjectOfType<GameManager>().EndGame();
+                }
             }
-            else {
-                ScoreManager.killedByBound = true;
-				ScoreManager.killedByCeil = false;
-				ScoreManager.killedByWater = false;
-                FindObjectOfType<GameManager>().EndGame();
+            else
+            {
+                Destroy(this);
             }
+
+            
         }
     }
 
     private void OnTriggerEnter(Collider collider)
     {
         if(collider.gameObject.tag == "ceil" || collider.gameObject.tag == "water"){
-            if(islevel) {
-				if (collider.gameObject.tag == "ceil") {
-					ScoreManager.killedByCeil = true;
-					ScoreManager.killedByWater = false;
-					ScoreManager.killedByBound = false;
-					Debug.Log("ceil");
-				} else {
-					ScoreManager.killedByWater = true;
-					ScoreManager.killedByCeil = false;
-					ScoreManager.killedByBound = false;
-					Debug.Log("water");
-				}
-                level_game_over();
-            } else {
-                ScoreManager.killedByCeil = true;
-				ScoreManager.killedByWater = false;
-				ScoreManager.killedByBound = false;
-                FindObjectOfType<GameManager>().EndGame();
+            if (this.tag == "Player")
+            {
+                if (islevel) {
+				    if (collider.gameObject.tag == "ceil") {
+					    ScoreManager.killedByCeil = true;
+					    ScoreManager.killedByWater = false;
+					    ScoreManager.killedByBound = false;
+					    Debug.Log("ceil");
+				    } else {
+					    ScoreManager.killedByWater = true;
+					    ScoreManager.killedByCeil = false;
+					    ScoreManager.killedByBound = false;
+					    Debug.Log("water");
+				    }
+                    level_game_over();
+                } else {
+                    ScoreManager.killedByCeil = true;
+				    ScoreManager.killedByWater = false;
+				    ScoreManager.killedByBound = false;
+                    FindObjectOfType<GameManager>().EndGame();
+                }
             }
+            else
+            {
+                Destroy(this);
+            }
+                
         }
     }
 

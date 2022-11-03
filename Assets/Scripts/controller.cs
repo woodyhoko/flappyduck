@@ -13,6 +13,8 @@ public class controller : MonoBehaviour
     public List<GameObject> stars = new List<GameObject>();
     public GameObject bullet;
 
+    public GameObject cube;
+
     private bool jump = false;
     private int jump_numb = 0;
     private float jump_height = 5.0f;
@@ -293,7 +295,7 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-
+        
         if (level && this_Level_name == "Level_4_0")
         {
             if (timer == 1400)
@@ -305,6 +307,22 @@ public class controller : MonoBehaviour
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 4.0  Passed";
+                replay.SetActive(false);
+                next_level.SetActive(true);
+            }
+        }
+
+        if (level && this_Level_name == "testing_for_clone")
+        {
+            if (timer == 5000)
+            {
+                // ScoreManager.level41Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
+                Time.timeScale = 0;
+                Canvas.SetActive(true);
+                title.text = "testing_for_clone  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
             }
@@ -663,6 +681,41 @@ public class controller : MonoBehaviour
                 ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
             }
         }
+
+        //Clone
+        if (collider.gameObject.tag == "clone")
+        {
+            Destroy(collider.gameObject);
+            if ((GlobalData.Instance.cloned_cubes[0] + GlobalData.Instance.cloned_cubes[1]) < 2)
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                GameObject clone = Instantiate(player);
+                clone.SetActive(true);
+
+                clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                
+                if (GlobalData.Instance.cloned_cubes[0] == 0)
+                {
+                    //clone.transform.SetParent(this.transform);
+                    
+                    clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z);
+                    GlobalData.Instance.cloned_cubes[0] = 1;
+                }
+                else
+                {
+                    
+                    //clone.transform.SetParent();
+                    //clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                    clone.transform.position = new Vector3(clone.transform.position.x + 2f, 4.0f, clone.transform.position.z);
+                    GlobalData.Instance.cloned_cubes[1] = 1;
+                }
+                
+                //clone.transform.rotation = Quaternion.identity;
+                clone.tag = "cloned_cube";
+            }
+            
+        }
+
     }
     private void EnableCollider()
     {

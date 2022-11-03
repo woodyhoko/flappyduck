@@ -26,6 +26,8 @@ TagManager:
   - fps
   - Undefined
   - enemy
+  - clone
+  - cloned_cube
   layers:
   - Default
   - TransparentFX

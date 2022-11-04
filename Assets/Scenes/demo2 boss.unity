@@ -470,7 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 2142891406}
   title: {fileID: 1447219017}
-  maxHealth: 400
+  maxHealth: 2000
 --- !u!1 &96292697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,9 +2499,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duckMaterial: {fileID: 2100000, guid: 7132ce07b40b7b841859bd36efcc012c, type: 2}
+  main_camera: {fileID: 0}
   star: {fileID: 948402763}
   stars: []
   bullet: {fileID: 1482989147}
+  cube: {fileID: 0}
   ateText: {fileID: 0}
   limitText: {fileID: 1574870663}
   time: 0
@@ -6877,19 +6879,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 526718873}
   bigger: {fileID: 1557440025}
+  bigger_chance: 0
   smaller: {fileID: 975515784}
+  smaller_chance: 0
   star_upgrade: {fileID: 361810098}
+  star_upgrade_chance: 0
   longger: {fileID: 312475518}
+  longger_chance: 0
   faster: {fileID: 348246692}
+  faster_chance: 0
   shooter: {fileID: 359913199}
+  shooter_chance: 0
   pipe: {fileID: 1590029960}
+  pipe_chance: 0
   movingpipe: {fileID: 1515629381}
+  movingpipe_chance: 0
   rock: {fileID: 887509171}
+  rock_chance: 0
   wall: {fileID: 1795752818}
+  wall_chance: 0
   invisible: {fileID: 162276700}
+  invisible_chance: 0
   move_forward: {fileID: 490578847}
+  move_forward_chance: 0
   portal: {fileID: 1051381692}
+  portal_chance: 0
   water: {fileID: 1950439626}
+  water_chance: 0
+  fps: {fileID: 0}
+  fps_chance: 0
 --- !u!114 &1721641364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8573,6 +8591,11 @@ MonoBehaviour:
   star_size: 0.1
   world: 1
   star_num: 0
+  cloned_cubes: 0000000000000000
+  dizzy: 0
+  numAddHit: 30
+  numNeedHit: 0
+  cube_health: 100
 --- !u!1 &2060010965
 GameObject:
   m_ObjectHideFlags: 0

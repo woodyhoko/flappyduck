@@ -316,9 +316,9 @@ public class controller : MonoBehaviour
             }
         }
 
-        if (level && this_Level_name == "testing_for_clone")
+        if (level && this_Level_name == "Level_5_0")
         {
-            if (timer == 5000)
+            if (timer == 500)
             {
                 // ScoreManager.level41Passed = true;
                 ScoreManager.killedByBound = false;
@@ -326,7 +326,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByWater = false;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
-                title.text = "testing_for_clone  Passed";
+                title.text = "Level 5.0  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
             }

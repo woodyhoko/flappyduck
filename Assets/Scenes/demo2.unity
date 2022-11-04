@@ -7224,13 +7224,13 @@ MonoBehaviour:
   shooter: {fileID: 359913199}
   shooter_chance: 0.002
   pipe: {fileID: 1590029960}
-  pipe_chance: 0
+  pipe_chance: 0.015
   movingpipe: {fileID: 1515629381}
   movingpipe_chance: 0.01
   rock: {fileID: 887509171}
-  rock_chance: 0.01
+  rock_chance: 0.005
   wall: {fileID: 1795752818}
-  wall_chance: 0
+  wall_chance: 0.01
   invisible: {fileID: 162276700}
   invisible_chance: 0.002
   move_forward: {fileID: 490578847}
@@ -7238,7 +7238,7 @@ MonoBehaviour:
   portal: {fileID: 1051381692}
   portal_chance: 0.0002
   water: {fileID: 1950439626}
-  water_chance: 0
+  water_chance: 0.005
   fps: {fileID: 1438486282}
   fps_chance: 0.005
 --- !u!1 &1775848536

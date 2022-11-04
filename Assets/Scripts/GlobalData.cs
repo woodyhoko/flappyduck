@@ -21,6 +21,12 @@ public class GlobalData : MonoBehaviour
     public int world = 1;
     public int star_num = 0;
     public int[] cloned_cubes = new int[] { 0, 0 };
+
+    // dizzness
+    public bool dizzy = false;
+    public int numAddHit = 30;
+    public int numNeedHit = 0;
+
     private void Awake()
     {
         // start of new code
@@ -34,6 +40,7 @@ public class GlobalData : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
     public void destroy()
     {
         Destroy(gameObject);

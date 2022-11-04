@@ -22,4 +22,19 @@ public class rock : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void Update()
+    {
+
+    }
+
+    void OnCollisionEnter(Collision col){
+        if (col.gameObject.tag == "Player"){
+            print("Trigger Dizzness");
+
+            GlobalData.Instance.dizzy = true;
+            GlobalData.Instance.numNeedHit = GlobalData.Instance.numAddHit;
+            GlobalData.Instance.numAddHit += 10; // increase difficulty for next hit
+        }
+     }
 }

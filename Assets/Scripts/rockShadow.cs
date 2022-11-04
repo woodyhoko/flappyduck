@@ -9,6 +9,7 @@ public class rockShadow : MonoBehaviour
     {
         Invoke("Destroy", 1f);
     }
+
     private void Destroy(){
         if (clone){
             Destroy(gameObject);

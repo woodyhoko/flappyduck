@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.16999474, g: 0.16174862, b: 0.13008001, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1808,10 +1808,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duckMaterial: {fileID: 0}
-  main_camera: {fileID: 0}
+  main_camera: {fileID: 963194225}
   star: {fileID: 0}
   stars: []
   bullet: {fileID: 0}
+  cube: {fileID: 0}
   ateText: {fileID: 0}
   limitText: {fileID: 0}
   time: 0
@@ -6657,6 +6658,11 @@ MonoBehaviour:
   star_size: 0.1
   world: 1
   star_num: 0
+  cloned_cubes: 0000000000000000
+  dizzy: 0
+  numAddHit: 30
+  numNeedHit: 0
+  cube_health: 100
 --- !u!1 &2060010965
 GameObject:
   m_ObjectHideFlags: 0

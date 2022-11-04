@@ -27,6 +27,9 @@ public class GlobalData : MonoBehaviour
     public int numAddHit = 30;
     public int numNeedHit = 0;
 
+    //cube health
+    public float cube_health = 100f;
+
     private void Awake()
     {
         // start of new code

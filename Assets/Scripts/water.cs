@@ -22,11 +22,15 @@ public class water : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("get hit by water");
-            ScoreManager.killedByWater= true;
-            ScoreManager.killedByCeil = false;
-            ScoreManager.killedByBound = false;
-            FindObjectOfType<GameManager>().EndGame();
+            GlobalData.Instance.cube_health -= 50f;
+            if(GlobalData.Instance.cube_health<=0f)
+            {
+                ScoreManager.killedByWater= true;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByBound = false;
+                FindObjectOfType<GameManager>().EndGame();
+            }
+                //Debug.Log("get hit by water");
             }
             // Destroy(gameObject);
         }

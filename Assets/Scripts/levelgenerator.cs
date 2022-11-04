@@ -65,7 +65,8 @@ public class levelgenerator : MonoBehaviour
             GameObject obj = (GameObject)Instantiate(rock);
             obj.GetComponent<rock>().clone = true;
             // obj.transform.SetParent(this.transform);
-            obj.transform.position = new Vector3(Random.Range(-5.5f, 5.5f), 10, player.transform.position.z);
+            // obj.transform.position = new Vector3(Random.Range(-5.5f, 5.5f), 10, player.transform.position.z);
+            obj.transform.position = new Vector3(player.transform.position.x, 10, player.transform.position.z);
             obj.transform.rotation = new Quaternion(Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f));
         }
         if (Random.Range(0, 1f) < pipe_chance + difficulty * 0.0001f)

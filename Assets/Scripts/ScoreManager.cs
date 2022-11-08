@@ -45,7 +45,7 @@ public class ScoreManager : MonoBehaviour {
 	public static int star_upgrade = 0;
 
 	public static bool tutorial = false;
-
+	public static float cube_health = 100f;
 	void Start()
 	{
 		// startTime = Time.time;
@@ -53,5 +53,6 @@ public class ScoreManager : MonoBehaviour {
 
 	void Update()
 	{
+		cube_health = GlobalData.Instance.cube_health;
 	}
 }

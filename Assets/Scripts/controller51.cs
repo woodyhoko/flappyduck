@@ -597,6 +597,9 @@ public class controller51 : MonoBehaviour
                 GlobalData.Instance.star_num++;
                 ScoreManager.star_upgrade++;
                 Destroy(collider.gameObject);
+
+                
+
                 GameObject one_star = Instantiate(star);
                 one_star.SetActive(true);
                 one_star.transform.SetParent(this.transform);
@@ -681,10 +684,31 @@ public class controller51 : MonoBehaviour
                 //each time becomes 0.8 * original
                 Destroy(collider.gameObject);
                 GlobalData.Instance.star_size += 0.2f;
+
+                /*
                 foreach (GameObject one_star in stars)
                 {
                     one_star.transform.localScale = new Vector3(0.5f, GlobalData.Instance.star_size, 0.5f);
                 }
+                */
+
+                // player
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                foreach (GameObject one_star in player.GetComponent<controller51>().stars)
+                {
+                    one_star.transform.localScale = new Vector3(0.5f, GlobalData.Instance.star_size, 0.5f);
+                }
+                
+
+                //cloned cube
+                foreach (GameObject cloned_cube in GlobalData.Instance.cloned_list)
+                {
+                    foreach (GameObject cloned_star in cloned_cube.GetComponent<controller51>().stars)
+                    {
+                        cloned_star.transform.localScale = new Vector3(0.25f, GlobalData.Instance.star_size * 0.5f, 0.25f);
+                    }
+                }
+
 
                 // star.transform.localScale += new Vector3(0, 0.2f, 0);
                 ScoreManager.longer++;
@@ -745,40 +769,29 @@ public class controller51 : MonoBehaviour
         //Clone
         if (collider.gameObject.tag == "clone")
         {
+
             Destroy(collider.gameObject);
-            if ((GlobalData.Instance.cloned_cubes[0] + GlobalData.Instance.cloned_cubes[1]) < 2)
-            {
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                GameObject clone = Instantiate(player);
-                clone.SetActive(true);
+            
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            //if ()
 
-                clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            GameObject clone = Instantiate(player);
+            Debug.Log("clone once");
+            clone.SetActive(true);
 
-                Debug.Log("clone cubes: " + GlobalData.Instance.cloned_cubes[0] + " " + GlobalData.Instance.cloned_cubes[1]);
-                
-                if (GlobalData.Instance.cloned_cubes[0] == 0)
-                {
-                    //clone.transform.SetParent(this.transform);
-                    
-                    clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z);
-                    GlobalData.Instance.cloned_cubes[0] = 1;
-                    Debug.Log("clone cube on left");
-                    
-                }
-                else
-                {
-                    
-                    //clone.transform.SetParent();
-                    //clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                    clone.transform.position = new Vector3(clone.transform.position.x + 2f, 4.0f, clone.transform.position.z);
-                    GlobalData.Instance.cloned_cubes[1] = 1;
-                    Debug.Log("clone cube on right");
-                }
+            clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z);
 
-                //clone.transform.rotation = Quaternion.identity;
-                clone.tag = "cloned_cube";
-                GlobalData.Instance.cloned_list.Add(clone);
-            }
+
+
+            //clone.transform.rotation = Quaternion.identity;
+            clone.tag = "cloned_cube";
+            GlobalData.Instance.cloned_list.Add(clone);
+            
+
+            GameObject[] cloned_list = GameObject.FindGameObjectsWithTag("cloned_cube");
+            Debug.Log("clone list size: " + cloned_list.Length + "  , cube list Global: " + GlobalData.Instance.cloned_list.Count);
+            
             
         }
 

@@ -23,6 +23,7 @@ public class GlobalData : MonoBehaviour
     public int world = 1;
     public int star_num = 0;
     public int[] cloned_cubes = new int[] { 0, 0 };
+    public int number_of_cloned_cube = 0;
     public List<GameObject> cloned_list = new List<GameObject>();
 
     // dizzness

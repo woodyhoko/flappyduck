@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
+[Serializable]
 public class Score : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string name;
+    public int score;
 
-    // Update is called once per frame
-    void Update()
+    public Score(string name, int score)
     {
-        
+        this.name = name;
+        this.score = score;
     }
 }

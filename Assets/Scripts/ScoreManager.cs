@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEditor;
+using System.Collections.Generic;
+using System.Linq;
+using System;
+
 public class ScoreManager : MonoBehaviour {
     public static int sscore = 0;
 
@@ -45,9 +49,26 @@ public class ScoreManager : MonoBehaviour {
 
 	public static bool tutorial = false;
 
+	public ScoreData sd;
+
 	void Start()
 	{
 		// startTime = Time.time;
+	}
+
+	void Awake()
+	{
+		sd = new ScoreData();
+	}
+
+	public IEnumerable<Score> GetHighScores()
+	{
+		return sd.scores.OrderByDescending(x => x.score);
+	}
+
+	public void AddScore(Score score)
+	{
+		sd.scores.Add(score);
 	}
 
 	void Update()

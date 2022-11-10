@@ -536,11 +536,22 @@ public class controller51 : MonoBehaviour
             GlobalData.Instance.shoot_timestep++;
             if (GlobalData.Instance.shoot_timestep % GlobalData.Instance.shoot_freq == 0)
             {
+                // Player
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
                 GameObject bul;
                 bul = Instantiate(bullet);
-                bul.transform.position = transform.position + new Vector3(0, 0, 1f);
+                bul.transform.position = player.transform.position + new Vector3(0, 0, 1f);
                 Rigidbody m_Rigidbody = bul.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, 10f);
+
+                //clone
+
+                foreach (GameObject cloned_cube in GlobalData.Instance.cloned_list)
+                {
+                    GameObject cloned_bul = Instantiate(bullet);
+                    cloned_bul.transform.position = cloned_cube.transform.position + new Vector3(0, 0, 1f);
+                    cloned_bul.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 10f);
+                }
             }
         }
         if (invi_remaining_time > 0)
@@ -598,26 +609,77 @@ public class controller51 : MonoBehaviour
                 ScoreManager.star_upgrade++;
                 Destroy(collider.gameObject);
 
-                
+
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                //player object start_upgrade
 
                 GameObject one_star = Instantiate(star);
                 one_star.SetActive(true);
-                one_star.transform.SetParent(this.transform);
+                one_star.transform.SetParent(player.transform);
                 one_star.transform.localScale = new Vector3(.5f, GlobalData.Instance.star_size, 0.5f);
-                stars.Add(one_star);
-                float angle = 2f * Mathf.PI / (float)stars.Count;
-                for (int i = -1; ++i < stars.Count;)
+
+                controller51 player_comp = player.GetComponent<controller51>();
+
+                player_comp.stars.Add(one_star);
+                float angle = 2f * Mathf.PI / (float)player_comp.stars.Count;
+                for (int i = -1; ++i < player_comp.stars.Count;)
                 {
-                    stars[i].transform.position = this.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
+                    player_comp.stars[i].transform.position = player.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
                 }
+
+                // clone
+                
+                foreach (GameObject cloned_cube in GlobalData.Instance.cloned_list)
+                {
+                    GameObject cloned_one_star = Instantiate(star);
+                    cloned_one_star.SetActive(true);
+                    cloned_one_star.transform.SetParent(cloned_cube.transform);
+                    cloned_one_star.transform.localScale = new Vector3(.5f, GlobalData.Instance.star_size, 0.5f);
+
+                    controller51 clone_comp = cloned_cube.GetComponent<controller51>();
+
+                    clone_comp.stars.Add(cloned_one_star);
+                    float cloned_angle = 2f * Mathf.PI / (float)clone_comp.stars.Count;
+                    for (int i = -1; ++i < clone_comp.stars.Count;)
+                    {
+                        clone_comp.stars[i].transform.position = cloned_cube.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
+                    }
+                }
+
+
+
+
+                Debug.Log("star numb: " + GlobalData.Instance.star_num);
+
+
             }
             if (collider.gameObject.tag == "invisible")
             {
                 Destroy(collider.gameObject);
+                
                 Physics.IgnoreLayerCollision(6, 7, true);
-                Color tempCol = GetComponent<Renderer>().material.color;
+
+                // Player
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+                Color tempCol = player.GetComponent<Renderer>().material.color;
+                print("player color original: " + tempCol.a);
                 tempCol.a = .5f;
-                GetComponent<Renderer>().material.color = tempCol;
+
+                player.GetComponent<Renderer>().material.color = tempCol;
+                print("player color change: " + player.GetComponent<Renderer>().material.color.a);
+
+                // Cloned cube
+                foreach (GameObject cloned_cube in GlobalData.Instance.cloned_list)
+                {
+                    Color cloned_tempCol = cloned_cube.GetComponent<Renderer>().material.color;
+                    print("clone color original: " + tempCol.a);
+                    cloned_tempCol.a = .5f;
+                    cloned_cube.GetComponent<Renderer>().material.color = cloned_tempCol;
+                    print("clone color change: " + cloned_cube.GetComponent<Renderer>().material.color.a);
+                }
+
+
                 invi_remaining_time = 100;
                 // Invoke ("EnableCollider", 5f);
                 ScoreManager.invisible++;

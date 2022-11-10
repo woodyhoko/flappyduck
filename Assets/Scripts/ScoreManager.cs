@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEditor;
+using System.Collections.Generic;
+using System.Linq;
+using System;
+
 public class ScoreManager : MonoBehaviour {
     public static int sscore = 0;
 
@@ -40,19 +44,34 @@ public class ScoreManager : MonoBehaviour {
 	
 	public static bool level31 = false;
 	public static bool level31Passed = false;
-	public static bool level40 = false;
-	public static bool level40Passed = false;
+	
 	public static int star_upgrade = 0;
 
 	public static bool tutorial = false;
-	public static float cube_health = 100f;
+
+	public ScoreData sd;
+
 	void Start()
 	{
 		// startTime = Time.time;
 	}
 
+	void Awake()
+	{
+		sd = new ScoreData();
+	}
+
+	public IEnumerable<Score> GetHighScores()
+	{
+		return sd.scores.OrderByDescending(x => x.score);
+	}
+
+	public void AddScore(Score score)
+	{
+		sd.scores.Add(score);
+	}
+
 	void Update()
 	{
-		cube_health = GlobalData.Instance.cube_health;
 	}
 }

@@ -75,6 +75,15 @@ public class CheckDie : MonoBehaviour
             }
             else
             {
+                int size = GlobalData.Instance.cloned_list.Count;
+
+                for (int i = 0; i < size; i++)
+                {
+                    if (GlobalData.Instance.cloned_list[i] == this)
+                    {
+                        GlobalData.Instance.cloned_list.RemoveAt(i);
+                    }
+                }
                 Destroy(this);
             }
                 

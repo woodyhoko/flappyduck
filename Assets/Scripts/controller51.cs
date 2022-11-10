@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class controller : MonoBehaviour
+public class controller51 : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
     public Material duckMaterial;
@@ -23,7 +23,6 @@ public class controller : MonoBehaviour
     // Gravity, reversed gravity, move forward
     public static bool larger_gravity = false;
     public static bool reversed_gravity = false;
-    public static bool move_forward = false;
     private float speed;
 
     public TMP_Text ateText;
@@ -44,6 +43,7 @@ public class controller : MonoBehaviour
     private bool fps_mode_lock = false;
 
     private int lastKey = 0; // 0 for left and 1 for right
+
 
     public void Menu_Button()
     {
@@ -131,13 +131,14 @@ public class controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
 
         speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
         m_Rigidbody = GetComponent<Rigidbody>();
         larger_gravity = false;
         reversed_gravity = false;
-        move_forward = false;
+        GlobalData.Instance.move_forward = false;
         // if (!level && !GlobalData.Instance.choosen_powerCard)
         // {
         //     if(power_card != null){
@@ -501,17 +502,25 @@ public class controller : MonoBehaviour
 
 
         //move forward
-        if (move_forward)
+        if (GlobalData.Instance.move_forward)
         {
             //Debug.Log("z: " + transform.position.z);
             if (transform.position.z < GlobalData.Instance.move_forward_limit)
             {
                 m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
+
+                //cloned cubes move forward
+                int size = GlobalData.Instance.cloned_list.Count;
+                for (int i = 0; i < size; i++)
+                {
+                    GlobalData.Instance.cloned_list[i].GetComponent<Rigidbody>().velocity = m_Rigidbody.velocity;
+                }
+
             }
 
             Debug.Log("z: " + transform.position.z);
             //m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 2.0f);
-            move_forward = false;
+            GlobalData.Instance.move_forward = false;
         }
 
         // movement
@@ -584,9 +593,13 @@ public class controller : MonoBehaviour
         {
             if (collider.gameObject.tag == "star_upgrade")
             {
+                //star_upgrade(collider, this);
                 GlobalData.Instance.star_num++;
                 ScoreManager.star_upgrade++;
                 Destroy(collider.gameObject);
+
+                
+
                 GameObject one_star = Instantiate(star);
                 one_star.SetActive(true);
                 one_star.transform.SetParent(this.transform);
@@ -618,17 +631,43 @@ public class controller : MonoBehaviour
             {
                 //each time becomes 1.2 * original
                 Destroy(collider.gameObject);
-                transform.localScale = transform.localScale * 1.2f;
+                //transform.localScale = transform.localScale * 1.2f;
                 ScoreManager.biggerCube++;
                 GlobalData.Instance.ate++;
+
+                
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                
+                player.transform.localScale = GlobalData.Instance.player_localScale * 1.2f;
+                GlobalData.Instance.player_localScale = player.transform.localScale;
+
+                //cloned cubes
+                int size = GlobalData.Instance.cloned_list.Count;
+                for (int i = 0; i < size; i++)
+                {
+                    GlobalData.Instance.cloned_list[i].transform.localScale = GlobalData.Instance.player_localScale * 0.5f;
+                }
+
             }
             if (collider.gameObject.tag == "smaller")
             {
                 //each time becomes 0.8 * original
                 Destroy(collider.gameObject);
-                transform.localScale = transform.localScale * 0.8f;
+                //transform.localScale = transform.localScale * 0.8f;
                 ScoreManager.smallerCube++;
                 GlobalData.Instance.ate++;
+
+                
+                
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                player.transform.localScale = GlobalData.Instance.player_localScale * 0.8f;
+                GlobalData.Instance.player_localScale = player.transform.localScale;
+                //cloned cubes
+                int size = GlobalData.Instance.cloned_list.Count;
+                for (int i = 0; i < size; i++)
+                {
+                    GlobalData.Instance.cloned_list[i].transform.localScale = GlobalData.Instance.player_localScale * 0.5f;
+                }
             }
             if (collider.gameObject.tag == "faster")
             {
@@ -637,16 +676,39 @@ public class controller : MonoBehaviour
                 GlobalData.Instance.starRotateSpeed *= 1.5f;
                 ScoreManager.faster++;
                 GlobalData.Instance.ate++;
+
+                // No need for cloned cubes due to only use data from Global Data
             }
             if (collider.gameObject.tag == "longger")
             {
                 //each time becomes 0.8 * original
                 Destroy(collider.gameObject);
                 GlobalData.Instance.star_size += 0.2f;
+
+                /*
                 foreach (GameObject one_star in stars)
                 {
                     one_star.transform.localScale = new Vector3(0.5f, GlobalData.Instance.star_size, 0.5f);
                 }
+                */
+
+                // player
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                foreach (GameObject one_star in player.GetComponent<controller51>().stars)
+                {
+                    one_star.transform.localScale = new Vector3(0.5f, GlobalData.Instance.star_size, 0.5f);
+                }
+                
+
+                //cloned cube
+                foreach (GameObject cloned_cube in GlobalData.Instance.cloned_list)
+                {
+                    foreach (GameObject cloned_star in cloned_cube.GetComponent<controller51>().stars)
+                    {
+                        cloned_star.transform.localScale = new Vector3(0.25f, GlobalData.Instance.star_size * 0.5f, 0.25f);
+                    }
+                }
+
 
                 // star.transform.localScale += new Vector3(0, 0.2f, 0);
                 ScoreManager.longer++;
@@ -663,13 +725,17 @@ public class controller : MonoBehaviour
                 }
                 ScoreManager.shooter++;
                 GlobalData.Instance.ate++;
+
+                //no setting for cloned clube due to only using Global Data
             }
 
             if (collider.gameObject.tag == "move_forward")
             {
                 Destroy(collider.gameObject);
-                move_forward = true;
+                GlobalData.Instance.move_forward = true;
                 GlobalData.Instance.ate++;
+
+                //cloned cubes
             }
             if (collider.gameObject.tag == "fps")
             {
@@ -703,38 +769,57 @@ public class controller : MonoBehaviour
         //Clone
         if (collider.gameObject.tag == "clone")
         {
-            Destroy(collider.gameObject);
-            if ((GlobalData.Instance.cloned_cubes[0] + GlobalData.Instance.cloned_cubes[1]) < 2)
-            {
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                GameObject clone = Instantiate(player);
-                clone.SetActive(true);
 
-                clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                
-                if (GlobalData.Instance.cloned_cubes[0] == 0)
-                {
-                    //clone.transform.SetParent(this.transform);
-                    
-                    clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z);
-                    GlobalData.Instance.cloned_cubes[0] = 1;
-                }
-                else
-                {
-                    
-                    //clone.transform.SetParent();
-                    //clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                    clone.transform.position = new Vector3(clone.transform.position.x + 2f, 4.0f, clone.transform.position.z);
-                    GlobalData.Instance.cloned_cubes[1] = 1;
-                }
-                
-                //clone.transform.rotation = Quaternion.identity;
-                clone.tag = "cloned_cube";
-            }
+            Destroy(collider.gameObject);
+            
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            //if ()
+
+            GameObject clone = Instantiate(player);
+            Debug.Log("clone once");
+            clone.SetActive(true);
+
+            clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z);
+
+
+
+            //clone.transform.rotation = Quaternion.identity;
+            clone.tag = "cloned_cube";
+            GlobalData.Instance.cloned_list.Add(clone);
+            
+
+            GameObject[] cloned_list = GameObject.FindGameObjectsWithTag("cloned_cube");
+            Debug.Log("clone list size: " + cloned_list.Length + "  , cube list Global: " + GlobalData.Instance.cloned_list.Count);
+            
             
         }
 
     }
+
+    //functioins for each update
+    /*
+    private void star_upgrade(Collider collider, controller51 gameObject)
+    {
+        
+        gameObject.GlobalData.Instance.star_num++;
+        ScoreManager.star_upgrade++;
+        Destroy(collider.gameObject);
+        GameObject one_star = Instantiate(star);
+        one_star.SetActive(true);
+        one_star.transform.SetParent(this.transform);
+        one_star.transform.localScale = new Vector3(.5f, GlobalData.Instance.star_size, 0.5f);
+        stars.Add(one_star);
+        float angle = 2f * Mathf.PI / (float)stars.Count;
+        for (int i = -1; ++i < stars.Count;)
+        {
+            stars[i].transform.position = this.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
+        }
+    }
+    */
+
+
+
     private void EnableCollider()
     {
         Color tempCol = GetComponent<Renderer>().material.color;

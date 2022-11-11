@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.19723392, g: 0.23320732, b: 0.27606526, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -327,7 +327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &71954419
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2632,8 +2632,8 @@ MonoBehaviour:
   replay: {fileID: 0}
   next_level: {fileID: 0}
   title: {fileID: 0}
-  this_Level_name: Level1smaller
-  next_Level_name: Level1smaller
+  this_Level_name: demo2
+  next_Level_name: demo2
 --- !u!114 &526718880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2646,11 +2646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df5488c6adc0ee24fa35f259eec144b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  islevel: 0
-  Canvas: {fileID: 0}
-  title: {fileID: 0}
-  replay: {fileID: 0}
-  next_level: {fileID: 0}
+  islevel: 1
+  Canvas: {fileID: 1995623879}
+  title: {fileID: 1017110082}
+  replay: {fileID: 845885319}
+  next_level: {fileID: 1490334098}
 --- !u!1 &549761531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,7 +3305,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 526718879}
         m_TargetAssemblyTypeName: controller, Assembly-CSharp
         m_MethodName: Replay_Button
         m_Mode: 1
@@ -4248,7 +4248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1017110081
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4567,7 +4567,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 526718879}
         m_TargetAssemblyTypeName: controller, Assembly-CSharp
         m_MethodName: Menu_Button
         m_Mode: 1
@@ -6258,7 +6258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 526718879}
         m_TargetAssemblyTypeName: controller, Assembly-CSharp
         m_MethodName: Next_Level_Button
         m_Mode: 1
@@ -8785,7 +8785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1995623881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9181,11 +9181,11 @@ MonoBehaviour:
   cloned_cubes: 0000000000000000
   number_of_cloned_cube: 0
   cloned_list: []
-  hearts: []
   dizzy: 1
-  numAddHit: 10
+  numTotalHit: 10
   numNeedHit: 0
   cube_health: 3
+  hearts: []
 --- !u!1 &2060010965
 GameObject:
   m_ObjectHideFlags: 0

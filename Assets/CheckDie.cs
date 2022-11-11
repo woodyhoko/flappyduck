@@ -24,19 +24,17 @@ public class CheckDie : MonoBehaviour
         if(transform.position.y < -10 || transform.position.z < -10 || transform.position.x < -6 || transform.position.x > 6) {
             if (this.tag == "Player")
             {
+                ScoreManager.killedByBound = true;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
                 if(islevel)
                 {
-				    ScoreManager.killedByBound = true;
-				    ScoreManager.killedByCeil = false;
-				    ScoreManager.killedByWater = false;
                     level_game_over();
                 }
                 else
                 {
-                    ScoreManager.killedByBound = true;
-				    ScoreManager.killedByCeil = false;
-				    ScoreManager.killedByWater = false;
-                    FindObjectOfType<GameManager>().EndGame();
+                    level_game_over();
+                    // FindObjectOfType<GameManager>().EndGame();
                 }
             }
             else
@@ -44,7 +42,6 @@ public class CheckDie : MonoBehaviour
                 Destroy(this);
             }
 
-            
         }
     }
 
@@ -67,7 +64,7 @@ public class CheckDie : MonoBehaviour
                         if (islevel)
                             level_game_over();
                         else
-                            FindObjectOfType<GameManager>().EndGame();
+                            level_game_over(); // FindObjectOfType<GameManager>().EndGame();
                     }
                 }
                 else if (collider.gameObject.tag == "ceil")
@@ -79,7 +76,7 @@ public class CheckDie : MonoBehaviour
                     if (islevel)
                         level_game_over();
                     else
-                        FindObjectOfType<GameManager>().EndGame();
+                        level_game_over(); //FindObjectOfType<GameManager>().EndGame();
                 }
             }
             else
@@ -115,8 +112,10 @@ public class CheckDie : MonoBehaviour
                 {
                     level_game_over();
                 }
-                else
-                    FindObjectOfType<GameManager>().EndGame();
+                else {
+                    level_game_over();
+                    // FindObjectOfType<GameManager>().EndGame();
+                }
             }
             Destroy(collision.gameObject);
             Debug.Log("get hit by water");
@@ -138,6 +137,5 @@ public class CheckDie : MonoBehaviour
         title.text = "Game Over";
         replay.SetActive(true);
         next_level.SetActive(false);
-
     }
 }

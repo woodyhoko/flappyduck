@@ -19,7 +19,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
     public TMP_Text title;
     public GameObject replay;
     public GameObject next_level;
-
+    public GameObject rock;
     public bool haveRock = false;
 
     void Start()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.16999474, g: 0.16174862, b: 0.13008001, a: 1}
+  m_IndirectSpecularColor: {r: 0.16683373, g: 0.16119772, b: 0.13119686, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1825,7 +1825,7 @@ MonoBehaviour:
   next_level: {fileID: 899265504}
   title: {fileID: 1289897850}
   this_Level_name: Level_1_0
-  next_Level_name: Level_2_0
+  next_Level_name: Level_1_1
 --- !u!114 &526718883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1839,6 +1839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islevel: 1
+  hasRock: 0
   Canvas: {fileID: 487442750}
   title: {fileID: 1289897850}
   replay: {fileID: 1327023471}
@@ -5540,6 +5541,8 @@ MonoBehaviour:
   title: {fileID: 1289897850}
   replay: {fileID: 1327023471}
   next_level: {fileID: 899265504}
+  rock: {fileID: 0}
+  haveRock: 0
 --- !u!1 &1775848536
 GameObject:
   m_ObjectHideFlags: 0
@@ -6866,7 +6869,7 @@ MonoBehaviour:
   number_of_cloned_cube: 0
   cloned_list: []
   dizzy: 0
-  numAddHit: 30
+  numTotalHit: 10
   numNeedHit: 0
   cube_health: 1
   hearts: []

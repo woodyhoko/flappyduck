@@ -190,14 +190,17 @@ public class controller : MonoBehaviour
         }
     }
 
-    private void showResultPage(string text) {
+    private void showResultPage(string text, bool hasRock) {
         Time.timeScale = 0;
 
+        // set canvas
         Canvas.SetActive(true);
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
-        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Background").gameObject;
-        Canvas.SetActive(true);
         background.SetActive(true);
+        if (hasRock) {
+            GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
+            dizzy.SetActive(false);
+        }
 
         title.text = text;
         replay.SetActive(false);
@@ -230,13 +233,13 @@ public class controller : MonoBehaviour
 
         if (level && this_Level_name == "Level_1_1")
         {
-            if (timer == 900)
+            if (timer == 1000)
             {
                 ScoreManager.level11Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                showResultPage("Level 1.1  Passed");
+                showResultPage("Level 1.1  Passed", true);
             }
         }
 

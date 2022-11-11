@@ -7,6 +7,7 @@ using TMPro;
 public class CheckDie : MonoBehaviour
 {
     public bool islevel = true;
+    public bool hasRock = false;
     public GameObject Canvas;
     public TMP_Text title;
     public GameObject replay;
@@ -127,15 +128,17 @@ public class CheckDie : MonoBehaviour
     {
         Time.timeScale = 0;
 
-        GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
-        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
-
         Canvas.SetActive(true);
+        GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
         background.SetActive(true);
-        dizzy.SetActive(false);
+        if (hasRock) {
+            GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
+            dizzy.SetActive(false);
+        }
 
         title.text = "Game Over";
         replay.SetActive(true);
         next_level.SetActive(false);
+        print("hey");
     }
 }

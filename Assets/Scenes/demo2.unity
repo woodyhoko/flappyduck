@@ -2647,6 +2647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islevel: 1
+  hasRock: 1
   Canvas: {fileID: 1995623879}
   title: {fileID: 1017110082}
   replay: {fileID: 845885319}
@@ -7478,7 +7479,7 @@ MonoBehaviour:
   movingpipe: {fileID: 1515629381}
   movingpipe_chance: 0.01
   rock: {fileID: 887509171}
-  rock_chance: 0.005
+  rock_chance: 0.003
   wall: {fileID: 1795752818}
   wall_chance: 0.01
   invisible: {fileID: 162276700}

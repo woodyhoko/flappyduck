@@ -8,11 +8,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
     public GameObject player;
     public GameObject bigger;
     public GameObject smaller;
-    public GameObject pipe;
-    public GameObject wall;
     public GameObject movingpipe;
-    public GameObject rock;
-    public GameObject portal;
     public GameObject text;
     public GameObject movingHori;
 

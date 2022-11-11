@@ -25,14 +25,15 @@ public class GlobalData : MonoBehaviour
     public int[] cloned_cubes = new int[] { 0, 0 };
     public int number_of_cloned_cube = 0;
     public List<GameObject> cloned_list = new List<GameObject>();
-    public List<GameObject> hearts = new List<GameObject>();
+
     // dizzness
     public bool dizzy = false;
     public int numAddHit = 30;
     public int numNeedHit = 0;
 
     //cube health
-    public int cube_health = 5;
+    public int cube_health = 3;
+    public List<GameObject> hearts = new List<GameObject>();
 
     private void Awake()
     {

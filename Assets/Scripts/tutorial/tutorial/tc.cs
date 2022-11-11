@@ -30,7 +30,8 @@ public class tc : MonoBehaviour
     private int ate = 0;
     public TMP_Text ateText;
     public TMP_Text limitText;
-
+    public GameObject heart;
+    public GameObject HealthUi;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,15 @@ public class tc : MonoBehaviour
         reversed_gravity = false;
         move_forward = false;
         limitText.text = "eat limitation: " + update_max_limit;
+        for (int heart_now = 0; heart_now < GlobalData.Instance.cube_health; heart_now++)
+        {
+            GameObject heart1 = Instantiate(heart);
+            heart1.SetActive(true);
+            GlobalData.Instance.hearts.Add(heart1);
+            heart1.transform.SetParent(HealthUi.transform);
+            heart1.transform.position = new Vector3(50 + 55 * heart_now, 50f, 0f);
+            //Debug.Log(GlobalData.Instance.cube_health);
+        }
     }
 
     // Update is called once per frame

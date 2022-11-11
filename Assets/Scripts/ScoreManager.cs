@@ -59,6 +59,8 @@ public class ScoreManager : MonoBehaviour {
 
 	public ScoreData sd;
 
+	public static string username = "testplayer1";
+
 	void Start()
 	{
 		// startTime = Time.time;

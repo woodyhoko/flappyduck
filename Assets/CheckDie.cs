@@ -12,6 +12,7 @@ public class CheckDie : MonoBehaviour
     public TMP_Text title;
     public GameObject replay;
     public GameObject next_level;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,9 @@ public class CheckDie : MonoBehaviour
                 else
                 {
                     level_game_over();
-                    // FindObjectOfType<GameManager>().EndGame();
+                   
+                    //playfabManager.SendLeaderBoard(ScoreManager.sscore);
+                    //playfabManager.GetLeaderboard();
                 }
             }
             else
@@ -78,6 +81,8 @@ public class CheckDie : MonoBehaviour
                         level_game_over();
                     else
                         level_game_over(); //FindObjectOfType<GameManager>().EndGame();
+                    //playfabManager.SendLeaderBoard(ScoreManager.sscore);
+                    //playfabManager.GetLeaderboard();
                 }
             }
             else

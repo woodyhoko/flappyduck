@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelMenu : MonoBehaviour
 {
+	
     public void level10()
     {
         Debug.Log("Level10");
@@ -363,6 +364,11 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.tutorial = true;
         
         
+    }
+    
+    public void leaderBoard()
+    {
+	    SceneManager.LoadScene("leaderboard");
     }
 
     // // Start is called before the first frame update

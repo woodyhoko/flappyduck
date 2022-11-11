@@ -2643,8 +2643,8 @@ MonoBehaviour:
   stars: []
   bullet: {fileID: 1482989147}
   cube: {fileID: 0}
-  heart: {fileID: 0}
-  HealthUi: {fileID: 0}
+  heart: {fileID: 1163862420}
+  HealthUi: {fileID: 143116171}
   ateText: {fileID: 183150104}
   limitText: {fileID: 0}
   time: 0
@@ -2669,6 +2669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islevel: 1
+  hasRock: 0
   Canvas: {fileID: 1725161534}
   title: {fileID: 506413007}
   replay: {fileID: 226541796}
@@ -5799,7 +5800,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515629381}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -6177,7 +6178,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590029960}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -6275,7 +6276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_text: {fileID: 1909677949}
-  maxHealth: 400
+  maxHealth: 100
 --- !u!1 &1607069996
 GameObject:
   m_ObjectHideFlags: 0
@@ -7101,7 +7102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_text: {fileID: 1909677949}
-  maxHealth: 400
+  maxHealth: 150
 --- !u!114 &1795752820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7139,7 +7140,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795752818}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -8503,7 +8504,7 @@ MonoBehaviour:
   number_of_cloned_cube: 0
   cloned_list: []
   dizzy: 0
-  numAddHit: 30
+  numTotalHit: 10
   numNeedHit: 0
   cube_health: 3
   hearts: []

@@ -3612,7 +3612,7 @@ MonoBehaviour:
   number_of_cloned_cube: 0
   cloned_list: []
   dizzy: 0
-  numAddHit: 30
+  numTotalHit: 10
   numNeedHit: 0
   cube_health: 100
   hearts: []
@@ -3926,8 +3926,8 @@ MonoBehaviour:
   stars: []
   bullet: {fileID: 0}
   cube: {fileID: 0}
-  heart: {fileID: 0}
-  HealthUi: {fileID: 0}
+  heart: {fileID: 1521360062}
+  HealthUi: {fileID: 582802608}
   ateText: {fileID: 0}
   limitText: {fileID: 0}
   time: 0
@@ -3952,6 +3952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islevel: 1
+  hasRock: 0
   Canvas: {fileID: 697029952}
   title: {fileID: 1257587070}
   replay: {fileID: 812974605}

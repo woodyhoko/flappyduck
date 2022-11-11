@@ -28,6 +28,7 @@ TagManager:
   - enemy
   - clone
   - cloned_cube
+  - Player2
   layers:
   - Default
   - TransparentFX

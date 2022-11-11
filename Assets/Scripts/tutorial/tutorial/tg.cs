@@ -66,20 +66,16 @@ public class tg : MonoBehaviour
         else if (time == 280)
         {
             GameObject obj = (GameObject)Instantiate(rock);
-            GameObject obj2 = (GameObject)Instantiate(rock);
-            obj.GetComponent<rock>().clone = true;
-            obj2.GetComponent<rock>().clone = true;
-            // obj.transform.SetParent(this.transform);
-            obj.transform.position = new Vector3(-4, 10, player.transform.position.z);
+            obj.transform.position = new Vector3(player.transform.position.x, 10, player.transform.position.z);
+            obj.transform.rotation = new Quaternion(Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f));
         
-            obj2.transform.position = new Vector3(0, 10, player.transform.position.z);
         }
-        if(time==281)
+        if(time==285)
         {
             PauseGame();
             canvas2.SetActive(true);
         }
-        if(time==320)
+        if(time==510)
         {
             food = Instantiate(invisible);
             food.transform.rotation = Quaternion.identity;
@@ -87,7 +83,7 @@ public class tg : MonoBehaviour
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
-        if(time==330)
+        if(time==520)
         {
             food = Instantiate(wall);
             food.transform.rotation = Quaternion.identity;
@@ -96,12 +92,12 @@ public class tg : MonoBehaviour
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
-        if(time==360)
+        if(time==460)
         {
             PauseGame();
             canvas2.SetActive(true);
         }
-        if(time==480)
+        if(time==680)
         {
             PauseGame();
             canvas2.SetActive(true);

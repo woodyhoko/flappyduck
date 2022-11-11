@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+
 public class tutorial_controller : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
@@ -15,6 +16,9 @@ public class tutorial_controller : MonoBehaviour
     private int shoot_freq = 50;
     private int shoot_timestep = 0;
     private float move_forward_limit = 4.0f;
+
+    public int numTotalHit = 3;
+    public int numNeedHit = 3;
 
     private bool jump = false;
     private int jump_numb = 0;
@@ -31,14 +35,17 @@ public class tutorial_controller : MonoBehaviour
     private int ate = 0;
     public TMP_Text ateText;
     public TMP_Text limitText;
-
+    private bool dizzy = false;
     public GameObject heart;
     public GameObject HealthUi;
     public int cube_health = 3;
     public List<GameObject> hearts = new List<GameObject>();
     // Start is called before the first frame update
+    private int lastKey = 0; // 0 for left and 1 for right
+    public GameObject Canvas;
     void Start()
     {
+
         m_Rigidbody = GetComponent<Rigidbody>();
         larger_gravity = false;
         reversed_gravity = false;
@@ -71,6 +78,15 @@ public class tutorial_controller : MonoBehaviour
 
     void FixedUpdate()
     {
+        // movement
+        if (!dizzy)
+        {
+            MoveController();
+        }
+        else
+        {
+            TriggerDizzness();
+        }
         if (transform.position.y < -10 || transform.position.z < -10 || transform.position.x < -6 || transform.position.x > 6)
         {
             SceneManager.LoadScene("gameover");
@@ -133,12 +149,6 @@ public class tutorial_controller : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.LeftArrow)){
-            transform.position = transform.position + new Vector3(-move_speed, 0 ,0); 
-        }
-        if(Input.GetKey(KeyCode.RightArrow)){
-            transform.position = transform.position + new Vector3(move_speed, 0 ,0);    
-        }
         if(shoot){
            // print("check");
            shoot_timestep ++;
@@ -160,6 +170,7 @@ public class tutorial_controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+
         if (collider.gameObject.tag == "pipe")
         {
             cube_health--;
@@ -268,6 +279,13 @@ public class tutorial_controller : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "Rock")
+        {
+            dizzy = true;
+            numNeedHit = numTotalHit;
+            TriggerDizzness();
+            Destroy(collision.gameObject);
+        }
         if (collision.gameObject.tag == "Plane")
         {
             jump_numb = 2;
@@ -289,4 +307,58 @@ public class tutorial_controller : MonoBehaviour
             Debug.Log("get hit by pipe");
         }
     }
+    private void TriggerDizzness()
+    {
+        if (lastKey == 1 && Input.GetKey(KeyCode.LeftArrow))
+        {
+            lastKey = 0;
+            numNeedHit -= 1;
+        }
+        else if (lastKey == 0 && Input.GetKey(KeyCode.RightArrow))
+        {
+            lastKey = 1;
+            numNeedHit -= 1;
+        }
+
+        // check if it can recover
+        if (numNeedHit <= 0)
+        {
+            Canvas.SetActive(false);
+            dizzy = false;
+            numNeedHit = 0;
+        }
+        else
+        {
+            // set the canvas
+            GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
+            GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
+            Canvas.SetActive(true);
+            background.SetActive(false);
+            dizzy.SetActive(true);
+
+            float rate = (1 - (float)numNeedHit / (float)numTotalHit) * 100;
+            TMP_Text progress = Canvas.GetComponent<Transform>().Find("Dizzy").GetComponent<Transform>().Find("Progress").GetComponent<TMP_Text>();
+            progress.text = string.Format("Recover {0:0}%", rate); // $"Recover {rate.1f}%";
+            print(numNeedHit);
+        }
+    }
+
+    private void MoveController()
+    {
+        Canvas.SetActive(false);
+        dizzy = false;
+        numNeedHit = 0;
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            lastKey = 0;
+            transform.position = transform.position + new Vector3(-move_speed, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            lastKey = 1;
+            transform.position = transform.position + new Vector3(move_speed, 0, 0);
+        }
+    }
+
+
 }

@@ -37,9 +37,11 @@ public class LevelMenu : MonoBehaviour
     public void level11()
     {
         // Debug.Log("Level11");
-        SceneManager.LoadScene("Level_1_0");
-        ScoreManager.level1 = true;
+        SceneManager.LoadScene("Level_1_1");
+        ScoreManager.level1 = false;
 		ScoreManager.level1Passed = false;
+        ScoreManager.level11 = true;
+        ScoreManager.level11Passed = false;
 		ScoreManager.level20 = false;
 		ScoreManager.level21 = false;
 		ScoreManager.level22 = false;

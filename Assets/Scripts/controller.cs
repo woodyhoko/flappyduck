@@ -69,6 +69,11 @@ public class controller : MonoBehaviour
             ScoreManager.level1 = false;
             ScoreManager.level20 = true;
         }
+        if (this_Level_name == "Level_1_1")
+        {
+            ScoreManager.level11 = false;
+            ScoreManager.level20 = true;
+        }
         else if (this_Level_name == "Level_2_0")
         {
             ScoreManager.level20 = false;
@@ -185,6 +190,20 @@ public class controller : MonoBehaviour
         }
     }
 
+    private void showResultPage(string text) {
+        Time.timeScale = 0;
+
+        Canvas.SetActive(true);
+        GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
+        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Background").gameObject;
+        Canvas.SetActive(true);
+        background.SetActive(true);
+
+        title.text = text;
+        replay.SetActive(false);
+        next_level.SetActive(true);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -206,6 +225,18 @@ public class controller : MonoBehaviour
                 title.text = "Level 1.0  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
+            }
+        }
+
+        if (level && this_Level_name == "Level_1_1")
+        {
+            if (timer == 900)
+            {
+                ScoreManager.level11Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
+                showResultPage("Level 1.1  Passed");
             }
         }
 
@@ -785,8 +816,13 @@ public class controller : MonoBehaviour
             GlobalData.Instance.numNeedHit = 0;
         } else {
             // set the canvas
-            float rate = (1 - (float)GlobalData.Instance.numNeedHit / (float)GlobalData.Instance.numAddHit) * 100;
+            GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
+            GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
             Canvas.SetActive(true);
+            background.SetActive(false);
+            dizzy.SetActive(true);
+
+            float rate = (1 - (float)GlobalData.Instance.numNeedHit / (float)GlobalData.Instance.numAddHit) * 100;
             TMP_Text progress = Canvas.GetComponent<Transform>().Find("Dizzy").GetComponent<Transform>().Find("Progress").GetComponent<TMP_Text>();
             progress.text = string.Format("Recover {0:0}%", rate); // $"Recover {rate.1f}%";
         }

@@ -136,9 +136,13 @@ public class CheckDie : MonoBehaviour
             dizzy.SetActive(false);
         }
 
+        if (!islevel) {
+            TMP_Text score = background.GetComponent<Transform>().Find("Score").GetComponent<TMP_Text>();
+            score.GetComponent<TMPro.TextMeshProUGUI>().text = "Score : " + ScoreManager.sscore.ToString();
+        }
+
         title.text = "Game Over";
         replay.SetActive(true);
         next_level.SetActive(false);
-        print("hey");
     }
 }

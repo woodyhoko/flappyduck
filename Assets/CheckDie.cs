@@ -50,27 +50,36 @@ public class CheckDie : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject.tag == "ceil" || collider.gameObject.tag == "water"){
+        if(collider.gameObject.tag == "ceil" ||collider.gameObject.tag == "pipe"){
             if (this.tag == "Player")
             {
-                if (islevel) {
-				    if (collider.gameObject.tag == "ceil") {
-					    ScoreManager.killedByCeil = true;
-					    ScoreManager.killedByWater = false;
-					    ScoreManager.killedByBound = false;
-					    Debug.Log("ceil");
-				    } else {
-					    ScoreManager.killedByWater = true;
-					    ScoreManager.killedByCeil = false;
-					    ScoreManager.killedByBound = false;
-					    Debug.Log("water");
-				    }
-                    level_game_over();
-                } else {
+                if (collider.gameObject.tag == "pipe")
+                {
+                    GlobalData.Instance.cube_health -= 1;
+                    int hp = GlobalData.Instance.cube_health;
+                    if (hp >= 0)
+                        GlobalData.Instance.hearts[hp].SetActive(false);
+                    if (hp <= 0f)
+                    {
+                        ScoreManager.killedByWater = true;
+                        ScoreManager.killedByCeil = false;
+                        ScoreManager.killedByBound = false;
+                        if (islevel)
+                            level_game_over();
+                        else
+                            FindObjectOfType<GameManager>().EndGame();
+                    }
+                }
+                else if (collider.gameObject.tag == "ceil")
+                {
                     ScoreManager.killedByCeil = true;
-				    ScoreManager.killedByWater = false;
-				    ScoreManager.killedByBound = false;
-                    FindObjectOfType<GameManager>().EndGame();
+                    ScoreManager.killedByWater = false;
+                    ScoreManager.killedByBound = false;
+                    Debug.Log("ceil");
+                    if (islevel)
+                        level_game_over();
+                    else
+                        FindObjectOfType<GameManager>().EndGame();
                 }
             }
             else
@@ -89,6 +98,31 @@ public class CheckDie : MonoBehaviour
                 
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "water" && this.tag == "Player")
+        {
+            GlobalData.Instance.cube_health -= 1;
+            GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
+            if (GlobalData.Instance.cube_health <= 0f)
+            {
+               
+                ScoreManager.killedByWater = true;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByBound = false;
+                if(islevel)
+                {
+                    level_game_over();
+                }
+                else
+                    FindObjectOfType<GameManager>().EndGame();
+            }
+            Destroy(collision.gameObject);
+            Debug.Log("get hit by water");
+        }
+    }
+
 
     private void level_game_over()
     {
@@ -104,5 +138,6 @@ public class CheckDie : MonoBehaviour
         title.text = "Game Over";
         replay.SetActive(true);
         next_level.SetActive(false);
+
     }
 }

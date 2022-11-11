@@ -20,20 +20,20 @@ public class water : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            GlobalData.Instance.cube_health -= 1;
-            GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
-            if (GlobalData.Instance.cube_health <= 0f)
-            {
-                ScoreManager.killedByWater = true;
-                ScoreManager.killedByCeil = false;
-                ScoreManager.killedByBound = false;
-                FindObjectOfType<GameManager>().EndGame();
-            }
-            Debug.Log("get hit by water");
-            Destroy(gameObject);
-        }
+        //if (collision.gameObject.tag == "Player")
+       // {
+        //    GlobalData.Instance.cube_health -= 1;
+        //    GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
+         //   if (GlobalData.Instance.cube_health <= 0f)
+         //   {
+         //       ScoreManager.killedByWater = true;
+         //       ScoreManager.killedByCeil = false;
+          //      ScoreManager.killedByBound = false;
+          //      FindObjectOfType<GameManager>().EndGame();
+          //  }
+          //  Debug.Log("get hit by water");
+          //  Destroy(gameObject);
+      //  }
     }
     private void OnTriggerEnter(Collider collider)
     {

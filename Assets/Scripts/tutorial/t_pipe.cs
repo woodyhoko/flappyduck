@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class pipe : MonoBehaviour
+public class t_pipe : MonoBehaviour
 {
-    // public GameObject healthBarUI;
-    // public Canvas Canvas;
-    //pipeHealth pipeHealth = new pipeHealth();
     public TMPro.TextMeshProUGUI score_text;
     HealthSystem healthSystem;
     public float maxHealth = 400f;
@@ -23,7 +20,14 @@ public class pipe : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        // healthBar.transform.SetParent(Canvas.transform);
+        // healthBar.transform.position = this.transform.position + new Vector3(0,1.2f,0);
     }
+
+    //public void SetHealth(float max_health){
+     //   pipeHealth.init(max_health);
+   // }
+
     private void OnCollisionEnter(Collision collision){
         if(collision.gameObject.tag == "bullet")
         {
@@ -45,7 +49,7 @@ public class pipe : MonoBehaviour
         if (collider.gameObject.tag == "bullet")
         {
             //Debug.Log("get hit by bullet");
-            if (gameObject != null && collider.gameObject != null && healthSystem != null)
+            if (gameObject != null && collider.gameObject != null&& healthSystem!=null)
             {
                 //healthSystem.Damage(collider.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
                 healthSystem.Damage(1);
@@ -61,19 +65,18 @@ public class pipe : MonoBehaviour
                 // Destroy(gameObject);
             }
         }
-        //if (collider.gameObject.tag == "Player")
-        //{
-        //   GlobalData.Instance.cube_health -= 1;
-        //   GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
+        if (collider.gameObject.tag == "Player")
+        {
+            GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
 
-        //  if (GlobalData.Instance.cube_health <= 0f)
-        //  {
-        //      ScoreManager.killedByWater = true;
-        //      ScoreManager.killedByCeil = false;
-        //      ScoreManager.killedByBound = false;
-        //      FindObjectOfType<GameManager>().EndGame();
-        //  }
-        //  Debug.Log("get hit by pipe");
-
+            if (GlobalData.Instance.cube_health <= 0f)
+            {
+                ScoreManager.killedByWater = true;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByBound = false;
+                FindObjectOfType<GameManager>().EndGame();
+            }
+            Debug.Log("get hit by pipe");
+        }
     }
 }

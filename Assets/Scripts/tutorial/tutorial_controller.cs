@@ -32,6 +32,10 @@ public class tutorial_controller : MonoBehaviour
     public TMP_Text ateText;
     public TMP_Text limitText;
 
+    public GameObject heart;
+    public GameObject HealthUi;
+    public int cube_health = 3;
+    public List<GameObject> hearts = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +44,15 @@ public class tutorial_controller : MonoBehaviour
         reversed_gravity = false;
         move_forward = false;
         limitText.text = "eat limitation: " + update_max_limit;
+        for (int heart_now = 0; heart_now < cube_health; heart_now++)
+        {
+            GameObject heart1 = Instantiate(heart);
+            heart1.SetActive(true);
+            hearts.Add(heart1);
+            heart1.transform.SetParent(HealthUi.transform);
+            heart1.transform.position = new Vector3(50 + 55 * heart_now, 50f, 0f);
+            //Debug.Log(GlobalData.Instance.cube_health);
+        }
     }
 
     // Update is called once per frame
@@ -147,6 +160,21 @@ public class tutorial_controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        if (collider.gameObject.tag == "pipe")
+        {
+            cube_health--;
+           hearts[cube_health].SetActive(false);
+
+            if (cube_health <= 0f)
+            {
+                ScoreManager.killedByWater = true;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByBound = false;
+                FindObjectOfType<GameManager>().EndGame();
+            }
+            Debug.Log("get hit by pipe");
+        }
+
         if (ate < update_max_limit)
         {
             if (collider.gameObject.tag == "bigger")
@@ -244,6 +272,21 @@ public class tutorial_controller : MonoBehaviour
         {
             jump_numb = 2;
 
+        }
+        if (collision.gameObject.tag == "water")
+        {
+            cube_health--;
+            hearts[cube_health].SetActive(false);
+
+            if (cube_health <= 0f)
+            {
+                ScoreManager.killedByWater = true;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByBound = false;
+                FindObjectOfType<GameManager>().EndGame();
+            }
+            Destroy(collision.gameObject);
+            Debug.Log("get hit by pipe");
         }
     }
 }

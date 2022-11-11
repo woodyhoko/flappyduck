@@ -35,9 +35,12 @@ public class levelgenerator : MonoBehaviour
     public float water_chance;
     public GameObject fps;
     public float fps_chance;
+
     //public GameObject text;
 
     // public GameObject movingHori;
+    public GameObject heart;
+    public GameObject HealthUi;
 
     private int difficulty = 0;
     //public GameObject player; 
@@ -53,6 +56,7 @@ public class levelgenerator : MonoBehaviour
         // ppipe.transform.position = new Vector3(0, 1, 20);
         // Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
         // m_Rigidbody.velocity = new Vector3(0,0,-15f);
+        Debug.Log(GlobalData.Instance.cube_health);
     }
 
     // Update is called once per frame

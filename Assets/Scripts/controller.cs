@@ -14,6 +14,9 @@ public class controller : MonoBehaviour
     public GameObject bullet;
 
     public GameObject cube;
+    public GameObject heart;
+    public GameObject HealthUi;
+   // public List<GameObject> hearts = new List<GameObject>();
 
     private bool jump = false;
     private int jump_numb = 0;
@@ -131,7 +134,8 @@ public class controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
+        //change cube color
+        //gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
 
         speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -169,6 +173,15 @@ public class controller : MonoBehaviour
             {
                 stars[i].transform.position = this.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
             }
+        }
+        for (int heart_now = 0; heart_now < GlobalData.Instance.cube_health; heart_now++)
+        {
+            GameObject heart1 = Instantiate(heart);
+            heart1.SetActive(true);
+            GlobalData.Instance.hearts.Add(heart1);
+            heart1.transform.SetParent(HealthUi.transform);
+            heart1.transform.position = new Vector3(50 + 55 * heart_now, 50f, 0f);
+            //Debug.Log(GlobalData.Instance.cube_health);
         }
     }
 
@@ -546,6 +559,7 @@ public class controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+
         if (collider.gameObject.tag == "enemy")
         {
             Debug.Log("get hit by enemy");
@@ -745,7 +759,7 @@ public class controller : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health/100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
+        //gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health/100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
 
         if (collision.gameObject.tag == "Plane")
         {

@@ -33,8 +33,9 @@ public class rock : MonoBehaviour
             print("Trigger Dizzness");
 
             GlobalData.Instance.dizzy = true;
-            GlobalData.Instance.numNeedHit = GlobalData.Instance.numAddHit;
-            GlobalData.Instance.numAddHit += 10; // increase difficulty for next hit
+            GlobalData.Instance.numNeedHit = GlobalData.Instance.numTotalHit;
+            GlobalData.Instance.numTotalHit += 1; // increase difficulty for next hit
+            // print(GlobalData.Instance.numNeedHit);
         }
      }
 }

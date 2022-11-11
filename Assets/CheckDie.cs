@@ -95,7 +95,7 @@ public class CheckDie : MonoBehaviour
         Time.timeScale = 0;
 
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
-        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Background").gameObject;
+        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
 
         Canvas.SetActive(true);
         background.SetActive(true);

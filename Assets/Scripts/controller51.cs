@@ -918,7 +918,7 @@ public class controller51 : MonoBehaviour
             GlobalData.Instance.numNeedHit = 0;
         } else {
             // set the canvas
-            float rate = (1 - (float)GlobalData.Instance.numNeedHit / (float)GlobalData.Instance.numAddHit) * 100;
+            float rate = (1 - (float)GlobalData.Instance.numNeedHit / (float)GlobalData.Instance.numTotalHit) * 100;
             Canvas.SetActive(true);
             TMP_Text progress = Canvas.GetComponent<Transform>().Find("Dizzy").GetComponent<Transform>().Find("Progress").GetComponent<TMP_Text>();
             progress.text = string.Format("Recover {0:0}%", rate); // $"Recover {rate.1f}%";

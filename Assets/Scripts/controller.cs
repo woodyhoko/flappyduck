@@ -822,9 +822,10 @@ public class controller : MonoBehaviour
             background.SetActive(false);
             dizzy.SetActive(true);
 
-            float rate = (1 - (float)GlobalData.Instance.numNeedHit / (float)GlobalData.Instance.numAddHit) * 100;
+            float rate = (1 - (float)GlobalData.Instance.numNeedHit / (float)GlobalData.Instance.numTotalHit) * 100;
             TMP_Text progress = Canvas.GetComponent<Transform>().Find("Dizzy").GetComponent<Transform>().Find("Progress").GetComponent<TMP_Text>();
             progress.text = string.Format("Recover {0:0}%", rate); // $"Recover {rate.1f}%";
+            print(GlobalData.Instance.numNeedHit);
         }
     }
 

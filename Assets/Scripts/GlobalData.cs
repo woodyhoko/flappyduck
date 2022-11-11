@@ -28,7 +28,7 @@ public class GlobalData : MonoBehaviour
     public List<GameObject> hearts = new List<GameObject>();
     // dizzness
     public bool dizzy = false;
-    public int numAddHit = 30;
+    public int numTotalHit = 10;
     public int numNeedHit = 0;
 
     //cube health

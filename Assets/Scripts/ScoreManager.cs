@@ -83,5 +83,6 @@ public class ScoreManager : MonoBehaviour {
 
 	void Update()
 	{
+		cube_health = GlobalData.Instance.cube_health;
 	}
 }

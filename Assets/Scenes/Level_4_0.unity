@@ -76971,6 +76971,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440033645}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1441170342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1441170344}
+  - component: {fileID: 1441170343}
+  m_Layer: 0
+  m_Name: GlobalObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1441170343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441170342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cbdcd729c8b5b0438b1f482a7cc4eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starRotateSpeed: 1
+  shoot: 0
+  shoot_freq: 50
+  shoot_timestep: 0
+  move_forward_limit: 4
+  move_forward: 0
+  move_speed: 0.08
+  update_max_limit: 6
+  ate: 0
+  choosen_powerCard: 0
+  plane_width: 10
+  world_speed: 1
+  star_size: 0.1
+  player_localScale: {x: 1, y: 1, z: 1}
+  world: 1
+  star_num: 0
+  cloned_cubes: 0000000000000000
+  number_of_cloned_cube: 0
+  cloned_list: []
+  dizzy: 0
+  numTotalHit: 10
+  numNeedHit: 0
+  cube_health: 3
+  hearts: []
+--- !u!4 &1441170344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441170342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 111
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1441565976
 GameObject:
   m_ObjectHideFlags: 0

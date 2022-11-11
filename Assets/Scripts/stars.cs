@@ -37,8 +37,8 @@ public class stars : MonoBehaviour
     void Awake()
     {
         Debug.Log("STATS OF level 1 AFTERRR");
-        Debug.Log(ScoreManager.cube_health == 100f);
-        Debug.Log(ScoreManager.level1);
+        Debug.Log(ScoreManager.cube_health);
+       
         Debug.Log(ScoreManager.level1Passed);
         if (ScoreManager.level31 && ScoreManager.level31Passed)
         {

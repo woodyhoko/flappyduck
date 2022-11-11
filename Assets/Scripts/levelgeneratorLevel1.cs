@@ -23,13 +23,27 @@ public class levelgeneratorLevel1 : MonoBehaviour
     public TMP_Text title;
     public GameObject replay;
     public GameObject next_level;
+
+    public bool haveRock = false;
+
     void Start()
     {
+    }
+
+    private void generateRock() {
+        GameObject obj = (GameObject)Instantiate(rock);
+        obj.GetComponent<rock>().clone = true;
+        obj.transform.position = new Vector3(player.transform.position.x, 10, player.transform.position.z);
+        obj.transform.rotation = new Quaternion(Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f));
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (haveRock && (timer == 100 || timer == 200 || timer == 300)) {
+            generateRock();
+        }
+
         timer++;
         if (start)
         {

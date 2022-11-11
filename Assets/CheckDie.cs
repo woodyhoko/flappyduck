@@ -93,7 +93,14 @@ public class CheckDie : MonoBehaviour
     private void level_game_over()
     {
         Time.timeScale = 0;
+
+        GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
+        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Background").gameObject;
+
         Canvas.SetActive(true);
+        background.SetActive(true);
+        dizzy.SetActive(false);
+
         title.text = "Game Over";
         replay.SetActive(true);
         next_level.SetActive(false);

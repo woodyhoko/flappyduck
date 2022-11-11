@@ -23,6 +23,9 @@ public class ScoreManager : MonoBehaviour {
 	
 	public static bool level1 = false;
 	public static bool level1Passed = false;
+
+	public static bool level11 = false;
+	public static bool level11Passed = false;
 	
 	public static bool level20 = false;
 	public static bool level20Passed = false;

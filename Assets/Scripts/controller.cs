@@ -602,15 +602,7 @@ public class controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-
-        if (collider.gameObject.tag == "enemy")
-        {
-            Debug.Log("get hit by enemy");
-            Destroy(collider.gameObject);
-            //     ScoreManager.killedByMovingEnemy= true;
-            FindObjectOfType<GameManager>().EndGame();
-
-        }
+        
         if (collider.gameObject.tag == "portal_back")
         {
             //each time becomes 1.2 * original

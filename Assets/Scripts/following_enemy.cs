@@ -43,6 +43,17 @@ public class following_enemy : MonoBehaviour
                 // Destroy(gameObject);
             }
         }
+        else  if (collider.gameObject.tag == "Player")
+        {
+            GlobalData.Instance.cube_health -= 1;
+            GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
+            if (GlobalData.Instance.cube_health <= 0f)
+            {
+                FindObjectOfType<GameManager>().EndGame();
+            }
+            Debug.Log("get hit by chasing enemy");
+            Destroy(gameObject);
+        }
     }
 
 private void OnCollisionEnter(Collision collision){
@@ -59,6 +70,7 @@ private void OnCollisionEnter(Collision collision){
 
 
     }
+
 }
     // Update is called once per frame
     void FixedUpdate()

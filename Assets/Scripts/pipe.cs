@@ -51,7 +51,9 @@ public class pipe : MonoBehaviour
                 healthSystem.Damage(50);
                 //pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
                 //Debug.Log(healthSystem.GetHealth());
-                gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - healthSystem.GetHealthPercentage(), 0, 1), Mathf.Clamp(healthSystem.GetHealthPercentage(), 0, 1), 0, 0.5f);
+                gameObject.GetComponent<Renderer>().material.color = new Color(
+                    Mathf.Clamp(1 - healthSystem.GetHealthPercentage(), 0, 1),
+                    Mathf.Clamp(healthSystem.GetHealthPercentage(), 0, 1), 0, 0.5f);
 
                 if (healthSystem.GetHealth().Equals(0f))
                 {
@@ -61,19 +63,19 @@ public class pipe : MonoBehaviour
                 // Destroy(gameObject);
             }
         }
-        //if (collider.gameObject.tag == "Player")
-        //{
-        //   GlobalData.Instance.cube_health -= 1;
-        //   GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
 
-        //  if (GlobalData.Instance.cube_health <= 0f)
-        //  {
-        //      ScoreManager.killedByWater = true;
-        //      ScoreManager.killedByCeil = false;
-        //      ScoreManager.killedByBound = false;
-        //      FindObjectOfType<GameManager>().EndGame();
-        //  }
-        //  Debug.Log("get hit by pipe");
+        if (collider.gameObject.tag == "Player")
+        {
+            GlobalData.Instance.cube_health -= 1;
+            GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
 
+            if (GlobalData.Instance.cube_health <= 0f)
+            {
+                FindObjectOfType<GameManager>().EndGame();
+            }
+
+            Debug.Log("get hit by pipe");
+
+        }
     }
 }

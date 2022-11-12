@@ -37,7 +37,19 @@ public class shooting_enemy : MonoBehaviour
                 }
                 // Destroy(gameObject);
             }
+            else  if (collider.gameObject.tag == "Player")
+            {
+                GlobalData.Instance.cube_health -= 1;
+                GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
+                if (GlobalData.Instance.cube_health <= 0f)
+                {
+                    FindObjectOfType<GameManager>().EndGame();
+                }
+                Debug.Log("get hit by shooting enemy");
+                Destroy(gameObject);
+            }
         }
+        
     }
 
     private void OnCollisionEnter(Collision collision){
@@ -54,6 +66,7 @@ public class shooting_enemy : MonoBehaviour
 
 
         }
+        
     }
 
     // Update is called once per frame

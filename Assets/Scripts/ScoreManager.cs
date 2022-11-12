@@ -51,6 +51,8 @@ public class ScoreManager : MonoBehaviour {
 	public static bool level40 = false;
 	public static bool level40Passed = false;
 	
+	public static bool level41 = false;
+	public static bool level41Passed = false;
 	public static int star_upgrade = 0;
 
 	public static bool tutorial = false;

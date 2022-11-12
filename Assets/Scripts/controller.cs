@@ -114,6 +114,11 @@ public class controller : MonoBehaviour
         else if (this_Level_name == "Level_4_0")
         {
             ScoreManager.level40 = false;
+            ScoreManager.level41 = true;
+        }
+        else if (this_Level_name == "Level_4_1")
+        {
+            ScoreManager.level41 = false;
         }
         Time.timeScale = 1;
         ScoreManager.startTime = Time.time;
@@ -359,7 +364,7 @@ public class controller : MonoBehaviour
         
         if (level && this_Level_name == "Level_4_0")
         {
-            if (timer == 1400)
+            if (timer == 1200)
             {
                 ScoreManager.level40Passed = true;
                 ScoreManager.killedByBound = false;
@@ -373,7 +378,22 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-
+        if (level && this_Level_name == "Level_4_1")
+        {
+            if (timer == 1400)
+            {
+                ScoreManager.level41Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
+                ScoreManager.cube_health = GlobalData.Instance.cube_health;
+                Time.timeScale = 0;
+                Canvas.SetActive(true);
+                title.text = "Level 4.1  Passed";
+                replay.SetActive(false);
+                next_level.SetActive(true);
+            }
+        }
         if (level && this_Level_name == "Level_5_0")
         {
             if (timer == 500)

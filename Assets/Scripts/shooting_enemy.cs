@@ -78,7 +78,7 @@ public class shooting_enemy : MonoBehaviour
             enebulins = Instantiate(enebul);
             enebulins.transform.position = transform.position + new Vector3(0, 0,-2f);
             Rigidbody m_Rigidbody = enebulins.GetComponent<Rigidbody>();
-            m_Rigidbody.velocity = new Vector3(0, 0, -30f);
+            m_Rigidbody.velocity = new Vector3(0, 0, -20f);
         }
     }
 }

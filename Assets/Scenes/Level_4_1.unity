@@ -36113,9 +36113,9 @@ MonoBehaviour:
   number_of_cloned_cube: 0
   cloned_list: []
   dizzy: 0
-  numAddHit: 30
+  numTotalHit: 10
   numNeedHit: 0
-  cube_health: 100
+  cube_health: 3
   hearts: []
 --- !u!4 &692744126
 Transform:
@@ -39558,6 +39558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islevel: 1
+  hasRock: 0
   Canvas: {fileID: 916059180}
   title: {fileID: 2094288737}
   replay: {fileID: 1260201928}

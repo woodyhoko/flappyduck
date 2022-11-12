@@ -35987,7 +35987,7 @@ MonoBehaviour:
   dizzy: 0
   numTotalHit: 10
   numNeedHit: 0
-  cube_health: 100
+  cube_health: 3
   hearts: []
 --- !u!4 &692744126
 Transform:

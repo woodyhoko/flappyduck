@@ -222,7 +222,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-
+                ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 1.0  Passed";
@@ -251,7 +251,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-
+                ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 2.0  Passed";
@@ -267,7 +267,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-
+                ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 2.1  Passed";

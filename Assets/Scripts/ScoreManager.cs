@@ -68,6 +68,7 @@ public class ScoreManager : MonoBehaviour {
 
 	void Awake()
 	{
+
 		sd = new ScoreData();
 	}
 
@@ -81,8 +82,9 @@ public class ScoreManager : MonoBehaviour {
 		sd.scores.Add(score);
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
-		cube_health = GlobalData.Instance.cube_health;
+		
+		Debug.Log("updating cube_health " + cube_health);
 	}
 }

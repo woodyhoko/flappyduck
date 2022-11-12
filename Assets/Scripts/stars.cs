@@ -38,9 +38,9 @@ public class stars : MonoBehaviour
     {
         Debug.Log("STATS OF level 1 AFTERRR");
         Debug.Log(ScoreManager.cube_health);
-       
-        Debug.Log(ScoreManager.level1Passed);
-        if (ScoreManager.level31 && ScoreManager.level31Passed)
+        Debug.Log(ScoreManager.level30);
+        Debug.Log(ScoreManager.level30Passed);
+        if (ScoreManager.level31Passed)
         {
             if (ScoreManager.cube_health == 3)
             {
@@ -60,7 +60,7 @@ public class stars : MonoBehaviour
 
 
         }
-        else if (ScoreManager.level30 && ScoreManager.level30Passed)
+        else if (ScoreManager.level30Passed)
         {
             Debug.Log("passed");
               if (ScoreManager.cube_health  == 3)
@@ -79,7 +79,7 @@ public class stars : MonoBehaviour
                 strlt30.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
             }
         }
-        else if (ScoreManager.level21 && ScoreManager.level21Passed)
+        else if ( ScoreManager.level21Passed)
         {
             Debug.Log("passed");
             if (ScoreManager.cube_health  == 3)
@@ -98,7 +98,7 @@ public class stars : MonoBehaviour
                 strlt21.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
             }
         }
-        else if (ScoreManager.level20 && ScoreManager.level20Passed)
+        else if ( ScoreManager.level20Passed)
         {
             Debug.Log("passed");
             if (ScoreManager.cube_health  == 3)
@@ -117,7 +117,7 @@ public class stars : MonoBehaviour
                 strlt20.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
             }
         }
-        else if (ScoreManager.level22 && ScoreManager.level22Passed)
+        else if ( ScoreManager.level22Passed)
         {
             Debug.Log("passed");
            if (ScoreManager.cube_health  == 3)
@@ -136,7 +136,7 @@ public class stars : MonoBehaviour
                 strlt22.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
             }
         }
-        else if (ScoreManager.level23 && ScoreManager.level23Passed)
+        else if ( ScoreManager.level23Passed)
         {
             Debug.Log("passed");
            if (ScoreManager.cube_health  == 3)
@@ -155,7 +155,7 @@ public class stars : MonoBehaviour
                 strlt23.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
             }
         }
-        else if (ScoreManager.level24 && ScoreManager.level24Passed)
+        else if ( ScoreManager.level24Passed)
         {
             Debug.Log("passed");
            if (ScoreManager.cube_health  == 3)
@@ -193,7 +193,7 @@ public class stars : MonoBehaviour
                 strlt10.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
             }
         }
-        else if (ScoreManager.level40 && ScoreManager.level40Passed)
+        else if ( ScoreManager.level40Passed)
         {
             Debug.Log("passed");
            if (ScoreManager.cube_health  == 3)

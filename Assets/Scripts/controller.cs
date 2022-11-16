@@ -531,7 +531,6 @@ public class controller : MonoBehaviour
         {
             jump_height = 5.0f;
         }
-
         //reversed gravity
         if (reversed_gravity)
         {

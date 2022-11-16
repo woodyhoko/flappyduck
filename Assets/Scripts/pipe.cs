@@ -17,18 +17,19 @@ public class pipe : MonoBehaviour
     {
         Physics.IgnoreLayerCollision(6, 10, true);
         Physics.IgnoreLayerCollision(6, 6, true);
-        healthSystem= new(maxHealth);
+        healthSystem = new(maxHealth);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
     }
-    private void OnCollisionEnter(Collision collision){
-        if(collision.gameObject.tag == "bullet")
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "bullet")
         {
             //Debug.Log("get hit by bullet");
-             healthSystem.Damage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
+            healthSystem.Damage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
             //pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
             if (healthSystem.GetHealth().Equals(0f))
             {
@@ -54,7 +55,6 @@ public class pipe : MonoBehaviour
                 gameObject.GetComponent<Renderer>().material.color = new Color(
                     Mathf.Clamp(1 - healthSystem.GetHealthPercentage(), 0, 1),
                     Mathf.Clamp(healthSystem.GetHealthPercentage(), 0, 1), 0, 0.5f);
-
                 if (healthSystem.GetHealth().Equals(0f))
                 {
                     Destroy(collider.gameObject);
@@ -64,18 +64,20 @@ public class pipe : MonoBehaviour
             }
         }
 
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player" && collider.gameObject.tag != "star")
         {
             GlobalData.Instance.cube_health -= 1;
-            GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
-
-            if (GlobalData.Instance.cube_health <= 0f)
+            int hp = GlobalData.Instance.cube_health;
+            if (hp >= 0)
+                GlobalData.Instance.hearts[hp].SetActive(false);
+            if (hp <= 0f)
             {
-                FindObjectOfType<GameManager>().EndGame();
+                ScoreManager.killedByWater = false;
+                ScoreManager.killedByPipe = true;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByBound = false;
             }
-
-            Debug.Log("get hit by pipe");
-
+            Destroy(this.gameObject);
         }
     }
 }

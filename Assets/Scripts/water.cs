@@ -39,18 +39,16 @@ public class water : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         Debug.Log("---------------water triggger!!------------");
-        if (collider.gameObject.tag == "Player")
+        GlobalData.Instance.cube_health -= 1;
+        GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
+        if (GlobalData.Instance.cube_health <= 0f)
         {
-            GlobalData.Instance.cube_health -= 1;
-            GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
-            if (GlobalData.Instance.cube_health <= 0f)
-            {
-                ScoreManager.killedByWater = true;
-                ScoreManager.killedByCeil = false;
-                ScoreManager.killedByBound = false;
-                FindObjectOfType<GameManager>().EndGame();
-            }
-            Debug.Log("get hit by water");
+            ScoreManager.killedByWater = true;
+            ScoreManager.killedByPipe = false;
+            ScoreManager.killedByCeil = false;
+            ScoreManager.killedByBound = false;
         }
+        Destroy(this.gameObject);
+        Debug.Log("get hit by water");
     }
 }

@@ -16,7 +16,7 @@ public class controller : MonoBehaviour
     public GameObject cube;
     public GameObject heart;
     public GameObject HealthUi;
-   // public List<GameObject> hearts = new List<GameObject>();
+    // public List<GameObject> hearts = new List<GameObject>();
 
     private bool jump = false;
     private int jump_numb = 0;
@@ -195,14 +195,16 @@ public class controller : MonoBehaviour
         }
     }
 
-    private void showResultPage(string text, bool hasRock) {
+    private void showResultPage(string text, bool hasRock)
+    {
         Time.timeScale = 0;
 
         // set canvas
         Canvas.SetActive(true);
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
         background.SetActive(true);
-        if (hasRock) {
+        if (hasRock)
+        {
             GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
             dizzy.SetActive(false);
         }
@@ -361,7 +363,7 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-        
+
         if (level && this_Level_name == "Level_4_0")
         {
             if (timer == 1200)
@@ -553,8 +555,6 @@ public class controller : MonoBehaviour
         if (jump)
         {
             jump = false;
-
-
             /*
             if (larger_gravity)
             {
@@ -566,7 +566,6 @@ public class controller : MonoBehaviour
             }
             //m_Rigidbody.AddForce(0, -9.8f, 0, ForceMode.Force);
             */
-
             Debug.Log("gravity: " + Physics.gravity);
             Debug.Log("jumping: " + transform.position);
             Debug.Log("jumping height: " + jump_height);
@@ -584,16 +583,18 @@ public class controller : MonoBehaviour
             {
                 m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
             }
-
             Debug.Log("z: " + transform.position.z);
             //m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 2.0f);
             move_forward = false;
         }
 
         // movement
-        if (!GlobalData.Instance.dizzy) {
+        if (!GlobalData.Instance.dizzy)
+        {
             MoveController();
-        } else {
+        }
+        else
+        {
             TriggerDizzness();
         }
 
@@ -622,7 +623,7 @@ public class controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        
+
         if (collider.gameObject.tag == "portal_back")
         {
             //each time becomes 1.2 * original
@@ -716,7 +717,6 @@ public class controller : MonoBehaviour
                 {
                     one_star.transform.localScale = new Vector3(0.5f, GlobalData.Instance.star_size, 0.5f);
                 }
-
                 // star.transform.localScale += new Vector3(0, 0.2f, 0);
                 ScoreManager.longer++;
                 GlobalData.Instance.ate++;
@@ -778,29 +778,24 @@ public class controller : MonoBehaviour
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 GameObject clone = Instantiate(player);
                 clone.SetActive(true);
-
                 clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                
                 if (GlobalData.Instance.cloned_cubes[0] == 0)
                 {
                     //clone.transform.SetParent(this.transform);
-                    
                     clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z);
                     GlobalData.Instance.cloned_cubes[0] = 1;
                 }
                 else
                 {
-                    
                     //clone.transform.SetParent();
                     //clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                     clone.transform.position = new Vector3(clone.transform.position.x + 2f, 4.0f, clone.transform.position.z);
                     GlobalData.Instance.cloned_cubes[1] = 1;
                 }
-                
                 //clone.transform.rotation = Quaternion.identity;
                 clone.tag = "cloned_cube";
             }
-            
+
         }
 
     }
@@ -819,33 +814,36 @@ public class controller : MonoBehaviour
         if (collision.gameObject.tag == "Plane")
         {
             jump_numb = 2;
-
         }
     }
 
-    private void TriggerDizzness() {
-        if (lastKey == 1 && Input.GetKey(KeyCode.LeftArrow)) {
+    private void TriggerDizzness()
+    {
+        if (lastKey == 1 && Input.GetKey(KeyCode.LeftArrow))
+        {
             lastKey = 0;
             GlobalData.Instance.numNeedHit -= 1;
         }
-        else if (lastKey == 0 && Input.GetKey(KeyCode.RightArrow)) {
+        else if (lastKey == 0 && Input.GetKey(KeyCode.RightArrow))
+        {
             lastKey = 1;
             GlobalData.Instance.numNeedHit -= 1;
         }
-
         // check if it can recover
-        if (GlobalData.Instance.numNeedHit <= 0) {
+        if (GlobalData.Instance.numNeedHit <= 0)
+        {
             Canvas.SetActive(false);
             GlobalData.Instance.dizzy = false;
             GlobalData.Instance.numNeedHit = 0;
-        } else {
+        }
+        else
+        {
             // set the canvas
             GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
             GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
             Canvas.SetActive(true);
             background.SetActive(false);
             dizzy.SetActive(true);
-
             float rate = (1 - (float)GlobalData.Instance.numNeedHit / (float)GlobalData.Instance.numTotalHit) * 100;
             TMP_Text progress = Canvas.GetComponent<Transform>().Find("Dizzy").GetComponent<Transform>().Find("Progress").GetComponent<TMP_Text>();
             progress.text = string.Format("Recover {0:0}%", rate); // $"Recover {rate.1f}%";
@@ -853,9 +851,9 @@ public class controller : MonoBehaviour
         }
     }
 
-    private void MoveController() {
+    private void MoveController()
+    {
         Canvas.SetActive(false);
-
         GlobalData.Instance.dizzy = false;
         GlobalData.Instance.numNeedHit = 0;
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -881,7 +879,6 @@ public class controller : MonoBehaviour
     //     Debug.Log(collision.gameObject);
     //     Destroy(collision.gameObject);
     // }
-
-    //}
+    // }
     // }
 }

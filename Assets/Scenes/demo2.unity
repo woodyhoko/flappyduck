@@ -7455,7 +7455,7 @@ MonoBehaviour:
   water_chance: 0.005
   fps: {fileID: 1438486282}
   fps_chance: 0
-  clone: {fileID: 0}
+  clone: {fileID: 1935139815}
   clone_chance: 0.003
   heart: {fileID: 334466263}
   HealthUi: {fileID: 232725516}

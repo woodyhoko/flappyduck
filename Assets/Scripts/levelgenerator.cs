@@ -35,6 +35,8 @@ public class levelgenerator : MonoBehaviour
     public float water_chance;
     public GameObject fps;
     public float fps_chance;
+    public GameObject clone;
+    public float clone_chance;
 
     //public GameObject text;
 
@@ -296,6 +298,17 @@ public class levelgenerator : MonoBehaviour
             food.transform.Rotate(0, 90, 0); // for showing icons in right view
             food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
 
+            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+            difficulty++;
+        }
+        if (Random.Range(0, 1f) < clone_chance)
+        {
+            GameObject food;
+            food = Instantiate(clone);
+            food.transform.rotation = Quaternion.identity;
+            food.transform.Rotate(0, 90, 0);
+            food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             difficulty++;

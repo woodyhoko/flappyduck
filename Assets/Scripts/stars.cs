@@ -32,6 +32,14 @@ public class stars : MonoBehaviour
     public GameObject strmid40;
     public GameObject strrt40;
     public GameObject strlt40;
+    
+    public GameObject strmid41;
+    public GameObject strrt41;
+    public GameObject strlt41;
+    
+    public GameObject strmid42;
+    public GameObject strrt42;
+    public GameObject strlt42;
 
     // Start is called before the first frame update
     void Awake()
@@ -208,6 +216,44 @@ public class stars : MonoBehaviour
                 strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
             }
            else if (ScoreManager.cube_health  == 1)
+            {
+                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+            }
+        }
+        else if ( ScoreManager.level41Passed)
+        {
+            Debug.Log("passed");
+            if (ScoreManager.cube_health  == 3)
+            {
+                strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strrt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+            }
+            else if (ScoreManager.cube_health  == 2)
+            {
+                strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+            }
+            else if (ScoreManager.cube_health  == 1)
+            {
+                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+            }
+        }
+        else if ( ScoreManager.level42Passed)
+        {
+            Debug.Log("passed");
+            if (ScoreManager.cube_health  == 3)
+            {
+                strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strrt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+            }
+            else if (ScoreManager.cube_health  == 2)
+            {
+                strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+            }
+            else if (ScoreManager.cube_health  == 1)
             {
                 strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
             }

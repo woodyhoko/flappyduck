@@ -14,7 +14,7 @@ public class playfabManager : MonoBehaviour
     {
         Login();
         Debug.Log("score " + ScoreManager.sscore);
-        //SendLeaderBoard(ScoreManager.sscore);
+        SendLeaderBoard(ScoreManager.sscore);
         //GetLeaderboard();
     }
 
@@ -81,8 +81,6 @@ public class playfabManager : MonoBehaviour
             texts[0].text = (item.Position + 1).ToString();
             texts[1].text = item.PlayFabId;
             texts[2].text = item.StatValue.ToString();
-            
-            Debug.Log(item.Position + " " + item.PlayFabId + " " + item.StatValue);
         }
     }
 }

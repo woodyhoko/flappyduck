@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.16405675, g: 0.17121592, b: 0.18004194, a: 1}
+  m_IndirectSpecularColor: {r: 0.15495163, g: 0.15419006, b: 0.15630138, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2654,6 +2654,7 @@ MonoBehaviour:
   title: {fileID: 712939865}
   replay: {fileID: 845885319}
   next_level: {fileID: 1490334098}
+  updatedLeaderBoardValue: 0
 --- !u!1 &549761531
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using PlayFab;
+using PlayFab.ClientModels;
 
 public class CheckDie : MonoBehaviour
 {
@@ -13,11 +15,14 @@ public class CheckDie : MonoBehaviour
     public GameObject replay;
     public GameObject next_level;
 
+    public bool updatedLeaderBoardValue = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
+        Login();
     }
 
     // Update is called once per frame
@@ -37,8 +42,6 @@ public class CheckDie : MonoBehaviour
                 else
                 {
                     level_game_over();
-
-                    //playfabManager.SendLeaderBoard(ScoreManager.sscore);
                     //playfabManager.GetLeaderboard();
                 }
             }
@@ -59,9 +62,6 @@ public class CheckDie : MonoBehaviour
                 else
                 {
                     level_game_over();
-
-                    //playfabManager.SendLeaderBoard(ScoreManager.sscore);
-                    //playfabManager.GetLeaderboard();
                 }
             }
             else
@@ -171,10 +171,59 @@ public class CheckDie : MonoBehaviour
         {
             TMP_Text score = background.GetComponent<Transform>().Find("Score").GetComponent<TMP_Text>();
             score.GetComponent<TMPro.TextMeshProUGUI>().text = "Score : " + ScoreManager.sscore.ToString();
+            if (!updatedLeaderBoardValue)
+            {
+                SendLeaderBoard(ScoreManager.sscore);
+                updatedLeaderBoardValue = true;
+            } 
         }
 
         title.text = "Game Over";
         replay.SetActive(true);
         next_level.SetActive(false);
+    }
+    
+    public void SendLeaderBoard(int score)
+    {
+        var request = new UpdatePlayerStatisticsRequest
+        {
+            Statistics = new List<StatisticUpdate>
+            {
+                new StatisticUpdate
+                {
+                    StatisticName = "flappyduck",
+                    Value = score
+                }
+            }
+        };
+        PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnError);
+    }
+    
+    
+    public void OnError(PlayFabError error)
+    {
+        Debug.Log("Error while logging in/creating account");
+        Debug.Log(error.GenerateErrorReport());
+    }
+    
+    public void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
+    {
+        Debug.Log("successful leaderboard sent");
+    }
+
+    public void Login()
+    {
+        var request = new LoginWithCustomIDRequest
+        {
+            // CustomId = SystemInfo.deviceUniqueIdentifier,
+            CustomId = ScoreManager.username,
+            CreateAccount = true
+        };
+        PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
+    }
+
+    public void OnSuccess(LoginResult result)
+    {
+        Debug.Log("Successful login/account create!");
     }
 }

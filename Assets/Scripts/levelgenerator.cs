@@ -80,7 +80,7 @@ public class levelgenerator : MonoBehaviour
             if (modNumber < 0.01f)
             {
 
-                if (modNumber < 0.004f)
+                if (modNumber < 0.002f)
                 {
                     GameObject w1 = (GameObject)Instantiate(wall2);
                     GameObject w2 = (GameObject)Instantiate(wall2);

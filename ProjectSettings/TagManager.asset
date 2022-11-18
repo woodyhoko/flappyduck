@@ -29,6 +29,7 @@ TagManager:
   - clone
   - cloned_cube
   - Player2
+  - cherry
   layers:
   - Default
   - TransparentFX

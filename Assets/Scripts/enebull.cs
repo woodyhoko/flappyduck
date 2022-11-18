@@ -26,7 +26,8 @@ public class enebull : MonoBehaviour
             {
                 FindObjectOfType<GameManager>().EndGame();
             }
-            Debug.Log("get hit by bullet of shooting enemy");
+            Debug.Log("get hit by shooting enemy");
+            Destroy(gameObject);
         }
     }
 }

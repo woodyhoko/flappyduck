@@ -24,7 +24,7 @@ public class canvas2 : MonoBehaviour
         switch (line)
         {
             case 0:
-                text.text = "avoid obstacles!";
+                text.text = "Avoid all the obstacles!";
                 break;
             case 1:
                 c.SetActive(false);
@@ -32,7 +32,7 @@ public class canvas2 : MonoBehaviour
                 line++;
                 break;
             case 2:
-                text.text = "avoid falling rocks!";
+                text.text = "Avoid the falling rock!";
                 break;
             case 3:
                 c.SetActive(false);
@@ -48,7 +48,7 @@ public class canvas2 : MonoBehaviour
                 line++;
                 break;
             case 6:
-                text.text = "you will meet different cubes in following levels";
+                text.text = "You will meet different upgrade cubes in following levels";
                 break;
             case 7:
                 text.text = " In endless mode : You can only eat limited number of power cubes";

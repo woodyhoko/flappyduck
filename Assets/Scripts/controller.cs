@@ -801,6 +801,23 @@ public class controller : MonoBehaviour
             }
 
         }
+        //cherry
+        if (collider.gameObject.tag == "cherry")
+        {
+            int hp = GlobalData.Instance.cube_health;
+            if (hp >= GlobalData.Instance.hearts.Count)
+            {
+                GameObject heart1 = Instantiate(heart);
+                heart1.SetActive(true);
+                GlobalData.Instance.hearts.Add(heart1);
+                heart1.transform.SetParent(HealthUi.transform);
+                heart1.transform.position = new Vector3(50 + 55 * hp, 50f, 0f);
+            }
+            else
+                    GlobalData.Instance.hearts[hp].SetActive(true);
+            GlobalData.Instance.cube_health += 1;
+            Destroy(collider.gameObject);
+        }
 
     }
     private void EnableCollider()

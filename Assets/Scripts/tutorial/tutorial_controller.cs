@@ -38,7 +38,7 @@ public class tutorial_controller : MonoBehaviour
     private bool dizzy = false;
     public GameObject heart;
     public GameObject HealthUi;
-    public int cube_health = 3;
+    public int cube_health = 5;
     public List<GameObject> hearts = new List<GameObject>();
     // Start is called before the first frame update
     private int lastKey = 0; // 0 for left and 1 for right
@@ -185,7 +185,21 @@ public class tutorial_controller : MonoBehaviour
             }
             Debug.Log("get hit by pipe");
         }
+        if (collider.gameObject.tag == "bullet")
+        {
+            Destroy(collider.gameObject);
+            cube_health--;
+            hearts[cube_health].SetActive(false);
 
+            if (cube_health <= 0f)
+            {
+                ScoreManager.killedByWater = true;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByBound = false;
+                FindObjectOfType<GameManager>().EndGame();
+            }
+            Debug.Log("get hit by pipe");
+        }
         if (ate < update_max_limit)
         {
             if (collider.gameObject.tag == "bigger")
@@ -304,7 +318,7 @@ public class tutorial_controller : MonoBehaviour
                 FindObjectOfType<GameManager>().EndGame();
             }
             Destroy(collision.gameObject);
-            Debug.Log("get hit by pipe");
+            //Debug.Log("get hit by pipe");
         }
     }
     private void TriggerDizzness()
@@ -339,7 +353,7 @@ public class tutorial_controller : MonoBehaviour
             float rate = (1 - (float)numNeedHit / (float)numTotalHit) * 100;
             TMP_Text progress = Canvas.GetComponent<Transform>().Find("Dizzy").GetComponent<Transform>().Find("Progress").GetComponent<TMP_Text>();
             progress.text = string.Format("Recover {0:0}%", rate); // $"Recover {rate.1f}%";
-            print(numNeedHit);
+            //print(numNeedHit);
         }
     }
 

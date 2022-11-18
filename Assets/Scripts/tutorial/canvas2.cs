@@ -24,7 +24,7 @@ public class canvas2 : MonoBehaviour
         switch (line)
         {
             case 0:
-                text.text = "Avoid all the obstacles!";
+                text.text = "Touch the pipes and walls will lose your health!!!";
                 break;
             case 1:
                 c.SetActive(false);
@@ -32,7 +32,7 @@ public class canvas2 : MonoBehaviour
                 line++;
                 break;
             case 2:
-                text.text = "Avoid the falling rock!";
+                text.text = "Avoid the silver traps!!!";
                 break;
             case 3:
                 c.SetActive(false);
@@ -40,7 +40,7 @@ public class canvas2 : MonoBehaviour
                 line++;
                 break;
             case 4:
-                text.text = "Eat the power cube : Invisible";
+                text.text = "Falling rocks will make you dizzy. Avoid it!";
                 break;
             case 5:
                 c.SetActive(false);
@@ -48,12 +48,36 @@ public class canvas2 : MonoBehaviour
                 line++;
                 break;
             case 6:
-                text.text = "You will meet different upgrade cubes in following levels";
+                text.text = "Certain enemies will shoot at you!";
                 break;
             case 7:
-                text.text = " In endless mode : You can only eat limited number of power cubes";
+                c.SetActive(false);
+                Time.timeScale = 1f;
+                line++;
                 break;
             case 8:
+                text.text = "Certain enemies will chase at you!";
+                break;
+            case 9:
+                c.SetActive(false);
+                Time.timeScale = 1f;
+                line++;
+                break;
+            case 10:
+                text.text = "Eat the power cube : Invisible !!! ";
+                break;
+            case 11:
+                c.SetActive(false);
+                Time.timeScale = 1f;
+                line++;
+                break;
+            case 12:
+                text.text = "You will meet different upgrade cubes in following levels";
+                break;
+            case 13:
+                text.text = " In endless mode : You can only eat limited number of power cubes";
+                break;
+            case 14:
                 SceneManager.LoadScene("gameover");
                 break;
         }

@@ -3856,6 +3856,7 @@ MonoBehaviour:
   title: {fileID: 1257587070}
   replay: {fileID: 812974605}
   next_level: {fileID: 2142790020}
+  updatedLeaderBoardValue: 0
 --- !u!54 &746632013
 Rigidbody:
   m_ObjectHideFlags: 0

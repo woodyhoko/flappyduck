@@ -5,7 +5,7 @@ using UnityEngine;
 public class t_rock : MonoBehaviour
 {
     // Rigidbody rb;
-
+    public bool clone = false;
     public GameObject rock_shadow;
     // Start is called before the first frame update
     void Start()
@@ -14,7 +14,15 @@ public class t_rock : MonoBehaviour
         // obj.transform.SetParent(this.transform);
         obj.transform.position = transform.position + new Vector3(0, -transform.position.y + 0.001f, 0);
         obj.GetComponent<rockShadow>().clone = true;
+        Invoke("destroy", 2f);
     }
+
+    private void destroy()
+    {
+        if(clone)
+            Destroy(gameObject);
+    }
+
 
 
     void Update()

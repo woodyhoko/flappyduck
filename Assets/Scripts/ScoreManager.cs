@@ -23,8 +23,8 @@ public class ScoreManager : MonoBehaviour
     public static bool killedByBound = false;
     public static float startTime = Time.time;
 
-    public static bool level1 = false;
-    public static bool level1Passed = false;
+    public static bool level10 = false;
+    public static bool level10Passed = false;
 
     public static bool level11 = false;
     public static bool level11Passed = false;
@@ -63,13 +63,14 @@ public class ScoreManager : MonoBehaviour
     public static bool tutorial = false;
 
     public static float cube_health;
-
+    public static float cube_health_org;
     public ScoreData sd;
 
     public static string username = "testplayer1";
 
     void Start()
     {
+       
         // startTime = Time.time;
     }
 

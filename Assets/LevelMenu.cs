@@ -10,8 +10,9 @@ public class LevelMenu : MonoBehaviour
     {
         Debug.Log("Level10");
         SceneManager.LoadScene("Level_1_0");
-        ScoreManager.level1 = true;
-		ScoreManager.level1Passed = false;
+        ScoreManager.level10 = true;
+        ScoreManager.level11 = false;
+		ScoreManager.level10Passed = false;
 		ScoreManager.level20 = false;
 		ScoreManager.level21 = false;
 		ScoreManager.level22 = false;
@@ -39,8 +40,7 @@ public class LevelMenu : MonoBehaviour
     {
         // Debug.Log("Level11");
         SceneManager.LoadScene("Level_1_1");
-        ScoreManager.level1 = false;
-		ScoreManager.level1Passed = false;
+        ScoreManager.level10 = false;
         ScoreManager.level11 = true;
         ScoreManager.level11Passed = false;
 		ScoreManager.level20 = false;
@@ -67,8 +67,9 @@ public class LevelMenu : MonoBehaviour
 
     public void level20()
     {
-        SceneManager.LoadScene("Level_2_0");
-        ScoreManager.level1 = false;
+	    SceneManager.LoadScene("Level_2_0");
+        ScoreManager.level10 = false;
+        ScoreManager.level11 = false;
 		ScoreManager.level20 = true;
 		ScoreManager.level20Passed = false;
 		ScoreManager.level21 = false;
@@ -96,8 +97,9 @@ public class LevelMenu : MonoBehaviour
 
     public void level21()
     {
-        SceneManager.LoadScene("Level_2_1");
-        ScoreManager.level1 = false;
+	    SceneManager.LoadScene("Level_2_1");
+        ScoreManager.level10 = false;
+        ScoreManager.level11 = false;
 		ScoreManager.level20 = false;
 		ScoreManager.level21 = true;
 		ScoreManager.level21Passed = false;
@@ -125,8 +127,9 @@ public class LevelMenu : MonoBehaviour
 
     public void level22()
     {
-        SceneManager.LoadScene("Level_2_2");
-        ScoreManager.level1 = false;
+	    SceneManager.LoadScene("Level_2_2");
+        ScoreManager.level10 = false;
+        ScoreManager.level11 = false;
 		ScoreManager.level20 = false;
 		ScoreManager.level21 = false;
 		ScoreManager.level22 = true;
@@ -155,7 +158,8 @@ public class LevelMenu : MonoBehaviour
     public void level40()
     {
 	    SceneManager.LoadScene("Level_4_0");
-	    ScoreManager.level1 = false;
+	    ScoreManager.level10 = false;
+	    ScoreManager.level11 = false;
 	    ScoreManager.level20 = false;
 	    ScoreManager.level21 = false;
 	    ScoreManager.level22 = false;
@@ -183,8 +187,9 @@ public class LevelMenu : MonoBehaviour
 
     public void level23()
     {
-        SceneManager.LoadScene("Level_2_3");
-        ScoreManager.level1 = false;
+	    SceneManager.LoadScene("Level_2_3");
+        ScoreManager.level10 = false;
+        ScoreManager.level11 = false;
 		ScoreManager.level20 = false;
 		ScoreManager.level21 = false;
 		ScoreManager.level22 = false;
@@ -212,8 +217,9 @@ public class LevelMenu : MonoBehaviour
 
     public void level24()
     {
-        SceneManager.LoadScene("Level_2_4");
-        ScoreManager.level1 = false;
+	    SceneManager.LoadScene("Level_2_4");
+        ScoreManager.level10 = false;
+        ScoreManager.level11 = false;
 		ScoreManager.level20 = false;
 		ScoreManager.level21 = false;
 		ScoreManager.level22 = false;
@@ -241,8 +247,9 @@ public class LevelMenu : MonoBehaviour
 
     public void level30()
     {
-        SceneManager.LoadScene("Level_3_0");
-        ScoreManager.level1 = false;
+	    SceneManager.LoadScene("Level_3_0");
+        ScoreManager.level10 = false;
+        ScoreManager.level11 = false;
 		ScoreManager.level20 = false;
 		ScoreManager.level21 = false;
 		ScoreManager.level22 = false;
@@ -270,8 +277,9 @@ public class LevelMenu : MonoBehaviour
 
     public void level31()
     {
-        SceneManager.LoadScene("Level_3_1");
-        ScoreManager.level1 = false;
+	    SceneManager.LoadScene("Level_3_1");
+        ScoreManager.level10 = false;
+        ScoreManager.level11 = false;
 		ScoreManager.level20 = false;
 		ScoreManager.level21 = false;
 		ScoreManager.level22 = false;
@@ -299,14 +307,15 @@ public class LevelMenu : MonoBehaviour
 
     public void level32()
     {
-        SceneManager.LoadScene("Level1");
+	    SceneManager.LoadScene("Level1");
     }
 
     public void level_endless()
     {
         Debug.Log("Endless Run");
         SceneManager.LoadScene("demo2");
-        ScoreManager.level1 = false;
+        ScoreManager.level10 = false;
+        ScoreManager.level11 = false;
 		ScoreManager.level20 = false;
 		ScoreManager.level21 = false;
 		ScoreManager.level22 = false;
@@ -339,13 +348,13 @@ public class LevelMenu : MonoBehaviour
 
     public void GoMenu()
     {
-        SceneManager.LoadScene("menu");
+	    SceneManager.LoadScene("menu");
     }
 
     public void GoTutorial()
     {
 	    Debug.Log("tutorialhere");
-        SceneManager.LoadScene("tutorial");
+	    SceneManager.LoadScene("tutorial");
         ScoreManager.startTime = Time.time;
         
         ScoreManager.killedByRock = false;
@@ -353,7 +362,8 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
         
-        ScoreManager.level1 = false;
+        ScoreManager.level10 = false;
+        ScoreManager.level11 = false;
         ScoreManager.level20 = false;
         ScoreManager.level21 = false;
         ScoreManager.level22 = false;

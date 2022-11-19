@@ -66,8 +66,8 @@ public class controller : MonoBehaviour
         ScoreManager.star_upgrade = 0;
         if (this_Level_name == "Level_1_0")
         {
-            ScoreManager.level1 = false;
-            ScoreManager.level20 = true;
+            ScoreManager.level10 = false;
+            ScoreManager.level11 = true;
         }
         if (this_Level_name == "Level_1_1")
         {
@@ -230,7 +230,7 @@ public class controller : MonoBehaviour
         {
             if (timer == 900)
             {
-                ScoreManager.level1Passed = true;
+                ScoreManager.level10Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
@@ -248,6 +248,7 @@ public class controller : MonoBehaviour
             if (timer == 1000)
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
+                ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
                 ScoreManager.level11Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
@@ -265,6 +266,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
+
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 title.text = "Level 2.0  Passed";

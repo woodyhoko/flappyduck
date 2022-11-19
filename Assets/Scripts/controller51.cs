@@ -63,7 +63,7 @@ public class controller51 : MonoBehaviour
         ScoreManager.star_upgrade = 0;
         if (this_Level_name == "Level_1_0")
         {
-            ScoreManager.level1 = false;
+            ScoreManager.level10= false;
             ScoreManager.level20 = true;
         }
         else if (this_Level_name == "Level_2_0")
@@ -184,7 +184,7 @@ public class controller51 : MonoBehaviour
         {
             if (timer == 900)
             {
-                ScoreManager.level1Passed = true;
+                ScoreManager.level10Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;

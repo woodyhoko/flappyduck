@@ -33,8 +33,14 @@ public class GlobalData : MonoBehaviour
 
     //cube health
     public int cube_health = 3;
+    
+
     public List<GameObject> hearts = new List<GameObject>();
 
+    public void start()
+    {
+
+    }
     private void Awake()
     {
         // start of new code

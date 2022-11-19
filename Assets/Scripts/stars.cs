@@ -6,40 +6,17 @@ using UnityEngine.UI;
 public class stars : MonoBehaviour
 {
     public GameObject strmid10;
-    public GameObject strrt10;
-    public GameObject strlt10;
+    public GameObject strmid11;
     public GameObject strmid20;
-    public GameObject strrt20;
-    public GameObject strlt20;
     public GameObject strmid21;
-    public GameObject strrt21;
-    public GameObject strlt21;
     public GameObject strmid22;
-    public GameObject strrt22;
-    public GameObject strlt22;
     public GameObject strmid23;
-    public GameObject strrt23;
-    public GameObject strlt23;
     public GameObject strmid24;
-    public GameObject strrt24;
-    public GameObject strlt24;
     public GameObject strmid30;
-    public GameObject strrt30;
-    public GameObject strlt30;
     public GameObject strmid31;
-    public GameObject strrt31;
-    public GameObject strlt31;
     public GameObject strmid40;
-    public GameObject strrt40;
-    public GameObject strlt40;
-    
     public GameObject strmid41;
-    public GameObject strrt41;
-    public GameObject strlt41;
-    
-    public GameObject strmid42;
-    public GameObject strrt42;
-    public GameObject strlt42;
+  public GameObject strmid42;
 
     // Start is called before the first frame update
     void Awake()
@@ -50,20 +27,9 @@ public class stars : MonoBehaviour
         Debug.Log(ScoreManager.level30Passed);
         if (ScoreManager.level31Passed)
         {
-            if (ScoreManager.cube_health == 3)
+            if (ScoreManager.cube_health == ScoreManager.cube_health_org)
             {
-                strmid31.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strrt31.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt31.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 2)
-            {
-                strmid31.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt31.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 1)
-            {
-                strlt31.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid31.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
             }
 
 
@@ -71,191 +37,102 @@ public class stars : MonoBehaviour
         else if (ScoreManager.level30Passed)
         {
             Debug.Log("passed");
-              if (ScoreManager.cube_health  == 3)
+              if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
-                strmid30.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strrt30.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt30.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid30.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+               
             }
-            else   if (ScoreManager.cube_health  == 2)
-            {
-                strmid30.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt30.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 1)
-            {
-                strlt30.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
+          
         }
         else if ( ScoreManager.level21Passed)
         {
             Debug.Log("passed");
-            if (ScoreManager.cube_health  == 3)
+            if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
-                strmid21.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strrt21.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt21.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 2)
-            {
-                strmid21.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt21.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 1)
-            {
-                strlt21.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid21.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
             }
         }
         else if ( ScoreManager.level20Passed)
         {
             Debug.Log("passed");
-            if (ScoreManager.cube_health  == 3)
+            if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
-                strmid20.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strrt20.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt20.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 2)
-            {
-                strmid20.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt20.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 1)
-            {
-                strlt20.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid20.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+                
             }
         }
         else if ( ScoreManager.level22Passed)
         {
             Debug.Log("passed");
-           if (ScoreManager.cube_health  == 3)
+           if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
-                strmid22.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strrt22.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt22.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 2)
-            {
-                strmid22.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt22.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-           else if (ScoreManager.cube_health  == 1)
-            {
-                strlt22.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid22.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+               
             }
         }
         else if ( ScoreManager.level23Passed)
         {
             Debug.Log("passed");
-           if (ScoreManager.cube_health  == 3)
+           if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
-                strmid23.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strrt23.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt23.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  ==2 )
-            {
-                strmid23.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt23.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-           else if (ScoreManager.cube_health  == 1)
-            {
-                strlt23.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid23.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+               
             }
         }
         else if ( ScoreManager.level24Passed)
         {
             Debug.Log("passed");
-           if (ScoreManager.cube_health  == 3)
+           if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
-                strmid24.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strrt24.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt24.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  ==2 )
-            {
-                strmid24.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt24.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-           else if (ScoreManager.cube_health  == 1)
-            {
-                strlt24.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid24.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+              
             }
         }
-        else if (ScoreManager.level1 && ScoreManager.level1Passed)
+        else if ( ScoreManager.level10Passed)
         {
-            Debug.Log("passed level 1");
-           if (ScoreManager.cube_health  == 3)
+            Debug.Log("passed level 1.0");
+           if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
-                strmid10.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strrt10.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt10.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  ==2 )
-            {
-                strmid10.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt10.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-           else if (ScoreManager.cube_health  == 1)
-            {
-                strlt10.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid10.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+              
             }
         }
         else if ( ScoreManager.level40Passed)
         {
             Debug.Log("passed");
-           if (ScoreManager.cube_health  == 3)
+           if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
-                strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strrt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 2)
-            {
-                strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-           else if (ScoreManager.cube_health  == 1)
-            {
-                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+              
             }
         }
         else if ( ScoreManager.level41Passed)
         {
             Debug.Log("passed");
-            if (ScoreManager.cube_health  == 3)
+            if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
-                strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strrt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 2)
-            {
-                strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 1)
-            {
-                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid41.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+                
             }
         }
         else if ( ScoreManager.level42Passed)
         {
             Debug.Log("passed");
-            if (ScoreManager.cube_health  == 3)
+            if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
-                strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strrt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid42.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+               
             }
-            else if (ScoreManager.cube_health  == 2)
+        } else if ( ScoreManager.level11Passed)
+        {
+            Debug.Log(" lev 1.1 passed");
+            Debug.Log(ScoreManager.cube_health_org);
+            Debug.Log(ScoreManager.cube_health);
+            if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
-                strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
-            }
-            else if (ScoreManager.cube_health  == 1)
-            {
-                strlt40.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
+                strmid11.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
+                Debug.Log(strmid11.GetComponent<Image>().color);
+               
             }
         }
 

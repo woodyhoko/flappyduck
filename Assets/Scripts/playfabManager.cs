@@ -13,9 +13,6 @@ public class playfabManager : MonoBehaviour
     void Start()
     {
         Login();
-        Debug.Log("score " + ScoreManager.sscore);
-        SendLeaderBoard(ScoreManager.sscore);
-        //GetLeaderboard();
     }
 
     public void Login()
@@ -41,13 +38,8 @@ public class playfabManager : MonoBehaviour
         {
             name = result.InfoResultPayload.PlayerProfile.DisplayName;
         }
-
-        Debug.Log(name);
-        /*if (name == null)
-        {
-            
-        } */
     }
+    
     
     public void OnError(PlayFabError error)
     {
@@ -94,7 +86,7 @@ public class playfabManager : MonoBehaviour
             GameObject newGo = Instantiate(rowPrefab, rowParent);
             Text[] texts = newGo.GetComponentsInChildren<Text>();
             texts[0].text = (item.Position + 1).ToString();
-            texts[1].text = item.PlayFabId;
+            texts[1].text = item.DisplayName;
             texts[2].text = item.StatValue.ToString();
         }
     }

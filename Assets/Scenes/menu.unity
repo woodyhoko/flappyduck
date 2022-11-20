@@ -1095,7 +1095,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1840940494}
         m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
-        m_MethodName: level_endless
+        m_MethodName: enter_namePage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

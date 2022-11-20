@@ -22,7 +22,7 @@ public class GlobalData : MonoBehaviour
     public Vector3 player_localScale = new Vector3(1f, 1f, 1f);
     public int world = 1;
     public int star_num = 0;
-    public int[] cloned_cubes = new int[] { 0, 0 };
+    //public int[] cloned_cubes = new int[] { 0, 0 };
     public int number_of_cloned_cube = 0;
     public List<GameObject> cloned_list = new List<GameObject>();
 

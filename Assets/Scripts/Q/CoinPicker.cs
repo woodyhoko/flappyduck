@@ -14,8 +14,8 @@ public class CoinPicker : MonoBehaviour
 
         //cube.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y, cube.transform.position.z + 0.9f);
         //controller_Q.m_Rigidbody.velocity = new Vector3(0, 0, controller_Q.m_Rigidbody.velocity.z + 2.0f);
-        controller.move_forward = true;
-        controller_Q.move_forward = true;
+        //controller.move_forward = true;
+        //controller_Q.move_forward = true;
         
 
         //ScoreManager.sscore += 2;

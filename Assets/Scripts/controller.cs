@@ -20,6 +20,7 @@ public class controller : MonoBehaviour
 
     private bool jump = false;
     private int jump_numb = 0;
+    public static int ts;
     private float jump_height = 5.0f;
     private int invi_remaining_time = 30;
 
@@ -490,6 +491,7 @@ public class controller : MonoBehaviour
 
     void FixedUpdate()
     {
+        ts=ts+1;
         if (!fps_mode_lock)
         {
             if (fps_mode && Vector3.Distance(main_camera.transform.position, this.transform.position) < 0.1)

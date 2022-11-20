@@ -72,8 +72,9 @@ public class shooting_enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GlobalData.Instance.shoot_timestep % 100 == 0)
-        {
+        if (controller.ts % GlobalData.Instance.shoot_freq == 0)
+        {  
+
             GameObject enebulins;
             enebulins = Instantiate(enebul);
             enebulins.transform.position = transform.position + new Vector3(0, 0,-2f);

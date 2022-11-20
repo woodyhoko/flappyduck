@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelMenu : MonoBehaviour
 {
-	
-    public void level10()
+
+	public void level10()
     {
         Debug.Log("Level10");
         SceneManager.LoadScene("Level_1_0");

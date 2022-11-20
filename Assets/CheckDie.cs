@@ -220,7 +220,12 @@ public class CheckDie : MonoBehaviour
             CreateAccount = true
         };
         PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
-        updateDisplayName();
+        
+        var request2 = new UpdateUserTitleDisplayNameRequest
+        {
+            DisplayName = ScoreManager.username,
+        };
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request2, OnDisplayNameUpdate, OnError);
     }
 
     public void OnSuccess(LoginResult result)
@@ -228,15 +233,6 @@ public class CheckDie : MonoBehaviour
         Debug.Log("Successful login/account create!");
     }
     
-    public void updateDisplayName()
-    {
-        var request = new UpdateUserTitleDisplayNameRequest
-        {
-            DisplayName = ScoreManager.username,
-        };
-        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
-    }
-
     void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
     {
         Debug.Log("updated display name");

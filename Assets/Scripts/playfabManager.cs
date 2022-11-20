@@ -90,4 +90,18 @@ public class playfabManager : MonoBehaviour
             texts[2].text = item.StatValue.ToString();
         }
     }
+    
+    /*public void updateDisplayName()
+    {
+        var request = new UpdateUserTitleDisplayNameRequest
+        {
+            DisplayName = ScoreManager.username,
+        };
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
+    }
+
+    void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
+    {
+        Debug.Log("updated display name");
+    }*/
 }

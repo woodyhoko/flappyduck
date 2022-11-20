@@ -3496,8 +3496,8 @@ MonoBehaviour:
   replay: {fileID: 1260201928}
   next_level: {fileID: 1702976416}
   title: {fileID: 2094288737}
-  this_Level_name: Level_4_2
-  next_Level_name: Level_5_0
+  this_Level_name: Level_1_3
+  next_Level_name: Level_2_0
 --- !u!114 &746632012
 MonoBehaviour:
   m_ObjectHideFlags: 0

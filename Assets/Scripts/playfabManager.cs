@@ -24,7 +24,11 @@ public class playfabManager : MonoBehaviour
         {
             // CustomId = SystemInfo.deviceUniqueIdentifier,
             CustomId = ScoreManager.username,
-            CreateAccount = true
+            CreateAccount = true,
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
+            {
+                GetPlayerProfile = true
+            }
         };
         PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
     }
@@ -32,6 +36,17 @@ public class playfabManager : MonoBehaviour
     public void OnSuccess(LoginResult result)
     {
         Debug.Log("Successful login/account create!");
+        string name = null;
+        if (result.InfoResultPayload.PlayerProfile != null)
+        {
+            name = result.InfoResultPayload.PlayerProfile.DisplayName;
+        }
+
+        Debug.Log(name);
+        /*if (name == null)
+        {
+            
+        } */
     }
     
     public void OnError(PlayFabError error)

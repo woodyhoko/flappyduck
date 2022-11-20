@@ -339,6 +339,11 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.invisible = 0;
 		ScoreManager.star_upgrade = 0;
     }
+    
+    public void enter_namePage()
+    {
+	    SceneManager.LoadScene("inputUserName");
+    }
 
     public void QuitMenu()
     {

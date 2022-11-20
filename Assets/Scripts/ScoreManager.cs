@@ -66,7 +66,7 @@ public class ScoreManager : MonoBehaviour
     public static float cube_health_org;
     public ScoreData sd;
 
-    public static string username = "testplayer1";
+    public static string username = "levelPlayer";
 
     void Start()
     {

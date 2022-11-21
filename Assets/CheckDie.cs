@@ -180,7 +180,7 @@ public class CheckDie : MonoBehaviour
         {
             TMP_Text score = background.GetComponent<Transform>().Find("Score").GetComponent<TMP_Text>();
             score.GetComponent<TMPro.TextMeshProUGUI>().text = "Score : " + ScoreManager.sscore.ToString();
-            if (!updatedLeaderBoardValue)
+            if (!updatedLeaderBoardValue && ScoreManager.username != "levelPlayer")
             {
                 SendLeaderBoard(ScoreManager.sscore);
                 updatedLeaderBoardValue = true;

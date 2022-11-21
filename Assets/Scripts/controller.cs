@@ -491,7 +491,7 @@ public class controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        ts=ts+1;
+        ts = ts + 1;
         if (!fps_mode_lock)
         {
             if (fps_mode && Vector3.Distance(main_camera.transform.position, this.transform.position) < 0.1)
@@ -818,7 +818,7 @@ public class controller : MonoBehaviour
                 heart1.transform.position = new Vector3(50 + 55 * hp, 50f, 0f);
             }
             else
-                    GlobalData.Instance.hearts[hp].SetActive(true);
+                GlobalData.Instance.hearts[hp].SetActive(true);
             GlobalData.Instance.cube_health += 1;
             Destroy(collider.gameObject);
         }

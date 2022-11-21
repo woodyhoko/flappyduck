@@ -2,9 +2,9 @@ Shader "Unlit/ScrollX"
 {
     Properties
     {
-    _MainTex("Base Layer(RGB)", 2D) = "white" {}   // 纹理    
-    _ScrollX("Base layer Scroll Speed", Float) = 1.0   // 滚动速度
-    _Mutiplier("Layer Mutiplier", Float) = 1         //整体亮度
+    _MainTex("Base Layer(RGB)", 2D) = "white" {}
+    _ScrollX("Base layer Scroll Speed", Float) = 1.0
+    _Mutiplier("Layer Mutiplier", Float) = 1
     }
         SubShader
     {

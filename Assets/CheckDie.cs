@@ -16,6 +16,9 @@ public class CheckDie : MonoBehaviour
     public GameObject next_level;
 
     public bool updatedLeaderBoardValue = false;
+    
+    public bool loggedin = false;
+    public bool updatedName = false;
 
 
     // Start is called before the first frame update
@@ -28,6 +31,12 @@ public class CheckDie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (loggedin && !updatedName)
+        {
+            updatedName = true;
+            updateDisplayName();
+        }
+        
         if (transform.position.y < -10 || transform.position.z < -10 || transform.position.x < -8 || transform.position.x > 8)
         {
             if (this.tag == "Player")
@@ -217,7 +226,11 @@ public class CheckDie : MonoBehaviour
         {
             // CustomId = SystemInfo.deviceUniqueIdentifier,
             CustomId = ScoreManager.username,
-            CreateAccount = true
+            CreateAccount = true,
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
+            {
+                GetPlayerProfile = true
+            }
         };
         PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
     }
@@ -225,5 +238,20 @@ public class CheckDie : MonoBehaviour
     public void OnSuccess(LoginResult result)
     {
         Debug.Log("Successful login/account create!");
+        loggedin = true;
+    }
+    
+    public void updateDisplayName()
+    {
+        var request = new UpdateUserTitleDisplayNameRequest
+        {
+            DisplayName = ScoreManager.username,
+        };
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
+    }
+    
+    void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
+    {
+        Debug.Log("updated display name");
     }
 }

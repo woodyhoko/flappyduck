@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelMenu : MonoBehaviour
 {
-	
-    public void level10()
+
+	public void level10()
     {
         Debug.Log("Level10");
         SceneManager.LoadScene("Level_1_0");
@@ -338,6 +338,11 @@ public class LevelMenu : MonoBehaviour
 		ScoreManager.longer = 0;
 		ScoreManager.invisible = 0;
 		ScoreManager.star_upgrade = 0;
+    }
+    
+    public void enter_namePage()
+    {
+	    SceneManager.LoadScene("inputUserName");
     }
 
     public void QuitMenu()

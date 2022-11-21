@@ -13,9 +13,6 @@ public class playfabManager : MonoBehaviour
     void Start()
     {
         Login();
-        Debug.Log("score " + ScoreManager.sscore);
-        SendLeaderBoard(ScoreManager.sscore);
-        //GetLeaderboard();
     }
 
     public void Login()
@@ -24,7 +21,11 @@ public class playfabManager : MonoBehaviour
         {
             // CustomId = SystemInfo.deviceUniqueIdentifier,
             CustomId = ScoreManager.username,
-            CreateAccount = true
+            CreateAccount = true,
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
+            {
+                GetPlayerProfile = true
+            }
         };
         PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
     }
@@ -32,7 +33,13 @@ public class playfabManager : MonoBehaviour
     public void OnSuccess(LoginResult result)
     {
         Debug.Log("Successful login/account create!");
+        string name = null;
+        if (result.InfoResultPayload.PlayerProfile != null)
+        {
+            name = result.InfoResultPayload.PlayerProfile.DisplayName;
+        }
     }
+    
     
     public void OnError(PlayFabError error)
     {
@@ -79,8 +86,22 @@ public class playfabManager : MonoBehaviour
             GameObject newGo = Instantiate(rowPrefab, rowParent);
             Text[] texts = newGo.GetComponentsInChildren<Text>();
             texts[0].text = (item.Position + 1).ToString();
-            texts[1].text = item.PlayFabId;
+            texts[1].text = item.DisplayName;
             texts[2].text = item.StatValue.ToString();
         }
     }
+    
+    /*public void updateDisplayName()
+    {
+        var request = new UpdateUserTitleDisplayNameRequest
+        {
+            DisplayName = ScoreManager.username,
+        };
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
+    }
+
+    void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
+    {
+        Debug.Log("updated display name");
+    }*/
 }

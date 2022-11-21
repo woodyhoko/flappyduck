@@ -77,4 +77,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/inputUserName.unity
     guid: a8cf9777d0336401288110878b6462e0
+  - enabled: 1
+    path: Assets/Scenes/Level_1_mid_dy.unity
+    guid: 59bd4e87cbbac40c192e6d58a89aede8
   m_configObjects: {}

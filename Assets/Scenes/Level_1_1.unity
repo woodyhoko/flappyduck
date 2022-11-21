@@ -1465,7 +1465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &487442751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,6 +1908,9 @@ MonoBehaviour:
   title: {fileID: 1289897850}
   replay: {fileID: 1327023471}
   next_level: {fileID: 899265504}
+  updatedLeaderBoardValue: 0
+  loggedin: 0
+  updatedName: 0
 --- !u!1 &549761531
 GameObject:
   m_ObjectHideFlags: 0
@@ -7285,7 +7288,6 @@ MonoBehaviour:
   player_localScale: {x: 1, y: 1, z: 1}
   world: 1
   star_num: 0
-  cloned_cubes: 0000000000000000
   number_of_cloned_cube: 0
   cloned_list: []
   dizzy: 0

@@ -679,7 +679,7 @@ public class controller : MonoBehaviour
                 one_star.transform.SetParent(player.transform);
                 one_star.transform.localScale = new Vector3(.5f, GlobalData.Instance.star_size, 0.5f);
 
-                controller51 player_comp = player.GetComponent<controller51>();
+                controller player_comp = player.GetComponent<controller>();
 
                 player_comp.stars.Add(one_star);
                 float angle = 2f * Mathf.PI / (float)player_comp.stars.Count;

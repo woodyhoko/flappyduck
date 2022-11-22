@@ -22,13 +22,15 @@ public class shooting_enemy : MonoBehaviour
         if (collider.gameObject.tag == "bullet")
         {
             Debug.Log("Enemy get hit by bullet1");
-            if (gameObject != null && collider.gameObject != null&& healthSystem!=null)
+            if (gameObject != null && collider.gameObject != null && healthSystem != null)
             {
                 //healthSystem.Damage(collider.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
                 healthSystem.Damage(50f);
                 //pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
                 //Debug.Log(healthSystem.GetHealth());
-                gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - healthSystem.GetHealthPercentage(), 0, 1), Mathf.Clamp(healthSystem.GetHealthPercentage(), 0, 1), 0, 0.5f);
+                gameObject.GetComponent<Renderer>().material.color = new Color(
+                    Mathf.Clamp(1 - healthSystem.GetHealthPercentage(), 0, 1),
+                    Mathf.Clamp(healthSystem.GetHealthPercentage(), 0, 1), 0, 0.5f);
                 Debug.Log(healthSystem.GetHealth());
                 if (healthSystem.GetHealth().Equals(0f))
                 {
@@ -37,7 +39,8 @@ public class shooting_enemy : MonoBehaviour
                 }
                 // Destroy(gameObject);
             }
-            else  if (collider.gameObject.tag == "Player")
+        }
+        else  if (collider.gameObject.tag == "Player")
             {
                 GlobalData.Instance.cube_health -= 1;
                 GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
@@ -50,7 +53,7 @@ public class shooting_enemy : MonoBehaviour
             }
         }
         
-    }
+    
 
     private void OnCollisionEnter(Collision collision){
         if(collision.gameObject.tag == "bullet")
@@ -77,7 +80,7 @@ public class shooting_enemy : MonoBehaviour
 
             GameObject enebulins;
             enebulins = Instantiate(enebul);
-            enebulins.transform.position = transform.position + new Vector3(0, 0,-2f);
+            enebulins.transform.position = transform.position + new Vector3(0, 0.8f,-2f);
             Rigidbody m_Rigidbody = enebulins.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -20f);
         }

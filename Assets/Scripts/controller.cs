@@ -387,6 +387,14 @@ public class controller : MonoBehaviour
 
         if (level && this_Level_name == "Level_4_0")
         {
+            //stop game
+            //if (timer == 300)
+            //{
+                
+            //    Time.timeScale = 0;
+                
+
+            //}
             if (timer == 580)
             {
                 ScoreManager.level40Passed = true;

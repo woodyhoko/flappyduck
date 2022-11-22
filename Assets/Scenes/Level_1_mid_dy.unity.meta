@@ -1,10 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Scenes/Level_1_mid_dy.unity.meta
 <<<<<<<< HEAD:Assets/Scenes/demo2_Profiles.meta
 guid: 0b2be04083eea9a418b85cd915823843
 folderAsset: yes
 ========
 guid: 59bd4e87cbbac40c192e6d58a89aede8
 >>>>>>>> 56d09a783f1b1886617abae8a995a72552c76c43:Assets/Scenes/Level_1_mid_dy.unity.meta
+=======
+guid: ef86778241ce0448cba4304a05b26bfe
+>>>>>>> Stashed changes:Assets/Scenes/Level_1_mid_dy 1.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

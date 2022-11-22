@@ -22,7 +22,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
     public GameObject rock;
     public bool haveRock = false;
 
-    public bool introceShowed = false;
+    public bool introceShowed;
     public GameObject introduction;
     void Start()
     {

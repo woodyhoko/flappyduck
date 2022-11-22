@@ -38,12 +38,12 @@ public class horimoving : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
 
-        if (collider.gameObject.tag == "star")
-        {
-            ScoreManager.sscore++;
-            score_text.text = "Score : " + ScoreManager.sscore.ToString();
-            Destroy(gameObject);
-        }
+        //if (collider.gameObject.tag == "star")
+        //{
+         //   ScoreManager.sscore++;
+        //   score_text.text = "Score : " + ScoreManager.sscore.ToString();
+         //   Destroy(gameObject);
+        //}
         if (collider.gameObject.tag == "bullet")
         {
             //Debug.Log("get hit by bullet");
@@ -61,17 +61,21 @@ public class horimoving : MonoBehaviour
                 }
                 // Destroy(gameObject);
             }
-        }        else  if (collider.gameObject.tag == "Player"){
-            {
+        }
+        if (collider.gameObject.tag == "Player" && collider.gameObject.tag != "star")
+        {
                 GlobalData.Instance.cube_health -= 1;
                 GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
                 if (GlobalData.Instance.cube_health <= 0f)
                 {
-                    FindObjectOfType<GameManager>().EndGame();
+                    //FindObjectOfType<GameManager>().EndGame();
+                    ScoreManager.killedByWater = false;
+                    ScoreManager.killedByPipe = true;
+                    ScoreManager.killedByCeil = false;
+                    ScoreManager.killedByBound = false;
                 }
                 Debug.Log("get hit by moving pipe");
                 Destroy(gameObject);
-            }
         }
     }
 

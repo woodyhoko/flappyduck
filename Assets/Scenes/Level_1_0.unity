@@ -622,14 +622,13 @@ GameObject:
   - component: {fileID: 141007416}
   - component: {fileID: 141007413}
   - component: {fileID: 141007419}
-  - component: {fileID: 141007420}
   m_Layer: 0
   m_Name: movingHori
   m_TagString: pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &141007413
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -724,21 +723,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &141007420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141007411}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
-  title: {fileID: 0}
-  replay: {fileID: 0}
 --- !u!1 &183150102
 GameObject:
   m_ObjectHideFlags: 0
@@ -3947,6 +3931,7 @@ MonoBehaviour:
   Canvas: {fileID: 487442750}
   title: {fileID: 1289897850}
   replay: {fileID: 1327023471}
+  score_text: {fileID: 0}
 --- !u!54 &1300335684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4990,7 +4975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1515629382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5758,7 +5743,7 @@ MonoBehaviour:
   rock: {fileID: 0}
   haveRock: 0
   introceShowed: 0
-  introduction: {fileID: 0}
+  introduction: {fileID: 1975947225}
 --- !u!1 &1775848536
 GameObject:
   m_ObjectHideFlags: 0
@@ -6836,6 +6821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: introduce
       objectReference: {fileID: 0}
+    - target: {fileID: 6844052421525588546, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6844052421525588557, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6922,6 +6911,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+--- !u!1 &1975947225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6844052421525588546, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+  m_PrefabInstance: {fileID: 1975947224}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1986387423
 GameObject:
   m_ObjectHideFlags: 0
@@ -6938,7 +6932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1986387424
 MonoBehaviour:
   m_ObjectHideFlags: 0

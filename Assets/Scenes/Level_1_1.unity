@@ -815,6 +815,7 @@ MonoBehaviour:
   Canvas: {fileID: 0}
   title: {fileID: 0}
   replay: {fileID: 0}
+  score_text: {fileID: 0}
 --- !u!1 &183150102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,6 +1457,10 @@ PrefabInstance:
     - target: {fileID: 6844052421525588546, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_Name
       value: introduce
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052421525588546, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6844052421525588557, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_Pivot.x
@@ -4069,6 +4074,7 @@ MonoBehaviour:
   Canvas: {fileID: 487442750}
   title: {fileID: 1289897850}
   replay: {fileID: 1327023471}
+  score_text: {fileID: 0}
 --- !u!54 &1300335684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5973,8 +5979,8 @@ MonoBehaviour:
   next_level: {fileID: 899265504}
   rock: {fileID: 887509171}
   haveRock: 1
-  introceShowed: 0
-  introduction: {fileID: 0}
+  introceShowed: 1
+  introduction: {fileID: 1807031588}
 --- !u!1 &1775848536
 GameObject:
   m_ObjectHideFlags: 0
@@ -6201,6 +6207,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1807031588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6844052421525588546, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+  m_PrefabInstance: {fileID: 463083799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1813472241
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,8 +28,16 @@ public class levelgeneratorLevel30 : MonoBehaviour
     //public GameObject player; 
     //public GameObject star;
     // Start is called before the first frame update
+
+    public bool introceShowed;
+    public GameObject introduction;
     void Start()
     {
+        if (!introceShowed)
+        {
+            Time.timeScale = 0f;
+            introduction.SetActive(true);
+        }
         // GameObject ppipe = (GameObject)Instantiate (pipe);
         // // var rotation = new Quaternion();
         // // rotation.eulerAngles = new Vector3(54.5f, 0, 0);

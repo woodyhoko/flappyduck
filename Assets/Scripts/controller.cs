@@ -713,7 +713,7 @@ public class controller : MonoBehaviour
                     cloned_one_star.transform.SetParent(cloned_cube.transform);
                     cloned_one_star.transform.localScale = new Vector3(.5f, GlobalData.Instance.star_size, 0.5f);
 
-                    controller51 clone_comp = cloned_cube.GetComponent<controller51>();
+                    controller clone_comp = cloned_cube.GetComponent<controller>();
 
                     clone_comp.stars.Add(cloned_one_star);
                     float cloned_angle = 2f * Mathf.PI / (float)clone_comp.stars.Count;
@@ -830,7 +830,7 @@ public class controller : MonoBehaviour
 
                 // player
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
-                foreach (GameObject one_star in player.GetComponent<controller51>().stars)
+                foreach (GameObject one_star in player.GetComponent<controller>().stars)
                 {
                     one_star.transform.localScale = new Vector3(0.5f, GlobalData.Instance.star_size, 0.5f);
                 }
@@ -839,7 +839,7 @@ public class controller : MonoBehaviour
                 //cloned cube
                 foreach (GameObject cloned_cube in GlobalData.Instance.cloned_list)
                 {
-                    foreach (GameObject cloned_star in cloned_cube.GetComponent<controller51>().stars)
+                    foreach (GameObject cloned_star in cloned_cube.GetComponent<controller>().stars)
                     {
                         cloned_star.transform.localScale = new Vector3(0.25f, GlobalData.Instance.star_size * 0.5f, 0.25f);
                     }

@@ -1,45 +1,18 @@
-s%YAML 1.1
+%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - invisible
-  - gravity
-  - move_forward
-  - gravity_size
-  - Rock
-  - ceil
-  - pipe
-  - water
-  - star
-  - Plane
-  - longger
-  - faster
-  - shooter
-  - star_upgrade
-  - smaller
-  - portal_back
-  - bullet
-  - bigger
-  - portal
-  - fps
-  - Undefined
-  - enemy
-  - clone
-  - cloned_cube
-  - Player2
-  - cherry
-  - enebull
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - ground
+  - 
   - Water
   - UI
-  - pipe
-  - player
+  - 
+  - 
   - 
   - 
   - 

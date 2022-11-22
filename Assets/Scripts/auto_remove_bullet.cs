@@ -25,5 +25,9 @@ public class auto_remove_bullet : MonoBehaviour
         //{
         //    Destroy(gameObject);
         //}
+        if (collider.gameObject.tag == "impenetrable_water")
+        {
+            Destroy(gameObject);
+        }
     }
 }

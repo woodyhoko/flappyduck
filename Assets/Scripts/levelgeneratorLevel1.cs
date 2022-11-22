@@ -22,8 +22,15 @@ public class levelgeneratorLevel1 : MonoBehaviour
     public GameObject rock;
     public bool haveRock = false;
 
+    public bool introceShowed = false;
+    public GameObject introduction;
     void Start()
     {
+        if(!introceShowed)
+        {
+            Time.timeScale = 0f;
+            introduction.SetActive(true);
+        }
     }
 
     private void generateRock() {

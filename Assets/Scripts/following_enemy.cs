@@ -51,11 +51,7 @@ public class following_enemy : MonoBehaviour
                 Debug.Log(GlobalData.Instance.cube_health);
                 GlobalData.Instance.cube_health -= 1;
                 GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
-                if (GlobalData.Instance.cube_health <= 0f)
-                {
-                    FindObjectOfType<GameManager>().EndGame();
-                }
-
+                
                 Debug.Log("get hit by shooting enemy");
                 
             }

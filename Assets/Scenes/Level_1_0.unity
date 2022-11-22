@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.16683373, g: 0.16119772, b: 0.13119686, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -719,7 +719,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141007411}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -739,6 +739,7 @@ MonoBehaviour:
   Canvas: {fileID: 0}
   title: {fileID: 0}
   replay: {fileID: 0}
+  score_text: {fileID: 0}
 --- !u!1 &183150102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,6 +1845,9 @@ MonoBehaviour:
   title: {fileID: 1289897850}
   replay: {fileID: 1327023471}
   next_level: {fileID: 899265504}
+  updatedLeaderBoardValue: 0
+  loggedin: 0
+  updatedName: 0
 --- !u!1 &549761531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3943,6 +3947,7 @@ MonoBehaviour:
   Canvas: {fileID: 487442750}
   title: {fileID: 1289897850}
   replay: {fileID: 1327023471}
+  score_text: {fileID: 0}
 --- !u!54 &1300335684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4927,7 +4932,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515629381}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -6865,7 +6870,6 @@ MonoBehaviour:
   player_localScale: {x: 1, y: 1, z: 1}
   world: 1
   star_num: 0
-  cloned_cubes: 0000000000000000
   number_of_cloned_cube: 0
   cloned_list: []
   dizzy: 0

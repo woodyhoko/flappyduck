@@ -62,7 +62,18 @@ public class moving_pipes : MonoBehaviour
                 }
                 // Destroy(gameObject);
             }
+        }        else  if (collider.gameObject.tag == "Player"){
+        {
+            GlobalData.Instance.cube_health -= 1;
+            GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
+            if (GlobalData.Instance.cube_health <= 0f)
+            {
+                FindObjectOfType<GameManager>().EndGame();
+            }
+            Debug.Log("get hit by moving pipe");
+            Destroy(gameObject);
         }
+    }
     }
 
 

@@ -15,18 +15,38 @@ public class enebull : MonoBehaviour
     {
         
     }
+
+
     private void OnTriggerEnter(Collider collider)
     {
         Debug.Log("---------------bullet triggger!!------------");
-        if (collider.gameObject.tag == "Player")
+        
+        if (collider.gameObject.tag == "Player"&& GlobalData.Instance.isInvi==false)
         {
-            GlobalData.Instance.cube_health -= 1;
-            GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
-            if (GlobalData.Instance.cube_health <= 0f)
+            Debug.Log(GlobalData.Instance.isInvi);
+            if (GlobalData.Instance.cube_health > 0f)
+            {
+                Debug.Log(GlobalData.Instance.cube_health);
+                GlobalData.Instance.cube_health -= 1;
+                GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
+                if (GlobalData.Instance.cube_health <= 0f)
+                {
+                    FindObjectOfType<GameManager>().EndGame();
+                }
+
+                Debug.Log("get hit by shooting enemy");
+                
+            }
+            
+            else
             {
                 FindObjectOfType<GameManager>().EndGame();
             }
-            Debug.Log("get hit by shooting enemy");
+        }
+       
+
+        else if (collider.gameObject.tag == "pipe")
+        { Debug.Log("---------------bullet hit wall!!------------");
             Destroy(gameObject);
         }
     }

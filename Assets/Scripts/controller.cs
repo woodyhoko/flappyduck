@@ -23,7 +23,6 @@ public class controller : MonoBehaviour
     public static int ts;
     private float jump_height = 5.0f;
     private int invi_remaining_time = 30;
-
     // Gravity, reversed gravity, move forward
     public static bool larger_gravity = false;
     public static bool reversed_gravity = false;
@@ -624,9 +623,12 @@ public class controller : MonoBehaviour
         }
         if (invi_remaining_time > 0)
         {
+            GlobalData.Instance.isInvi = true;
+            Debug.Log(GlobalData.Instance.isInvi);
             invi_remaining_time--;
             if (invi_remaining_time <= 0)
             {
+                GlobalData.Instance.isInvi = false;
                 EnableCollider();
             }
         }
@@ -679,7 +681,7 @@ public class controller : MonoBehaviour
                 one_star.transform.SetParent(player.transform);
                 one_star.transform.localScale = new Vector3(.5f, GlobalData.Instance.star_size, 0.5f);
 
-                controller51 player_comp = player.GetComponent<controller51>();
+                controller player_comp = player.GetComponent<controller>();
 
                 player_comp.stars.Add(one_star);
                 float angle = 2f * Mathf.PI / (float)player_comp.stars.Count;

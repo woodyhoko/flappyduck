@@ -14,6 +14,8 @@ public class controller51 : MonoBehaviour
     public GameObject bullet;
 
     public GameObject cube;
+    public GameObject heart;
+    public GameObject HealthUi;
 
     private bool jump = false;
     private int jump_numb = 0;
@@ -170,6 +172,15 @@ public class controller51 : MonoBehaviour
             {
                 stars[i].transform.position = this.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
             }
+        }
+        for (int heart_now = 0; heart_now < GlobalData.Instance.cube_health; heart_now++)
+        {
+            GameObject heart1 = Instantiate(heart);
+            heart1.SetActive(true);
+            GlobalData.Instance.hearts.Add(heart1);
+            heart1.transform.SetParent(HealthUi.transform);
+            heart1.transform.position = new Vector3(50 + 55 * heart_now, 50f, 0f);
+            //Debug.Log(GlobalData.Instance.cube_health);
         }
     }
 

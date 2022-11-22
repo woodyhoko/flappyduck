@@ -18,7 +18,7 @@ public class score_board : MonoBehaviour
             score.SetActive(true);
             die.SetActive(true);
             heading.SetActive(true);
-            textt.SetActive(false);
+            //textt.SetActive(false);
 
             score.GetComponent<TMPro.TextMeshProUGUI>().text = "Score : " + ScoreManager.sscore.ToString();
             if (ScoreManager.killedByWater) {
@@ -37,7 +37,7 @@ public class score_board : MonoBehaviour
             score.SetActive(false);
             die.SetActive(false);
             heading.SetActive(false);
-            textt.SetActive(true);
+            //textt.SetActive(true);
         }
     }
 

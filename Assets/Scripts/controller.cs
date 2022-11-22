@@ -630,18 +630,33 @@ public class controller : MonoBehaviour
             TriggerDizzness();
         }
 
+        //Time.timeScale = 0;
         if (GlobalData.Instance.shoot)
         {
             // print("check");
             GlobalData.Instance.shoot_timestep++;
             if (GlobalData.Instance.shoot_timestep % GlobalData.Instance.shoot_freq == 0)
             {
+                // Player
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
                 GameObject bul;
                 bul = Instantiate(bullet);
-                bul.transform.position = transform.position + new Vector3(0, 0, 1f);
+                bul.transform.position = player.transform.position + new Vector3(0, 0, 1f);
                 Rigidbody m_Rigidbody = bul.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, 10f);
+
+                //clone
+
+                foreach (GameObject cloned_cube in GlobalData.Instance.cloned_list)
+                {
+                    GameObject cloned_bul = Instantiate(bullet);
+                    cloned_bul.transform.position = cloned_cube.transform.position + new Vector3(0, 0, 1f);
+                    cloned_bul.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 10f);
+                }
             }
+
+
+            
         }
         if (invi_remaining_time > 0)
         {

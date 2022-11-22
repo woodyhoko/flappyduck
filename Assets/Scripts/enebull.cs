@@ -21,9 +21,9 @@ public class enebull : MonoBehaviour
     {
         Debug.Log("---------------bullet triggger!!------------");
         
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player"&& GlobalData.Instance.isInvi==false)
         {
-            
+            Debug.Log(GlobalData.Instance.isInvi);
             if (GlobalData.Instance.cube_health > 0f)
             {
                 Debug.Log(GlobalData.Instance.cube_health);

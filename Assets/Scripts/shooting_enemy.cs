@@ -40,7 +40,7 @@ public class shooting_enemy : MonoBehaviour
                 // Destroy(gameObject);
             }
         }
-        else  if (collider.gameObject.tag == "Player")
+        else  if (collider.gameObject.tag == "Player" && GlobalData.Instance.isInvi==false)
             {
                 GlobalData.Instance.cube_health -= 1;
                 GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);

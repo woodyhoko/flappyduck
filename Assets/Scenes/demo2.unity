@@ -2697,6 +2697,7 @@ GameObject:
   - component: {fileID: 526718878}
   - component: {fileID: 526718880}
   - component: {fileID: 526718879}
+  - component: {fileID: 526718881}
   m_Layer: 7
   m_Name: Cube
   m_TagString: Player
@@ -2849,8 +2850,23 @@ MonoBehaviour:
   replay: {fileID: 845885319}
   next_level: {fileID: 1490334098}
   updatedLeaderBoardValue: 0
-  loggedin: 0
-  updatedName: 0
+--- !u!114 &526718881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526718873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 0}
+  isGlobal: 0
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &544697094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4551,7 +4567,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 963194228}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 2147483648
+    m_Bits: 64
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -4610,7 +4626,8 @@ GameObject:
   - component: {fileID: 975515787}
   - component: {fileID: 975515786}
   - component: {fileID: 975515785}
-  m_Layer: 0
+  - component: {fileID: 975515791}
+  m_Layer: 6
   m_Name: smaller
   m_TagString: smaller
   m_Icon: {fileID: 0}
@@ -4723,6 +4740,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &975515791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975515784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: d024315c9a6adae4c8a8d01c804f3868, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &1003566065
 GameObject:
   m_ObjectHideFlags: 0

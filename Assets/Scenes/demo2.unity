@@ -823,6 +823,7 @@ MonoBehaviour:
   Canvas: {fileID: 0}
   title: {fileID: 0}
   replay: {fileID: 0}
+  score_text: {fileID: 0}
 --- !u!23 &141007416
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2766,7 +2767,7 @@ MonoBehaviour:
   star: {fileID: 948402763}
   stars: []
   bullet: {fileID: 1482989147}
-  cube: {fileID: 0}
+  cube: {fileID: 526718873}
   heart: {fileID: 334466263}
   HealthUi: {fileID: 232725516}
   ateText: {fileID: 183150104}
@@ -2799,6 +2800,8 @@ MonoBehaviour:
   replay: {fileID: 845885319}
   next_level: {fileID: 1490334098}
   updatedLeaderBoardValue: 0
+  loggedin: 0
+  updatedName: 0
 --- !u!1 &544697094
 GameObject:
   m_ObjectHideFlags: 0
@@ -8541,7 +8544,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9c94a66174198944f94cdddedf10f36e, type: 2}
+  - {fileID: 2100000, guid: a346d60a047cc974ab18d234e6f39301, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9929,13 +9932,13 @@ MonoBehaviour:
   player_localScale: {x: 1, y: 1, z: 1}
   world: 1
   star_num: 0
-  cloned_cubes: 0000000000000000
   number_of_cloned_cube: 0
   cloned_list: []
   dizzy: 1
   numTotalHit: 10
   numNeedHit: 0
   cube_health: 3
+  isInvi: 0
   hearts: []
 --- !u!1 &2060010965
 GameObject:

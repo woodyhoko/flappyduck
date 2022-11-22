@@ -46,7 +46,7 @@ public class enebull : MonoBehaviour
        
 
         else if (collider.gameObject.tag == "pipe")
-        { Debug.Log("---------------bullet hit wall!!------------");
+        { Debug.Log("--------------- ene bullet hit wall!!------------");
             Destroy(gameObject);
         }
     }

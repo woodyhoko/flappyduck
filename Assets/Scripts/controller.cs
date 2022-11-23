@@ -612,9 +612,7 @@ public class controller : MonoBehaviour
             }
             //m_Rigidbody.AddForce(0, -9.8f, 0, ForceMode.Force);
             */
-            Debug.Log("gravity: " + Physics.gravity);
-            Debug.Log("jumping: " + transform.position);
-            Debug.Log("jumping height: " + jump_height);
+            
             m_Rigidbody.velocity = new Vector3(0, jump_height, 0);
         }
 
@@ -625,16 +623,23 @@ public class controller : MonoBehaviour
         if (GlobalData.Instance.move_forward)
         {
             //Debug.Log("z: " + transform.position.z);
-            if (transform.position.z < GlobalData.Instance.move_forward_limit)
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Rigidbody player_Rigibody = player.GetComponent<Rigidbody>();
+
+            if (player.transform.position.z < GlobalData.Instance.move_forward_limit)
             {
-                m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
+                //m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
+                player_Rigibody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
+
+                //cloned cubes move forward
+                int size = GlobalData.Instance.cloned_list.Count;
+                for (int i = 0; i < size; i++)
+                {
+                    GlobalData.Instance.cloned_list[i].GetComponent<Rigidbody>().velocity = player_Rigibody.velocity;
+                }
             }
-            //cloned cubes move forward
-            int size = GlobalData.Instance.cloned_list.Count;
-            for (int i = 0; i < size; i++)
-            {
-                GlobalData.Instance.cloned_list[i].GetComponent<Rigidbody>().velocity = m_Rigidbody.velocity;
-            }
+
+            
         }
 
         // movement

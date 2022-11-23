@@ -3,28 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - clone
-  - invisible
-  - pipe
-  - longger
-  - gravity
-  - faster
-  - shooter
-  - move_forward
-  - gravity_size
-  - Rock
-  - smaller
-  - portal
-  - ceil
-  - water
-  - bullet
-  - bigger
-  - star
-  - Plane
-  - star_upgrade
-  - cloned_cube
-  - impenetrable_water
+  tags: []
   layers:
   - Default
   - TransparentFX

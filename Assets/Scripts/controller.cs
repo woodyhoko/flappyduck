@@ -152,6 +152,9 @@ public class controller : MonoBehaviour
         //change cube color
         //gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
 
+
+        
+
         speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
         m_Rigidbody = GetComponent<Rigidbody>();
         larger_gravity = false;
@@ -395,7 +398,7 @@ public class controller : MonoBehaviour
                 
 
             //}
-            if (timer == 580)
+            if (timer == 600)
             {
                 ScoreManager.level40Passed = true;
                 ScoreManager.killedByBound = false;
@@ -411,7 +414,7 @@ public class controller : MonoBehaviour
         }
         if (level && this_Level_name == "Level_4_1")
         {
-            if (timer == 800)
+            if (timer == 820)
             {
                 ScoreManager.level41Passed = true;
                 ScoreManager.killedByBound = false;

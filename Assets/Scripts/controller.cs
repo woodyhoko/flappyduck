@@ -262,7 +262,7 @@ public class controller : MonoBehaviour
 
         if (level && this_Level_name == "Level_1_mid_dy")
         {
-            if (timer == 1000)
+            if (timer >= 900)
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
@@ -271,6 +271,20 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
                 showResultPage("Level_1_mid Passed", true);
+            }
+        }
+
+        if (level && this_Level_name == "Level_3_mid_dy")
+        {
+            if (timer >= 950)
+            {
+                ScoreManager.cube_health = GlobalData.Instance.cube_health;
+                ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
+                ScoreManager.level11Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
+                showResultPage("Level_3_mid Passed", true);
             }
         }
 

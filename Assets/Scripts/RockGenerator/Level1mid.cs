@@ -19,7 +19,7 @@ public class Level1mid : MonoBehaviour
     void FixedUpdate()
     {
         timer++;
-        if (haveRock && (timer == 10 || timer == 500 || timer == 810)) {
+        if (haveRock && (timer == 15 || timer == 300)) {
             generateRock();
         }
     }

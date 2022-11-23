@@ -625,11 +625,13 @@ public class controller : MonoBehaviour
             //Debug.Log("z: " + transform.position.z);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             Rigidbody player_Rigibody = player.GetComponent<Rigidbody>();
+            print("oranginal velocity: " + player_Rigibody.velocity);
 
             if (player.transform.position.z < GlobalData.Instance.move_forward_limit)
             {
                 //m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
                 player_Rigibody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
+                print("after velocity: " + player_Rigibody.velocity);
 
                 //cloned cubes move forward
                 int size = GlobalData.Instance.cloned_list.Count;
@@ -638,6 +640,7 @@ public class controller : MonoBehaviour
                     GlobalData.Instance.cloned_list[i].GetComponent<Rigidbody>().velocity = player_Rigibody.velocity;
                 }
             }
+            GlobalData.Instance.move_forward = false;
 
             
         }

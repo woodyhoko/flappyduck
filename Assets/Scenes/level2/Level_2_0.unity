@@ -1346,6 +1346,7 @@ GameObject:
   - component: {fileID: 444717048}
   - component: {fileID: 444717047}
   - component: {fileID: 444717046}
+  - component: {fileID: 444717049}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1419,6 +1420,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 32.725, y: 0, z: 0}
+--- !u!114 &444717049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444717045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e9606caa8fe554a89d606593766461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &456857714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,6 +2308,7 @@ MonoBehaviour:
   numTotalHit: 10
   numNeedHit: 0
   cube_health: 3
+  isInvi: 0
   hearts: []
 --- !u!4 &692744126
 Transform:
@@ -2463,7 +2477,7 @@ GameObject:
   - component: {fileID: 746632018}
   m_Layer: 7
   m_Name: Cube
-  m_TagString: Player2
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6029,6 +6043,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6844052421525588557, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052421525588557, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052421525588557, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052421525588557, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -6076,6 +6102,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6844052421970687236, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052422362120434, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_text
+      value: 'level - 2.0
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 6844052422370199566, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_SizeDelta.x
       value: -40
@@ -6083,6 +6119,16 @@ PrefabInstance:
     - target: {fileID: 6844052422370199566, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052422462681506, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: b6aba4ed9c080044a8d71eaa4615d6b7, type: 3}
+    - target: {fileID: 6844052422789877024, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_text
+      value: 'Get a star which will destroy the enemy.
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df8610fab864c34ab770c87101c1662, type: 3}

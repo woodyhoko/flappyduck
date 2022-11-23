@@ -460,7 +460,7 @@ public class controller : MonoBehaviour
         }
         if (level && this_Level_name == "Level_4_2")
         {
-            if (timer == 1200)
+            if (timer == 1100)
             {
                 ScoreManager.level42Passed = true;
                 ScoreManager.killedByBound = false;
@@ -471,7 +471,7 @@ public class controller : MonoBehaviour
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 title.text = "Level 4.2  Passed";
                 replay.SetActive(false);
-                next_level.SetActive(false);
+                next_level.SetActive(true);
             }
         }
         if (Input.GetKeyDown(KeyCode.Space))

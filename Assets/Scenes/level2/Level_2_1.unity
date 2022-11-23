@@ -3507,13 +3507,13 @@ MonoBehaviour:
   player_localScale: {x: 1, y: 1, z: 1}
   world: 1
   star_num: 0
-  cloned_cubes: 0000000000000000
   number_of_cloned_cube: 0
   cloned_list: []
   dizzy: 0
   numTotalHit: 10
   numNeedHit: 0
   cube_health: 3
+  isInvi: 0
   hearts: []
 --- !u!4 &692744126
 Transform:
@@ -3857,6 +3857,8 @@ MonoBehaviour:
   replay: {fileID: 812974605}
   next_level: {fileID: 2142790020}
   updatedLeaderBoardValue: 0
+  loggedin: 0
+  updatedName: 0
 --- !u!54 &746632013
 Rigidbody:
   m_ObjectHideFlags: 0

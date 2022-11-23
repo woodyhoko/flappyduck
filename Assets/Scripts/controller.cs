@@ -471,7 +471,7 @@ public class controller : MonoBehaviour
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 title.text = "Level 4.2  Passed";
                 replay.SetActive(false);
-                next_level.SetActive(false);
+                next_level.SetActive(true);
             }
         }
         if (Input.GetKeyDown(KeyCode.Space))

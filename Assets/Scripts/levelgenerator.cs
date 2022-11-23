@@ -38,8 +38,11 @@ public class levelgenerator : MonoBehaviour
     public GameObject clone;
     public float clone_chance;
     public GameObject wall2;
-    public float wall2_chance;
-    public float wall3_chance;
+
+    public GameObject light1;
+    public GameObject light2;
+    public GameObject lightWhite;
+    public GameObject lightWhite2;
     //public GameObject text;
 
     // public GameObject movingHori;
@@ -112,6 +115,64 @@ public class levelgenerator : MonoBehaviour
                     Rigidbody m_Rigidbody2 = w2.GetComponent<Rigidbody>();
                     m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
                     intervalTime = 50;
+                }
+                else if (modNumber < 0.006f)
+                {
+                    GameObject l;
+                    l = Instantiate(light1);
+                    l.transform.position = new Vector3(-5, 0.2f, 36);
+                    Rigidbody m_Rigidbody = l.GetComponent<Rigidbody>();
+                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    l = Instantiate(light2);
+                    l.transform.position = new Vector3(5, 0.2f, 36);
+                    m_Rigidbody = l.GetComponent<Rigidbody>();
+                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                }
+                else if (modNumber < 0.008f)
+                {
+                    GameObject l;
+                    l = Instantiate(light1);
+                    l.transform.position = new Vector3(-5, 0.2f, 36);
+                    Rigidbody m_Rigidbody = l.GetComponent<Rigidbody>();
+                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    l = Instantiate(light2);
+                    l.transform.position = new Vector3(5, 0.2f, 36);
+                    m_Rigidbody = l.GetComponent<Rigidbody>();
+                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                }
+                else if (modNumber < 0.1f)
+                {
+                     GameObject l;
+                     l = Instantiate(lightWhite);
+                     l.transform.position = new Vector3(-5, 0.2f, 36);
+                     Rigidbody m_Rigidbody = l.GetComponent<Rigidbody>();
+                     m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+
+                     l = Instantiate(lightWhite);
+                     l.transform.position = new Vector3(-5, 0.2f, 38);
+                     m_Rigidbody = l.GetComponent<Rigidbody>();
+                     m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+
+                    l = Instantiate(lightWhite);
+                    l.transform.position = new Vector3(-5, 0.2f, 40);
+                    m_Rigidbody = l.GetComponent<Rigidbody>();
+                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+
+
+                    l = Instantiate(lightWhite2);
+                    l.transform.position = new Vector3(5, 0.2f, 36);
+                    m_Rigidbody = l.GetComponent<Rigidbody>();
+                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+
+                    l = Instantiate(lightWhite2);
+                    l.transform.position = new Vector3(5, 0.2f, 38);
+                    m_Rigidbody = l.GetComponent<Rigidbody>();
+                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+
+                    l = Instantiate(lightWhite2);
+                    l.transform.position = new Vector3(5, 0.2f, 40);
+                    m_Rigidbody = l.GetComponent<Rigidbody>();
+                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
                 }
             }
             else
@@ -364,6 +425,7 @@ public class levelgenerator : MonoBehaviour
                     m_Rigidbody.velocity = new Vector3(0, 0, -15f);
                     difficulty++;
                 }
+
                 // else if (randomNumber < 0.016f)
                 // {
                 //     GameObject food;

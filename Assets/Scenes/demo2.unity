@@ -1420,7 +1420,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.997118, g: 0, b: 1, a: 1}
   m_Intensity: 1.5
-  m_Range: 80
+  m_Range: 85
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5181,7 +5181,7 @@ MonoBehaviour:
   movingpipe: {fileID: 1515629381}
   movingpipe_chance: 0.01
   rock: {fileID: 887509171}
-  rock_chance: 0.0015
+  rock_chance: 0.0012
   wall: {fileID: 1795752818}
   wall_chance: 0.01
   invisible: {fileID: 162276700}
@@ -6721,6 +6721,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3149355301380300444, guid: 2d8879902575a4e4195d2cbd6802ee23, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d264f47549dc6fd40a1a65bfffc385aa, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d8879902575a4e4195d2cbd6802ee23, type: 3}
 --- !u!1001 &4395647497266771585
@@ -7130,7 +7134,7 @@ PrefabInstance:
     - target: {fileID: 4931343362478128706, guid: 47183e0d6898ae8488cb4a6b8deee3da, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 88459c7fa3d46084982ef4b09c318525, type: 2}
+      objectReference: {fileID: 2100000, guid: 1e956e0b23c0cf64b9fc58dcc36f8fe1, type: 2}
     - target: {fileID: 4931343362478128710, guid: 47183e0d6898ae8488cb4a6b8deee3da, type: 3}
       propertyPath: score_text
       value: 
@@ -7151,7 +7155,7 @@ PrefabInstance:
     - target: {fileID: 5104389599721216049, guid: 3aebed9ec863d3745bb052b24e6acd9a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 88459c7fa3d46084982ef4b09c318525, type: 2}
+      objectReference: {fileID: 2100000, guid: 1e956e0b23c0cf64b9fc58dcc36f8fe1, type: 2}
     - target: {fileID: 5104389599721216055, guid: 3aebed9ec863d3745bb052b24e6acd9a, type: 3}
       propertyPath: m_RootOrder
       value: 36

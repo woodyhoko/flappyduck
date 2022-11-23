@@ -220,19 +220,19 @@ public class levelgenerator : MonoBehaviour
                 }
                 if (Random.Range(0, 1f) < wall_chance)
                 {
-                    float wallRandom = Random.Range(0, 1f);
+                    //float wallRandom = Random.Range(0, 1f);
                     float heightRandom = Random.Range(0, 2f);
                     GameObject ppipe = (GameObject)Instantiate(wall);
                     //ppipe.GetComponent<pipe>().SetHealth(100f);
-                    if (wallRandom > 0.5)
-                    {
+                    //if (wallRandom > 0.5)
+                    //{
                         ppipe.transform.localScale = new Vector3(2.5f, 2, 0.5f);
                         ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1f, 36);
-                    }
-                    else
-                    {
+                    //}
+                    //else
+                    //{
                         ppipe.transform.position = new Vector3(Random.Range(-2, 2f), 0.8f, 36);
-                    }
+                    //}
                     ppipe.transform.rotation = Quaternion.identity;
 
                     Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();

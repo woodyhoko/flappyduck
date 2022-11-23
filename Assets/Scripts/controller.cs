@@ -225,10 +225,10 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fps_mode_lock)
-        {
-            main_camera.transform.position = this.transform.position;
-        }
+        //if (fps_mode_lock)
+        //{
+        //    main_camera.transform.position = this.transform.position;
+        //}
         if (level && this_Level_name == "Level_1_0")
         {
             if (timer == 900)
@@ -494,33 +494,33 @@ public class controller : MonoBehaviour
         }
 
 
-        if (power_card != null)
-        {
-            if (!GlobalData.Instance.choosen_powerCard)
-            {
-                if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
-                    GlobalData.Instance.choosen_powerCard = true;
-                    power_card.SetActive(false);
-                    GlobalData.Instance.update_max_limit = 9;
-                    limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
-                    Time.timeScale = 1f;
-                }
-                else if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
-                    GlobalData.Instance.choosen_powerCard = true;
-                    power_card.SetActive(false);
-                    Time.timeScale = 1f;
-                }
-                else if (Input.GetKeyDown(KeyCode.Alpha3))
-                {
-                    GlobalData.Instance.choosen_powerCard = true;
-                    power_card.SetActive(false);
-                    Time.timeScale = 1f;
-                    GlobalData.Instance.move_speed += 0.06f;
-                }
-            }
-        }
+        //if (power_card != null)
+        //{
+        //    if (!GlobalData.Instance.choosen_powerCard)
+         //   {
+        //        if (Input.GetKeyDown(KeyCode.Alpha1))
+         //       {
+        //            GlobalData.Instance.choosen_powerCard = true;
+         //           power_card.SetActive(false);
+         //           GlobalData.Instance.update_max_limit = 9;
+         //           limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
+         //           Time.timeScale = 1f;
+         //       }
+          //      else if (Input.GetKeyDown(KeyCode.Alpha2))
+          //      {
+          //          GlobalData.Instance.choosen_powerCard = true;
+          //          power_card.SetActive(false);
+          //         Time.timeScale = 1f;
+          //      }
+          //      else if (Input.GetKeyDown(KeyCode.Alpha3))
+          //      {
+          //          GlobalData.Instance.choosen_powerCard = true;
+          //          power_card.SetActive(false);
+          //          Time.timeScale = 1f;
+         //           GlobalData.Instance.move_speed += 0.06f;
+          //      }
+           // }
+        //}
 
 
 
@@ -543,8 +543,8 @@ public class controller : MonoBehaviour
             }
             else
             {
-                main_camera.transform.position = Vector3.Lerp(main_camera.transform.position, new Vector3(0, 4.6f, -7.69f), 0.1f);
-                main_camera.transform.rotation = Quaternion.Lerp(main_camera.transform.rotation, Quaternion.Euler(32.725f, 0, 0), 0.1f);
+                main_camera.transform.position = Vector3.Lerp(main_camera.transform.position, new Vector3(0, 5f, -8f), 0.1f);
+                main_camera.transform.rotation = Quaternion.Lerp(main_camera.transform.rotation, Quaternion.Euler(22f, 0, 0), 0.1f);
             }
         }
 

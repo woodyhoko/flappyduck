@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09842079, g: 0.101874135, b: 0.10634602, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11240,8 +11240,8 @@ MonoBehaviour:
   replay: {fileID: 1260201928}
   next_level: {fileID: 1702976416}
   title: {fileID: 2094288737}
-  this_Level_name: sukhada_3.x.1
-  next_Level_name: sukhada_3.x.2 1
+  this_Level_name: Level_3_3
+  next_Level_name: Level_3_4
 --- !u!114 &746632012
 MonoBehaviour:
   m_ObjectHideFlags: 0

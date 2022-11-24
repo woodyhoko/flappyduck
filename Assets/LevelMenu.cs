@@ -70,7 +70,7 @@ public class LevelMenu : MonoBehaviour
     public void level13()
     {
         // Debug.Log("Level11");
-        SceneManager.LoadScene("sukhada_1.x");
+        SceneManager.LoadScene("Level_1_3");
         initLevel();
         ScoreManager.level13 = true;
     }
@@ -140,14 +140,14 @@ public class LevelMenu : MonoBehaviour
 
     public void level33()
     {
-        SceneManager.LoadScene("sukhada_3.x.1");
+        SceneManager.LoadScene("Level_3_3");
         initLevel();
         ScoreManager.level33 = true;
     }
 
     public void level34()
     {
-        SceneManager.LoadScene("sukhada_3.x.2 1");
+        SceneManager.LoadScene("Level_3_4");
         initLevel();
         ScoreManager.level34 = true;
     }
@@ -175,7 +175,7 @@ public class LevelMenu : MonoBehaviour
 
     public void level43()
     {
-        SceneManager.LoadScene("sukhada_4.x");
+        SceneManager.LoadScene("Level_4_3");
         initLevel();
         ScoreManager.level43 = true;
     }

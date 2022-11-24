@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2277,7 +2277,7 @@ GameObject:
   - component: {fileID: 436958253}
   - component: {fileID: 436958252}
   m_Layer: 5
-  m_Name: strmid11
+  m_Name: strmid12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2461,16 +2461,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strmid10: {fileID: 151190212}
   strmid11: {fileID: 479713895}
+  strmid12: {fileID: 436958250}
+  strmid13: {fileID: 534671899}
   strmid20: {fileID: 960955505}
   strmid21: {fileID: 852013266}
   strmid22: {fileID: 278843312}
   strmid23: {fileID: 1427644915}
   strmid24: {fileID: 1774863692}
+  strmid25: {fileID: 841013763}
   strmid30: {fileID: 337075696}
   strmid31: {fileID: 2122747777}
+  strmid32: {fileID: 138060391}
+  strmid33: {fileID: 2049497036}
+  strmid34: {fileID: 854107493}
   strmid40: {fileID: 1295441907}
   strmid41: {fileID: 635823168}
-  strmid42: {fileID: 0}
+  strmid42: {fileID: 1285929697}
+  strmid43: {fileID: 1350246821}
 --- !u!1 &451082768
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,7 +2840,7 @@ GameObject:
   - component: {fileID: 534671902}
   - component: {fileID: 534671901}
   m_Layer: 5
-  m_Name: strmid11
+  m_Name: strmid13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3662,7 +3669,7 @@ GameObject:
   - component: {fileID: 841013766}
   - component: {fileID: 841013765}
   m_Layer: 5
-  m_Name: strmid24
+  m_Name: strmid25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5589,7 +5596,7 @@ GameObject:
   - component: {fileID: 1285929700}
   - component: {fileID: 1285929699}
   m_Layer: 5
-  m_Name: strmid41
+  m_Name: strmid42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5741,7 +5748,7 @@ GameObject:
   - component: {fileID: 1350246824}
   - component: {fileID: 1350246823}
   m_Layer: 5
-  m_Name: strmid41
+  m_Name: strmid43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

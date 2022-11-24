@@ -46,6 +46,8 @@ public class controller : MonoBehaviour
     private bool fps_mode = false;
     private bool fps_mode_lock = false;
 
+    private bool clonedd = false;
+
     private int lastKey = 0; // 0 for left and 1 for right
 
     public void Menu_Button()
@@ -390,9 +392,9 @@ public class controller : MonoBehaviour
             //stop game
             //if (timer == 300)
             //{
-                
+
             //    Time.timeScale = 0;
-                
+
 
             //}
             if (timer == 580)
@@ -656,7 +658,7 @@ public class controller : MonoBehaviour
             }
 
 
-            
+
         }
         if (invi_remaining_time > 0)
         {
@@ -934,9 +936,9 @@ public class controller : MonoBehaviour
 
             GameObject clone = Instantiate(player);
             Debug.Log("clone once");
-            clone.SetActive(true);
 
             clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            clone.SetActive(true);
 
             float player_x_pos = player.transform.position.x;
             float cloned_x = 0f;
@@ -955,7 +957,7 @@ public class controller : MonoBehaviour
             {
                 clone.transform.position = new Vector3(cloned_x, 4.0f, clone.transform.position.z);
             }
-            
+
 
             //clone.transform.rotation = Quaternion.identity;
             clone.tag = "cloned_cube";

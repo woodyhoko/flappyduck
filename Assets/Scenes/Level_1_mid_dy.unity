@@ -4250,7 +4250,7 @@ MonoBehaviour:
   next_level: {fileID: 1548828178}
   title: {fileID: 292083435}
   this_Level_name: Level_1_mid_dy
-  next_Level_name: sukhada_1.x
+  next_Level_name: Level_1_3
 --- !u!114 &746632012
 MonoBehaviour:
   m_ObjectHideFlags: 0

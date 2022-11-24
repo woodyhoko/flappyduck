@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44658208, g: 0.49641603, b: 0.5748196, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465829, g: 0.49641728, b: 0.57482105, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -913,10 +913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
-  title: {fileID: 0}
-  replay: {fileID: 0}
-  score_text: {fileID: 0}
 --- !u!23 &141007416
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4600,7 +4596,7 @@ MonoBehaviour:
   next_level: {fileID: 1254491040}
   title: {fileID: 506413007}
   this_Level_name: Level_4_2
-  next_Level_name: Menu
+  next_Level_name: sukhada_4.x
 --- !u!114 &526718884
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -155,7 +155,7 @@ public class controller : MonoBehaviour
         //gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
 
 
-        
+
 
         speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -513,29 +513,29 @@ public class controller : MonoBehaviour
         //if (power_card != null)
         //{
         //    if (!GlobalData.Instance.choosen_powerCard)
-         //   {
+        //   {
         //        if (Input.GetKeyDown(KeyCode.Alpha1))
-         //       {
+        //       {
         //            GlobalData.Instance.choosen_powerCard = true;
-         //           power_card.SetActive(false);
-         //           GlobalData.Instance.update_max_limit = 9;
-         //           limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
-         //           Time.timeScale = 1f;
-         //       }
-          //      else if (Input.GetKeyDown(KeyCode.Alpha2))
-          //      {
-          //          GlobalData.Instance.choosen_powerCard = true;
-          //          power_card.SetActive(false);
-          //         Time.timeScale = 1f;
-          //      }
-          //      else if (Input.GetKeyDown(KeyCode.Alpha3))
-          //      {
-          //          GlobalData.Instance.choosen_powerCard = true;
-          //          power_card.SetActive(false);
-          //          Time.timeScale = 1f;
-         //           GlobalData.Instance.move_speed += 0.06f;
-          //      }
-           // }
+        //           power_card.SetActive(false);
+        //           GlobalData.Instance.update_max_limit = 9;
+        //           limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
+        //           Time.timeScale = 1f;
+        //       }
+        //      else if (Input.GetKeyDown(KeyCode.Alpha2))
+        //      {
+        //          GlobalData.Instance.choosen_powerCard = true;
+        //          power_card.SetActive(false);
+        //         Time.timeScale = 1f;
+        //      }
+        //      else if (Input.GetKeyDown(KeyCode.Alpha3))
+        //      {
+        //          GlobalData.Instance.choosen_powerCard = true;
+        //          power_card.SetActive(false);
+        //          Time.timeScale = 1f;
+        //           GlobalData.Instance.move_speed += 0.06f;
+        //      }
+        // }
         //}
 
 
@@ -628,7 +628,7 @@ public class controller : MonoBehaviour
             }
             //m_Rigidbody.AddForce(0, -9.8f, 0, ForceMode.Force);
             */
-            
+
             m_Rigidbody.velocity = new Vector3(0, jump_height, 0);
         }
 
@@ -658,7 +658,7 @@ public class controller : MonoBehaviour
             }
             GlobalData.Instance.move_forward = false;
 
-            
+
         }
 
         // movement

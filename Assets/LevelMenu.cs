@@ -6,343 +6,190 @@ using UnityEngine.SceneManagement;
 public class LevelMenu : MonoBehaviour
 {
 
-	public void level10()
+    private void initLevel()
     {
-        Debug.Log("Level10");
-        SceneManager.LoadScene("Level_1_0");
-        ScoreManager.level10 = true;
+        ScoreManager.level10 = false;
         ScoreManager.level11 = false;
-		ScoreManager.level10Passed = false;
-		ScoreManager.level20 = false;
-		ScoreManager.level21 = false;
-		ScoreManager.level22 = false;
-		ScoreManager.level23 = false;
-		ScoreManager.level24 = false;
-		ScoreManager.level30 = false;
-		ScoreManager.level31 = false;
+        ScoreManager.level12 = false;
+        ScoreManager.level13 = false;
+        ScoreManager.level20 = false;
+        ScoreManager.level21 = false;
+        ScoreManager.level22 = false;
+        ScoreManager.level23 = false;
+        ScoreManager.level24 = false;
+        ScoreManager.level25 = false;
+        ScoreManager.level30 = false;
+        ScoreManager.level31 = false;
+        ScoreManager.level32 = false;
+        ScoreManager.level33 = false;
+        ScoreManager.level34 = false;
+        ScoreManager.level40 = false;
+        ScoreManager.level41 = false;
+        ScoreManager.level42 = false;
+        ScoreManager.level43 = false;
 
         ScoreManager.startTime = Time.time;
         ScoreManager.killedByRock = false;
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
-		ScoreManager.tutorial = false;
-		ScoreManager.biggerCube = 0;
-		ScoreManager.smallerCube = 0;
-		ScoreManager.shooter = 0;
-		ScoreManager.faster = 0;
-		ScoreManager.longer = 0;
-		ScoreManager.invisible = 0;
-		ScoreManager.star_upgrade = 0;
+        ScoreManager.tutorial = false;
+        ScoreManager.biggerCube = 0;
+        ScoreManager.smallerCube = 0;
+        ScoreManager.shooter = 0;
+        ScoreManager.faster = 0;
+        ScoreManager.longer = 0;
+        ScoreManager.invisible = 0;
+        ScoreManager.star_upgrade = 0;
+    }
+
+    public void level10()
+    {
+        Debug.Log("Level10");
+        SceneManager.LoadScene("Level_1_0");
+        initLevel();
+        ScoreManager.level10 = true;
     }
 
     public void level11()
     {
         // Debug.Log("Level11");
         SceneManager.LoadScene("Level_1_1");
-        ScoreManager.level10 = false;
+        initLevel();
         ScoreManager.level11 = true;
-        ScoreManager.level11Passed = false;
-		ScoreManager.level20 = false;
-		ScoreManager.level21 = false;
-		ScoreManager.level22 = false;
-		ScoreManager.level23 = false;
-		ScoreManager.level24 = false;
-		ScoreManager.level30 = false;
-		ScoreManager.level31 = false;
-		ScoreManager.tutorial = false;
-        ScoreManager.startTime = Time.time;
-        ScoreManager.killedByRock = false;
-        ScoreManager.killedByWater = false;
-        ScoreManager.killedByCeil = false;
-        ScoreManager.killedByBound = false;
-		ScoreManager.biggerCube = 0;
-		ScoreManager.smallerCube = 0;
-		ScoreManager.shooter = 0;
-		ScoreManager.faster = 0;
-		ScoreManager.longer = 0;
-		ScoreManager.invisible = 0;
-		ScoreManager.star_upgrade = 0;
+    }
+
+    public void level12()
+    {
+        // Debug.Log("Level11");
+        SceneManager.LoadScene("Level_1_mid_dy");
+        initLevel();
+        ScoreManager.level12 = true;
+    }
+
+    public void level13()
+    {
+        // Debug.Log("Level11");
+        SceneManager.LoadScene("sukhada_1.x");
+        initLevel();
+        ScoreManager.level13 = true;
     }
 
     public void level20()
     {
-	    SceneManager.LoadScene("Level_2_0");
-        ScoreManager.level10 = false;
-        ScoreManager.level11 = false;
-		ScoreManager.level20 = true;
-		ScoreManager.level20Passed = false;
-		ScoreManager.level21 = false;
-		ScoreManager.level22 = false;
-		ScoreManager.level23 = false;
-		ScoreManager.level24 = false;
-		ScoreManager.level30 = false;
-		ScoreManager.level31 = false;
-		ScoreManager.tutorial = false;
-        ScoreManager.startTime = Time.time;
-        
-        ScoreManager.killedByRock = false;
-        ScoreManager.killedByWater = false;
-        ScoreManager.killedByCeil = false;
-        ScoreManager.killedByBound = false;
-
-		ScoreManager.biggerCube = 0;
-		ScoreManager.smallerCube = 0;
-		ScoreManager.shooter = 0;
-		ScoreManager.faster = 0;
-		ScoreManager.longer = 0;
-		ScoreManager.invisible = 0;
-		ScoreManager.star_upgrade = 0;
+        SceneManager.LoadScene("Level_2_0");
+        initLevel();
+        ScoreManager.level20 = true;
     }
 
     public void level21()
     {
-	    SceneManager.LoadScene("Level_2_1");
-        ScoreManager.level10 = false;
-        ScoreManager.level11 = false;
-		ScoreManager.level20 = false;
-		ScoreManager.level21 = true;
-		ScoreManager.level21Passed = false;
-		ScoreManager.level22 = false;
-		ScoreManager.level23 = false;
-		ScoreManager.level24 = false;
-		ScoreManager.level30 = false;
-		ScoreManager.level31 = false;
-		ScoreManager.tutorial = false;
-        ScoreManager.startTime = Time.time;
-        
-        ScoreManager.killedByRock = false;
-        ScoreManager.killedByWater = false;
-        ScoreManager.killedByCeil = false;
-        ScoreManager.killedByBound = false;
-
-		ScoreManager.biggerCube = 0;
-		ScoreManager.smallerCube = 0;
-		ScoreManager.shooter = 0;
-		ScoreManager.faster = 0;
-		ScoreManager.longer = 0;
-		ScoreManager.invisible = 0;
-		ScoreManager.star_upgrade = 0;
+        SceneManager.LoadScene("Level_2_1");
+        initLevel();
+        ScoreManager.level21 = true;
     }
 
     public void level22()
     {
-	    SceneManager.LoadScene("Level_2_2");
-        ScoreManager.level10 = false;
-        ScoreManager.level11 = false;
-		ScoreManager.level20 = false;
-		ScoreManager.level21 = false;
-		ScoreManager.level22 = true;
-		ScoreManager.level22Passed = false;
-		ScoreManager.level23 = false;
-		ScoreManager.level24 = false;
-		ScoreManager.level30 = false;
-		ScoreManager.level31 = false;
-		ScoreManager.tutorial = false;
-        ScoreManager.startTime = Time.time;
-        
-        ScoreManager.killedByRock = false;
-        ScoreManager.killedByWater = false;
-        ScoreManager.killedByCeil = false;
-        ScoreManager.killedByBound = false;
-
-		ScoreManager.biggerCube = 0;
-		ScoreManager.smallerCube = 0;
-		ScoreManager.shooter = 0;
-		ScoreManager.faster = 0;
-		ScoreManager.longer = 0;
-		ScoreManager.invisible = 0;
-		ScoreManager.star_upgrade = 0;
-    }
-    
-    public void level40()
-    {
-	    SceneManager.LoadScene("Level_4_0");
-	    ScoreManager.level10 = false;
-	    ScoreManager.level11 = false;
-	    ScoreManager.level20 = false;
-	    ScoreManager.level21 = false;
-	    ScoreManager.level22 = false;
-	    ScoreManager.level22Passed = false;
-	    ScoreManager.level23 = false;
-	    ScoreManager.level24 = false;
-	    ScoreManager.level30 = false;
-	    ScoreManager.level31 = false;
-	    ScoreManager.tutorial = false;
-	    ScoreManager.startTime = Time.time;
-        
-	    ScoreManager.killedByRock = false;
-	    ScoreManager.killedByWater = false;
-	    ScoreManager.killedByCeil = false;
-	    ScoreManager.killedByBound = false;
-
-	    ScoreManager.biggerCube = 0;
-	    ScoreManager.smallerCube = 0;
-	    ScoreManager.shooter = 0;
-	    ScoreManager.faster = 0;
-	    ScoreManager.longer = 0;
-	    ScoreManager.invisible = 0;
-	    ScoreManager.star_upgrade = 0;
+        SceneManager.LoadScene("Level_2_mid");
+        initLevel();
+        ScoreManager.level22 = true;
     }
 
     public void level23()
     {
-	    SceneManager.LoadScene("Level_2_3");
-        ScoreManager.level10 = false;
-        ScoreManager.level11 = false;
-		ScoreManager.level20 = false;
-		ScoreManager.level21 = false;
-		ScoreManager.level22 = false;
-		ScoreManager.level23 = true;
-		ScoreManager.level23Passed = false;
-		ScoreManager.level24 = false;
-		ScoreManager.level30 = false;
-		ScoreManager.level31 = false;
-		ScoreManager.tutorial = false;
-        ScoreManager.startTime = Time.time;
-
-        ScoreManager.killedByRock = false;
-        ScoreManager.killedByWater = false;
-        ScoreManager.killedByCeil = false;
-        ScoreManager.killedByBound = false;
-
-		ScoreManager.biggerCube = 0;
-		ScoreManager.smallerCube = 0;
-		ScoreManager.shooter = 0;
-		ScoreManager.faster = 0;
-		ScoreManager.longer = 0;
-		ScoreManager.invisible = 0;
-		ScoreManager.star_upgrade = 0;
+        SceneManager.LoadScene("Level_2_2");
+        initLevel();
+        ScoreManager.level23 = true;
     }
 
     public void level24()
     {
-	    SceneManager.LoadScene("Level_2_4");
-        ScoreManager.level10 = false;
-        ScoreManager.level11 = false;
-		ScoreManager.level20 = false;
-		ScoreManager.level21 = false;
-		ScoreManager.level22 = false;
-		ScoreManager.level23 = false;
-		ScoreManager.level24 = true;
-		ScoreManager.level24Passed = false;
-		ScoreManager.level30 = false;
-		ScoreManager.level31 = false;
-		ScoreManager.tutorial = false;
-        ScoreManager.startTime = Time.time;
+        SceneManager.LoadScene("Level_2_3");
+        initLevel();
+        ScoreManager.level24 = true;
+    }
 
-        ScoreManager.killedByRock = false;
-        ScoreManager.killedByWater = false;
-        ScoreManager.killedByCeil = false;
-        ScoreManager.killedByBound = false;
-
-		ScoreManager.biggerCube = 0;
-		ScoreManager.smallerCube = 0;
-		ScoreManager.shooter = 0;
-		ScoreManager.faster = 0;
-		ScoreManager.longer = 0;
-		ScoreManager.invisible = 0;
-		ScoreManager.star_upgrade = 0;
+    public void level25()
+    {
+        SceneManager.LoadScene("Level_2_4");
+        initLevel();
+        ScoreManager.level25 = true;
     }
 
     public void level30()
     {
-	    SceneManager.LoadScene("Level_3_0");
-        ScoreManager.level10 = false;
-        ScoreManager.level11 = false;
-		ScoreManager.level20 = false;
-		ScoreManager.level21 = false;
-		ScoreManager.level22 = false;
-		ScoreManager.level23 = false;
-		ScoreManager.level24 = false;
-		ScoreManager.level30 = true;
-		ScoreManager.level30Passed = false;
-		ScoreManager.level31 = false;
-		ScoreManager.tutorial = false;
-        ScoreManager.startTime = Time.time;
-        
-        ScoreManager.killedByRock = false;
-        ScoreManager.killedByWater = false;
-        ScoreManager.killedByCeil = false;
-        ScoreManager.killedByBound = false;
-
-		ScoreManager.biggerCube = 0;
-		ScoreManager.smallerCube = 0;
-		ScoreManager.shooter = 0;
-		ScoreManager.faster = 0;
-		ScoreManager.longer = 0;
-		ScoreManager.invisible = 0;
-		ScoreManager.star_upgrade = 0;
+        SceneManager.LoadScene("Level_3_0");
+        initLevel();
+        ScoreManager.level30 = true;
     }
 
     public void level31()
     {
-	    SceneManager.LoadScene("Level_3_1");
-        ScoreManager.level10 = false;
-        ScoreManager.level11 = false;
-		ScoreManager.level20 = false;
-		ScoreManager.level21 = false;
-		ScoreManager.level22 = false;
-		ScoreManager.level23 = false;
-		ScoreManager.level24 = false;
-		ScoreManager.level30 = false;
-		ScoreManager.level31 = true;
-		ScoreManager.level31Passed = false;
-		ScoreManager.tutorial = false;
-        ScoreManager.startTime = Time.time;
-        
-        ScoreManager.killedByRock = false;
-        ScoreManager.killedByWater = false;
-        ScoreManager.killedByCeil = false;
-        ScoreManager.killedByBound = false;
-
-		ScoreManager.biggerCube = 0;
-		ScoreManager.smallerCube = 0;
-		ScoreManager.shooter = 0;
-		ScoreManager.faster = 0;
-		ScoreManager.longer = 0;
-		ScoreManager.invisible = 0;
-		ScoreManager.star_upgrade = 0;
+        SceneManager.LoadScene("Level_3_1");
+        initLevel();
+        ScoreManager.level31 = true;
     }
 
     public void level32()
     {
-	    SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level_3_mid_dy");
+        initLevel();
+        ScoreManager.level32 = true;
+    }
+
+    public void level33()
+    {
+        SceneManager.LoadScene("sukhada_3.x.1");
+        initLevel();
+        ScoreManager.level33 = true;
+    }
+
+    public void level34()
+    {
+        SceneManager.LoadScene("sukhada_3.x.2 1");
+        initLevel();
+        ScoreManager.level34 = true;
+    }
+
+    public void level40()
+    {
+        SceneManager.LoadScene("Level_4_0");
+        initLevel();
+        ScoreManager.level40 = true;
+    }
+
+    public void level41()
+    {
+        SceneManager.LoadScene("Level_4_1");
+        initLevel();
+        ScoreManager.level41 = true;
+    }
+
+    public void level42()
+    {
+        SceneManager.LoadScene("Level_4_2");
+        initLevel();
+        ScoreManager.level42 = true;
+    }
+
+    public void level43()
+    {
+        SceneManager.LoadScene("sukhada_4.x");
+        initLevel();
+        ScoreManager.level43 = true;
     }
 
     public void level_endless()
     {
         Debug.Log("Endless Run");
         SceneManager.LoadScene("demo2");
-        ScoreManager.level10 = false;
-        ScoreManager.level11 = false;
-		ScoreManager.level20 = false;
-		ScoreManager.level21 = false;
-		ScoreManager.level22 = false;
-		ScoreManager.level23 = false;
-		ScoreManager.level24 = false;
-		ScoreManager.level30 = false;
-		ScoreManager.level31 = false;
-		ScoreManager.tutorial = false;
-        ScoreManager.startTime = Time.time;
-        
-        ScoreManager.killedByRock = false;
-        ScoreManager.killedByWater = false;
-        ScoreManager.killedByCeil = false;
-        ScoreManager.killedByBound = false;
-
-		ScoreManager.biggerCube = 0;
-		ScoreManager.smallerCube = 0;
-		ScoreManager.shooter = 0;
-		ScoreManager.faster = 0;
-		ScoreManager.longer = 0;
-		ScoreManager.invisible = 0;
-		ScoreManager.star_upgrade = 0;
+        initLevel();
     }
-    
+
     public void enter_namePage()
     {
-	    SceneManager.LoadScene("inputUserName");
+        SceneManager.LoadScene("inputUserName");
     }
 
     public void QuitMenu()
@@ -353,48 +200,40 @@ public class LevelMenu : MonoBehaviour
 
     public void GoMenu()
     {
-	    SceneManager.LoadScene("menu");
+        SceneManager.LoadScene("menu");
     }
 
     public void GoTutorial()
     {
-	    Debug.Log("tutorialhere");
-	    SceneManager.LoadScene("tutorial");
+        Debug.Log("tutorialhere");
+        SceneManager.LoadScene("tutorial");
         ScoreManager.startTime = Time.time;
-        
+
         ScoreManager.killedByRock = false;
         ScoreManager.killedByWater = false;
         ScoreManager.killedByCeil = false;
         ScoreManager.killedByBound = false;
-        
-        ScoreManager.level10 = false;
-        ScoreManager.level11 = false;
-        ScoreManager.level20 = false;
-        ScoreManager.level21 = false;
-        ScoreManager.level22 = false;
-        ScoreManager.level23 = false;
-        ScoreManager.level24 = false;
-        ScoreManager.level30 = false;
-        ScoreManager.level31 = false;
-		ScoreManager.tutorial = true;
-        
-        
+
+        initLevel();
+        ScoreManager.tutorial = true;
+
+
     }
-    
+
     public void leaderBoard()
     {
-	    SceneManager.LoadScene("leaderboard");
+        SceneManager.LoadScene("leaderboard");
     }
 
     // // Start is called before the first frame update
     // void Start()
     // {
-        
+
     // }
 
     // // Update is called once per frame
     // void Update()
     // {
-        
+
     // }
 }

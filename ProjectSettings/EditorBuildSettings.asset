@@ -79,5 +79,20 @@ EditorBuildSettings:
     guid: a8cf9777d0336401288110878b6462e0
   - enabled: 1
     path: Assets/Scenes/Level_1_mid_dy.unity
-    guid: 59bd4e87cbbac40c192e6d58a89aede8
+    guid: 0b2be04083eea9a418b85cd915823843
+  - enabled: 1
+    path: Assets/Scenes/Level_2_mid.unity
+    guid: f60f9265ee86243d28b6e12374192dc4
+  - enabled: 1
+    path: Assets/Scenes/Level_3_mid_dy.unity
+    guid: c4d5ca8ef65794d6db679af94d8a12e8
+  - enabled: 1
+    path: Assets/Scenes/Level_4_1.unity
+    guid: ccbc0f5d9009848959526dd8d958550d
+  - enabled: 1
+    path: Assets/Scenes/Level_4_2.unity
+    guid: 47024905e59504de8bbb934e0260abda
+  - enabled: 1
+    path: Assets/Scenes/sukhada_3.x.2 1.unity
+    guid: 3e63cfe804c64439e9c74e88be025a85
   m_configObjects: {}

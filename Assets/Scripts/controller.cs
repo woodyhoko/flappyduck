@@ -154,6 +154,9 @@ public class controller : MonoBehaviour
         //change cube color
         //gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
 
+
+        
+
         speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
         m_Rigidbody = GetComponent<Rigidbody>();
         larger_gravity = false;
@@ -224,10 +227,10 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fps_mode_lock)
-        {
-            main_camera.transform.position = this.transform.position;
-        }
+        //if (fps_mode_lock)
+        //{
+        //    main_camera.transform.position = this.transform.position;
+        //}
         if (level && this_Level_name == "Level_1_0")
         {
             if (timer == 900)
@@ -261,7 +264,7 @@ public class controller : MonoBehaviour
 
         if (level && this_Level_name == "Level_1_mid_dy")
         {
-            if (timer == 1000)
+            if (timer >= 900)
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
@@ -270,6 +273,34 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
                 showResultPage("Level_1_mid Passed", true);
+            }
+        }
+
+        if (level && this_Level_name == "Level_2_mid")
+        {
+            if (timer >= 1350)
+            {
+                ScoreManager.cube_health = GlobalData.Instance.cube_health;
+                ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
+                ScoreManager.level11Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
+                showResultPage("Level_1_mid Passed", true);
+            }
+        }
+
+        if (level && this_Level_name == "Level_3_mid_dy")
+        {
+            if (timer >= 950)
+            {
+                ScoreManager.cube_health = GlobalData.Instance.cube_health;
+                ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
+                ScoreManager.level11Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
+                showResultPage("Level_3_mid Passed", true);
             }
         }
 
@@ -397,7 +428,7 @@ public class controller : MonoBehaviour
 
 
             //}
-            if (timer == 580)
+            if (timer == 600)
             {
                 ScoreManager.level40Passed = true;
                 ScoreManager.killedByBound = false;
@@ -413,7 +444,7 @@ public class controller : MonoBehaviour
         }
         if (level && this_Level_name == "Level_4_1")
         {
-            if (timer == 800)
+            if (timer == 820)
             {
                 ScoreManager.level41Passed = true;
                 ScoreManager.killedByBound = false;
@@ -445,7 +476,7 @@ public class controller : MonoBehaviour
         }
         if (level && this_Level_name == "Level_4_2")
         {
-            if (timer == 1200)
+            if (timer == 1100)
             {
                 ScoreManager.level42Passed = true;
                 ScoreManager.killedByBound = false;
@@ -456,7 +487,7 @@ public class controller : MonoBehaviour
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 title.text = "Level 4.2  Passed";
                 replay.SetActive(false);
-                next_level.SetActive(false);
+                next_level.SetActive(true);
             }
         }
         if (Input.GetKeyDown(KeyCode.Space))
@@ -479,33 +510,33 @@ public class controller : MonoBehaviour
         }
 
 
-        if (power_card != null)
-        {
-            if (!GlobalData.Instance.choosen_powerCard)
-            {
-                if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
-                    GlobalData.Instance.choosen_powerCard = true;
-                    power_card.SetActive(false);
-                    GlobalData.Instance.update_max_limit = 9;
-                    limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
-                    Time.timeScale = 1f;
-                }
-                else if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
-                    GlobalData.Instance.choosen_powerCard = true;
-                    power_card.SetActive(false);
-                    Time.timeScale = 1f;
-                }
-                else if (Input.GetKeyDown(KeyCode.Alpha3))
-                {
-                    GlobalData.Instance.choosen_powerCard = true;
-                    power_card.SetActive(false);
-                    Time.timeScale = 1f;
-                    GlobalData.Instance.move_speed += 0.06f;
-                }
-            }
-        }
+        //if (power_card != null)
+        //{
+        //    if (!GlobalData.Instance.choosen_powerCard)
+         //   {
+        //        if (Input.GetKeyDown(KeyCode.Alpha1))
+         //       {
+        //            GlobalData.Instance.choosen_powerCard = true;
+         //           power_card.SetActive(false);
+         //           GlobalData.Instance.update_max_limit = 9;
+         //           limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
+         //           Time.timeScale = 1f;
+         //       }
+          //      else if (Input.GetKeyDown(KeyCode.Alpha2))
+          //      {
+          //          GlobalData.Instance.choosen_powerCard = true;
+          //          power_card.SetActive(false);
+          //         Time.timeScale = 1f;
+          //      }
+          //      else if (Input.GetKeyDown(KeyCode.Alpha3))
+          //      {
+          //          GlobalData.Instance.choosen_powerCard = true;
+          //          power_card.SetActive(false);
+          //          Time.timeScale = 1f;
+         //           GlobalData.Instance.move_speed += 0.06f;
+          //      }
+           // }
+        //}
 
 
 
@@ -528,8 +559,8 @@ public class controller : MonoBehaviour
             }
             else
             {
-                main_camera.transform.position = Vector3.Lerp(main_camera.transform.position, new Vector3(0, 4.6f, -7.69f), 0.1f);
-                main_camera.transform.rotation = Quaternion.Lerp(main_camera.transform.rotation, Quaternion.Euler(32.725f, 0, 0), 0.1f);
+                main_camera.transform.position = Vector3.Lerp(main_camera.transform.position, new Vector3(0, 5f, -8f), 0.1f);
+                main_camera.transform.rotation = Quaternion.Lerp(main_camera.transform.rotation, Quaternion.Euler(22f, 0, 0), 0.1f);
             }
         }
 
@@ -597,9 +628,7 @@ public class controller : MonoBehaviour
             }
             //m_Rigidbody.AddForce(0, -9.8f, 0, ForceMode.Force);
             */
-            Debug.Log("gravity: " + Physics.gravity);
-            Debug.Log("jumping: " + transform.position);
-            Debug.Log("jumping height: " + jump_height);
+            
             m_Rigidbody.velocity = new Vector3(0, jump_height, 0);
         }
 
@@ -610,16 +639,26 @@ public class controller : MonoBehaviour
         if (GlobalData.Instance.move_forward)
         {
             //Debug.Log("z: " + transform.position.z);
-            if (transform.position.z < GlobalData.Instance.move_forward_limit)
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Rigidbody player_Rigibody = player.GetComponent<Rigidbody>();
+            print("oranginal velocity: " + player_Rigibody.velocity);
+
+            if (player.transform.position.z < GlobalData.Instance.move_forward_limit)
             {
-                m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
+                //m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
+                player_Rigibody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
+                print("after velocity: " + player_Rigibody.velocity);
+
+                //cloned cubes move forward
+                int size = GlobalData.Instance.cloned_list.Count;
+                for (int i = 0; i < size; i++)
+                {
+                    GlobalData.Instance.cloned_list[i].GetComponent<Rigidbody>().velocity = player_Rigibody.velocity;
+                }
             }
-            //cloned cubes move forward
-            int size = GlobalData.Instance.cloned_list.Count;
-            for (int i = 0; i < size; i++)
-            {
-                GlobalData.Instance.cloned_list[i].GetComponent<Rigidbody>().velocity = m_Rigidbody.velocity;
-            }
+            GlobalData.Instance.move_forward = false;
+
+            
         }
 
         // movement

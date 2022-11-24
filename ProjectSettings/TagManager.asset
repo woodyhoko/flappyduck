@@ -4,27 +4,28 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - clone
-  - invisible
   - pipe
-  - longger
-  - gravity
-  - faster
-  - shooter
-  - move_forward
-  - gravity_size
-  - Rock
-  - smaller
-  - portal
-  - ceil
-  - water
-  - bullet
-  - bigger
-  - star
-  - Plane
   - star_upgrade
+  - smaller
+  - move_forward
+  - longger
+  - water
+  - clone
+  - star
+  - bigger
+  - gravity
+  - gravity_size
+  - shooter
+  - faster
+  - invisible
+  - Rock
+  - portal
+  - fps
+  - ceil
+  - bullet
+  - Plane
+  - cherry
   - cloned_cube
-  - impenetrable_water
   layers:
   - Default
   - TransparentFX
@@ -57,7 +58,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - post-process
   m_SortingLayers:
   - name: Default
     uniqueID: 0

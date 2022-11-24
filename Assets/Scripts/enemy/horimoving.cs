@@ -6,10 +6,10 @@ using TMPro;
 public class horimoving : MonoBehaviour
 {
     
-    public GameObject Canvas;
-    public TMP_Text title;
-    public GameObject replay;
-    public TMPro.TextMeshProUGUI score_text;
+    // public GameObject Canvas;
+    // public TMP_Text title;
+    // public GameObject replay;
+    // public TMPro.TextMeshProUGUI score_text;
     HealthSystem healthSystem;
     // Start is called before the first frame update
     void Start()

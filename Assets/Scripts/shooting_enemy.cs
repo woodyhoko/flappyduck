@@ -45,9 +45,7 @@ public class shooting_enemy : MonoBehaviour
                 GlobalData.Instance.cube_health -= 1;
                 GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
                 if (GlobalData.Instance.cube_health <= 0f)
-                {
-                    FindObjectOfType<GameManager>().EndGame();
-                }
+               
                 Debug.Log("get hit by shooting enemy");
                 Destroy(gameObject);
             }
@@ -80,7 +78,7 @@ public class shooting_enemy : MonoBehaviour
 
             GameObject enebulins;
             enebulins = Instantiate(enebul);
-            enebulins.transform.position = transform.position + new Vector3(0, 0.8f,-2f);
+            enebulins.transform.position = transform.position + new Vector3(0, 0.5f,-2f);
             Rigidbody m_Rigidbody = enebulins.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -20f);
         }

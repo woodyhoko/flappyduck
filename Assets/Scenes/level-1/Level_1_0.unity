@@ -2859,9 +2859,29 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7445331082571778259, guid: e6743a7993f16b14d841de93e6d85819, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445331082571778261, guid: e6743a7993f16b14d841de93e6d85819, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445331082571778261, guid: e6743a7993f16b14d841de93e6d85819, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7445331082571778264, guid: e6743a7993f16b14d841de93e6d85819, type: 3}
       propertyPath: m_RootOrder
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445331082571778264, guid: e6743a7993f16b14d841de93e6d85819, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445331082571778264, guid: e6743a7993f16b14d841de93e6d85819, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 7445331082571778264, guid: e6743a7993f16b14d841de93e6d85819, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2869,7 +2889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7445331082571778264, guid: e6743a7993f16b14d841de93e6d85819, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7445331082571778264, guid: e6743a7993f16b14d841de93e6d85819, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2903,7 +2923,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7445331082571778261, guid: e6743a7993f16b14d841de93e6d85819, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e6743a7993f16b14d841de93e6d85819, type: 3}
 --- !u!1 &1058377219 stripped
 GameObject:
@@ -4553,7 +4574,6 @@ MonoBehaviour:
   player: {fileID: 1748421880}
   bigger: {fileID: 1664309997}
   smaller: {fileID: 129489913}
-  movingpipe: {fileID: 1515629381}
   text: {fileID: 0}
   movingHori: {fileID: 1058377219}
   Canvas: {fileID: 487442750}

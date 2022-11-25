@@ -43,13 +43,13 @@ public class levelgeneratorLevel1 : MonoBehaviour
             GameObject movinghori = (GameObject)Instantiate(movingHori);
             movinghori.transform.rotation = Quaternion.identity;
             //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
-            movinghori.transform.position = new Vector3(-5f, .010f, 36);
+            movinghori.transform.position = new Vector3(-4f, 1.4f, 36);
             Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
 
             GameObject movinghori2 = (GameObject)Instantiate(movingHori);
             movinghori2.transform.rotation = Quaternion.identity;
-            movinghori2.transform.position = new Vector3(5f, .010f, 36);
+            movinghori2.transform.position = new Vector3(4f, 1.4f, 36);
             Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
             m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
         }
@@ -61,23 +61,23 @@ public class levelgeneratorLevel1 : MonoBehaviour
         }
 
         // level 1.0
-        if (timer == 150)
+        if (timer == 350)
         {
             GameObject movinghori = (GameObject)Instantiate(movingHori);
             movinghori.transform.rotation = Quaternion.identity;
             //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
-            movinghori.transform.position = new Vector3(-3.5f, .010f, 36);
+            movinghori.transform.position = new Vector3(-3.5f, 1.4f, 36);
             Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
 
             GameObject movinghori2 = (GameObject)Instantiate(movingHori);
             movinghori2.transform.rotation = Quaternion.identity;
-            movinghori2.transform.position = new Vector3(3.5f, .010f, 36);
+            movinghori2.transform.position = new Vector3(3.5f, 1.4f, 36);
             Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
             m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
         }
 
-        if (timer == 300)
+        if (timer == 150)
         {
             GameObject food;
             food = Instantiate(smaller);
@@ -89,7 +89,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
         
-        if (timer == 330)
+        if (timer == 170)
         {
             GameObject food;
             food = Instantiate(smaller);
@@ -101,7 +101,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
         
-        if (timer == 350)
+        if (timer == 180)
         {
             GameObject food;
             food = Instantiate(bigger);
@@ -113,7 +113,7 @@ public class levelgeneratorLevel1 : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
         
-        if (timer == 370)
+        if (timer == 200)
         {
             GameObject food;
             food = Instantiate(smaller);
@@ -125,13 +125,13 @@ public class levelgeneratorLevel1 : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
         
-        if (timer == 390)
+        if (timer == 240)
         {
             GameObject food;
             food = Instantiate(bigger);
             food.transform.rotation = Quaternion.identity;
             food.transform.Rotate(0, 90, 0); // for showing icons in right view
-            food.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);
+            food.transform.position = new Vector3(Random.Range(-4, 4f), 1, 36);
 
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
@@ -143,13 +143,13 @@ public class levelgeneratorLevel1 : MonoBehaviour
             GameObject movinghori = (GameObject)Instantiate(movingHori);
             movinghori.transform.rotation = Quaternion.identity;
             //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
-            movinghori.transform.position = new Vector3(-3f, .010f, 36);
+            movinghori.transform.position = new Vector3(-3f,1.4f, 36);
             Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
                 
             GameObject movinghori2 = (GameObject)Instantiate(movingHori);
             movinghori2.transform.rotation = Quaternion.identity;
-            movinghori2.transform.position = new Vector3(3f, .010f, 36);
+            movinghori2.transform.position = new Vector3(3f, 1.4f, 36);
             Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
             m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
         }
@@ -172,13 +172,13 @@ public class levelgeneratorLevel1 : MonoBehaviour
             GameObject movinghori = (GameObject)Instantiate(movingHori);
             movinghori.transform.rotation = Quaternion.identity;
             //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
-            movinghori.transform.position = new Vector3(-2.9f, .010f, 36);
+            movinghori.transform.position = new Vector3(-2.9f,1.4f, 36);
             Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
                 
             GameObject movinghori2 = (GameObject)Instantiate(movingHori);
             movinghori2.transform.rotation = Quaternion.identity;
-            movinghori2.transform.position = new Vector3(2.9f, .010f, 36);
+            movinghori2.transform.position = new Vector3(2.9f, 1.4f, 36);
             Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
             m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
         }
@@ -224,13 +224,13 @@ public class levelgeneratorLevel1 : MonoBehaviour
             GameObject movinghori = (GameObject)Instantiate(movingHori);
             movinghori.transform.rotation = Quaternion.identity;
             //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
-            movinghori.transform.position = new Vector3(-5f, .010f, 36);
+            movinghori.transform.position = new Vector3(-2.5f,1.2f, 36);
             Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
                 
             GameObject movinghori2 = (GameObject)Instantiate(movingHori);
             movinghori2.transform.rotation = Quaternion.identity;
-            movinghori2.transform.position = new Vector3(5f, .010f, 36);
+            movinghori2.transform.position = new Vector3(2.5f,1f, 36);
             Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
             m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
         }

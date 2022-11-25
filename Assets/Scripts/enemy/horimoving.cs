@@ -22,17 +22,6 @@ public class horimoving : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("horizontal wall touched");
-        // if(collision.gameObject.tag == "Player")
-        // {
-        //     // ScoreManager.killedByWater= true;
-        //     // FindObjectOfType<GameManager>().EndGame();
-        //     Time.timeScale = 0;
-        //     Canvas.SetActive(true);
-        //     title.text = "Game Over";
-        //     replay.SetActive(true);
-        // }
-        // Destroy(gameObject);
 
     }
     private void OnTriggerEnter(Collider collider)
@@ -76,7 +65,7 @@ public class horimoving : MonoBehaviour
                     ScoreManager.killedByCeil = false;
                     ScoreManager.killedByBound = false;
                 }
-                Debug.Log("get hit by moving pipe");
+                //Debug.Log("get hit by moving pipe");
                 Destroy(gameObject);
         }
     }

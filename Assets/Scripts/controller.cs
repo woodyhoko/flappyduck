@@ -706,33 +706,33 @@ public class controller : MonoBehaviour
         // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
 
         //set jumping limit
-        if (larger_gravity)
-        {
-            jump_height = 3.0f;
-        }
-        else
-        {
-            jump_height = 5.0f;
-        }
+        //if (larger_gravity)
+        //{
+        //    jump_height = 3.0f;
+        // }
+       // else
+        //{
+        //    jump_height = 5.0f;
+       //}
         //reversed gravity
-        if (reversed_gravity)
-        {
-            Physics.gravity = new Vector3(0, 9.8f, 0);
+        //if (reversed_gravity)
+        //{
+        //    Physics.gravity = new Vector3(0, 9.8f, 0);
             //set unlimited jumping under reversed gravity environment
-            jump_numb = 2;
-            if (jump_height > 0)
-            {
-                jump_height = jump_height * (-1.0f);
-            }
-        }
-        else
-        {
-            Physics.gravity = new Vector3(0, -9.8f, 0);
-            if (jump_height < 0)
-            {
-                jump_height = jump_height * (-1.0f);
-            }
-        }
+         //   jump_numb = 2;
+         //   if (jump_height > 0)
+         //   {
+          //      jump_height = jump_height * (-1.0f);
+          //  }
+       // }
+        //else
+       // {
+          //  Physics.gravity = new Vector3(0, -9.8f, 0);
+         //   if (jump_height < 0)
+         //   {
+          //      jump_height = jump_height * (-1.0f);
+          //  }
+       // }
 
         if (jump)
         {
@@ -756,30 +756,28 @@ public class controller : MonoBehaviour
 
 
         //move forward
-        if (GlobalData.Instance.move_forward)
-        {
+        //if (GlobalData.Instance.move_forward)
+        //{
             //Debug.Log("z: " + transform.position.z);
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            Rigidbody player_Rigibody = player.GetComponent<Rigidbody>();
-            print("oranginal velocity: " + player_Rigibody.velocity);
+        //    GameObject player = GameObject.FindGameObjectWithTag("Player");
+          //  Rigidbody player_Rigibody = player.GetComponent<Rigidbody>();
+         //   print("oranginal velocity: " + player_Rigibody.velocity);
 
-            if (player.transform.position.z < GlobalData.Instance.move_forward_limit)
-            {
+        //    if (player.transform.position.z < GlobalData.Instance.move_forward_limit)
+        //    {
                 //m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
-                player_Rigibody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
-                print("after velocity: " + player_Rigibody.velocity);
+         //       player_Rigibody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
+         //       print("after velocity: " + player_Rigibody.velocity);
 
                 //cloned cubes move forward
-                int size = GlobalData.Instance.cloned_list.Count;
-                for (int i = 0; i < size; i++)
-                {
-                    GlobalData.Instance.cloned_list[i].GetComponent<Rigidbody>().velocity = player_Rigibody.velocity;
-                }
-            }
-            GlobalData.Instance.move_forward = false;
-
-
-        }
+          //      int size = GlobalData.Instance.cloned_list.Count;
+          //      for (int i = 0; i < size; i++)
+           //     {
+           //         GlobalData.Instance.cloned_list[i].GetComponent<Rigidbody>().velocity = player_Rigibody.velocity;
+           //     }
+            //}
+           // GlobalData.Instance.move_forward = false;
+        //}
 
         // movement
         if (!GlobalData.Instance.dizzy)
@@ -956,7 +954,7 @@ public class controller : MonoBehaviour
                 ScoreManager.biggerCube++;
                 GlobalData.Instance.ate++;
 
-
+                jump_height += 0.4f;
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
 
                 player.transform.localScale = GlobalData.Instance.player_localScale * 1.2f;
@@ -977,7 +975,7 @@ public class controller : MonoBehaviour
                 ScoreManager.smallerCube++;
                 GlobalData.Instance.ate++;
 
-
+                //jump_height -= 0.4f;
 
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 player.transform.localScale = GlobalData.Instance.player_localScale * 0.8f;

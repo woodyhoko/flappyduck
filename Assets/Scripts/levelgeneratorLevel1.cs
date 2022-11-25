@@ -8,7 +8,6 @@ public class levelgeneratorLevel1 : MonoBehaviour
     public GameObject player;
     public GameObject bigger;
     public GameObject smaller;
-    public GameObject movingpipe;
     public GameObject text;
     public GameObject movingHori;
 
@@ -22,15 +21,9 @@ public class levelgeneratorLevel1 : MonoBehaviour
     public GameObject rock;
     public bool haveRock = false;
 
-    public bool introceShowed;
-    public GameObject introduction;
     void Start()
     {
-        if(!introceShowed)
-        {
-            Time.timeScale = 0f;
-            introduction.SetActive(true);
-        }
+
     }
 
     private void generateRock() {

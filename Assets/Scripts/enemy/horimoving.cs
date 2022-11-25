@@ -64,8 +64,10 @@ public class horimoving : MonoBehaviour
         }
         if (collider.gameObject.tag == "Player" && collider.gameObject.tag != "star")
         {
+
                 GlobalData.Instance.cube_health -= 1;
-                GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
+                if(GlobalData.Instance.cube_health>=0)
+                    GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
                 if (GlobalData.Instance.cube_health <= 0f)
                 {
                     //FindObjectOfType<GameManager>().EndGame();

@@ -38,15 +38,22 @@ public class playfabManager : MonoBehaviour
         {
             name = result.InfoResultPayload.PlayerProfile.DisplayName;
         }
+        var request = new GetLeaderboardRequest
+        {
+            StatisticName = "flappyduck",
+            StartPosition = 0,
+            MaxResultsCount = 5
+        };
+        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnError);
     }
-    
-    
+
+
     public void OnError(PlayFabError error)
     {
         Debug.Log("Error while logging in/creating account");
         Debug.Log(error.GenerateErrorReport());
     }
-    
+
     public void SendLeaderBoard(int score)
     {
         var request = new UpdatePlayerStatisticsRequest
@@ -90,7 +97,7 @@ public class playfabManager : MonoBehaviour
             texts[2].text = item.StatValue.ToString();
         }
     }
-    
+
     /*public void updateDisplayName()
     {
         var request = new UpdateUserTitleDisplayNameRequest

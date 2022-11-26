@@ -48,7 +48,7 @@ public class pipe : MonoBehaviour
             if (gameObject != null && collider.gameObject != null && healthSystem != null)
             {
                 //healthSystem.Damage(collider.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
-                healthSystem.Damage(50);
+                healthSystem.Damage(200);
                 //pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
                 //Debug.Log(healthSystem.GetHealth());
                 gameObject.GetComponent<Renderer>().material.color = new Color(

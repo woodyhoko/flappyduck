@@ -12,12 +12,13 @@ public class moving_pipes : MonoBehaviour
     //pipeHealth pipeHealth = new pipeHealth();
     public TMPro.TextMeshProUGUI score_text;
     HealthSystem healthSystem;
+    public float maxHealth = 200f;
     // Start is called before the first frame update
     void Start()
     {
         Physics.IgnoreLayerCollision(6, 10, true);
         Physics.IgnoreLayerCollision(6, 6, true);
-        healthSystem= new(400f);
+        healthSystem= new(maxHealth);
         // healthBarUI = (GameObject)Instantiate(healthBarUI);
     }
     
@@ -51,7 +52,7 @@ public class moving_pipes : MonoBehaviour
             if (gameObject != null && collider.gameObject != null)
             {
                //healthSystem.Damage(collider.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
-                healthSystem.Damage(50);
+                healthSystem.Damage(200);
 
                 //pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
                 // Debug.Log(healthSystem.GetHealth());

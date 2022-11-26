@@ -1078,6 +1078,10 @@ PrefabInstance:
       value: Pipe (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4931343362478128710, guid: 47183e0d6898ae8488cb4a6b8deee3da, type: 3}
+      propertyPath: maxHealth
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931343362478128710, guid: 47183e0d6898ae8488cb4a6b8deee3da, type: 3}
       propertyPath: score_text
       value: 
       objectReference: {fileID: 1909677949}
@@ -3453,6 +3457,7 @@ MonoBehaviour:
   speedUpDown: 10
   distanceUpDown: 1
   score_text: {fileID: 1909677949}
+  maxHealth: 200
 --- !u!114 &1515629383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4292,12 +4297,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1909677949}
     - target: {fileID: 5104389599721216061, guid: 3aebed9ec863d3745bb052b24e6acd9a, type: 3}
+      propertyPath: maxHealth
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104389599721216061, guid: 3aebed9ec863d3745bb052b24e6acd9a, type: 3}
       propertyPath: score_text
       value: 
       objectReference: {fileID: 1909677949}
     - target: {fileID: 5104389599721216061, guid: 3aebed9ec863d3745bb052b24e6acd9a, type: 3}
       propertyPath: speedUpDown
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5104389599721216062, guid: 3aebed9ec863d3745bb052b24e6acd9a, type: 3}
       propertyPath: m_Name
@@ -4345,7 +4354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_text: {fileID: 1909677949}
-  maxHealth: 150
+  maxHealth: 600
 --- !u!114 &1795752820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4408,7 +4417,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 17ea0a917f97fca4dbb6765b5a6a2cb5, type: 2}
+  - {fileID: 2100000, guid: 225953366b253e049a9020ab225b4101, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5401,6 +5410,7 @@ MonoBehaviour:
   cube_health: 3
   isInvi: 0
   hearts: []
+  lightNum: 0
 --- !u!1 &2076544374
 GameObject:
   m_ObjectHideFlags: 0

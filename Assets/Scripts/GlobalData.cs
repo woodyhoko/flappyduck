@@ -38,6 +38,7 @@ public class GlobalData : MonoBehaviour
 
     public List<GameObject> hearts = new List<GameObject>();
 
+    public int lightNum = 0;
     public void start()
     {
 

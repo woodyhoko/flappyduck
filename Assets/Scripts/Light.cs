@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class pipe : MonoBehaviour
+public class Light : MonoBehaviour
 {
     // public GameObject healthBarUI;
     // public Canvas Canvas;
     //pipeHealth pipeHealth = new pipeHealth();
-    public TMPro.TextMeshProUGUI score_text;
     HealthSystem healthSystem;
     public float maxHealth = 400f;
 
@@ -19,6 +17,14 @@ public class pipe : MonoBehaviour
         Physics.IgnoreLayerCollision(6, 6, true);
         healthSystem = new(maxHealth);
     }
+    void Update()
+    {
+        if (transform.position.z < -5)
+        {
+            GlobalData.Instance.lightNum--;
+            Destroy(gameObject);
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -28,13 +34,12 @@ public class pipe : MonoBehaviour
         if (collision.gameObject.tag == "bullet")
         {
             //Debug.Log("get hit by bullet");
-            healthSystem.Damage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
+            healthSystem.Damage(50);
             //pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
             if (healthSystem.GetHealth().Equals(0f))
             {
                 Destroy(collision.gameObject);
             }
-
 
         }
     }

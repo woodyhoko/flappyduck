@@ -39,6 +39,9 @@ public class levelgenerator : MonoBehaviour
     public float clone_chance;
     public GameObject wall2;
 
+
+    //public GameObject lightNum = 0;
+    //public GameObject light1Limit = 2;
     public GameObject light1;
     public GameObject light2;
     public GameObject lightWhite;
@@ -82,7 +85,7 @@ public class levelgenerator : MonoBehaviour
             float modNumber = Random.Range(0, 1f);
             if (modNumber < 0.01f)
             {
-
+                int lightNum = GlobalData.Instance.lightNum;
                 if (modNumber < 0.002f)
                 {
                     GameObject w1 = (GameObject)Instantiate(wall2);
@@ -116,9 +119,10 @@ public class levelgenerator : MonoBehaviour
                     m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
                     intervalTime = 50;
                 }
-                else if (modNumber < 0.006f)
+                else if (lightNum <= 4 && modNumber < 0.006f)
                 {
                     GameObject l;
+                    GlobalData.Instance.lightNum += 2;
                     l = Instantiate(light1);
                     l.transform.position = new Vector3(-5, 0.2f, 36);
                     Rigidbody m_Rigidbody = l.GetComponent<Rigidbody>();
@@ -128,9 +132,10 @@ public class levelgenerator : MonoBehaviour
                     m_Rigidbody = l.GetComponent<Rigidbody>();
                     m_Rigidbody.velocity = new Vector3(0, 0, -15f);
                 }
-                else if (modNumber < 0.008f)
+                else if (lightNum <= 4 && modNumber < 0.008f)
                 {
                     GameObject l;
+                    GlobalData.Instance.lightNum += 2;
                     l = Instantiate(light1);
                     l.transform.position = new Vector3(-5, 0.2f, 36);
                     Rigidbody m_Rigidbody = l.GetComponent<Rigidbody>();
@@ -140,10 +145,11 @@ public class levelgenerator : MonoBehaviour
                     m_Rigidbody = l.GetComponent<Rigidbody>();
                     m_Rigidbody.velocity = new Vector3(0, 0, -15f);
                 }
-                else if (modNumber < 0.1f)
+                else if (lightNum == 0 && modNumber < 0.009f)
                 {
                      GameObject l;
-                     l = Instantiate(lightWhite);
+                     GlobalData.Instance.lightNum += 6;
+                    l = Instantiate(lightWhite);
                      l.transform.position = new Vector3(-5, 0.2f, 36);
                      Rigidbody m_Rigidbody = l.GetComponent<Rigidbody>();
                      m_Rigidbody.velocity = new Vector3(0, 0, -15f);

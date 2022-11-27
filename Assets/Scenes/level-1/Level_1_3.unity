@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731189, g: 0.38073924, b: 0.35872707, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311855, g: 0.38073862, b: 0.35872632, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -785,7 +785,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4801232504656877658, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
         m_TargetAssemblyTypeName: controller, Assembly-CSharp
         m_MethodName: Menu_Button
         m_Mode: 1
@@ -3032,6 +3032,7 @@ MonoBehaviour:
   cube_health: 3
   isInvi: 0
   hearts: []
+  lightNum: 0
 --- !u!4 &692744126
 Transform:
   m_ObjectHideFlags: 0

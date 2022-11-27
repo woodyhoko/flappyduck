@@ -152,7 +152,7 @@ public class stars : MonoBehaviour
         }
         else if ( ScoreManager.level12Passed)
         {
-            Debug.Log("passed");
+            Debug.Log(" 1.2 passed");
             if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
                 strmid12.GetComponent<Image>().color = new Color32(255, 255, 225, 255);

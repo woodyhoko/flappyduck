@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731189, g: 0.38073924, b: 0.35872707, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311855, g: 0.38073862, b: 0.35872632, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1001,6 +1001,7 @@ GameObject:
   - component: {fileID: 306881483}
   - component: {fileID: 306881482}
   - component: {fileID: 306881480}
+  - component: {fileID: 306881486}
   m_Layer: 0
   m_Name: movingHoriLeft
   m_TagString: pipe
@@ -1114,6 +1115,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306881478}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &306881486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306881478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &313443224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,7 +1917,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450148577}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000004, y: 2.0000005, z: 1.0000002}
@@ -1933,9 +1946,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f41524dc094b4192a8dbfaa40595604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedUpDown: 10
+  speedUpDown: 5
   distanceUpDown: 1
   score_text: {fileID: 0}
+  maxHealth: 200
 --- !u!114 &450148581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1973,7 +1987,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450148577}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -2037,7 +2051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450148577}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.5, z: 250}
+  m_LocalPosition: {x: 0, y: -2.18, z: 250}
   m_LocalScale: {x: 1.5, y: 5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3268,6 +3282,7 @@ GameObject:
   - component: {fileID: 691219661}
   - component: {fileID: 691219660}
   - component: {fileID: 691219658}
+  - component: {fileID: 691219664}
   m_Layer: 0
   m_Name: movingHoriLeft
   m_TagString: pipe
@@ -3381,6 +3396,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691219656}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &691219664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691219656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &692744124
 GameObject:
   m_ObjectHideFlags: 0
@@ -3434,6 +3461,7 @@ MonoBehaviour:
   cube_health: 3
   isInvi: 0
   hearts: []
+  lightNum: 0
 --- !u!4 &692744126
 Transform:
   m_ObjectHideFlags: 0
@@ -3463,6 +3491,7 @@ GameObject:
   - component: {fileID: 702366725}
   - component: {fileID: 702366724}
   - component: {fileID: 702366722}
+  - component: {fileID: 702366728}
   m_Layer: 0
   m_Name: jump
   m_TagString: pipe
@@ -3505,7 +3534,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702366720}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3576,6 +3605,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702366720}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &702366728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702366720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &728088153
 GameObject:
   m_ObjectHideFlags: 0
@@ -4121,6 +4162,7 @@ GameObject:
   - component: {fileID: 797394490}
   - component: {fileID: 797394489}
   - component: {fileID: 797394493}
+  - component: {fileID: 797394494}
   m_Layer: 0
   m_Name: movingHoriLeft
   m_TagString: pipe
@@ -4136,7 +4178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797394486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 0, z: 0}
+  m_LocalPosition: {x: -4.03, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4234,6 +4276,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &797394494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797394486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &799197203
 GameObject:
   m_ObjectHideFlags: 0
@@ -4248,6 +4302,7 @@ GameObject:
   - component: {fileID: 799197208}
   - component: {fileID: 799197207}
   - component: {fileID: 799197205}
+  - component: {fileID: 799197211}
   m_Layer: 0
   m_Name: movingHoriRight
   m_TagString: pipe
@@ -4361,6 +4416,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799197203}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &799197211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799197203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &805615513
 GameObject:
   m_ObjectHideFlags: 0
@@ -5537,6 +5604,7 @@ GameObject:
   - component: {fileID: 999338465}
   - component: {fileID: 999338464}
   - component: {fileID: 999338462}
+  - component: {fileID: 999338468}
   m_Layer: 0
   m_Name: movingHoriLeft
   m_TagString: pipe
@@ -5650,6 +5718,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 999338460}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &999338468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999338460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1011622448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8420,6 +8500,7 @@ GameObject:
   - component: {fileID: 1569096323}
   - component: {fileID: 1569096322}
   - component: {fileID: 1569096326}
+  - component: {fileID: 1569096327}
   m_Layer: 0
   m_Name: movingHoriRight
   m_TagString: pipe
@@ -8435,7 +8516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569096319}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: 5.61, y: 0, z: 0}
   m_LocalScale: {x: 9, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8531,6 +8612,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1569096327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569096319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1581625299
@@ -10753,6 +10846,7 @@ GameObject:
   - component: {fileID: 2072524603}
   - component: {fileID: 2072524602}
   - component: {fileID: 2072524600}
+  - component: {fileID: 2072524606}
   m_Layer: 0
   m_Name: jump
   m_TagString: pipe
@@ -10866,6 +10960,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072524598}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2072524606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072524598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2086876491
 GameObject:
   m_ObjectHideFlags: 0

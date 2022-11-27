@@ -69,6 +69,7 @@ public class moving_pipes : MonoBehaviour
         if (collider.gameObject.tag == "Player" && collider.gameObject.tag != "star")
         {
             GlobalData.Instance.cube_health -= 1;
+            Destroy(gameObject);
             GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
             if (GlobalData.Instance.cube_health <= 0f)
             {
@@ -79,7 +80,7 @@ public class moving_pipes : MonoBehaviour
                     ScoreManager.killedByBound = false;
             }
             Debug.Log("get hit by moving pipe");
-            Destroy(gameObject);
+           
         }
     
     }

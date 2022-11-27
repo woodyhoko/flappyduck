@@ -305,21 +305,21 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                showResultPage("Level 1.1  Passed", true);
+                showResultPage("Level 1.1 Passed", true);
             }
         }
 
-        if (level && this_Level_name == "Level_1_mid_dy")
+        if (level && this_Level_name == "Level_1_2")
         {
             if (timer >= 900)
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
-                ScoreManager.level11Passed = true;
+                ScoreManager.level12Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                showResultPage("Level_1_mid Passed", true);
+                showResultPage("Level 1.2 Passed", true);
             }
         }
 
@@ -333,7 +333,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                showResultPage("Level_1_mid Passed", true);
+                showResultPage("Level 2.2  Passed", true);
             }
         }
 
@@ -343,11 +343,11 @@ public class controller : MonoBehaviour
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
-                ScoreManager.level11Passed = true;
+                ScoreManager.level32Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                showResultPage("Level_3_mid Passed", true);
+                showResultPage("Level 3.2 Passed", true);
             }
         }
 
@@ -386,26 +386,9 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-        if (level && this_Level_name == "Level_2_2")
-        {
-            if (timer == 1300)
-            {
-                ScoreManager.level22Passed = true;
-                ScoreManager.killedByBound = false;
-                ScoreManager.killedByCeil = false;
-                ScoreManager.killedByWater = false;
-                ScoreManager.cube_health = GlobalData.Instance.cube_health;
-                ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
-                Time.timeScale = 0;
-                Canvas.SetActive(true);
-                title.text = "Level 2.2  Passed";
-                replay.SetActive(false);
-                next_level.SetActive(true);
-            }
-        }
         if (level && this_Level_name == "Level_2_3")
         {
-            if (timer == 1500)
+            if (timer == 1300)
             {
                 ScoreManager.level23Passed = true;
                 ScoreManager.killedByBound = false;
@@ -422,7 +405,7 @@ public class controller : MonoBehaviour
         }
         if (level && this_Level_name == "Level_2_4")
         {
-            if (timer == 1900)
+            if (timer == 1500)
             {
                 ScoreManager.level24Passed = true;
                 ScoreManager.killedByBound = false;
@@ -434,6 +417,24 @@ public class controller : MonoBehaviour
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
                 title.text = "Level 2.4  Passed";
+                replay.SetActive(false);
+                next_level.SetActive(true);
+            }
+        }
+        if (level && this_Level_name == "Level_2_5")
+        {
+            if (timer == 1900)
+            {
+                ScoreManager.level24Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByWater = false;
+                ScoreManager.level24Passed = true;
+                Time.timeScale = 0;
+                Canvas.SetActive(true);
+                ScoreManager.cube_health = GlobalData.Instance.cube_health;
+                ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
+                title.text = "Level 2.5  Passed";
                 replay.SetActive(false);
                 next_level.SetActive(true);
             }
@@ -580,7 +581,7 @@ public class controller : MonoBehaviour
                 showResultPage("Level_3_1 Passed", true);
             }
         }
-        if (level && this_Level_name == "Level_3_2")
+        if (level && this_Level_name == "Level_3_3")
         {
             if (timer >= 950)
             {
@@ -589,7 +590,23 @@ public class controller : MonoBehaviour
                 ScoreManager.level11Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
-                ScoreManager.level32Passed = true;
+                ScoreManager.level33Passed = true;
+
+                ScoreManager.killedByWater = false;
+                showResultPage("Level_3_2 Passed", true);
+            }
+        }
+        
+        if (level && this_Level_name == "Level_3_4")
+        {
+            if (timer >= 950)
+            {
+                ScoreManager.cube_health = GlobalData.Instance.cube_health;
+                ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
+                ScoreManager.level11Passed = true;
+                ScoreManager.killedByBound = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.level34Passed = true;
 
                 ScoreManager.killedByWater = false;
                 showResultPage("Level_3_2 Passed", true);

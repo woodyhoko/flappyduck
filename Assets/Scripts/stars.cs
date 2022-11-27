@@ -108,7 +108,7 @@ public class stars : MonoBehaviour
         {
             Debug.Log(ScoreManager.cube_health);
             Debug.Log(ScoreManager.cube_health_org);
-           if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
+           if (ScoreManager.cube_health  == 3)
             {
                 strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
               
@@ -117,7 +117,7 @@ public class stars : MonoBehaviour
         else if ( ScoreManager.level41Passed)
         {
             Debug.Log("passed");
-            if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
+            if (ScoreManager.cube_health  == 3)
             {
                 strmid41.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
                 
@@ -135,7 +135,7 @@ public class stars : MonoBehaviour
             }
         } else if ( ScoreManager.level11Passed)
         {
-            if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
+            if (ScoreManager.cube_health  == 3)
             {
                 strmid11.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
                 Debug.Log(strmid11.GetComponent<Image>().color);
@@ -144,7 +144,7 @@ public class stars : MonoBehaviour
         }   else if ( ScoreManager.level43Passed)
         {
             Debug.Log("passed");
-            if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
+            if (ScoreManager.cube_health  == 3)
             {
                 strmid43.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
                 
@@ -172,7 +172,7 @@ public class stars : MonoBehaviour
             if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
                 strmid13.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
-                Debug.Log(strmid11.GetComponent<Image>().color);
+                Debug.Log(strmid13.GetComponent<Image>().color);
                
             }
         }   else if ( ScoreManager.level32Passed)
@@ -188,7 +188,7 @@ public class stars : MonoBehaviour
             if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
                 strmid33.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
-                Debug.Log(strmid11.GetComponent<Image>().color);
+                Debug.Log(strmid33.GetComponent<Image>().color);
                
             }
         }
@@ -197,7 +197,7 @@ public class stars : MonoBehaviour
             if (ScoreManager.cube_health  == ScoreManager.cube_health_org)
             {
                 strmid34.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
-                Debug.Log(strmid11.GetComponent<Image>().color);
+                Debug.Log(strmid34.GetComponent<Image>().color);
                
             }
         }

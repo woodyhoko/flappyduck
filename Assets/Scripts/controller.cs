@@ -329,7 +329,7 @@ public class controller : MonoBehaviour
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
-                ScoreManager.level11Passed = true;
+                ScoreManager.level22Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
@@ -425,11 +425,10 @@ public class controller : MonoBehaviour
         {
             if (timer == 1900)
             {
-                ScoreManager.level24Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                ScoreManager.level24Passed = true;
+                ScoreManager.level25Passed = true;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
@@ -541,7 +540,6 @@ public class controller : MonoBehaviour
                 ScoreManager.level42Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
-                ScoreManager.level42Passed = true;
                 ScoreManager.killedByWater = false;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
@@ -558,7 +556,6 @@ public class controller : MonoBehaviour
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
-                ScoreManager.level11Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
@@ -572,7 +569,6 @@ public class controller : MonoBehaviour
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
-                ScoreManager.level11Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.level31Passed = true;
@@ -583,11 +579,10 @@ public class controller : MonoBehaviour
         }
         if (level && this_Level_name == "Level_3_3")
         {
-            if (timer >= 950)
+            if (timer >= 1400)
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
-                ScoreManager.level11Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.level33Passed = true;
@@ -599,11 +594,10 @@ public class controller : MonoBehaviour
         
         if (level && this_Level_name == "Level_3_4")
         {
-            if (timer >= 950)
+            if (timer >= 1300)
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
-                ScoreManager.level11Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.level34Passed = true;
@@ -618,7 +612,6 @@ public class controller : MonoBehaviour
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
-                ScoreManager.level11Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.level43Passed = true;
 

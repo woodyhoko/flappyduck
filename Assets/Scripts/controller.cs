@@ -185,6 +185,7 @@ public class controller : MonoBehaviour
         ScoreManager.longer = 0;
         ScoreManager.invisible = 0;
         ScoreManager.star_upgrade = 0;
+        ScoreManager.sscore = 0;
         Time.timeScale = 1;
         ScoreManager.startTime = Time.time;
         GlobalData.Instance.destroy();

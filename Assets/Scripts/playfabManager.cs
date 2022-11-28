@@ -9,10 +9,22 @@ public class playfabManager : MonoBehaviour
 {
     public GameObject rowPrefab;
     public Transform rowParent;
+
+    public bool loggedIn = false;
+    public bool getData = false;
     // Start is called before the first frame update
     void Start()
     {
         Login();
+    }
+
+    void Update()
+    {
+        if (loggedIn && !getData)
+        {
+            GetLeaderboard();
+            getData = true;
+        }
     }
 
     public void Login()
@@ -33,18 +45,13 @@ public class playfabManager : MonoBehaviour
     public void OnSuccess(LoginResult result)
     {
         Debug.Log("Successful login/account create!");
-        string name = null;
+        loggedIn = true;
+        /*string name = null;
         if (result.InfoResultPayload.PlayerProfile != null)
         {
             name = result.InfoResultPayload.PlayerProfile.DisplayName;
-        }
-        var request = new GetLeaderboardRequest
-        {
-            StatisticName = "flappyduck",
-            StartPosition = 0,
-            MaxResultsCount = 5
-        };
-        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnError);
+        }*/
+
     }
 
 

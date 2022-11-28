@@ -20,6 +20,7 @@ public class CheckDie : MonoBehaviour
     public bool loggedin = false;
     public bool updatedName = false;
 
+    public bool enteredname = false;
 
     // Start is called before the first frame update
     void Start()
@@ -180,13 +181,7 @@ public class CheckDie : MonoBehaviour
         {
             TMP_Text score = background.GetComponent<Transform>().Find("Score").GetComponent<TMP_Text>();
             score.GetComponent<TMPro.TextMeshProUGUI>().text = "Score : " + ScoreManager.sscore.ToString();
-            if (!updatedLeaderBoardValue && ScoreManager.username != "levelPlayer")
-            {
-                SendLeaderBoard(ScoreManager.sscore);
-                updatedLeaderBoardValue = true;
-            } 
         }
-
         title.text = "Game Over";
         replay.SetActive(true);
         next_level.SetActive(false);

@@ -186,6 +186,7 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene("demo2");
         initLevel();
     }
+    
 
     public void enter_namePage()
     {

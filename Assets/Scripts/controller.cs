@@ -337,7 +337,7 @@ public class controller : MonoBehaviour
             }
         }
 
-        if (level && this_Level_name == "Level_2_mid")
+        if (level && this_Level_name == "Level_1_mid_dy")
         {
             if (timer >= 1350)
             {
@@ -361,7 +361,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                showResultPage("Level 3.2 Passed", true);
+                showResultPage("Level 3.2 Passed", false);
             }
         }
 

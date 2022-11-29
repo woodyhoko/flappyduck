@@ -3458,7 +3458,7 @@ MonoBehaviour:
   dizzy: 0
   numTotalHit: 10
   numNeedHit: 0
-  cube_health: 3
+  cube_health: 2
   isInvi: 0
   jump_height: 5
   hearts: []

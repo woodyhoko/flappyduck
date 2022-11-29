@@ -247,7 +247,10 @@ public class controller : MonoBehaviour
             }
         }
         
-        
+        if (this.tag == "Player")
+        {
+
+        }
         for (int heart_now = 0; heart_now < GlobalData.Instance.cube_health; heart_now++)
         {
             GameObject heart1 = Instantiate(heart);

@@ -34,7 +34,7 @@ public class GlobalData : MonoBehaviour
     //cube health
     public int cube_health = 3;
     public bool isInvi = false;
-    
+    public float jump_height = 5.0f;
 
     public List<GameObject> hearts = new List<GameObject>();
 

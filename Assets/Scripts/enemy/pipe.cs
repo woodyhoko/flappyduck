@@ -67,7 +67,7 @@ public class pipe : MonoBehaviour
         {
             GlobalData.Instance.cube_health -= 1;
             int hp = GlobalData.Instance.cube_health;
-            if (hp >= 0)
+            if (hp > 0)
                 GlobalData.Instance.hearts[hp].SetActive(false);
             if (hp <= 0f)
             {

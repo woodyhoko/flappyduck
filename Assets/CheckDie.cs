@@ -38,7 +38,7 @@ public class CheckDie : MonoBehaviour
             updateDisplayName();
         }
         
-        if (transform.position.y < -10 || transform.position.z < -10 || transform.position.x < -8 || transform.position.x > 8)
+        if (transform.position.y < -10 || transform.position.z < -5 || transform.position.x < -8 || transform.position.x > 8)
         {
             if (this.tag == "Player")
             {

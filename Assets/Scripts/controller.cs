@@ -21,7 +21,7 @@ public class controller : MonoBehaviour
     private bool jump = false;
     private int jump_numb = 0;
     public static int ts;
-    private float jump_height = 5.0f;
+    //private float jump_height = 5.0f;
     private int invi_remaining_time = 30;
     // Gravity, reversed gravity, move forward
     public static bool larger_gravity = false;
@@ -198,9 +198,11 @@ public class controller : MonoBehaviour
         //change cube color
         //gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
 
+        //portal
+        if(this_Level_name == "portal")
+            cube.transform.localScale = GlobalData.Instance.player_localScale;
 
-
-
+        GlobalData.Instance.hearts = new List<GameObject>();
         speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
         m_Rigidbody = GetComponent<Rigidbody>();
         larger_gravity = false;
@@ -238,6 +240,8 @@ public class controller : MonoBehaviour
                 stars[i].transform.position = this.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
             }
         }
+        
+        
         for (int heart_now = 0; heart_now < GlobalData.Instance.cube_health; heart_now++)
         {
             GameObject heart1 = Instantiate(heart);
@@ -760,7 +764,7 @@ public class controller : MonoBehaviour
             //m_Rigidbody.AddForce(0, -9.8f, 0, ForceMode.Force);
             */
 
-            m_Rigidbody.velocity = new Vector3(0, jump_height, 0);
+            m_Rigidbody.velocity = new Vector3(0, GlobalData.Instance.jump_height, 0);
         }
 
 
@@ -825,8 +829,6 @@ public class controller : MonoBehaviour
                 }
             }
 
-
-
         }
         if (invi_remaining_time > 0)
         {
@@ -856,16 +858,16 @@ public class controller : MonoBehaviour
             if (randomNumber < 0.3f)
             {
                 GlobalData.Instance.world_speed = 1.3f;
-                SceneManager.LoadScene("ice_world1");
+                SceneManager.LoadScene("ice");
             }
             else if (randomNumber < 0.6f)
             {
-                SceneManager.LoadScene("small_world1");
+                SceneManager.LoadScene("small");
             }
             else
             {
                 GlobalData.Instance.world_speed = 0.7f;
-                SceneManager.LoadScene("mud_world1");
+                SceneManager.LoadScene("mud");
             }
             //each time becomes 1.2 * original
 
@@ -965,7 +967,7 @@ public class controller : MonoBehaviour
                 ScoreManager.biggerCube++;
                 GlobalData.Instance.ate++;
 
-                jump_height += 0.4f;
+                GlobalData.Instance.jump_height += 0.4f;
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
 
                 player.transform.localScale = GlobalData.Instance.player_localScale * 1.2f;

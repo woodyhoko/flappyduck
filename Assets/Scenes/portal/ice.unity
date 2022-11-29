@@ -2852,7 +2852,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482989147 stripped
 GameObject:
@@ -3681,7 +3681,7 @@ MonoBehaviour:
   move_forward: {fileID: 490578847}
   move_forward_chance: 0.002
   portal: {fileID: 1051381692}
-  portal_chance: 0
+  portal_chance: 0.02
   water: {fileID: 1950439626}
   water_chance: 0.005
   fps: {fileID: 1438486282}
@@ -4657,7 +4657,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1438353261974990566, guid: 2991f4692cedf844f82b3ac1b334898b, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1438353261974990566, guid: 2991f4692cedf844f82b3ac1b334898b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4697,10 +4697,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1438353261974990566, guid: 2991f4692cedf844f82b3ac1b334898b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1438353261974990569, guid: 2991f4692cedf844f82b3ac1b334898b, type: 3}
-      propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1438353261974990570, guid: 2991f4692cedf844f82b3ac1b334898b, type: 3}
@@ -5406,6 +5402,14 @@ PrefabInstance:
       propertyPath: main_camera
       value: 
       objectReference: {fileID: 963194225}
+    - target: {fileID: 4801232504656877658, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
+      propertyPath: next_Level_name
+      value: portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801232504656877658, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
+      propertyPath: this_Level_name
+      value: portal
+      objectReference: {fileID: 0}
     - target: {fileID: 4801232504656877660, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
       propertyPath: m_Name
       value: Cube

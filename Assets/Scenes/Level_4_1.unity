@@ -2577,6 +2577,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4801201848930012395, guid: 5bb0e9c986d82754da292daef2b1edc9, type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
     - target: {fileID: 4801201848930012399, guid: 5bb0e9c986d82754da292daef2b1edc9, type: 3}
       propertyPath: m_Name
       value: water (2)

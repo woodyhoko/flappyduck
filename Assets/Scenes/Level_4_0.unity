@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465829, g: 0.49641728, b: 0.57482105, a: 1}
+  m_IndirectSpecularColor: {r: 0.64697206, g: 0.64697206, b: 0.64697206, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1590,6 +1590,7 @@ MonoBehaviour:
   updatedLeaderBoardValue: 0
   loggedin: 0
   updatedName: 0
+  enteredname: 0
 --- !u!1 &558627497
 GameObject:
   m_ObjectHideFlags: 0
@@ -4478,6 +4479,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6844052422789877024, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_text
+      value: Player gets a helper from clone
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052422789877024, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_margin.z
+      value: -316.5994
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
 --- !u!1 &1927464845 stripped
@@ -4961,7 +4970,9 @@ MonoBehaviour:
   numNeedHit: 0
   cube_health: 3
   isInvi: 0
+  jump_height: 5
   hearts: []
+  lightNum: 0
 --- !u!1 &2060010965
 GameObject:
   m_ObjectHideFlags: 0

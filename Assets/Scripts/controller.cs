@@ -932,7 +932,7 @@ public class controller : MonoBehaviour
 
                 Color tempCol = player.GetComponent<Renderer>().material.color;
                 print("player color original: " + tempCol.a);
-                tempCol.a = .5f;
+                tempCol.a = .15f;
 
                 player.GetComponent<Renderer>().material.color = tempCol;
                 print("player color change: " + player.GetComponent<Renderer>().material.color.a);

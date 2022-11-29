@@ -137,6 +137,7 @@ MonoBehaviour:
   updatedLeaderBoardValue: 0
   loggedin: 0
   updatedName: 0
+  enteredname: 0
 --- !u!114 &4801232504656877658
 MonoBehaviour:
   m_ObjectHideFlags: 0

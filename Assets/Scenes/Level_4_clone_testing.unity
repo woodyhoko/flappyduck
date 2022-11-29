@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: aa48e49a60b2147eab854d36b81d46be, type: 2}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44658208, g: 0.49641603, b: 0.5748196, a: 1}
+  m_IndirectSpecularColor: {r: 0.64697206, g: 0.64697206, b: 0.64697206, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1021,10 +1021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152e6187a2d7b43f49cd26a8c7772c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
-  title: {fileID: 0}
-  replay: {fileID: 0}
-  score_text: {fileID: 0}
 --- !u!23 &141007416
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3683,6 +3679,7 @@ MonoBehaviour:
   updatedLeaderBoardValue: 0
   loggedin: 0
   updatedName: 0
+  enteredname: 0
 --- !u!114 &526718885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7781,6 +7778,7 @@ MonoBehaviour:
   speedUpDown: 10
   distanceUpDown: 1
   score_text: {fileID: 1909677949}
+  maxHealth: 200
 --- !u!114 &1515629383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11074,7 +11072,9 @@ MonoBehaviour:
   numNeedHit: 0
   cube_health: 100
   isInvi: 0
+  jump_height: 5
   hearts: []
+  lightNum: 0
 --- !u!1 &2060010965
 GameObject:
   m_ObjectHideFlags: 0

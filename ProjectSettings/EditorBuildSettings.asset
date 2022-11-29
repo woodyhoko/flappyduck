@@ -75,7 +75,7 @@ EditorBuildSettings:
     path: Assets/Scenes/inputUserName.unity
     guid: a8cf9777d0336401288110878b6462e0
   - enabled: 1
-    path: Assets/Scenes/level-1/Level_1_mid_dy.unity
+    path: Assets/Scenes/level-1/Level_1_2.unity
     guid: 0b2be04083eea9a418b85cd915823843
   - enabled: 1
     path: Assets/Scenes/level2/Level_2_mid.unity

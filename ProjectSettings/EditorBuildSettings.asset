@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/portal/small.unity
     guid: d3ae7f76c90ea0d45b8b19da2b0a44e6
   - enabled: 1
-    path: Assets/Scenes/portal/mud.unity
+    path: Assets/Scenes/portal/earth.unity
     guid: 6481d633f5c25d24c9884030e38a0954
   - enabled: 1
     path: Assets/Scenes/portal/ice.unity
@@ -83,6 +83,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level-3/Level_3_mid_dy.unity
     guid: c4d5ca8ef65794d6db679af94d8a12e8
+  - enabled: 1
+    path: Assets/Scenes/portal/portal.unity
+    guid: b3ab14c0c25887849bcfdee9fc6c80be
   - enabled: 1
     path: Assets/Scenes/Level_4_1.unity
     guid: ccbc0f5d9009848959526dd8d958550d

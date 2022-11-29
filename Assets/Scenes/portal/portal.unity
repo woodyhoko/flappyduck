@@ -1677,6 +1677,10 @@ PrefabInstance:
       value: light_wall_3_blue
       objectReference: {fileID: 0}
     - target: {fileID: 121986, guid: 8b5797a18349fb546be8acddc71151ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 121986, guid: 8b5797a18349fb546be8acddc71151ff, type: 3}
       propertyPath: m_TagString
       value: pipe
       objectReference: {fileID: 0}
@@ -3009,6 +3013,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: light_wall_white
       objectReference: {fileID: 0}
+    - target: {fileID: 116758, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 464102, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3693,6 +3701,7 @@ MonoBehaviour:
   light2: {fileID: 1286432342}
   lightWhite: {fileID: 397367008}
   lightWhite2: {fileID: 1073419756}
+  speed: -15
   heart: {fileID: 334466263}
   HealthUi: {fileID: 232725516}
   cherry: {fileID: 320083002}
@@ -3707,6 +3716,10 @@ PrefabInstance:
     - target: {fileID: 116758, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
       propertyPath: m_Name
       value: light_wall_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 116758, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 116758, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
       propertyPath: m_TagString
@@ -5123,6 +5136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: light_wall_white (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 116758, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 464102, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -5691,6 +5708,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5980187345879820821, guid: 48ad01ccf6d2129459043c5b9a8f343b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5980187346111527630, guid: 48ad01ccf6d2129459043c5b9a8f343b, type: 3}
       propertyPath: m_Name
       value: Health UI
@@ -5788,6 +5809,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6071110701538831000, guid: 64fb51e48f2df1a4e98c3b48ad1ed226, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071110701538831000, guid: 64fb51e48f2df1a4e98c3b48ad1ed226, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071110701538831000, guid: 64fb51e48f2df1a4e98c3b48ad1ed226, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071110701538831000, guid: 64fb51e48f2df1a4e98c3b48ad1ed226, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6071110701538831002, guid: 64fb51e48f2df1a4e98c3b48ad1ed226, type: 3}
       propertyPath: m_Name
       value: Main Camera

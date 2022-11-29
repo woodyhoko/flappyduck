@@ -201,7 +201,13 @@ public class controller : MonoBehaviour
         //portal
         if(this_Level_name == "portal")
             cube.transform.localScale = GlobalData.Instance.player_localScale;
-
+        if (this_Level_name == "earth")
+        {
+            Physics.gravity = new Vector3(0, -5f, 0);
+            cube.transform.localScale = GlobalData.Instance.player_localScale;
+        }
+        else
+            Physics.gravity = new Vector3(0, -9.81f, 0);
         GlobalData.Instance.hearts = new List<GameObject>();
         speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -694,7 +700,7 @@ public class controller : MonoBehaviour
             }
             else
             {
-                main_camera.transform.position = Vector3.Lerp(main_camera.transform.position, new Vector3(0, 5f, -8f), 0.1f);
+                main_camera.transform.position = Vector3.Lerp(main_camera.transform.position, new Vector3(0, 6f, -8f), 0.1f);
                 main_camera.transform.rotation = Quaternion.Lerp(main_camera.transform.rotation, Quaternion.Euler(22f, 0, 0), 0.1f);
             }
         }
@@ -848,26 +854,30 @@ public class controller : MonoBehaviour
 
         if (collider.gameObject.tag == "portal_back")
         {
+            //Physics.gravity = new Vector3(0, -9.81f, 0);
             //each time becomes 1.2 * original
-            SceneManager.LoadScene("demo2");
+            SceneManager.LoadScene("portal");
             GlobalData.Instance.world_speed = 1f;
         }
         if (collider.gameObject.tag == "portal")
         {
             float randomNumber = Random.Range(0, 1f);
-            if (randomNumber < 0.3f)
+            if (randomNumber < 0.5f)
             {
+                //Physics.gravity = new Vector3(0, -9.81f, 0);
                 GlobalData.Instance.world_speed = 1.3f;
                 SceneManager.LoadScene("ice");
             }
-            else if (randomNumber < 0.6f)
+            else if (randomNumber < 0f)
             {
+               // Physics.gravity = new Vector3(0, -9.81f, 0);
                 SceneManager.LoadScene("small");
             }
             else
             {
-                GlobalData.Instance.world_speed = 0.7f;
-                SceneManager.LoadScene("mud");
+                GlobalData.Instance.world_speed = 1f;
+                //Physics.gravity = new Vector3(0, -5f, 0);
+                SceneManager.LoadScene("earth");
             }
             //each time becomes 1.2 * original
 

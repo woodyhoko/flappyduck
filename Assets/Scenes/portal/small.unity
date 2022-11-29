@@ -3693,6 +3693,7 @@ MonoBehaviour:
   light2: {fileID: 1286432342}
   lightWhite: {fileID: 397367008}
   lightWhite2: {fileID: 1073419756}
+  speed: -15
   heart: {fileID: 334466263}
   HealthUi: {fileID: 232725516}
   cherry: {fileID: 320083002}
@@ -4715,6 +4716,10 @@ PrefabInstance:
     - target: {fileID: 1979924308898899339, guid: 0abf0b6fbc3f94a4bad4664ca06633d5, type: 3}
       propertyPath: m_Name
       value: portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979924308898899339, guid: 0abf0b6fbc3f94a4bad4664ca06633d5, type: 3}
+      propertyPath: m_TagString
+      value: portal_back
       objectReference: {fileID: 0}
     - target: {fileID: 1979924308898899446, guid: 0abf0b6fbc3f94a4bad4664ca06633d5, type: 3}
       propertyPath: m_RootOrder

@@ -46,8 +46,9 @@ public class levelgenerator : MonoBehaviour
     public GameObject light2;
     public GameObject lightWhite;
     public GameObject lightWhite2;
+    //public GameObject lightChance = 0.02;
     //public GameObject text;
-
+    public float speed = -15f;
     // public GameObject movingHori;
     public GameObject heart;
     public GameObject HealthUi;
@@ -59,6 +60,7 @@ public class levelgenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = GlobalData.Instance.world_speed * speed;
         Physics.IgnoreLayerCollision(6, 10, true);
         // GameObject ppipe = (GameObject)Instantiate (pipe);
         // // var rotation = new Quaternion();
@@ -96,11 +98,11 @@ public class levelgenerator : MonoBehaviour
                     w2.transform.position = new Vector3(0, 0.4f, 36);
                     c.transform.position = new Vector3(Random.Range(-4f, 4f), 1.5f, 36);
                     Rigidbody m_Rigidbody = w1.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     Rigidbody m_Rigidbody2 = w2.GetComponent<Rigidbody>();
-                    m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody2.velocity = new Vector3(0, 0, speed);
                     Rigidbody m_Rigidbody3 = c.GetComponent<Rigidbody>();
-                    m_Rigidbody3.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody3.velocity = new Vector3(0, 0, speed);
                     intervalTime = 50;
                 }
                 else if (modNumber < 0.004f)
@@ -114,9 +116,9 @@ public class levelgenerator : MonoBehaviour
                     w1.transform.position = new Vector3(-3f, 0.8f, 36);
                     w2.transform.position = new Vector3(3f, 0.8f, 36);
                     Rigidbody m_Rigidbody = w1.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     Rigidbody m_Rigidbody2 = w2.GetComponent<Rigidbody>();
-                    m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody2.velocity = new Vector3(0, 0, speed);
                     intervalTime = 50;
                 }
                 else if (lightNum <= 4 && modNumber < 0.006f)
@@ -126,11 +128,11 @@ public class levelgenerator : MonoBehaviour
                     l = Instantiate(light1);
                     l.transform.position = new Vector3(-5, 0.2f, 36);
                     Rigidbody m_Rigidbody = l.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     l = Instantiate(light2);
                     l.transform.position = new Vector3(5, 0.2f, 36);
                     m_Rigidbody = l.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                 }
                 else if (lightNum <= 4 && modNumber < 0.008f)
                 {
@@ -139,11 +141,11 @@ public class levelgenerator : MonoBehaviour
                     l = Instantiate(light1);
                     l.transform.position = new Vector3(-5, 0.2f, 36);
                     Rigidbody m_Rigidbody = l.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     l = Instantiate(light2);
                     l.transform.position = new Vector3(5, 0.2f, 36);
                     m_Rigidbody = l.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                 }
                 else if (lightNum == 0 && modNumber < 0.009f)
                 {
@@ -152,33 +154,33 @@ public class levelgenerator : MonoBehaviour
                     l = Instantiate(lightWhite);
                      l.transform.position = new Vector3(-5, 0.2f, 36);
                      Rigidbody m_Rigidbody = l.GetComponent<Rigidbody>();
-                     m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                     m_Rigidbody.velocity = new Vector3(0, 0, speed);
 
                      l = Instantiate(lightWhite);
                      l.transform.position = new Vector3(-5, 0.2f, 38);
                      m_Rigidbody = l.GetComponent<Rigidbody>();
-                     m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                     m_Rigidbody.velocity = new Vector3(0, 0, speed);
 
                     l = Instantiate(lightWhite);
                     l.transform.position = new Vector3(-5, 0.2f, 40);
                     m_Rigidbody = l.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
 
 
                     l = Instantiate(lightWhite2);
                     l.transform.position = new Vector3(5, 0.2f, 36);
                     m_Rigidbody = l.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
 
                     l = Instantiate(lightWhite2);
                     l.transform.position = new Vector3(5, 0.2f, 38);
                     m_Rigidbody = l.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
 
                     l = Instantiate(lightWhite2);
                     l.transform.position = new Vector3(5, 0.2f, 40);
                     m_Rigidbody = l.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                 }
             }
             else
@@ -203,7 +205,7 @@ public class levelgenerator : MonoBehaviour
                     ppipe.transform.rotation = Quaternion.identity;
                     ppipe.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
                     Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                 }
                 if (Random.Range(0, 1f) < water_chance)
                 {
@@ -211,7 +213,7 @@ public class levelgenerator : MonoBehaviour
                     watero.transform.rotation = Quaternion.identity;
                     watero.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                     Rigidbody m_Rigidbody = watero.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                 }
                 if (Random.Range(0, 1f) < movingpipe_chance)
                 {
@@ -222,7 +224,7 @@ public class levelgenerator : MonoBehaviour
                     mpipeo.transform.rotation = Quaternion.identity;
                     mpipeo.transform.position = new Vector3(Random.Range(-5, 5f), .010f, 36);
                     Rigidbody m_Rigidbody = mpipeo.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                 }
                 if (Random.Range(0, 1f) < wall_chance)
                 {
@@ -242,7 +244,7 @@ public class levelgenerator : MonoBehaviour
                     ppipe.transform.rotation = Quaternion.identity;
 
                     Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                 }
                 // if (Random.Range(0, 1f) > randomNumber > 0.96f - difficulty * 0.0001f)
                 // {
@@ -314,7 +316,7 @@ public class levelgenerator : MonoBehaviour
                     food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
 
                     Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     difficulty++;
                 }
                 if (Random.Range(0, 1f) < smaller_chance)
@@ -326,7 +328,7 @@ public class levelgenerator : MonoBehaviour
                     food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
 
                     Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     difficulty++;
                 }
                 if (Random.Range(0, 1f) < faster_chance)
@@ -338,7 +340,7 @@ public class levelgenerator : MonoBehaviour
                     food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
 
                     Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     difficulty++;
                 }
                 if (Random.Range(0, 1f) < longger_chance)
@@ -350,7 +352,7 @@ public class levelgenerator : MonoBehaviour
                     food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
 
                     Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     difficulty++;
                 }
                 if (Random.Range(0, 1f) < shooter_chance)
@@ -362,7 +364,7 @@ public class levelgenerator : MonoBehaviour
                     food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
 
                     Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     difficulty++;
                 }
                 if (Random.Range(0, 1f) < invisible_chance)
@@ -374,7 +376,7 @@ public class levelgenerator : MonoBehaviour
                     food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
 
                     Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     difficulty++;
                 }
                 if (Random.Range(0, 1f) < star_upgrade_chance)
@@ -386,7 +388,7 @@ public class levelgenerator : MonoBehaviour
                     food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
 
                     Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     difficulty++;
                 }
                 if (Random.Range(0, 1f) < move_forward_chance)
@@ -398,7 +400,7 @@ public class levelgenerator : MonoBehaviour
                     food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
 
                     Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     difficulty++;
                 }
                 if (Random.Range(0, 1f) < portal_chance)
@@ -406,7 +408,7 @@ public class levelgenerator : MonoBehaviour
                     GameObject p = (GameObject)Instantiate(portal);
                     p.transform.position = new Vector3(Random.Range(-4, 4f), 2, 36);
                     Rigidbody m_Rigidbody = p.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                 }
                 if (Random.Range(0, 1f) < fps_chance)
                 {
@@ -417,7 +419,7 @@ public class levelgenerator : MonoBehaviour
                     food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
 
                     Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     difficulty++;
                 }
                 if (Random.Range(0, 1f) < clone_chance)
@@ -428,7 +430,7 @@ public class levelgenerator : MonoBehaviour
                     food.transform.Rotate(0, 90, 0);
                     food.transform.position = new Vector3(Random.Range(-5, 5f), 1, 36);
                     Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
-                    m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+                    m_Rigidbody.velocity = new Vector3(0, 0, speed);
                     difficulty++;
                 }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64697206, g: 0.64697206, b: 0.64697206, a: 1}
+  m_IndirectSpecularColor: {r: 0.18905947, g: 0.2161744, b: 0.311375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1077,6 +1077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pipe (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4931343362478128706, guid: 47183e0d6898ae8488cb4a6b8deee3da, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 88459c7fa3d46084982ef4b09c318525, type: 2}
     - target: {fileID: 4931343362478128710, guid: 47183e0d6898ae8488cb4a6b8deee3da, type: 3}
       propertyPath: maxHealth
       value: 400
@@ -5404,6 +5408,8 @@ MonoBehaviour:
   star_num: 0
   number_of_cloned_cube: 0
   cloned_list: []
+  introShowed: 0
+  feather_num: 0
   dizzy: 0
   numTotalHit: 10
   numNeedHit: 0

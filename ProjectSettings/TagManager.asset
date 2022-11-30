@@ -26,6 +26,10 @@ TagManager:
   - Plane
   - cherry
   - cloned_cube
+  - enebull
+  - enemy
+  - portal_back
+  - feather
   layers:
   - Default
   - TransparentFX

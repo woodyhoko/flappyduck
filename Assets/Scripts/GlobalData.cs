@@ -26,6 +26,8 @@ public class GlobalData : MonoBehaviour
     public int number_of_cloned_cube = 0;
     public List<GameObject> cloned_list = new List<GameObject>();
 
+    public bool introShowed = false;
+    public int feather_num = 0;
     // dizzness
     public bool dizzy = false;
     public int numTotalHit = 10;

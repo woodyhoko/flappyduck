@@ -641,6 +641,17 @@ public class controller : MonoBehaviour
                 showResultPage("Level_4_3 Passed", true);
             }
         }
+        if (level && (this_Level_name == "portal"|| this_Level_name == "earth"))
+        {
+            if (GlobalData.Instance.feather_num >=10)
+            {
+                Time.timeScale = 0;
+                Canvas.SetActive(true);
+                title.text = "Level Portal  Passed";
+                replay.SetActive(false);
+                next_level.SetActive(false);
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
@@ -875,7 +886,7 @@ public class controller : MonoBehaviour
             if (randomNumber < 0.5f)
             {
                 //Physics.gravity = new Vector3(0, -9.81f, 0);
-                GlobalData.Instance.world_speed = 1.3f;
+                GlobalData.Instance.world_speed = 1.4f;
                 SceneManager.LoadScene("ice");
             }
             else if (randomNumber < 0f)

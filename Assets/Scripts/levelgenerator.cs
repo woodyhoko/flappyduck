@@ -63,7 +63,7 @@ public class levelgenerator : MonoBehaviour
     {
         speed = GlobalData.Instance.world_speed * speed;
         Physics.IgnoreLayerCollision(6, 10, true);
-        if (!GlobalData.Instance.introShowed)
+        if (GlobalData.Instance.introShowed)
         {
             GlobalData.Instance.introShowed = true;
             intro.SetActive(true);

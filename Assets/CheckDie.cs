@@ -16,7 +16,7 @@ public class CheckDie : MonoBehaviour
     public GameObject next_level;
 
     public bool updatedLeaderBoardValue = false;
-    
+
     public bool loggedin = false;
     public bool updatedName = false;
 
@@ -37,7 +37,7 @@ public class CheckDie : MonoBehaviour
             updatedName = true;
             updateDisplayName();
         }
-        
+
         if (transform.position.y < -10 || transform.position.z < -5 || transform.position.x < -8 || transform.position.x > 8)
         {
             if (this.tag == "Player")
@@ -186,7 +186,7 @@ public class CheckDie : MonoBehaviour
         replay.SetActive(true);
         next_level.SetActive(false);
     }
-    
+
     public void SendLeaderBoard(int score)
     {
         var request = new UpdatePlayerStatisticsRequest
@@ -202,16 +202,17 @@ public class CheckDie : MonoBehaviour
         };
         PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnError);
     }
-    
-    
+
+
     public void OnError(PlayFabError error)
     {
         Debug.Log("Error while logging in/creating account");
         Debug.Log(error.GenerateErrorReport());
     }
-    
+
     public void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
     {
+        print(result.ToString());
         Debug.Log("successful leaderboard sent");
     }
 
@@ -235,7 +236,7 @@ public class CheckDie : MonoBehaviour
         Debug.Log("Successful login/account create!");
         loggedin = true;
     }
-    
+
     public void updateDisplayName()
     {
         var request = new UpdateUserTitleDisplayNameRequest
@@ -244,7 +245,7 @@ public class CheckDie : MonoBehaviour
         };
         PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
     }
-    
+
     void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
     {
         Debug.Log("updated display name");

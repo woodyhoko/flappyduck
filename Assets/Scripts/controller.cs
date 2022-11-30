@@ -65,6 +65,13 @@ public class controller : MonoBehaviour
         SceneManager.LoadScene("inputUserName");
     }
 
+    public void enter_leaderboard()
+    {
+        Time.timeScale = 1;
+        GlobalData.Instance.destroy();
+        SceneManager.LoadScene("leaderboard");
+    }
+
     public void Next_Level_Button()
     {
         ScoreManager.biggerCube = 0;
@@ -210,11 +217,11 @@ public class controller : MonoBehaviour
             GlobalData.Instance.shoot = true;
         }
 
-            //change cube color
-            //gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
+        //change cube color
+        //gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
 
-            //portal
-            if (this_Level_name == "portal")
+        //portal
+        if (this_Level_name == "portal")
             cube.transform.localScale = GlobalData.Instance.player_localScale;
         if (this_Level_name == "earth")
         {
@@ -274,7 +281,7 @@ public class controller : MonoBehaviour
                 //Debug.Log(GlobalData.Instance.cube_health);
             }
         }
-        
+
     }
 
     private void showResultPage(string text, bool hasRock)
@@ -1162,8 +1169,8 @@ public class controller : MonoBehaviour
 
             //Material newMat = Resources.Load("cube-m", typeof(Material)) as Material;
             clone.GetComponent<Renderer>().material = cloned_material;
-            
-            
+
+
             GlobalData.Instance.cloned_list.Add(clone);
 
 

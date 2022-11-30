@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18905947, g: 0.2161744, b: 0.311375, a: 1}
+  m_IndirectSpecularColor: {r: 0.18905899, g: 0.216174, b: 0.31137407, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18249,9 +18249,9 @@ GameObject:
   - component: {fileID: 333800524}
   - component: {fileID: 333800523}
   - component: {fileID: 333800522}
-  - component: {fileID: 333800521}
   - component: {fileID: 333800520}
   - component: {fileID: 333800519}
+  - component: {fileID: 333800527}
   m_Layer: 6
   m_Name: wall (9)
   m_TagString: pipe
@@ -18285,19 +18285,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
---- !u!114 &333800521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333800518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &333800522
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18392,6 +18379,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &333800527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333800518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &333929176
 GameObject:
   m_ObjectHideFlags: 0
@@ -32601,10 +32600,10 @@ GameObject:
   - component: {fileID: 615473776}
   - component: {fileID: 615473775}
   - component: {fileID: 615473774}
-  - component: {fileID: 615473773}
   - component: {fileID: 615473772}
   - component: {fileID: 615473771}
-  m_Layer: 6
+  - component: {fileID: 615473779}
+  m_Layer: 0
   m_Name: wall (12)
   m_TagString: pipe
   m_Icon: {fileID: 0}
@@ -32637,19 +32636,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
---- !u!114 &615473773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615473770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &615473774
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32744,6 +32730,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 114
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &615473779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615473770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &615643343
 GameObject:
   m_ObjectHideFlags: 0
@@ -40819,10 +40817,10 @@ GameObject:
   - component: {fileID: 770585262}
   - component: {fileID: 770585261}
   - component: {fileID: 770585260}
-  - component: {fileID: 770585259}
   - component: {fileID: 770585257}
   - component: {fileID: 770585265}
-  m_Layer: 6
+  - component: {fileID: 770585266}
+  m_Layer: 0
   m_Name: wall (13)
   m_TagString: pipe
   m_Icon: {fileID: 0}
@@ -40841,19 +40839,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &770585259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770585256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &770585260
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40941,7 +40926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770585256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 0.9, z: 60}
+  m_LocalPosition: {x: 1.4, y: 1.039, z: 60}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40962,6 +40947,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
+--- !u!114 &770585266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770585256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &770718030
 GameObject:
   m_ObjectHideFlags: 0
@@ -54796,9 +54793,9 @@ GameObject:
   - component: {fileID: 1037206466}
   - component: {fileID: 1037206465}
   - component: {fileID: 1037206464}
-  - component: {fileID: 1037206463}
   - component: {fileID: 1037206461}
   - component: {fileID: 1037206469}
+  - component: {fileID: 1037206470}
   m_Layer: 6
   m_Name: wall (14)
   m_TagString: pipe
@@ -54818,19 +54815,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1037206463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037206460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1037206464
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54918,7 +54902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037206460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.59, y: 0.94, z: 60}
+  m_LocalPosition: {x: 3.59, y: 1.042, z: 60}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54939,6 +54923,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
+--- !u!114 &1037206470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037206460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1037900407
 GameObject:
   m_ObjectHideFlags: 0
@@ -77840,9 +77836,9 @@ GameObject:
   - component: {fileID: 1445675031}
   - component: {fileID: 1445675030}
   - component: {fileID: 1445675029}
-  - component: {fileID: 1445675028}
   - component: {fileID: 1445675027}
   - component: {fileID: 1445675026}
+  - component: {fileID: 1445675034}
   m_Layer: 6
   m_Name: wall (7)
   m_TagString: pipe
@@ -77876,19 +77872,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
---- !u!114 &1445675028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445675025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1445675029
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77983,6 +77966,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1445675034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445675025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1447451308
 GameObject:
   m_ObjectHideFlags: 0
@@ -80531,9 +80526,9 @@ GameObject:
   - component: {fileID: 1485747714}
   - component: {fileID: 1485747713}
   - component: {fileID: 1485747712}
-  - component: {fileID: 1485747711}
   - component: {fileID: 1485747710}
   - component: {fileID: 1485747709}
+  - component: {fileID: 1485747717}
   m_Layer: 6
   m_Name: wall (5)
   m_TagString: pipe
@@ -80567,19 +80562,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
---- !u!114 &1485747711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485747708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1485747712
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -80674,6 +80656,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1485747717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485747708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1493791014
 GameObject:
   m_ObjectHideFlags: 0
@@ -81594,9 +81588,9 @@ GameObject:
   - component: {fileID: 1498915869}
   - component: {fileID: 1498915868}
   - component: {fileID: 1498915867}
-  - component: {fileID: 1498915866}
   - component: {fileID: 1498915872}
   - component: {fileID: 1498915873}
+  - component: {fileID: 1498915874}
   m_Layer: 6
   m_Name: wall (1)
   m_TagString: pipe
@@ -81604,19 +81598,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1498915866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498915864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1498915867
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -81737,6 +81718,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
+--- !u!114 &1498915874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498915864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1499965272
 GameObject:
   m_ObjectHideFlags: 0
@@ -87218,9 +87211,9 @@ GameObject:
   - component: {fileID: 1619168793}
   - component: {fileID: 1619168792}
   - component: {fileID: 1619168791}
-  - component: {fileID: 1619168790}
   - component: {fileID: 1619168789}
   - component: {fileID: 1619168788}
+  - component: {fileID: 1619168796}
   m_Layer: 6
   m_Name: wall (6)
   m_TagString: pipe
@@ -87254,19 +87247,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
---- !u!114 &1619168790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619168787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1619168791
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -87361,6 +87341,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1619168796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619168787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620619108
 GameObject:
   m_ObjectHideFlags: 0
@@ -88038,9 +88030,9 @@ GameObject:
   - component: {fileID: 1632368871}
   - component: {fileID: 1632368870}
   - component: {fileID: 1632368869}
-  - component: {fileID: 1632368868}
   - component: {fileID: 1632368867}
   - component: {fileID: 1632368866}
+  - component: {fileID: 1632368874}
   m_Layer: 6
   m_Name: wall (15)
   m_TagString: pipe
@@ -88074,19 +88066,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
---- !u!114 &1632368868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632368865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1632368869
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -88181,6 +88160,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 115
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632368874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632368865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1632895832
 GameObject:
   m_ObjectHideFlags: 0
@@ -97384,9 +97375,9 @@ GameObject:
   - component: {fileID: 1785095907}
   - component: {fileID: 1785095906}
   - component: {fileID: 1785095905}
-  - component: {fileID: 1785095904}
   - component: {fileID: 1785095910}
   - component: {fileID: 1785095911}
+  - component: {fileID: 1785095912}
   m_Layer: 6
   m_Name: wall (2)
   m_TagString: pipe
@@ -97394,19 +97385,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1785095904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785095902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1785095905
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -97420,7 +97398,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1785095906
@@ -97494,7 +97472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785095902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.91, y: 0.93, z: 60}
+  m_LocalPosition: {x: -3.91, y: 1.05, z: 60}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97527,6 +97505,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
+--- !u!114 &1785095912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785095902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1786252477
 GameObject:
   m_ObjectHideFlags: 0

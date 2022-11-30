@@ -67,7 +67,7 @@ public class LevelMenu : MonoBehaviour
         ScoreManager.level12 = true;
     }
 
-    public void level13()
+    public void leve_l13()
     {
         // Debug.Log("Level11");
         SceneManager.LoadScene("Level_1_3");

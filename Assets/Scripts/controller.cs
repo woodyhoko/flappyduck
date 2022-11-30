@@ -56,6 +56,13 @@ public class controller : MonoBehaviour
         GlobalData.Instance.destroy();
         SceneManager.LoadScene("menu");
     }
+    
+    public void enter_namePage()
+    {
+        Time.timeScale = 1;
+        GlobalData.Instance.destroy();
+        SceneManager.LoadScene("inputUserName");
+    }
 
     public void Next_Level_Button()
     {

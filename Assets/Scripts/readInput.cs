@@ -95,6 +95,17 @@ public class readInput : MonoBehaviour
         title.SetActive(false);
         inputBox.SetActive(false);
         getData = true;
+        ScoreManager.biggerCube = 0;
+        ScoreManager.smallerCube = 0;
+        ScoreManager.shooter = 0;
+        ScoreManager.faster = 0;
+        ScoreManager.longer = 0;
+        ScoreManager.invisible = 0;
+        ScoreManager.star_upgrade = 0;
+        ScoreManager.sscore = 0;
+        Time.timeScale = 1;
+        ScoreManager.startTime = Time.time;
+        GlobalData.Instance.destroy();
     }
     
     public void updateDisplayName()

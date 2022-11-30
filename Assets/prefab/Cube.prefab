@@ -169,3 +169,4 @@ MonoBehaviour:
   title: {fileID: 0}
   this_Level_name: demo2
   next_Level_name: demo2
+  cloned_material: {fileID: 2100000, guid: 5ad26a318875d4ed9bf41de78d1808d5, type: 2}

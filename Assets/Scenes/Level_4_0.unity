@@ -1764,6 +1764,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 554370865}
     - target: {fileID: 4801232504656877658, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
+      propertyPath: cloned_material
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ad26a318875d4ed9bf41de78d1808d5, type: 2}
+    - target: {fileID: 4801232504656877658, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
       propertyPath: next_Level_name
       value: Level_4_1
       objectReference: {fileID: 0}

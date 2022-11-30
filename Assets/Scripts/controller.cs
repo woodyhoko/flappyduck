@@ -263,17 +263,17 @@ public class controller : MonoBehaviour
 
         if (this.tag == "Player")
         {
-
+            for (int heart_now = 0; heart_now < GlobalData.Instance.cube_health; heart_now++)
+            {
+                GameObject heart1 = Instantiate(heart);
+                heart1.SetActive(true);
+                GlobalData.Instance.hearts.Add(heart1);
+                heart1.transform.SetParent(HealthUi.transform);
+                heart1.transform.position = new Vector3(50 + 55 * heart_now, 50f, 0f);
+                //Debug.Log(GlobalData.Instance.cube_health);
+            }
         }
-        for (int heart_now = 0; heart_now < GlobalData.Instance.cube_health; heart_now++)
-        {
-            GameObject heart1 = Instantiate(heart);
-            heart1.SetActive(true);
-            GlobalData.Instance.hearts.Add(heart1);
-            heart1.transform.SetParent(HealthUi.transform);
-            heart1.transform.position = new Vector3(50 + 55 * heart_now, 50f, 0f);
-            //Debug.Log(GlobalData.Instance.cube_health);
-        }
+        
     }
 
     private void showResultPage(string text, bool hasRock)
@@ -1158,6 +1158,8 @@ public class controller : MonoBehaviour
 
             //clone.transform.rotation = Quaternion.identity;
             clone.tag = "cloned_cube";
+            
+            
             GlobalData.Instance.cloned_list.Add(clone);
 
 

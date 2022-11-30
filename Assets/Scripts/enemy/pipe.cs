@@ -64,8 +64,15 @@ public class pipe : MonoBehaviour
             }
         }
 
-        if (collider.gameObject.tag == "Player" && collider.gameObject.tag != "star")
+
+        if (collider.gameObject.tag == "cloned_cube")
         {
+            Destroy(collider.gameObject);
+            Destroy(this.gameObject);
+        }
+        else if (collider.gameObject.tag == "Player" && collider.gameObject.tag != "star")
+        {
+            print("1233432432423");
             GlobalData.Instance.cube_health -= 1;
             int hp = GlobalData.Instance.cube_health;
             if (hp > 0)

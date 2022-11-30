@@ -8,13 +8,14 @@ public class auto_remove_bullet : MonoBehaviour
     public float bullet_damage = 50;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(transform.position.z > 1000){
+        if (transform.position.z > 50)
+        {
             Destroy(gameObject);
         }
     }

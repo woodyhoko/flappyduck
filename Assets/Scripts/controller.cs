@@ -47,6 +47,7 @@ public class controller : MonoBehaviour
     private bool fps_mode_lock = false;
 
     private bool clonedd = false;
+    public Material cloned_material;
 
     private int lastKey = 0; // 0 for left and 1 for right
 
@@ -1158,6 +1159,9 @@ public class controller : MonoBehaviour
 
             //clone.transform.rotation = Quaternion.identity;
             clone.tag = "cloned_cube";
+
+            //Material newMat = Resources.Load("cube-m", typeof(Material)) as Material;
+            clone.GetComponent<Renderer>().material = cloned_material;
             
             
             GlobalData.Instance.cloned_list.Add(clone);

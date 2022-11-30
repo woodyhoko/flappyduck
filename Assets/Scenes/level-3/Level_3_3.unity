@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64697206, g: 0.64697206, b: 0.64697206, a: 1}
+  m_IndirectSpecularColor: {r: 0.18905947, g: 0.2161744, b: 0.311375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10359,7 +10359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starRotateSpeed: 1
   shoot: 0
-  shoot_freq: 50
+  shoot_freq: 220
   shoot_timestep: 0
   move_forward_limit: 4
   move_forward: 0
@@ -10375,6 +10375,8 @@ MonoBehaviour:
   star_num: 0
   number_of_cloned_cube: 0
   cloned_list: []
+  introShowed: 0
+  feather_num: 0
   dizzy: 0
   numTotalHit: 10
   numNeedHit: 0

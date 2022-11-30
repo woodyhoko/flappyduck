@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.04876279, g: 0.05924844, b: 0.091266416, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1373,7 +1373,6 @@ GameObject:
   - component: {fileID: 333800524}
   - component: {fileID: 333800523}
   - component: {fileID: 333800522}
-  - component: {fileID: 333800521}
   - component: {fileID: 333800520}
   - component: {fileID: 333800519}
   m_Layer: 6
@@ -1409,19 +1408,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
---- !u!114 &333800521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333800518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &333800522
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1721,7 +1707,6 @@ GameObject:
   - component: {fileID: 381397542}
   - component: {fileID: 381397541}
   - component: {fileID: 381397540}
-  - component: {fileID: 381397539}
   - component: {fileID: 381397545}
   m_Layer: 6
   m_Name: wall
@@ -1730,19 +1715,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &381397539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381397537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &381397540
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3148,6 +3120,8 @@ MonoBehaviour:
   star_num: 0
   number_of_cloned_cube: 0
   cloned_list: []
+  introShowed: 0
+  feather_num: 0
   dizzy: 0
   numTotalHit: 10
   numNeedHit: 0
@@ -3241,7 +3215,6 @@ GameObject:
   - component: {fileID: 697798086}
   - component: {fileID: 697798085}
   - component: {fileID: 697798084}
-  - component: {fileID: 697798083}
   - component: {fileID: 697798082}
   - component: {fileID: 697798081}
   m_Layer: 6
@@ -3277,19 +3250,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 100
---- !u!114 &697798083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 697798080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &697798084
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3589,7 +3549,6 @@ GameObject:
   - component: {fileID: 770585262}
   - component: {fileID: 770585261}
   - component: {fileID: 770585260}
-  - component: {fileID: 770585259}
   - component: {fileID: 770585257}
   - component: {fileID: 770585265}
   m_Layer: 6
@@ -3611,19 +3570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &770585259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770585256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &770585260
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3745,7 +3691,6 @@ GameObject:
   - component: {fileID: 771029092}
   - component: {fileID: 771029091}
   - component: {fileID: 771029090}
-  - component: {fileID: 771029089}
   - component: {fileID: 771029088}
   - component: {fileID: 771029087}
   m_Layer: 6
@@ -3781,19 +3726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &771029089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771029086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &771029090
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4118,7 +4050,6 @@ GameObject:
   - component: {fileID: 996590332}
   - component: {fileID: 996590331}
   - component: {fileID: 996590330}
-  - component: {fileID: 996590329}
   - component: {fileID: 996590328}
   - component: {fileID: 996590327}
   m_Layer: 6
@@ -4154,19 +4085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &996590329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996590326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &996590330
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4274,7 +4192,6 @@ GameObject:
   - component: {fileID: 1037206466}
   - component: {fileID: 1037206465}
   - component: {fileID: 1037206464}
-  - component: {fileID: 1037206463}
   - component: {fileID: 1037206461}
   - component: {fileID: 1037206469}
   m_Layer: 6
@@ -4296,19 +4213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1207ca2b46da4ec419be4bb1a2945729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1037206463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037206460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1037206464
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5797,6 +5701,8 @@ MonoBehaviour:
   star_num: 0
   number_of_cloned_cube: 0
   cloned_list: []
+  introShowed: 0
+  feather_num: 0
   dizzy: 0
   numTotalHit: 10
   numNeedHit: 0
@@ -5833,7 +5739,6 @@ GameObject:
   - component: {fileID: 1445675031}
   - component: {fileID: 1445675030}
   - component: {fileID: 1445675029}
-  - component: {fileID: 1445675028}
   - component: {fileID: 1445675027}
   - component: {fileID: 1445675026}
   m_Layer: 6
@@ -5869,19 +5774,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
---- !u!114 &1445675028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445675025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1445675029
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6335,7 +6227,6 @@ GameObject:
   - component: {fileID: 1485747714}
   - component: {fileID: 1485747713}
   - component: {fileID: 1485747712}
-  - component: {fileID: 1485747711}
   - component: {fileID: 1485747710}
   - component: {fileID: 1485747709}
   m_Layer: 6
@@ -6371,19 +6262,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 100
---- !u!114 &1485747711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485747708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1485747712
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6491,7 +6369,6 @@ GameObject:
   - component: {fileID: 1498915869}
   - component: {fileID: 1498915868}
   - component: {fileID: 1498915867}
-  - component: {fileID: 1498915866}
   - component: {fileID: 1498915872}
   - component: {fileID: 1498915873}
   m_Layer: 6
@@ -6501,19 +6378,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1498915866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498915864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1498915867
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7227,7 +7091,6 @@ GameObject:
   - component: {fileID: 1619168793}
   - component: {fileID: 1619168792}
   - component: {fileID: 1619168791}
-  - component: {fileID: 1619168790}
   - component: {fileID: 1619168789}
   - component: {fileID: 1619168788}
   m_Layer: 6
@@ -7263,19 +7126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_text: {fileID: 0}
   maxHealth: 400
---- !u!114 &1619168790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619168787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1619168791
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8540,7 +8390,6 @@ GameObject:
   - component: {fileID: 1785095907}
   - component: {fileID: 1785095906}
   - component: {fileID: 1785095905}
-  - component: {fileID: 1785095904}
   - component: {fileID: 1785095910}
   - component: {fileID: 1785095911}
   m_Layer: 6
@@ -8550,19 +8399,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1785095904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785095902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed10c59311881a745931c7fc3354847c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet_damage: 50
 --- !u!54 &1785095905
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -56,7 +56,7 @@ public class controller : MonoBehaviour
         GlobalData.Instance.destroy();
         SceneManager.LoadScene("menu");
     }
-    
+
     public void enter_namePage()
     {
         Time.timeScale = 1;
@@ -171,12 +171,13 @@ public class controller : MonoBehaviour
         {
             ScoreManager.level42 = false;
             ScoreManager.level43 = true;
-        }else if (this_Level_name == "Level_4_3")
+        }
+        else if (this_Level_name == "Level_4_3")
         {
             ScoreManager.level43 = false;
         }
-        
-        
+
+
         Time.timeScale = 1;
         ScoreManager.startTime = Time.time;
         GlobalData.Instance.destroy();
@@ -206,7 +207,7 @@ public class controller : MonoBehaviour
         //gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
 
         //portal
-        if(this_Level_name == "portal")
+        if (this_Level_name == "portal")
             cube.transform.localScale = GlobalData.Instance.player_localScale;
         if (this_Level_name == "earth")
         {
@@ -253,7 +254,7 @@ public class controller : MonoBehaviour
                 stars[i].transform.position = this.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
             }
         }
-        
+
         if (this.tag == "Player")
         {
 
@@ -612,7 +613,7 @@ public class controller : MonoBehaviour
                 showResultPage("Level_3_2 Passed", true);
             }
         }
-        
+
         if (level && this_Level_name == "Level_3_4")
         {
             if (timer >= 1300)
@@ -639,17 +640,6 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
                 showResultPage("Level_4_3 Passed", true);
-            }
-        }
-        if (level && (this_Level_name == "portal"|| this_Level_name == "earth"))
-        {
-            if (GlobalData.Instance.feather_num >=10)
-            {
-                Time.timeScale = 0;
-                Canvas.SetActive(true);
-                title.text = "Level Portal  Passed";
-                replay.SetActive(false);
-                next_level.SetActive(false);
             }
         }
         if (Input.GetKeyDown(KeyCode.Space))
@@ -752,29 +742,29 @@ public class controller : MonoBehaviour
         //{
         //    jump_height = 3.0f;
         // }
-       // else
+        // else
         //{
         //    jump_height = 5.0f;
-       //}
+        //}
         //reversed gravity
         //if (reversed_gravity)
         //{
         //    Physics.gravity = new Vector3(0, 9.8f, 0);
-            //set unlimited jumping under reversed gravity environment
-         //   jump_numb = 2;
-         //   if (jump_height > 0)
-         //   {
-          //      jump_height = jump_height * (-1.0f);
-          //  }
-       // }
+        //set unlimited jumping under reversed gravity environment
+        //   jump_numb = 2;
+        //   if (jump_height > 0)
+        //   {
+        //      jump_height = jump_height * (-1.0f);
+        //  }
+        // }
         //else
-       // {
-          //  Physics.gravity = new Vector3(0, -9.8f, 0);
-         //   if (jump_height < 0)
-         //   {
-          //      jump_height = jump_height * (-1.0f);
-          //  }
-       // }
+        // {
+        //  Physics.gravity = new Vector3(0, -9.8f, 0);
+        //   if (jump_height < 0)
+        //   {
+        //      jump_height = jump_height * (-1.0f);
+        //  }
+        // }
 
         if (jump)
         {
@@ -800,25 +790,25 @@ public class controller : MonoBehaviour
         //move forward
         //if (GlobalData.Instance.move_forward)
         //{
-            //Debug.Log("z: " + transform.position.z);
+        //Debug.Log("z: " + transform.position.z);
         //    GameObject player = GameObject.FindGameObjectWithTag("Player");
-          //  Rigidbody player_Rigibody = player.GetComponent<Rigidbody>();
-         //   print("oranginal velocity: " + player_Rigibody.velocity);
+        //  Rigidbody player_Rigibody = player.GetComponent<Rigidbody>();
+        //   print("oranginal velocity: " + player_Rigibody.velocity);
 
         //    if (player.transform.position.z < GlobalData.Instance.move_forward_limit)
         //    {
-                //m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
-         //       player_Rigibody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
-         //       print("after velocity: " + player_Rigibody.velocity);
+        //m_Rigidbody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
+        //       player_Rigibody.velocity = new Vector3(0, 0, m_Rigidbody.velocity.z + 3.0f);
+        //       print("after velocity: " + player_Rigibody.velocity);
 
-                //cloned cubes move forward
-          //      int size = GlobalData.Instance.cloned_list.Count;
-          //      for (int i = 0; i < size; i++)
-           //     {
-           //         GlobalData.Instance.cloned_list[i].GetComponent<Rigidbody>().velocity = player_Rigibody.velocity;
-           //     }
-            //}
-           // GlobalData.Instance.move_forward = false;
+        //cloned cubes move forward
+        //      int size = GlobalData.Instance.cloned_list.Count;
+        //      for (int i = 0; i < size; i++)
+        //     {
+        //         GlobalData.Instance.cloned_list[i].GetComponent<Rigidbody>().velocity = player_Rigibody.velocity;
+        //     }
+        //}
+        // GlobalData.Instance.move_forward = false;
         //}
 
         // movement
@@ -886,12 +876,12 @@ public class controller : MonoBehaviour
             if (randomNumber < 0.5f)
             {
                 //Physics.gravity = new Vector3(0, -9.81f, 0);
-                GlobalData.Instance.world_speed = 1.4f;
+                GlobalData.Instance.world_speed = 1.3f;
                 SceneManager.LoadScene("ice");
             }
             else if (randomNumber < 0f)
             {
-               // Physics.gravity = new Vector3(0, -9.81f, 0);
+                // Physics.gravity = new Vector3(0, -9.81f, 0);
                 SceneManager.LoadScene("small");
             }
             else

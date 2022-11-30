@@ -4507,9 +4507,9 @@ MonoBehaviour:
   pipe: {fileID: 1590029960}
   pipe_chance: 0.015
   movingpipe: {fileID: 1515629381}
-  movingpipe_chance: 0.01
+  movingpipe_chance: 0
   rock: {fileID: 1193680150}
-  rock_chance: 0.0012
+  rock_chance: 0
   wall: {fileID: 1795752818}
   wall_chance: 0.01
   invisible: {fileID: 162276700}
@@ -4517,7 +4517,7 @@ MonoBehaviour:
   move_forward: {fileID: 490578847}
   move_forward_chance: 0
   portal: {fileID: 1051381692}
-  portal_chance: 0.02
+  portal_chance: 0.01
   water: {fileID: 1950439626}
   water_chance: 0.005
   fps: {fileID: 1438486282}

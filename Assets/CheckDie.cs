@@ -21,12 +21,16 @@ public class CheckDie : MonoBehaviour
     public bool updatedName = false;
 
     public bool enteredname = false;
+    public bool level = true;
+    private int minScore = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
-        Login();
+        if (!level)
+            Login();
+
     }
 
     // Update is called once per frame
@@ -235,6 +239,18 @@ public class CheckDie : MonoBehaviour
     {
         Debug.Log("Successful login/account create!");
         loggedin = true;
+        var request = new GetLeaderboardRequest
+        {
+            StatisticName = "flappyduck",
+            StartPosition = 0,
+            MaxResultsCount = 5
+        };
+        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnError);
+    }
+
+    public void OnLeaderboardGet(GetLeaderboardResult result)
+    {
+        minScore = result.Leaderboard[4].StatValue;
     }
 
     public void updateDisplayName()

@@ -193,6 +193,12 @@ public class LevelMenu : MonoBehaviour
         SceneManager.LoadScene("portal");
         initLevel();
     }
+    public void level_boss()
+    {
+        Debug.Log("Boss Run");
+        SceneManager.LoadScene("demo2 boss2");
+        initLevel();
+    }
     public void enter_namePage()
     {
         ScoreManager.biggerCube = 0;

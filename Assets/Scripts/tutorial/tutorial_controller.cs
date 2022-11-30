@@ -171,6 +171,7 @@ public class tutorial_controller : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
 
+
         if (collider.gameObject.tag == "pipe")
         {
             cube_health--;
@@ -183,7 +184,7 @@ public class tutorial_controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 FindObjectOfType<GameManager>().EndGame();
             }
-            Debug.Log("get hit by pipe");
+
         }
         if (collider.gameObject.tag == "bullet")
         {
@@ -198,7 +199,7 @@ public class tutorial_controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 FindObjectOfType<GameManager>().EndGame();
             }
-            Debug.Log("get hit by pipe");
+
         }
         if (ate < update_max_limit)
         {

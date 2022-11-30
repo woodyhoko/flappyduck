@@ -23,18 +23,7 @@ public class moving_pipes : MonoBehaviour
     }
     
     private void OnCollisionEnter(Collision collision){
-        if(collision.gameObject.tag == "bullet")
-        {
-            //Debug.Log("get hit by bullet");
-             healthSystem.Damage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
-            //pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
-            if (healthSystem.GetHealth().Equals(0f))
-            {
-                Destroy(collision.gameObject);
-            }
-            // Destroy(gameObject);
 
-        }
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -49,7 +38,7 @@ public class moving_pipes : MonoBehaviour
         if (collider.gameObject.tag == "bullet")
         {
             //Debug.Log("get hit by bullet");
-            if (gameObject != null && collider.gameObject != null)
+            if (gameObject != null && collider.gameObject != null&& healthSystem!=null)
             {
                //healthSystem.Damage(collider.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
                 healthSystem.Damage(200);

@@ -16,6 +16,7 @@ public class tg : MonoBehaviour
     public GameObject canvas; // canvas
     public GameObject canvas2; // canvas
     public GameObject shooting_enemy;
+    public GameObject chasing_enemy;
     int time = 0;
 
     // Start is called before the first frame update
@@ -84,9 +85,9 @@ public class tg : MonoBehaviour
         else if (time == 280)
         {
             GameObject obj = (GameObject)Instantiate(rock);
+            obj.GetComponent<t_rock>().clone = true;
             obj.transform.position = new Vector3(player.transform.position.x, 10, player.transform.position.z);
             obj.transform.rotation = new Quaternion(Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f));
-        
         }
         if (time == 275||time==445||time==500)
         {
@@ -102,7 +103,16 @@ public class tg : MonoBehaviour
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
             food.SetActive(true);
         }
-        if(time==530)
+        if (time == 470)
+        {
+            food = Instantiate(chasing_enemy);
+            //food.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+            food.transform.position = new Vector3(-2, 0, 36);
+            Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+            food.SetActive(true);
+        }
+        if (time==600)
         {
             food = Instantiate(invisible);
             food.transform.rotation = Quaternion.identity;
@@ -110,7 +120,7 @@ public class tg : MonoBehaviour
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
         }
-        if(time==540)
+        if(time==640)
         {
             food = Instantiate(wall);
             food.transform.rotation = Quaternion.identity;
@@ -121,7 +131,7 @@ public class tg : MonoBehaviour
             
         }
 
-        if(time==640||time==750)
+        if(time==680||time==850)
         {
             PauseGame();
             canvas2.SetActive(true);

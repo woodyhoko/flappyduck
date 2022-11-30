@@ -14,10 +14,10 @@ public class t_rock : MonoBehaviour
         // obj.transform.SetParent(this.transform);
         obj.transform.position = transform.position + new Vector3(0, -transform.position.y + 0.001f, 0);
         obj.GetComponent<rockShadow>().clone = true;
-        Invoke("destroy", 2f);
+        Invoke("Destroy", 2f);
     }
 
-    private void destroy()
+    private void Destroy()
     {
         if(clone)
             Destroy(gameObject);

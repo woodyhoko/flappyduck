@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e956e0b23c0cf64b9fc58dcc36f8fe1, type: 2}
+  - {fileID: 2100000, guid: a6c1fb81d158045beae62f661322a92c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,3 +145,4 @@ MonoBehaviour:
   speedUpDown: 5
   distanceUpDown: 1
   score_text: {fileID: 0}
+  maxHealth: 200

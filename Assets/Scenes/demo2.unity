@@ -3679,7 +3679,7 @@ MonoBehaviour:
   invisible: {fileID: 162276700}
   invisible_chance: 0.002
   move_forward: {fileID: 490578847}
-  move_forward_chance: 0.002
+  move_forward_chance: 0
   portal: {fileID: 1051381692}
   portal_chance: 0
   water: {fileID: 1950439626}

@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: aa48e49a60b2147eab854d36b81d46be, type: 2}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.64697206, g: 0.64697206, b: 0.64697206, a: 1}
+  m_IndirectSpecularColor: {r: 0.19237182, g: 0.22126898, b: 0.34230113, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5815,15 +5815,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6071110701538831000, guid: 64fb51e48f2df1a4e98c3b48ad1ed226, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 1
+      value: 0.6415094
       objectReference: {fileID: 0}
     - target: {fileID: 6071110701538831000, guid: 64fb51e48f2df1a4e98c3b48ad1ed226, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 1
+      value: 0.1617988
       objectReference: {fileID: 0}
     - target: {fileID: 6071110701538831000, guid: 64fb51e48f2df1a4e98c3b48ad1ed226, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 1
+      value: 0.038732607
       objectReference: {fileID: 0}
     - target: {fileID: 6071110701538831002, guid: 64fb51e48f2df1a4e98c3b48ad1ed226, type: 3}
       propertyPath: m_Name

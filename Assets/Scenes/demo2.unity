@@ -4242,7 +4242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starRotateSpeed: 1
   shoot: 0
-  shoot_freq: 250
+  shoot_freq: 220
   shoot_timestep: 0
   move_forward_limit: 4
   move_forward: 0

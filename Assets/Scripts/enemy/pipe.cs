@@ -47,6 +47,7 @@ public class pipe : MonoBehaviour
             //Debug.Log("get hit by bullet");
             if (gameObject != null && collider.gameObject != null && healthSystem != null)
             {
+                Destroy(collider.gameObject);
                 //healthSystem.Damage(collider.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
                 healthSystem.Damage(200);
                 //pipeHealth.TakeDamage(collision.gameObject.GetComponent<auto_remove_bullet>().bullet_damage);
@@ -56,9 +57,9 @@ public class pipe : MonoBehaviour
                     Mathf.Clamp(healthSystem.GetHealthPercentage(), 0, 1), 0, 0.5f);
                 if (healthSystem.GetHealth().Equals(0f))
                 {
-                    Destroy(collider.gameObject);
                     Destroy(gameObject);
                 }
+
                 // Destroy(gameObject);
             }
         }

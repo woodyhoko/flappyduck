@@ -3698,6 +3698,7 @@ MonoBehaviour:
   HealthUi: {fileID: 232725516}
   cherry: {fileID: 320083002}
   intervalTime: 80
+  intro: {fileID: 0}
 --- !u!1001 &1766196733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4257,6 +4258,8 @@ MonoBehaviour:
   star_num: 0
   number_of_cloned_cube: 0
   cloned_list: []
+  introShowed: 0
+  feather_num: 0
   dizzy: 1
   numTotalHit: 10
   numNeedHit: 0

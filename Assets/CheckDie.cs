@@ -21,16 +21,14 @@ public class CheckDie : MonoBehaviour
     public bool updatedName = false;
 
     public bool enteredname = false;
-    public bool level = true;
-    private int minScore = 0;
+    public int minScore = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
-        if (!level)
+        if (!islevel)
             Login();
-
     }
 
     // Update is called once per frame
@@ -171,7 +169,12 @@ public class CheckDie : MonoBehaviour
     private void level_game_over()
     {
         Time.timeScale = 0;
-
+        if (ScoreManager.sscore > minScore)
+        {
+            // Time.timeScale = 1;
+            GlobalData.Instance.destroy();
+            SceneManager.LoadScene("inputUserName");
+        }
         Canvas.SetActive(true);
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
         background.SetActive(true);

@@ -17,10 +17,10 @@ public class readInput : MonoBehaviour
     public GameObject goBack;
     public GameObject leaderboard;
     public GameObject afterText;
-    
+
     public GameObject title;
     public GameObject inputBox;
-    
+
     void Start()
     {
         goBack.SetActive(false);
@@ -40,7 +40,7 @@ public class readInput : MonoBehaviour
         doneWithName = true;
         Login(name);
     }
-    
+
     public void Login(string name)
     {
         var request = new LoginWithCustomIDRequest
@@ -55,7 +55,7 @@ public class readInput : MonoBehaviour
         };
         PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
     }
-    
+
     public void OnSuccess(LoginResult result)
     {
         Debug.Log("Successful login/account create!");
@@ -63,7 +63,7 @@ public class readInput : MonoBehaviour
         updateDisplayName();
         SendLeaderBoard(ScoreManager.sscore);
     }
-    
+
     public void OnError(PlayFabError error)
     {
         Debug.Log("Error while logging in/creating account");
@@ -85,9 +85,10 @@ public class readInput : MonoBehaviour
         };
         PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnError);
     }
-    
+
     public void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
     {
+        SceneManager.LoadScene("leaderboard");
         Debug.Log("successful leaderboard sent");
         goBack.SetActive(true);
         leaderboard.SetActive(true);
@@ -107,7 +108,7 @@ public class readInput : MonoBehaviour
         ScoreManager.startTime = Time.time;
         GlobalData.Instance.destroy();
     }
-    
+
     public void updateDisplayName()
     {
         var request = new UpdateUserTitleDisplayNameRequest
@@ -116,10 +117,10 @@ public class readInput : MonoBehaviour
         };
         PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
     }
-    
+
     void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
     {
         Debug.Log("updated display name");
     }
-    
+
 }

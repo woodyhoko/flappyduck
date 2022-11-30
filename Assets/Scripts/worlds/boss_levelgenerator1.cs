@@ -36,6 +36,7 @@ public class boss_levelgenerator1 : MonoBehaviour
         RectTransform rt = (RectTransform)progressBoard.transform;
         rt2 = (RectTransform)progress.transform;
         rt.sizeDelta = new Vector2(bossShow, 30f);
+        Time.timeScale = 0f;
     }
 
     // Update is called once per frame
@@ -119,16 +120,7 @@ public class boss_levelgenerator1 : MonoBehaviour
             rt2.sizeDelta = new Vector2(time, 30f);
             float randomNumber = Random.Range(0, 1f);
             //level 1: 0.03
-            if (randomNumber > 0.997f)
-            {
-                GameObject obj = (GameObject)Instantiate(rock);
-                obj.GetComponent<rock>().clone = true;
-                // obj.transform.SetParent(this.transform);
-                obj.transform.position = new Vector3(Random.Range(-5.5f * scale, 5.5f * scale), 10, player.transform.position.z);
-                obj.transform.rotation = new Quaternion(Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f), Random.Range(-5.5f, 5.5f));
-
-            }
-            if (randomNumber > 0.97f)
+            if (randomNumber > 0.98f)
             {
                 Physics.IgnoreLayerCollision(6, 10, true);
                 float wallRandom = Random.Range(0, 1f);
@@ -143,7 +135,7 @@ public class boss_levelgenerator1 : MonoBehaviour
                     Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                     m_Rigidbody.velocity = new Vector3(0, 0, -15f);
                 }
-                else if (randomNumber > 0.98f)
+                else
                 {
                     GameObject watero = (GameObject)Instantiate(water);
                     watero.transform.rotation = Quaternion.identity;
@@ -152,7 +144,7 @@ public class boss_levelgenerator1 : MonoBehaviour
                     m_Rigidbody.velocity = new Vector3(0, 0, -15f);
                 }
             }
-            else if (randomNumber < 0.012f)
+            else if (randomNumber < 0.014f)
             {
                 GameObject food;
                 if (randomNumber < 0.002f)
@@ -161,11 +153,11 @@ public class boss_levelgenerator1 : MonoBehaviour
                 }
                 else if (randomNumber < 0.004f)
                     food = Instantiate(smaller);
-                else if (randomNumber < 0.006f)
+                else if (randomNumber < 0.005f)
                     food = Instantiate(longger);
-                else if (randomNumber < 0.008f)
+                else if (randomNumber < 0.006f)
                     food = Instantiate(faster);
-                else if (randomNumber < 0.01f)
+                else if (randomNumber < 0.010f)
                     food = Instantiate(shooter);
                 else if (randomNumber < 0.012f)
                     food = Instantiate(invisible);

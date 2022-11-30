@@ -203,11 +203,17 @@ public class controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //change cube color
-        //gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
+        //boss shooter
+        if (level && this_Level_name == "demo2 boss2")
+        {
+            GlobalData.Instance.shoot = true;
+        }
 
-        //portal
-        if (this_Level_name == "portal")
+            //change cube color
+            //gameObject.GetComponent<Renderer>().material.color = new Color(Mathf.Clamp(1 - GlobalData.Instance.cube_health / 100f, 0, 1), Mathf.Clamp(GlobalData.Instance.cube_health / 100f, 0, 1), 0, 0.5f);
+
+            //portal
+            if (this_Level_name == "portal")
             cube.transform.localScale = GlobalData.Instance.player_localScale;
         if (this_Level_name == "earth")
         {
@@ -625,7 +631,7 @@ public class controller : MonoBehaviour
                 ScoreManager.level34Passed = true;
 
                 ScoreManager.killedByWater = false;
-                showResultPage("Level_3_2 Passed", true);
+                showResultPage("Level_3_2 Passed", false);
             }
         }
         if (level && this_Level_name == "Level_4_3")

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.64697206, g: 0.64697206, b: 0.64697206, a: 1}
+  m_IndirectSpecularColor: {r: 0.19237182, g: 0.22126898, b: 0.34230113, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1993,7 +1993,7 @@ Transform:
   m_GameObject: {fileID: 1193680150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.19, y: 0, z: -15.4}
-  m_LocalScale: {x: 1.5, y: 1, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3673,7 +3673,7 @@ MonoBehaviour:
   movingpipe: {fileID: 1515629381}
   movingpipe_chance: 0.01
   rock: {fileID: 1193680150}
-  rock_chance: 0.0012
+  rock_chance: 0.001
   wall: {fileID: 1795752818}
   wall_chance: 0.01
   invisible: {fileID: 162276700}
@@ -5488,6 +5488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pipe
       objectReference: {fileID: 0}
+    - target: {fileID: 4931343362478128706, guid: 47183e0d6898ae8488cb4a6b8deee3da, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 88459c7fa3d46084982ef4b09c318525, type: 2}
     - target: {fileID: 4931343362478128710, guid: 47183e0d6898ae8488cb4a6b8deee3da, type: 3}
       propertyPath: score_text
       value: 

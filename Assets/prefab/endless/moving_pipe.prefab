@@ -145,4 +145,4 @@ MonoBehaviour:
   speedUpDown: 5
   distanceUpDown: 1
   score_text: {fileID: 0}
-  maxHealth: 200
+  maxHealth: 600

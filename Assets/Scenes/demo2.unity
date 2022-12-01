@@ -5418,6 +5418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube
       objectReference: {fileID: 0}
+    - target: {fileID: 4801232504656877660, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
+      propertyPath: m_Layer
+      value: 31
+      objectReference: {fileID: 0}
     - target: {fileID: 4801232504656877662, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

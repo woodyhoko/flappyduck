@@ -177,12 +177,14 @@ public class CheckDie : MonoBehaviour
         }
         Canvas.SetActive(true);
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
+        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
+        dizzy.SetActive(false);
         background.SetActive(true);
-        if (hasRock)
-        {
-            GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
-            dizzy.SetActive(false);
-        }
+        // if (hasRock)
+        // {
+        //     GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
+        //     dizzy.SetActive(false);
+        // }
 
         if (!islevel)
         {

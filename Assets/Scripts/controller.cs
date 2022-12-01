@@ -302,10 +302,6 @@ public class controller : MonoBehaviour
         print("text: " + text);
         replay.SetActive(false);
         next_level.SetActive(true);
-
-
-
-
     }
 
     // Update is called once per frame

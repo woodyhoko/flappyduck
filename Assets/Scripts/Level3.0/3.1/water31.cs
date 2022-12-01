@@ -18,14 +18,29 @@ public class water31 : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Touched");
-        if(collision.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "cloned_cube")
         {
-            Debug.Log("get hit by water");
-            CheckDie31.Instant.game_over();
-         }
-     }
-    
+            Destroy(collider.gameObject);
+        }
+
+        if (collider.gameObject.tag == "Player" && collider.gameObject.tag != "star")
+        {
+            GlobalData.Instance.cube_health -= 1;
+            int hp = GlobalData.Instance.cube_health;
+            if (hp > 0)
+                GlobalData.Instance.hearts[hp].SetActive(false);
+            if (hp <= 0f)
+            {
+                ScoreManager.killedByWater = true;
+                ScoreManager.killedByPipe = false;
+                ScoreManager.killedByCeil = false;
+                ScoreManager.killedByBound = false;
+            }
+            Destroy(this.gameObject);
+        }
+    }
+
 }

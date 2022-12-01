@@ -4212,7 +4212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4801201848930012392, guid: 5bb0e9c986d82754da292daef2b1edc9, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4801201848930012395, guid: 5bb0e9c986d82754da292daef2b1edc9, type: 3}
       propertyPath: m_Mass

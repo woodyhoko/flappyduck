@@ -7,11 +7,7 @@
     <list default="true" id="2ebf039e-50d1-45c1-a70e-7385917a7a36" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Assets.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Assets.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CheckDie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CheckDie.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Level_4_0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Level_4_0.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Level_4_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Level_4_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/level-3/Level_3_3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/level-3/Level_3_3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Level3.0/3.1/water31.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Level3.0/3.1/water31.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/water.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/water.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/controller.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,14 +17,20 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/CheckDie.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LevelMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PlayFabEditorExtensions/Editor/Scripts/Panels/PlayFabEditorSDKTools.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PlayFabSDK/Multiplayer/PlayFabMultiplayerModels.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PlayFabSDK/Profiles/PlayFabProfilesAPI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PlayFabSDK/Profiles/PlayFabProfilesModels.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PlayFabSDK/Shared/Internal/SimpleJson.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Scripts/Level3.0/3.1/water31.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Scripts/Level3.0/CheckDie30.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Scripts/ScoreManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Scripts/SendToGoogle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Scripts/SendToGoogle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Scripts/controller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Scripts/controller_basic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Scripts/enemy/pipe.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Scripts/level_pipe.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Scripts/levelgenerator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Scripts/levelgeneratorLevel1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Scripts/readInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Scripts/stars.cs" root0="SKIP_HIGHLIGHTING" />

@@ -310,9 +310,9 @@ public class controller : MonoBehaviour
     void Update()
     {
 
-        print("timer: " + timer);
-        Debug.Log(level);
-        Debug.Log(this_Level_name);
+        //print("timer: " + timer);
+        //Debug.Log(level);
+        //Debug.Log(this_Level_name);
         //if (fps_mode_lock)
         //{
         //    main_camera.transform.position = this.transform.position;

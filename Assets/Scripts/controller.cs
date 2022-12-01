@@ -856,10 +856,7 @@ public class controller : MonoBehaviour
         {
             // print("check");
             GlobalData.Instance.shoot_timestep++;
-            GlobalData.Instance.shoot_freq = 30;
-            Debug.Log("shoot timestep: " + GlobalData.Instance.shoot_timestep);
-            Debug.Log("shoot freq: " + GlobalData.Instance.shoot_freq);
-            Debug.Log("bullet: " + GlobalData.Instance.shoot_timestep % GlobalData.Instance.shoot_freq);
+           
             if (GlobalData.Instance.shoot_timestep % GlobalData.Instance.shoot_freq == 0)
             {
                 // Player

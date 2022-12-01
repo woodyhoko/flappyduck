@@ -303,9 +303,9 @@ public class controller : MonoBehaviour
         replay.SetActive(false);
         next_level.SetActive(true);
 
-        
 
-        
+
+
     }
 
     // Update is called once per frame
@@ -395,9 +395,9 @@ public class controller : MonoBehaviour
             }
         }
 
-        
 
-        
+
+
 
         if (level && this_Level_name == "Level_2_0")
         {
@@ -505,7 +505,7 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-        
+
         if (level && this_Level_name == "Level_3_0")
         {
             if (timer == 700)
@@ -635,7 +635,7 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-        
+
         if (level && this_Level_name == "Level_4_2")
         {
             if (timer == 1100)
@@ -653,8 +653,8 @@ public class controller : MonoBehaviour
                 next_level.SetActive(true);
             }
         }
-        
-        
+
+
         if (level && this_Level_name == "Level_4_3")
         {
             if (timer >= 950)
@@ -670,7 +670,7 @@ public class controller : MonoBehaviour
             }
         }
 
-        
+
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -856,7 +856,7 @@ public class controller : MonoBehaviour
         {
             // print("check");
             GlobalData.Instance.shoot_timestep++;
-           
+
             if (GlobalData.Instance.shoot_timestep % GlobalData.Instance.shoot_freq == 0)
             {
                 // Player

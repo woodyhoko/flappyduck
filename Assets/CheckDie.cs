@@ -169,7 +169,7 @@ public class CheckDie : MonoBehaviour
     private void level_game_over()
     {
         Time.timeScale = 0;
-        if (ScoreManager.sscore > minScore)
+        if (!islevel && ScoreManager.sscore > minScore)
         {
             // Time.timeScale = 1;
             GlobalData.Instance.destroy();

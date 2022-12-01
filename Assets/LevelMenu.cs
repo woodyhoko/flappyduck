@@ -62,12 +62,12 @@ public class LevelMenu : MonoBehaviour
     public void level12()
     {
         // Debug.Log("Level11");
-        SceneManager.LoadScene("Level_1_mid_dy");
+        SceneManager.LoadScene("Level_1_2");
         initLevel();
         ScoreManager.level12 = true;
     }
 
-    public void leve_l13()
+    public void level13()
     {
         // Debug.Log("Level11");
         SceneManager.LoadScene("Level_1_3");

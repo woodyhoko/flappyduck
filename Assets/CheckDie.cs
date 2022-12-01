@@ -178,7 +178,8 @@ public class CheckDie : MonoBehaviour
         Canvas.SetActive(true);
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
         GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
-        dizzy.SetActive(false);
+        if(dizzy!=null)
+            dizzy.SetActive(false);
         background.SetActive(true);
         // if (hasRock)
         // {

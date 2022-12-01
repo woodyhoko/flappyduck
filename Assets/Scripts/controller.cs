@@ -292,20 +292,18 @@ public class controller : MonoBehaviour
         Canvas.SetActive(true);
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
         background.SetActive(true);
-        if (hasRock)
-        {
-            GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
+        //if (hasRock)
+        //{
+
+        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject; 
+        if (dizzy != null)
             dizzy.SetActive(false);
-        }
+        //}
         title.text = text;
         print("title text: " + title.text);
         print("text: " + text);
         replay.SetActive(false);
         next_level.SetActive(true);
-
-
-
-
     }
 
     // Update is called once per frame

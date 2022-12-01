@@ -176,6 +176,15 @@ public class CheckDie : MonoBehaviour
             SceneManager.LoadScene("inputUserName");
         }
         Canvas.SetActive(true);
+        Debug.Log(islevel);
+        if (islevel)
+        {
+            title.text = "Game Over";
+            replay.SetActive(true);
+            next_level.SetActive(false);
+            return;
+        }
+        
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
         GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
         if(dizzy!=null)
@@ -191,10 +200,11 @@ public class CheckDie : MonoBehaviour
         {
             TMP_Text score = background.GetComponent<Transform>().Find("Score").GetComponent<TMP_Text>();
             score.GetComponent<TMPro.TextMeshProUGUI>().text = "Score : " + ScoreManager.sscore.ToString();
+            title.text = "Game Over";
+            replay.SetActive(true);
+            next_level.SetActive(false);
         }
-        title.text = "Game Over";
-        replay.SetActive(true);
-        next_level.SetActive(false);
+        
     }
 
     public void SendLeaderBoard(int score)

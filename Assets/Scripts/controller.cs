@@ -230,7 +230,12 @@ public class controller : MonoBehaviour
         }
         else
             Physics.gravity = new Vector3(0, -9.81f, 0);
-        GlobalData.Instance.hearts = new List<GameObject>();
+
+        if (GlobalData.Instance.hearts.Count == 0)
+        {
+            GlobalData.Instance.hearts = new List<GameObject>();
+        }
+
         speed = GlobalData.Instance.move_speed * GlobalData.Instance.world_speed;
         m_Rigidbody = GetComponent<Rigidbody>();
         larger_gravity = false;
@@ -269,8 +274,10 @@ public class controller : MonoBehaviour
             }
         }
 
-        if (this.tag == "Player")
+        if (this.tag == "Player" )
         {
+            Debug.Log("Invoked me atleast");
+            Debug.Log(GlobalData.Instance.cube_health);
             for (int heart_now = 0; heart_now < GlobalData.Instance.cube_health; heart_now++)
             {
                 GameObject heart1 = Instantiate(heart);
@@ -278,8 +285,9 @@ public class controller : MonoBehaviour
                 GlobalData.Instance.hearts.Add(heart1);
                 heart1.transform.SetParent(HealthUi.transform);
                 heart1.transform.position = new Vector3(50 + 55 * heart_now, 50f, 0f);
-                //Debug.Log(GlobalData.Instance.cube_health);
+             
             }
+            Debug.Log(GlobalData.Instance.hearts.Count);
         }
 
     }

@@ -176,11 +176,13 @@ public class CheckDie : MonoBehaviour
             SceneManager.LoadScene("inputUserName");
         }
         Canvas.SetActive(true);
+        Debug.Log(islevel);
         if (islevel)
         {
             title.text = "Game Over";
             replay.SetActive(true);
             next_level.SetActive(false);
+            return;
         }
         
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;

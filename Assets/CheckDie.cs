@@ -176,7 +176,14 @@ public class CheckDie : MonoBehaviour
             SceneManager.LoadScene("inputUserName");
         }
         Canvas.SetActive(true);
-        Debug.Log(islevel);
+        // Debug.Log(islevel);
+
+        GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
+        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
+        if(dizzy!=null)
+            dizzy.SetActive(false);
+        background.SetActive(true);
+
         if (islevel)
         {
             title.text = "Game Over";
@@ -185,17 +192,6 @@ public class CheckDie : MonoBehaviour
             return;
         }
         
-        GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
-        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
-        if(dizzy!=null)
-            dizzy.SetActive(false);
-        background.SetActive(true);
-        // if (hasRock)
-        // {
-        //     GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
-        //     dizzy.SetActive(false);
-        // }
-
         if (!islevel)
         {
             TMP_Text score = background.GetComponent<Transform>().Find("Score").GetComponent<TMP_Text>();

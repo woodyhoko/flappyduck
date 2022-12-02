@@ -88,7 +88,7 @@ public class readInput : MonoBehaviour
 
     public void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
     {
-        SceneManager.LoadScene("leaderboard");
+        // SceneManager.LoadScene("leaderboard");
         Debug.Log("successful leaderboard sent");
         goBack.SetActive(true);
         leaderboard.SetActive(true);

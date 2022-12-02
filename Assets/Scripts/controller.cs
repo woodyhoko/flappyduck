@@ -1058,7 +1058,7 @@ public class controller : MonoBehaviour
             {
                 Destroy(collider.gameObject);
                 GlobalData.Instance.shoot = true;
-                if (GlobalData.Instance.shoot_freq >= 10)
+                if (GlobalData.Instance.shoot_freq >= 20)
                 {
                     GlobalData.Instance.shoot_freq *= 4;
                     GlobalData.Instance.shoot_freq /= 6;

@@ -682,10 +682,11 @@ public class controller : MonoBehaviour
             }
         }
 
-
+        
+        
         if (level && this_Level_name == "Level_4_3")
         {
-            if (timer >= 950)
+            if (timer >= 1200)
             {
                 if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
                 {

@@ -301,9 +301,11 @@ public class controller : MonoBehaviour
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
         background.SetActive(true);
 
-        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
-        if (dizzy != null)
-            dizzy.SetActive(false);
+        if (hasRock) {
+            GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
+            if (dizzy != null)
+                dizzy.SetActive(false);
+        }
 
         title.text = text;
         print("title text: " + title.text);

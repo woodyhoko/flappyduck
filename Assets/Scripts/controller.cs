@@ -211,7 +211,8 @@ public class controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GlobalData.Instance.hearts = new List<GameObject>();
+        if(this.tag == "Player")
+            GlobalData.Instance.hearts = new List<GameObject>();
         //boss shooter
         if (level && this_Level_name == "demo2 boss2")
         {

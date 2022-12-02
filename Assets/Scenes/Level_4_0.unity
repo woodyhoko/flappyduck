@@ -5458,11 +5458,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6844052422789877024, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_text
-      value: Player gets a helper from clone
+      value: "Player gets a helper from clone \n( Cloned cube can cancel out with
+        an obstacle)"
       objectReference: {fileID: 0}
     - target: {fileID: 6844052422789877024, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_margin.z
-      value: -316.5994
+      value: -344.47754
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df8610fab864c34ab770c87101c1662, type: 3}

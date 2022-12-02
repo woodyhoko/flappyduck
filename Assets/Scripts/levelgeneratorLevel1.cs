@@ -224,13 +224,13 @@ public class levelgeneratorLevel1 : MonoBehaviour
             GameObject movinghori = (GameObject)Instantiate(movingHori);
             movinghori.transform.rotation = Quaternion.identity;
             //movinghori.transform.position = new Vector3(Random.Range(-6, -1f), .010f, 36);
-            movinghori.transform.position = new Vector3(-2.5f,0.2f, 36);
+            movinghori.transform.position = new Vector3(-2.5f,1.2f, 36);
             Rigidbody m_Rigidbody = movinghori.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
                 
             GameObject movinghori2 = (GameObject)Instantiate(movingHori);
             movinghori2.transform.rotation = Quaternion.identity;
-            movinghori2.transform.position = new Vector3(2.5f,0f, 36);
+            movinghori2.transform.position = new Vector3(2.5f,1f, 36);
             Rigidbody m_Rigidbody2 = movinghori2.GetComponent<Rigidbody>();
             m_Rigidbody2.velocity = new Vector3(0, 0, -15f);
         }

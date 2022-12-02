@@ -67,6 +67,7 @@ public class pipe : MonoBehaviour
 
         if (collider.gameObject.tag == "cloned_cube")
         {
+            GlobalData.Instance.cloned_list.Remove(collider.gameObject);
             Destroy(collider.gameObject);
             Destroy(this.gameObject);
         }

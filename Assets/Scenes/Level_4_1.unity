@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18905947, g: 0.2161744, b: 0.311375, a: 1}
+  m_IndirectSpecularColor: {r: 0.18905899, g: 0.216174, b: 0.31137407, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2196,7 +2196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783783711}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.96, y: 1.34, z: 109.38}
+  m_LocalPosition: {x: -1.96, y: 1.34, z: 119.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5614,6 +5614,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8813984302468308230, guid: f98643d2127df5b4ba2986328be62eb6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8813984302468308286, guid: f98643d2127df5b4ba2986328be62eb6, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -5628,7 +5632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8813984302468308286, guid: f98643d2127df5b4ba2986328be62eb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.12
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8813984302468308286, guid: f98643d2127df5b4ba2986328be62eb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6083,7 +6087,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056513593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.8, y: 0.83, z: 145}
+  m_LocalPosition: {x: 3.2, y: 0.83, z: 145}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6225,7 +6229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073385145}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.14, y: 1.41, z: 55}
+  m_LocalPosition: {x: -1.14, y: 1, z: 55}
   m_LocalScale: {x: 20, y: 1.5, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6364,6 +6368,10 @@ PrefabInstance:
     - target: {fileID: 8813984302468308230, guid: f98643d2127df5b4ba2986328be62eb6, type: 3}
       propertyPath: m_Name
       value: wall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813984302468308230, guid: f98643d2127df5b4ba2986328be62eb6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8813984302468308286, guid: f98643d2127df5b4ba2986328be62eb6, type: 3}
       propertyPath: m_RootOrder

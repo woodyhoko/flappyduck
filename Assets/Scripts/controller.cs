@@ -1159,7 +1159,7 @@ public class controller : MonoBehaviour
 
 
             GameObject[] cloned_list = GameObject.FindGameObjectsWithTag("cloned_cube");
-            Debug.Log("clone list size: " + cloned_list.Length + "  , cube list Global: " + GlobalData.Instance.cloned_list.Count);
+            //Debug.Log("clone list size: " + cloned_list.Length + "  , cube list Global: " + GlobalData.Instance.cloned_list.Count);
 
         }
         //cherry

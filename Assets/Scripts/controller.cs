@@ -1167,11 +1167,11 @@ public class controller : MonoBehaviour
                 print("clone_x: " + cloned_x);
             } while ((cloned_x <= (player_x_pos + 0.5f)) && (cloned_x >= (player_x_pos - 0.5f)));
 
+
             if (this_Level_name == "Level_4_5" && GlobalData.Instance.cloned_list.Count == 0)
             {
                 //clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, Random.Range(clone.transform.position.z, clone.transform.position.z + 2f));
                 clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z + 2f);
-
             }
             if (this_Level_name == "Level_4_0")
             {
@@ -1181,7 +1181,8 @@ public class controller : MonoBehaviour
             }
             else
             {
-                clone.transform.position = new Vector3(cloned_x, 4.0f, clone.transform.position.z+2f);
+                
+                clone.transform.position = new Vector3(cloned_x, 4.0f, player.transform.position.z + 6f);
             }
 
 

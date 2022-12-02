@@ -276,8 +276,8 @@ public class controller : MonoBehaviour
 
         if (this.tag == "Player" )
         {
-            Debug.Log("Invoked me atleast");
-            Debug.Log(GlobalData.Instance.cube_health);
+            //Debug.Log("Invoked me atleast");
+            //Debug.Log(GlobalData.Instance.cube_health);
             for (int heart_now = 0; heart_now < GlobalData.Instance.cube_health; heart_now++)
             {
                 GameObject heart1 = Instantiate(heart);
@@ -287,7 +287,7 @@ public class controller : MonoBehaviour
                 heart1.transform.position = new Vector3(50 + 55 * heart_now, 50f, 0f);
              
             }
-            Debug.Log(GlobalData.Instance.hearts.Count);
+            //Debug.Log(GlobalData.Instance.hearts.Count);
         }
 
     }
@@ -318,13 +318,6 @@ public class controller : MonoBehaviour
     void Update()
     {
 
-        //print("timer: " + timer);
-        //Debug.Log(level);
-        //Debug.Log(this_Level_name);
-        //if (fps_mode_lock)
-        //{
-        //    main_camera.transform.position = this.transform.position;
-        //}
         if (level && this_Level_name == "Level_1_0")
         {
             if (timer >= 900)
@@ -787,13 +780,7 @@ public class controller : MonoBehaviour
         {
             timer++;
         }
-        //time++;
-        //if(time>200) SceneManager.LoadScene("demo2");
 
-
-        // if(Input.GetKeyDown(KeyCode.A)){
-        //     transform.Position(0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
-        // }
         foreach (GameObject one_star in stars)
         {
             // one_star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
@@ -803,34 +790,7 @@ public class controller : MonoBehaviour
         // star.transform.RotateAround(transform.position, Vector3.up, GlobalData.Instance.starRotateSpeed);
         // star.transform.RotateAround(transform.position, transform.eulerAngles, starRotateSpeed);
 
-        //set jumping limit
-        //if (larger_gravity)
-        //{
-        //    jump_height = 3.0f;
-        // }
-        // else
-        //{
-        //    jump_height = 5.0f;
-        //}
-        //reversed gravity
-        //if (reversed_gravity)
-        //{
-        //    Physics.gravity = new Vector3(0, 9.8f, 0);
-        //set unlimited jumping under reversed gravity environment
-        //   jump_numb = 2;
-        //   if (jump_height > 0)
-        //   {
-        //      jump_height = jump_height * (-1.0f);
-        //  }
-        // }
-        //else
-        // {
-        //  Physics.gravity = new Vector3(0, -9.8f, 0);
-        //   if (jump_height < 0)
-        //   {
-        //      jump_height = jump_height * (-1.0f);
-        //  }
-        // }
+
 
         if (jump)
         {
@@ -1207,13 +1167,21 @@ public class controller : MonoBehaviour
                 print("clone_x: " + cloned_x);
             } while ((cloned_x <= (player_x_pos + 0.5f)) && (cloned_x >= (player_x_pos - 0.5f)));
 
-            if (this_Level_name == "Level_4_0" && GlobalData.Instance.cloned_list.Count == 0)
+            if (this_Level_name == "Level_4_5" && GlobalData.Instance.cloned_list.Count == 0)
             {
-                clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, Random.Range(clone.transform.position.z, clone.transform.position.z + 2f));
+                //clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, Random.Range(clone.transform.position.z, clone.transform.position.z + 2f));
+                clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z + 2f);
+
+            }
+            if (this_Level_name == "Level_4_0")
+            {
+                //clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, Random.Range(clone.transform.position.z, clone.transform.position.z + 2f));
+                clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z + 2f);
+
             }
             else
             {
-                clone.transform.position = new Vector3(cloned_x, 4.0f, clone.transform.position.z);
+                clone.transform.position = new Vector3(cloned_x, 4.0f, clone.transform.position.z+2f);
             }
 
 

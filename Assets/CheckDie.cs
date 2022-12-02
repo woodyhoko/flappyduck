@@ -47,15 +47,9 @@ public class CheckDie : MonoBehaviour
                 ScoreManager.killedByBound = true;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                if (islevel)
-                {
-                    level_game_over();
-                }
-                else
-                {
-                    level_game_over();
+                level_game_over();
                     //playfabManager.GetLeaderboard();
-                }
+
             }
             else
             {
@@ -67,14 +61,8 @@ public class CheckDie : MonoBehaviour
         {
             if (this.tag == "Player")
             {
-                if (islevel)
-                {
-                    level_game_over();
-                }
-                else
-                {
-                    level_game_over();
-                }
+
+               level_game_over();
             }
             else
             {
@@ -83,87 +71,6 @@ public class CheckDie : MonoBehaviour
         }
     }
 
-    // private void OnTriggerEnter(Collider collider)
-    // {
-    // if (collider.gameObject.tag == "ceil" || collider.gameObject.tag == "pipe")
-    // {
-    //     if (this.tag == "Player")
-    //     {
-    //         if (collider.gameObject.tag == "pipe")
-    //         {
-    //             // GlobalData.Instance.cube_health -= 1;
-    //             int hp = GlobalData.Instance.cube_health;
-    //             if (hp >= 0)
-    //                 GlobalData.Instance.hearts[hp].SetActive(false);
-    //             if (hp <= 0f)
-    //             {
-    //                 ScoreManager.killedByWater = false;
-    //                 ScoreManager.killedByPipe = true;
-    //                 ScoreManager.killedByCeil = false;
-    //                 ScoreManager.killedByBound = false;
-    //                 if (islevel)
-    //                     level_game_over();
-    //                 else
-    //                     level_game_over(); // FindObjectOfType<GameManager>().EndGame();
-    //             }
-    //         }
-    //         else if (collider.gameObject.tag == "ceil")
-    //         {
-    //             ScoreManager.killedByCeil = true;
-    //             ScoreManager.killedByPipe = false;
-    //             ScoreManager.killedByWater = false;
-    //             ScoreManager.killedByBound = false;
-    //             Debug.Log("ceil");
-    //             if (islevel)
-    //                 level_game_over();
-    //             else
-    //                 level_game_over(); //FindObjectOfType<GameManager>().EndGame();
-    //             //playfabManager.SendLeaderBoard(ScoreManager.sscore);
-    //             //playfabManager.GetLeaderboard();
-    //         }
-    //     }
-    //     else
-    //     {
-    //         int size = GlobalData.Instance.cloned_list.Count;
-
-    //         for (int i = 0; i < size; i++)
-    //         {
-    //             if (GlobalData.Instance.cloned_list[i] == this)
-    //             {
-    //                 GlobalData.Instance.cloned_list.RemoveAt(i);
-    //             }
-    //         }
-    //         Destroy(this);
-    //     }
-
-    // }
-    // }
-    // private void OnCollisionEnter(Collision collision)
-    // {
-    // if (collision.gameObject.tag == "water" && this.tag == "Player")
-    // {
-    //     // GlobalData.Instance.cube_health -= 1;
-    //     GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
-    //     if (GlobalData.Instance.cube_health <= 0f)
-    //     {
-    //         ScoreManager.killedByWater = true;
-    //         ScoreManager.killedByPipe = false;
-    //         ScoreManager.killedByCeil = false;
-    //         ScoreManager.killedByBound = false;
-    //         if (islevel)
-    //         {
-    //             level_game_over();
-    //         }
-    //         else
-    //         {
-    //             level_game_over();
-    //             // FindObjectOfType<GameManager>().EndGame();
-    //         }
-    //     }
-    //     Destroy(collision.gameObject);
-    //     Debug.Log("get hit by water");
-    // }
-    // }
 
 
     private void level_game_over()
@@ -180,23 +87,20 @@ public class CheckDie : MonoBehaviour
 
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
         GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
-        if(dizzy!=null)
-            dizzy.SetActive(false);
+        dizzy.SetActive(false);
         background.SetActive(true);
-
+        title.text = "Game Over";
         if (islevel)
         {
-            title.text = "Game Over";
+
             replay.SetActive(true);
             next_level.SetActive(false);
-            return;
         }
-        
-        if (!islevel)
+        else
         {
             TMP_Text score = background.GetComponent<Transform>().Find("Score").GetComponent<TMP_Text>();
             score.GetComponent<TMPro.TextMeshProUGUI>().text = "Score : " + ScoreManager.sscore.ToString();
-            title.text = "Game Over";
+            //title.text = "Game Over";
             replay.SetActive(true);
             next_level.SetActive(false);
         }

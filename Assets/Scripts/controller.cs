@@ -833,9 +833,13 @@ public class controller : MonoBehaviour
 
                 foreach (GameObject cloned_cube in GlobalData.Instance.cloned_list)
                 {
-                    GameObject cloned_bul = Instantiate(bullet);
-                    cloned_bul.transform.position = cloned_cube.transform.position + new Vector3(0, 0, 1f);
-                    cloned_bul.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 10f);
+                    if (cloned_cube.gameObject != null)
+                    {
+                        GameObject cloned_bul = Instantiate(bullet);
+                        cloned_bul.transform.position = cloned_cube.transform.position + new Vector3(0, 0, 1f);
+                        cloned_bul.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 10f);
+                    }
+                    
                 }
             }
 
@@ -917,19 +921,23 @@ public class controller : MonoBehaviour
 
                 foreach (GameObject cloned_cube in GlobalData.Instance.cloned_list)
                 {
-                    GameObject cloned_one_star = Instantiate(star);
-                    cloned_one_star.SetActive(true);
-                    cloned_one_star.transform.SetParent(cloned_cube.transform);
-                    cloned_one_star.transform.localScale = new Vector3(.5f, GlobalData.Instance.star_size, 0.5f);
-
-                    controller clone_comp = cloned_cube.GetComponent<controller>();
-
-                    clone_comp.stars.Add(cloned_one_star);
-                    float cloned_angle = 2f * Mathf.PI / (float)clone_comp.stars.Count;
-                    for (int i = -1; ++i < clone_comp.stars.Count;)
+                    if (cloned_cube.gameObject != null)
                     {
-                        clone_comp.stars[i].transform.position = cloned_cube.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
+                        GameObject cloned_one_star = Instantiate(star);
+                        cloned_one_star.SetActive(true);
+                        cloned_one_star.transform.SetParent(cloned_cube.transform);
+                        cloned_one_star.transform.localScale = new Vector3(.5f, GlobalData.Instance.star_size, 0.5f);
+
+                        controller clone_comp = cloned_cube.GetComponent<controller>();
+
+                        clone_comp.stars.Add(cloned_one_star);
+                        float cloned_angle = 2f * Mathf.PI / (float)clone_comp.stars.Count;
+                        for (int i = -1; ++i < clone_comp.stars.Count;)
+                        {
+                            clone_comp.stars[i].transform.position = cloned_cube.transform.position + new Vector3(Mathf.Cos(angle * i), 0, Mathf.Sin(angle * i));
+                        }
                     }
+                    
                 }
 
                 //Debug.Log("star numb: " + GlobalData.Instance.star_num);
@@ -1115,7 +1123,7 @@ public class controller : MonoBehaviour
             //if ()
 
             GameObject clone = Instantiate(player);
-            //Debug.Log("clone once");
+            Debug.Log("clone once");
 
             clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             clone.SetActive(true);
@@ -1140,6 +1148,7 @@ public class controller : MonoBehaviour
 
             //clone.transform.rotation = Quaternion.identity;
             clone.tag = "cloned_cube";
+            clone.AddComponent<auto_remove>();
 
             //Material newMat = Resources.Load("cube-m", typeof(Material)) as Material;
             clone.GetComponent<Renderer>().material = cloned_material;

@@ -53,6 +53,9 @@ public class CheckDie : MonoBehaviour
             }
             else
             {
+                print("global clone list size before: " + GlobalData.Instance.cloned_list.Count);
+                GlobalData.Instance.cloned_list.Remove(this.gameObject);
+                print("global clone list size after: " + GlobalData.Instance.cloned_list.Count);
                 Destroy(this);
             }
 
@@ -66,6 +69,7 @@ public class CheckDie : MonoBehaviour
             }
             else
             {
+                GlobalData.Instance.cloned_list.Remove(this.gameObject);
                 Destroy(this);
             }
         }

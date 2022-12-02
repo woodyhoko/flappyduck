@@ -682,10 +682,11 @@ public class controller : MonoBehaviour
             }
         }
 
-
+        
+        
         if (level && this_Level_name == "Level_4_3")
         {
-            if (timer >= 950)
+            if (timer >= 1200)
             {
                 if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
                 {
@@ -878,7 +879,7 @@ public class controller : MonoBehaviour
         if (invi_remaining_time > 0)
         {
             GlobalData.Instance.isInvi = true;
-            Debug.Log(GlobalData.Instance.isInvi);
+            //Debug.Log(GlobalData.Instance.isInvi);
             invi_remaining_time--;
             if (invi_remaining_time <= 0)
             {

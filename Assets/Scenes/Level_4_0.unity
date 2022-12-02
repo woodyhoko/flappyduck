@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18905947, g: 0.2161744, b: 0.311375, a: 1}
+  m_IndirectSpecularColor: {r: 0.18905899, g: 0.216174, b: 0.31137407, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -846,7 +846,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164597112}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.47, y: 1.34, z: 17.33}
+  m_LocalPosition: {x: 2.47, y: 1.34, z: 97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1121,7 +1121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195905236}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.5, y: 1.34, z: 33.7}
+  m_LocalPosition: {x: -2.5, y: 1.34, z: 53.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1681,7 +1681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2655254105052270269, guid: e7360903c225edb43b22acafd3998a4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 75.2
+      value: 115.2
       objectReference: {fileID: 0}
     - target: {fileID: 2655254105052270269, guid: e7360903c225edb43b22acafd3998a4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2652,7 +2652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828364404}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.3, y: 1.1, z: 86.1}
+  m_LocalPosition: {x: 2.3, y: 1.1, z: 126.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3179,7 +3179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2655254105052270269, guid: e7360903c225edb43b22acafd3998a4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 126.9
+      value: 166.9
       objectReference: {fileID: 0}
     - target: {fileID: 2655254105052270269, guid: e7360903c225edb43b22acafd3998a4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5046,7 +5046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2655254105052270269, guid: e7360903c225edb43b22acafd3998a4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 48.24
+      value: 68.24
       objectReference: {fileID: 0}
     - target: {fileID: 2655254105052270269, guid: e7360903c225edb43b22acafd3998a4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5458,11 +5458,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6844052422789877024, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_text
-      value: Player gets a helper from clone
+      value: "Player gets a helper from clone \n( Cloned cube can cancel out with
+        an obstacle)"
       objectReference: {fileID: 0}
     - target: {fileID: 6844052422789877024, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_margin.z
-      value: -316.5994
+      value: -344.47754
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df8610fab864c34ab770c87101c1662, type: 3}

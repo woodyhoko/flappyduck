@@ -623,7 +623,7 @@ public class controller : MonoBehaviour
 
         if (level && this_Level_name == "Level_4_0")
         {
-            if (timer >= 600)
+            if (timer >= 450)
             {
                 ScoreManager.level40Passed = true;
                 Debug.Log(ScoreManager.level40Passed);
@@ -1161,28 +1161,19 @@ public class controller : MonoBehaviour
             float player_x_pos = player.transform.position.x;
             float cloned_x = 0f;
 
-            do
-            {
-                cloned_x = Random.Range(-4.5f, 4.5f);
-                print("clone_x: " + cloned_x);
-            } while ((cloned_x <= (player_x_pos + 0.5f)) && (cloned_x >= (player_x_pos - 0.5f)));
-
-            if (this_Level_name == "Level_4_5" && GlobalData.Instance.cloned_list.Count == 0)
-            {
-                //clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, Random.Range(clone.transform.position.z, clone.transform.position.z + 2f));
-                clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z + 2f);
-
-            }
-            if (this_Level_name == "Level_4_0")
-            {
-                //clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, Random.Range(clone.transform.position.z, clone.transform.position.z + 2f));
-                clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z + 2f);
-
-            }
+            if (player_x_pos >= 0)
+                cloned_x = player_x_pos - 2f;
             else
+                cloned_x = player_x_pos + 2f;
+            if(!level)
             {
-                clone.transform.position = new Vector3(cloned_x, 4.0f, clone.transform.position.z+2f);
+                do
+                {
+                    cloned_x = Random.Range(-4.5f, 4.5f);
+                //print("clone_x: " + cloned_x);
+                } while ((cloned_x <= (player_x_pos + 0.5f)) && (cloned_x >= (player_x_pos - 0.5f)));
             }
+            clone.transform.position = new Vector3(cloned_x, 2.0f, clone.transform.position.z + 2f);
 
 
             //clone.transform.rotation = Quaternion.identity;

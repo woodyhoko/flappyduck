@@ -4850,6 +4850,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 166958398976724785, guid: 768f6e2998d009d458713b683a7b1164, type: 3}
+      propertyPath: weight
+      value: 0.881
+      objectReference: {fileID: 0}
     - target: {fileID: 166958398976724790, guid: 768f6e2998d009d458713b683a7b1164, type: 3}
       propertyPath: m_Name
       value: post-process

@@ -38,8 +38,7 @@ public class GlobalData : MonoBehaviour
     public bool isInvi = false;
     public float jump_height = 5.0f;
 
-    public List<GameObject> hearts = new List<GameObject>();
-
+    public List<GameObject> hearts;
     public int lightNum = 0;
     public void start()
     {

@@ -300,13 +300,11 @@ public class controller : MonoBehaviour
         Canvas.SetActive(true);
         GameObject background = Canvas.GetComponent<Transform>().Find("Background").gameObject;
         background.SetActive(true);
-        //if (hasRock)
-        //{
 
-        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject; 
+        GameObject dizzy = Canvas.GetComponent<Transform>().Find("Dizzy").gameObject;
         if (dizzy != null)
             dizzy.SetActive(false);
-        //}
+
         title.text = text;
         print("title text: " + title.text);
         print("text: " + text);
@@ -381,20 +379,6 @@ public class controller : MonoBehaviour
             }
         }
 
-        //if (level && this_Level_name == "Level_1_2")
-        //{
-        //    if (timer >= 900)
-        //    {
-        //        ScoreManager.cube_health = GlobalData.Instance.cube_health;
-        //        ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
-        //        ScoreManager.level12Passed = true;
-        //        ScoreManager.killedByBound = false;
-        //        ScoreManager.killedByCeil = false;
-        //        ScoreManager.killedByWater = false;
-        //        showResultPage("Level 1.2 Passed", true);
-        //    }
-        //}
-
         if (level && this_Level_name == "Level_1_3")
         {
             if (timer >= 1050)
@@ -410,9 +394,6 @@ public class controller : MonoBehaviour
                 showResultPage("Level 1.3 Passed", false);
             }
         }
-
-
-
 
 
         if (level && this_Level_name == "Level_2_0")

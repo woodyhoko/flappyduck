@@ -284,7 +284,7 @@ public class controller : MonoBehaviour
                 heart1.SetActive(true);
                 GlobalData.Instance.hearts.Add(heart1);
                 heart1.transform.SetParent(HealthUi.transform);
-                heart1.transform.position = new Vector3(50 + 55 * heart_now, 50f, 0f);
+                heart1.transform.position = new Vector3(50 + 55 * heart_now, 80f, 0f);
              
             }
             //Debug.Log(GlobalData.Instance.hearts.Count);
@@ -1153,7 +1153,7 @@ public class controller : MonoBehaviour
             //if ()
 
             GameObject clone = Instantiate(player);
-            Debug.Log("clone once");
+            //Debug.Log("clone once");
 
             clone.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             clone.SetActive(true);

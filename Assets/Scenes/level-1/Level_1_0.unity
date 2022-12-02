@@ -6165,6 +6165,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6844052421690964937, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_text
+      value: 'Player becomes bigger (jump higner)
+
+
+        hints: double jump'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052421970687234, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_Color.b
+      value: 0.97847533
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052421970687234, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052421970687234, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052421970687234, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 0f5828f07c0e64a49a1fdd2f9f5e03e5, type: 3}
+    - target: {fileID: 6844052422462681506, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_Color.b
+      value: 0.45660377
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052422462681506, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9762786
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052422462681506, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844052422462681506, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 79fb16d01aea7b546b14a52ed5db2359, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
 --- !u!1 &1986387423

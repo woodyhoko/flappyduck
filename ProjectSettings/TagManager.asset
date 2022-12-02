@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - pipe
+  - star_upgrade
+  - smaller
+  - move_forward
+  - longger
+  - water
+  - clone
+  - star
+  - bigger
+  - gravity
+  - gravity_size
+  - shooter
+  - faster
+  - invisible
+  - Rock
+  - portal
+  - fps
+  - ceil
+  - bullet
+  - Plane
+  - cherry
+  - cloned_cube
+  - enebull
+  - enemy
+  - portal_back
+  - feather
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - post-process
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

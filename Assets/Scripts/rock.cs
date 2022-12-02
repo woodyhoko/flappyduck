@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class rock : MonoBehaviour
+{
+    // Rigidbody rb;
+    public bool clone = false;
+    public GameObject rock_shadow;
+    // Start is called before the first frame update
+    void Start()
+    {
+        GameObject obj = (GameObject)Instantiate (rock_shadow);
+        // obj.transform.SetParent(this.transform);
+        obj.transform.position = transform.position + new Vector3(0, -transform.position.y+0.001f, 0);
+        obj.GetComponent<rockShadow>().clone = true;
+        Invoke("Destroy", 2f);
+    }
+
+    private void Destroy(){
+        if (clone){
+            Destroy(gameObject);
+        }
+    }
+
+    void Update()
+    {
+
+    }
+
+    void OnCollisionEnter(Collision col){
+        if (col.gameObject.tag == "Player"){
+            print("Trigger Dizzness");
+
+            GlobalData.Instance.dizzy = true;
+            GlobalData.Instance.numNeedHit = GlobalData.Instance.numTotalHit;
+            GlobalData.Instance.numTotalHit += 1; // increase difficulty for next hit
+            // print(GlobalData.Instance.numNeedHit);
+        }
+     }
+}

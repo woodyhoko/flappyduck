@@ -19,6 +19,14 @@ public class auto_remove : MonoBehaviour
             score_text.text = "Score : " + ScoreManager.sscore.ToString();
             Destroy(gameObject);
         }
+
+        if (this.gameObject.tag == "cloned_cube" )
+        {
+            if (this.transform.position.y < -20)
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 
     //private void OnTriggerEnter(Collider collider)

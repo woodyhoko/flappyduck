@@ -88,7 +88,6 @@ public class readInput : MonoBehaviour
 
     public void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
     {
-        // SceneManager.LoadScene("leaderboard");
         Debug.Log("successful leaderboard sent");
         goBack.SetActive(true);
         leaderboard.SetActive(true);
@@ -106,7 +105,7 @@ public class readInput : MonoBehaviour
         ScoreManager.sscore = 0;
         Time.timeScale = 1;
         ScoreManager.startTime = Time.time;
-        GlobalData.Instance.destroy();
+        //GlobalData.Instance.destroy();
     }
 
     public void updateDisplayName()

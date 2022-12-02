@@ -6968,7 +6968,7 @@ PrefabInstance:
     - target: {fileID: 4801232504656877658, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
       propertyPath: limitText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1059277325}
     - target: {fileID: 4801232504656877658, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
       propertyPath: next_level
       value: 

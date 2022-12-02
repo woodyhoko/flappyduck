@@ -1167,21 +1167,27 @@ public class controller : MonoBehaviour
                 print("clone_x: " + cloned_x);
             } while ((cloned_x <= (player_x_pos + 0.5f)) && (cloned_x >= (player_x_pos - 0.5f)));
 
+            print("clone after do while on x");
+
             if (this_Level_name == "Level_4_5" && GlobalData.Instance.cloned_list.Count == 0)
             {
                 //clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, Random.Range(clone.transform.position.z, clone.transform.position.z + 2f));
                 clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z + 2f);
-
+                print("clone 4.5");
             }
             if (this_Level_name == "Level_4_0")
             {
+                print("clone 4.0");
                 //clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, Random.Range(clone.transform.position.z, clone.transform.position.z + 2f));
                 clone.transform.position = new Vector3(clone.transform.position.x - 2f, 4.0f, clone.transform.position.z + 2f);
 
             }
             else
             {
-                clone.transform.position = new Vector3(cloned_x, 4.0f, clone.transform.position.z+2f);
+                print("rest of level clone");
+                float clone_z = Random.Range(player.transform.position.z, player.transform.position.z + 6f);
+                print("clone z: " + clone_z);
+                clone.transform.position = new Vector3(cloned_x, 4.0f, clone_z);
             }
 
 

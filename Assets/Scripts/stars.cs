@@ -142,6 +142,7 @@ public class stars : MonoBehaviour
         }
          if ( ScoreManager.level12Passed)
         {
+            print("star lvl 12: " + ScoreManager.lvl12_perfect);
             if  (ScoreManager.lvl12_perfect == true)
             {
                 strmid12.GetComponent<Image>().color = new Color32(255, 255, 225, 255);

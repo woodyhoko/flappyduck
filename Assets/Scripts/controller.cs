@@ -364,11 +364,12 @@ public class controller : MonoBehaviour
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
+                print("level 1.2: " + GlobalData.Instance.cube_health + "    " + ScoreManager.cube_health);
                 if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl12_perfect = true;
                 }
-                ScoreManager.level22Passed = true;
+                ScoreManager.level12Passed = true;
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
@@ -505,7 +506,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                ScoreManager.level24Passed = true;
+                //ScoreManager.level24Passed = true;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
                 if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
@@ -526,7 +527,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                ScoreManager.level30Passed = true;
+                //ScoreManager.level30Passed = true;
                 Time.timeScale = 0;
                 if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {

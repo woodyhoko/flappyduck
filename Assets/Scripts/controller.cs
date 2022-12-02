@@ -287,6 +287,7 @@ public class controller : MonoBehaviour
                 heart1.transform.position = new Vector3(50 + 55 * heart_now, 80f, 0f);
              
             }
+            ScoreManager.cube_health = GlobalData.Instance.cube_health;
             //Debug.Log(GlobalData.Instance.hearts.Count);
         }
 
@@ -326,9 +327,10 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                if (GlobalData.Instance.hearts.Count == ScoreManager.cube_health)
+
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
-                    ScoreManager.lvl10_perfect = false;
+                    ScoreManager.lvl10_perfect = true;
                 }
                 showResultPage("Level 1.0  Passed", false);
                 //Time.timeScale = 0;
@@ -343,9 +345,9 @@ public class controller : MonoBehaviour
         {
             if (timer >= 1000)
             {
-                if (GlobalData.Instance.hearts.Count == ScoreManager.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
-                    ScoreManager.lvl11_perfect = false;
+                    ScoreManager.lvl11_perfect = true;
                 }
                 ScoreManager.level11Passed = true;
                 ScoreManager.killedByBound = false;
@@ -362,9 +364,9 @@ public class controller : MonoBehaviour
             {
                 ScoreManager.cube_health = GlobalData.Instance.cube_health;
                 ScoreManager.cube_health_org = GlobalData.Instance.hearts.Count;
-                if (GlobalData.Instance.hearts.Count == ScoreManager.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
-                    ScoreManager.lvl12_perfect = false;
+                    ScoreManager.lvl12_perfect = true;
                 }
                 ScoreManager.level22Passed = true;
                 ScoreManager.killedByBound = false;
@@ -378,7 +380,7 @@ public class controller : MonoBehaviour
         {
             if (timer >= 1050)
             {
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl13_perfect = true;
                 }
@@ -400,9 +402,8 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
                
-                Debug.Log(GlobalData.Instance.hearts.Count);
-                Debug.Log(ScoreManager.cube_health);
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl20_perfect = true;
                 }
@@ -422,7 +423,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
   
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl21_perfect = true;
                 }
@@ -446,7 +447,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl22_perfect = true;
                 }
@@ -464,7 +465,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl23_perfect = false;
                 }
@@ -487,7 +488,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByWater = false;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl24_perfect = true;
                 }
@@ -507,7 +508,7 @@ public class controller : MonoBehaviour
                 ScoreManager.level24Passed = true;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl25_perfect = true;
                 }
@@ -527,7 +528,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByWater = false;
                 ScoreManager.level30Passed = true;
                 Time.timeScale = 0;
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl30_perfect = true;
                 }
@@ -546,7 +547,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
                 Time.timeScale = 0;
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl31_perfect = true;
                 }
@@ -561,7 +562,7 @@ public class controller : MonoBehaviour
         {
             if (timer >= 950)
             {
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl32_perfect = true;
                 }
@@ -591,7 +592,7 @@ public class controller : MonoBehaviour
         {
             if (timer >= 1250)
             {
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl33_perfect = true;
                 }
@@ -608,7 +609,7 @@ public class controller : MonoBehaviour
         {
             if (timer >= 1300)
             {
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl34_perfect = true;
                 }
@@ -631,7 +632,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl40_perfect = true;
                 }
@@ -650,7 +651,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByBound = false;
                 ScoreManager.killedByCeil = false;
                 ScoreManager.killedByWater = false;
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl41_perfect = true;
                 }
@@ -672,7 +673,7 @@ public class controller : MonoBehaviour
                 ScoreManager.killedByWater = false;
                 Time.timeScale = 0;
                 Canvas.SetActive(true);
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl42_perfect = true;
                 }
@@ -688,7 +689,7 @@ public class controller : MonoBehaviour
         {
             if (timer >= 1200)
             {
-                if (GlobalData.Instance.hearts.Count == GlobalData.Instance.cube_health)
+                if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
                     ScoreManager.lvl43_perfect = true;
                 }

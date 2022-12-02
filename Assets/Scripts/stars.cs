@@ -45,7 +45,6 @@ public class stars : MonoBehaviour
         }
          if (ScoreManager.level30Passed)
         {
-            Debug.Log("passed");
             if (ScoreManager.lvl30_perfect == true)
             {
                 strmid30.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -55,7 +54,6 @@ public class stars : MonoBehaviour
         }
          if ( ScoreManager.level20Passed)
          {
-             Debug.Log(ScoreManager.lvl20_perfect);
              if (ScoreManager.lvl20_perfect == true)
              {
                  strmid20.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -64,7 +62,6 @@ public class stars : MonoBehaviour
          }
          if ( ScoreManager.level21Passed)
         {
-            Debug.Log("passed");
             if (ScoreManager.lvl21_perfect == true)
             {
                 strmid21.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -72,7 +69,6 @@ public class stars : MonoBehaviour
         }
          if ( ScoreManager.level22Passed)
         {
-            Debug.Log("passed");
             if (ScoreManager.lvl22_perfect == true)
             {
                 strmid22.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -82,7 +78,6 @@ public class stars : MonoBehaviour
 
          if ( ScoreManager.level23Passed)
         {
-            Debug.Log("passed");
            if (ScoreManager.lvl23_perfect == true)
             {
                 strmid23.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -91,7 +86,6 @@ public class stars : MonoBehaviour
         }
          if ( ScoreManager.level24Passed)
         {
-            Debug.Log("passed");
             if (ScoreManager.lvl24_perfect == true)
             {
                 strmid24.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -100,7 +94,6 @@ public class stars : MonoBehaviour
         }
          if ( ScoreManager.level10Passed)
         {
-            Debug.Log("passed level 1.0");
             if (ScoreManager.lvl10_perfect == true)
             {
                 strmid10.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -109,8 +102,6 @@ public class stars : MonoBehaviour
         }
          if ( ScoreManager.level40Passed)
         {
-            Debug.Log(ScoreManager.cube_health);
-            Debug.Log(ScoreManager.cube_health_org);
             if (ScoreManager.lvl40_perfect == true)
             {
                 strmid40.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -119,7 +110,6 @@ public class stars : MonoBehaviour
         }
          if ( ScoreManager.level41Passed)
         {
-            Debug.Log("passed");
             if (ScoreManager.lvl41_perfect == true)
             {
                 strmid41.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -132,7 +122,6 @@ public class stars : MonoBehaviour
             Debug.Log( ScoreManager.cube_health_org);
             if (ScoreManager.lvl42_perfect == true)
             {
-                Debug.Log("passed");
                 strmid42.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
                
             }
@@ -141,12 +130,10 @@ public class stars : MonoBehaviour
             if (ScoreManager.lvl11_perfect == true)
             {
                 strmid11.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
-                Debug.Log(strmid11.GetComponent<Image>().color);
                
             }
         }  if ( ScoreManager.level43Passed)
         {
-            Debug.Log("passed");
             if (ScoreManager.lvl43_perfect == true)
             {
                 strmid43.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -155,7 +142,6 @@ public class stars : MonoBehaviour
         }
          if ( ScoreManager.level12Passed)
         {
-            Debug.Log(" 1.2 passed");
             if  (ScoreManager.lvl12_perfect == true)
             {
                 strmid12.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -164,7 +150,6 @@ public class stars : MonoBehaviour
         } 
          if ( ScoreManager.level25Passed)
         {
-            Debug.Log("passed");
             if (ScoreManager.lvl25_perfect == true)
             {
                 strmid25.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
@@ -175,12 +160,10 @@ public class stars : MonoBehaviour
             if (ScoreManager.lvl13_perfect == true)
             {
                 strmid13.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
-                Debug.Log(strmid13.GetComponent<Image>().color);
                
             }
         }    if ( ScoreManager.level32Passed)
         {
-            Debug.Log("passed");
             if (ScoreManager.lvl32_perfect == true)
             {
                 strmid32.GetComponent<Image>().color = new Color32(255, 255, 225, 255);

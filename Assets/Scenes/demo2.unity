@@ -2817,7 +2817,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -40.986023, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4425,6 +4425,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2370738, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: cddcb28727ae0904da76a06a530f6f4a, type: 2}
     - target: {fileID: 10877412, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
       propertyPath: m_Range
       value: 15
@@ -5144,11 +5148,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 116758, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
       propertyPath: m_Name
-      value: light_wall_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 116758, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
-      propertyPath: m_TagString
-      value: pipe
+      value: light_wall_purple
       objectReference: {fileID: 0}
     - target: {fileID: 464102, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
       propertyPath: m_RootOrder
@@ -5194,13 +5194,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3403367038416748323, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2388861706001158467, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
-    - {fileID: 3403367038416748323, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
 --- !u!1 &1795752818 stripped
 GameObject:
@@ -6159,6 +6153,14 @@ PrefabInstance:
     - target: {fileID: 166958398976724784, guid: 768f6e2998d009d458713b683a7b1164, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166958398976724785, guid: 768f6e2998d009d458713b683a7b1164, type: 3}
+      propertyPath: weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 166958398976724785, guid: 768f6e2998d009d458713b683a7b1164, type: 3}
+      propertyPath: priority
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 166958398976724790, guid: 768f6e2998d009d458713b683a7b1164, type: 3}
       propertyPath: m_Name

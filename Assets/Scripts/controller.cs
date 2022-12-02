@@ -621,9 +621,10 @@ public class controller : MonoBehaviour
             }
         }
 
+        //print("timer: " + timer);
         if (level && this_Level_name == "Level_4_0")
         {
-            if (timer >= 450)
+            if (timer >= 650)
             {
                 ScoreManager.level40Passed = true;
                 Debug.Log(ScoreManager.level40Passed);

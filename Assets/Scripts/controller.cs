@@ -211,6 +211,7 @@ public class controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GlobalData.Instance.hearts = new List<GameObject>();
         //boss shooter
         if (level && this_Level_name == "demo2 boss2")
         {
@@ -252,10 +253,10 @@ public class controller : MonoBehaviour
         {
             power_card.SetActive(false);
         }
-        if (limitText != null)
-        {
-            limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
-        }
+        //if (limitText != null)
+        //{
+         //   limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
+       // }
         if (ateText != null)
         {
             ateText.text = "ate:" + GlobalData.Instance.ate.ToString();
@@ -1066,7 +1067,7 @@ public class controller : MonoBehaviour
             {
                 Destroy(collider.gameObject);
                 GlobalData.Instance.shoot = true;
-                if (GlobalData.Instance.shoot_freq >= 10)
+                if (GlobalData.Instance.shoot_freq >= 20)
                 {
                     GlobalData.Instance.shoot_freq *= 4;
                     GlobalData.Instance.shoot_freq /= 6;

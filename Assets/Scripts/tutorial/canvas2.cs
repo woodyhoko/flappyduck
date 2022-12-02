@@ -40,7 +40,7 @@ public class canvas2 : MonoBehaviour
                 line++;
                 break;
             case 4:
-                text.text = "Falling rocks will make you dizzy. Avoid it!";
+                text.text = "Falling rocks will make you dizzy. Avoid it! If you got hit, find a way out.";
                 break;
             case 5:
                 c.SetActive(false);

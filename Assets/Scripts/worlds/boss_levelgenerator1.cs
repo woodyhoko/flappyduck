@@ -67,10 +67,10 @@ public class boss_levelgenerator1 : MonoBehaviour
                     GameObject e2 = (GameObject)Instantiate(water);
                     //GameObject e3 = (GameObject)Instantiate(water);
                     GameObject e4 = (GameObject)Instantiate(water);
-                    e1.transform.position = new Vector3(-4f, .1f, 10);
+                    e1.transform.position = new Vector3(-2f, .1f, 10);
                     e2.transform.position = new Vector3(0, .1f, 15);
                     //e3.transform.position = new Vector3(2f, 1, 16);
-                    e4.transform.position = new Vector3(4f, .1f, 20);
+                    e4.transform.position = new Vector3(2f, .1f, 20);
                     Rigidbody r1 = e1.GetComponent<Rigidbody>();
                     r1.velocity = new Vector3(0, 0, speed);
                     Rigidbody r2 = e2.GetComponent<Rigidbody>();

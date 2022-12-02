@@ -7,6 +7,7 @@ using UnityEngine;
 public class levelgeneratorLevel31 : MonoBehaviour
 {
     public GameObject player;
+    public GameObject se;
     public GameObject shooter;
     public GameObject pipe;
     public GameObject movingpipe;
@@ -61,6 +62,13 @@ public class levelgeneratorLevel31 : MonoBehaviour
             
         }
 
+        if (timer == 80)
+        {
+            GameObject ppipe = (GameObject)Instantiate(se);
+            ppipe.transform.position = new Vector3(3, 0f, 36);
+            Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
         if (timer == 100)
         {
             GameObject food;
@@ -89,8 +97,34 @@ public class levelgeneratorLevel31 : MonoBehaviour
                 x *= (-1);
             }
         }
-
-
+        if (timer == 180)
+        {
+             GameObject ppipe = (GameObject)Instantiate(se);
+             ppipe.transform.position = new Vector3(4, 0f, 36);
+             Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
+             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
+        if (timer == 200||timer==220||timer==240)
+        {
+            GameObject ppipe = (GameObject)Instantiate(se);
+            ppipe.transform.position = new Vector3(timer/80, 0f, 36);
+            Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
+        if (timer == 210)
+        {
+            GameObject ppipe = (GameObject)Instantiate(se);
+            ppipe.transform.position = new Vector3(-2, 0f, 36);
+            Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
+        if (timer == 140)
+        {
+            GameObject ppipe = (GameObject)Instantiate(se);
+            ppipe.transform.position = new Vector3(-0, 0f, 36);
+            Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
+            m_Rigidbody.velocity = new Vector3(0, 0, -15f);
+        }
         if (timer == 430)
         {
             float x = -3.5f;
@@ -109,7 +143,7 @@ public class levelgeneratorLevel31 : MonoBehaviour
 
 
             
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 3; i++)
             {
                 GameObject ppipe = (GameObject)Instantiate(pipe);
                 ppipe.transform.position = new Vector3(0f, 1f, pip_pos_z);
@@ -117,7 +151,7 @@ public class levelgeneratorLevel31 : MonoBehaviour
                 ppipe.transform.rotation = Quaternion.identity;
                 Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
                 m_Rigidbody.velocity = new Vector3(0, 0, -15f);
-                pip_pos_z += 4f;
+                pip_pos_z += 15f;
             }
 
         }

@@ -70,9 +70,9 @@ public class t_shooting_enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (time % 100 == 0)
+        if (time % 50 == 0)
         {
             GameObject enebulins;
             enebulins = Instantiate(enebul);

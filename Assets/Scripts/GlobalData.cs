@@ -8,8 +8,8 @@ public class GlobalData : MonoBehaviour
 
     public float starRotateSpeed;
     public bool shoot = false;
-    public int shoot_freq = 220;
-    public int shoot_timestep = 0;
+    public int shoot_freq = 250;
+    public int shoot_timestep = 200;
     public float move_forward_limit = 4.0f;
     public bool move_forward = false;
     public float move_speed = 0.08f;

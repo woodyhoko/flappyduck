@@ -2347,7 +2347,7 @@ PrefabInstance:
     - target: {fileID: 6844052422462681506, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 356ed8c7f451f4043b517601b0eec845, type: 3}
+      objectReference: {fileID: 2800000, guid: 183bef5be2439d84589b8656082fed7d, type: 3}
     - target: {fileID: 6844052422462681508, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5720,8 +5720,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starRotateSpeed: 1
   shoot: 0
-  shoot_freq: 220
-  shoot_timestep: 0
+  shoot_freq: 180
+  shoot_timestep: 185
   move_forward_limit: 4
   move_forward: 0
   move_speed: 0.08

@@ -51,7 +51,7 @@ public class levelgeneratorLevel30 : MonoBehaviour
     void FixedUpdate()
     {
         timer++;
-        if (start)
+        if (start||timer == 110|| timer==50||timer==250 || timer == 51 || timer ==  20)
         {
 
             start = false;
@@ -59,16 +59,15 @@ public class levelgeneratorLevel30 : MonoBehaviour
             food = Instantiate(shooter);
             food.transform.rotation = Quaternion.identity;
             food.transform.Rotate(0, 90, 0); // for showing icons in right view
-            food.transform.position = new Vector3(Random.Range(-5, 5f), 2, 36);
+            food.transform.position = new Vector3(Random.Range(-4f, 4f), 2, 36);
 
             Rigidbody m_Rigidbody = food.GetComponent<Rigidbody>();
             m_Rigidbody.velocity = new Vector3(0, 0, -15f);
 
-            
         }
 
         
-        if (timer == 150)
+        if (timer == 180)
         {
             float x = -4.5f;
             for (float i = 0; i < 6; i++)
@@ -88,13 +87,13 @@ public class levelgeneratorLevel30 : MonoBehaviour
 
         }
 
-        if (timer == 350)
+        if (timer == 450)
         {
 
             float z = 36;
             for (int j = 0; j < 5; j++)
             {
-                z += 6;
+                z += 12;
                 float x = -4.5f;
                 if (j % 2 == 1)
                 {
@@ -116,7 +115,7 @@ public class levelgeneratorLevel30 : MonoBehaviour
         }
 
 
-        if (timer == 550)
+        if (timer == 750)
         {
             GameObject ppipe = (GameObject)Instantiate(wall);
             //ppipe.GetComponent<pipe>().SetHealth(100f);

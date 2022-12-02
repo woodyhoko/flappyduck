@@ -1934,6 +1934,19 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 6071110701538831000, guid: 64fb51e48f2df1a4e98c3b48ad1ed226, type: 3}
   m_PrefabInstance: {fileID: 6071110701922011115}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ea62b23dc957245900e9695cff5c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 1841314951}
 --- !u!1 &975515784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5528695238564127775, guid: d21fca7140b5020458186c8aa2ac3bc0, type: 3}
@@ -2161,7 +2174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6844052421525588546, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6844052421525588557, guid: 9df8610fab864c34ab770c87101c1662, type: 3}
       propertyPath: m_Pivot.x
@@ -2476,7 +2489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -342.9, y: -73.4}
+  m_AnchoredPosition: {x: -264.8, y: -73.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1297015492
@@ -2526,8 +2539,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4269,7 +4282,6 @@ MonoBehaviour:
   HealthUi: {fileID: 232725516}
   cherry: {fileID: 320083002}
   intervalTime: 80
-  intro: {fileID: 1841314951}
 --- !u!1001 &1766196733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4822,8 +4834,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starRotateSpeed: 1
   shoot: 0
-  shoot_freq: 50
-  shoot_timestep: 0
+  shoot_freq: 200
+  shoot_timestep: 195
   move_forward_limit: 4
   move_forward: 0
   move_speed: 0.08

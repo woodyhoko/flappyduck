@@ -57,18 +57,12 @@ public class levelgenerator : MonoBehaviour
     public int intervalTime = 0;
     //public GameObject player; 
     //public GameObject star;
-    public GameObject intro;
+    //public GameObject intro;
     // Start is called before the first frame update
     void Start()
     {
         speed = GlobalData.Instance.world_speed * speed;
         Physics.IgnoreLayerCollision(6, 10, true);
-        if (GlobalData.Instance.introShowed)
-        {
-            GlobalData.Instance.introShowed = true;
-            intro.SetActive(true);
-            Time.timeScale = 0;
-        }
         // GameObject ppipe = (GameObject)Instantiate (pipe);
         // // var rotation = new Quaternion();
         // // rotation.eulerAngles = new Vector3(54.5f, 0, 0);
@@ -76,7 +70,7 @@ public class levelgenerator : MonoBehaviour
         // ppipe.transform.position = new Vector3(0, 1, 20);
         // Rigidbody m_Rigidbody = ppipe.GetComponent<Rigidbody>();
         // m_Rigidbody.velocity = new Vector3(0,0,-15f);
-        Debug.Log(GlobalData.Instance.cube_health);
+       // Debug.Log(GlobalData.Instance.cube_health);
     }
 
     // Update is called once per frame
@@ -86,7 +80,7 @@ public class levelgenerator : MonoBehaviour
         if (intervalTime > 0)
         {
             intervalTime--;
-            Debug.Log(intervalTime);
+            //Debug.Log(intervalTime);
         }
         else
         {    

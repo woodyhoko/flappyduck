@@ -19,28 +19,23 @@ public class enebull : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("---------------bullet triggger!!------------");
+        //Debug.Log("---------------bullet triggger!!------------");
         
         if (collider.gameObject.tag == "Player"&& GlobalData.Instance.isInvi==false)
         {
-            Debug.Log(GlobalData.Instance.isInvi);
+            //Debug.Log(GlobalData.Instance.isInvi);
             Destroy(gameObject);
-            if (GlobalData.Instance.cube_health > 0f)
+            GlobalData.Instance.cube_health -= 1;
+            if (GlobalData.Instance.cube_health >=0f)
             {
-                Debug.Log(GlobalData.Instance.cube_health);
-                GlobalData.Instance.cube_health -= 1;
                 GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
-               
-                Debug.Log("get hit by shooting enemy");
                 
             }
             
         }
-       
-
-        else if (collider.gameObject.tag == "pipe")
-        { Debug.Log("--------------- ene bullet hit wall!!------------");
-            Destroy(gameObject);
-        }
+        //else if (collider.gameObject.tag == "pipe")
+        //{ Debug.Log("--------------- ene bullet hit wall!!------------");
+        //    Destroy(gameObject);
+        //}
     }
 }

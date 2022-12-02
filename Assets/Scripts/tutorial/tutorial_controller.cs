@@ -43,6 +43,12 @@ public class tutorial_controller : MonoBehaviour
     // Start is called before the first frame update
     private int lastKey = 0; // 0 for left and 1 for right
     public GameObject Canvas;
+    public GameObject gameover;
+    public void Menu_Button()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("menu");
+    }
     void Start()
     {
 
@@ -87,11 +93,13 @@ public class tutorial_controller : MonoBehaviour
         {
             TriggerDizzness();
         }
-        if (transform.position.y < -10 || transform.position.z < -10 || transform.position.x < -6 || transform.position.x > 6)
+        if (transform.position.y < -4|| transform.position.z < -10 || transform.position.x < -7 || transform.position.x > 7)
         {
-            SceneManager.LoadScene("gameover");
+            //SceneManager.LoadScene("gameover");
+            Time.timeScale = 0;
+            gameover.SetActive(true);
         }
-            star.transform.RotateAround(transform.position, Vector3.up, starRotateSpeed);
+        
         //set jumping limit
         if (larger_gravity)
         {

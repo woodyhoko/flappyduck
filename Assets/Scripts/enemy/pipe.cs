@@ -73,8 +73,8 @@ public class pipe : MonoBehaviour
         }
         else if (collider.gameObject.tag == "Player" && collider.gameObject.tag != "star")
         {
-            print(GlobalData.Instance.cube_health);
-            print(GlobalData.Instance.hearts.Count);
+            //print(GlobalData.Instance.cube_health);
+            //print(GlobalData.Instance.hearts.Count);
             GlobalData.Instance.cube_health -= 1;
             int hp = GlobalData.Instance.cube_health;
             if (hp >= 0)

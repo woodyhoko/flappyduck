@@ -30,10 +30,10 @@ public class stars : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(ScoreManager.level20Passed);
-        Debug.Log(ScoreManager.level21Passed);
-        Debug.Log(ScoreManager.lvl20_perfect);
-        Debug.Log(ScoreManager.lvl21_perfect);
+       // Debug.Log(ScoreManager.level20Passed);
+       // Debug.Log(ScoreManager.level21Passed);
+       // Debug.Log(ScoreManager.lvl20_perfect);
+       // Debug.Log(ScoreManager.lvl21_perfect);
         if (ScoreManager.level31Passed)
         {
             if (ScoreManager.lvl31_perfect == true)
@@ -174,7 +174,7 @@ public class stars : MonoBehaviour
             if (ScoreManager.lvl33_perfect == true)
             {
                 strmid33.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
-                Debug.Log(strmid33.GetComponent<Image>().color);
+                //Debug.Log(strmid33.GetComponent<Image>().color);
                
             }
         }
@@ -183,7 +183,7 @@ public class stars : MonoBehaviour
             if (ScoreManager.lvl34_perfect == true)
             {
                 strmid34.GetComponent<Image>().color = new Color32(255, 255, 225, 255);
-                Debug.Log(strmid34.GetComponent<Image>().color);
+                //Debug.Log(strmid34.GetComponent<Image>().color);
                
             }
         }

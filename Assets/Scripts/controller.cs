@@ -223,7 +223,7 @@ public class controller : MonoBehaviour
         //portal
         if (this_Level_name == "portal")
             cube.transform.localScale = GlobalData.Instance.player_localScale;
-        if (this_Level_name == "earth")
+        if (next_Level_name == "earth")
         {
             Physics.gravity = new Vector3(0, -5f, 0);
             cube.transform.localScale = GlobalData.Instance.player_localScale;
@@ -520,7 +520,7 @@ public class controller : MonoBehaviour
 
         if (level && this_Level_name == "Level_3_0")
         {
-            if (timer >= 700)
+            if (timer >= 900)
             {
                 ScoreManager.level30Passed = true;
                 ScoreManager.killedByBound = false;
@@ -540,7 +540,7 @@ public class controller : MonoBehaviour
         }
         if (level && this_Level_name == "Level_3_1")
         {
-            if (timer >= 1400)
+            if (timer >= 800)
             {
                 ScoreManager.level31Passed = true;
                 ScoreManager.killedByBound = false;
@@ -607,7 +607,7 @@ public class controller : MonoBehaviour
 
         if (level && this_Level_name == "Level_3_4")
         {
-            if (timer >= 1300)
+            if (timer >= 1380)
             {
                 if (GlobalData.Instance.cube_health == ScoreManager.cube_health)
                 {
@@ -713,46 +713,7 @@ public class controller : MonoBehaviour
                 jump_numb -= 1;
             }
 
-            // No limit on jumping on reversed gravity
-            /*
-            if (reversed_gravity)
-            {
-                jump_numb = 2;
-                jump = true;
-            }
-            */
         }
-
-
-        //if (power_card != null)
-        //{
-        //    if (!GlobalData.Instance.choosen_powerCard)
-        //   {
-        //        if (Input.GetKeyDown(KeyCode.Alpha1))
-        //       {
-        //            GlobalData.Instance.choosen_powerCard = true;
-        //           power_card.SetActive(false);
-        //           GlobalData.Instance.update_max_limit = 9;
-        //           limitText.text = "eat limitation: " + GlobalData.Instance.update_max_limit;
-        //           Time.timeScale = 1f;
-        //       }
-        //      else if (Input.GetKeyDown(KeyCode.Alpha2))
-        //      {
-        //          GlobalData.Instance.choosen_powerCard = true;
-        //          power_card.SetActive(false);
-        //         Time.timeScale = 1f;
-        //      }
-        //      else if (Input.GetKeyDown(KeyCode.Alpha3))
-        //      {
-        //          GlobalData.Instance.choosen_powerCard = true;
-        //          power_card.SetActive(false);
-        //          Time.timeScale = 1f;
-        //           GlobalData.Instance.move_speed += 0.06f;
-        //      }
-        // }
-        //}
-
-
 
     }
 
@@ -1096,10 +1057,10 @@ public class controller : MonoBehaviour
             {
                 Destroy(collider.gameObject);
                 GlobalData.Instance.shoot = true;
-                if (GlobalData.Instance.shoot_freq >= 5)
+                if (GlobalData.Instance.shoot_freq >= 10)
                 {
                     GlobalData.Instance.shoot_freq *= 4;
-                    GlobalData.Instance.shoot_freq /= 5;
+                    GlobalData.Instance.shoot_freq /= 6;
                 }
                 ScoreManager.shooter++;
                 GlobalData.Instance.ate++;
@@ -1256,7 +1217,7 @@ public class controller : MonoBehaviour
             float rate = (1 - (float)GlobalData.Instance.numNeedHit / (float)GlobalData.Instance.numTotalHit) * 100;
             TMP_Text progress = Canvas.GetComponent<Transform>().Find("Dizzy").GetComponent<Transform>().Find("Progress").GetComponent<TMP_Text>();
             progress.text = string.Format("Recover {0:0}%", rate); // $"Recover {rate.1f}%";
-            print(GlobalData.Instance.numNeedHit);
+            //print(GlobalData.Instance.numNeedHit);
         }
     }
 

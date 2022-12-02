@@ -10,7 +10,7 @@ public class shooting_enemy : MonoBehaviour
     private Rigidbody enemyrb;
     HealthSystem healthSystem;
 
-
+    private int time = 0;
     void Start()
     {
         enemyrb = GetComponent<Rigidbody>();
@@ -71,16 +71,16 @@ public class shooting_enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (controller.ts % GlobalData.Instance.shoot_freq == 0)
+        if (time % 100 == 0)
         {  
-
             GameObject enebulins;
             enebulins = Instantiate(enebul);
-            enebulins.transform.position = transform.position + new Vector3(0, 0.5f,-2f);
+            enebulins.transform.position = transform.position + new Vector3(0, 0.5f,-1f);
             Rigidbody m_Rigidbody = enebulins.GetComponent<Rigidbody>();
-            m_Rigidbody.velocity = new Vector3(0, 0, -20f);
+            m_Rigidbody.velocity = new Vector3(0, 0, -20);
         }
+        time++;
     }
 }

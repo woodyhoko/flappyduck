@@ -59,7 +59,8 @@ public class moving_pipes : MonoBehaviour
         {
             GlobalData.Instance.cube_health -= 1;
             Destroy(gameObject);
-            GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
+            if (GlobalData.Instance.cube_health >= 0)
+                GlobalData.Instance.hearts[GlobalData.Instance.cube_health].SetActive(false);
             if (GlobalData.Instance.cube_health <= 0f)
             {
                     //FindObjectOfType<GameManager>().EndGame();

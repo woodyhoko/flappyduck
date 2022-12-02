@@ -379,6 +379,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1328218317}
     - target: {fileID: 4801232504656877658, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
+      propertyPath: heart
+      value: 
+      objectReference: {fileID: 836805662}
+    - target: {fileID: 4801232504656877658, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
@@ -394,6 +398,10 @@ PrefabInstance:
       propertyPath: replay
       value: 
       objectReference: {fileID: 812974605}
+    - target: {fileID: 4801232504656877658, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
+      propertyPath: HealthUi
+      value: 
+      objectReference: {fileID: 836805661}
     - target: {fileID: 4801232504656877658, guid: e83130d612c6bd848a4bd89360d6575f, type: 3}
       propertyPath: next_level
       value: 
@@ -3731,6 +3739,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48ad01ccf6d2129459043c5b9a8f343b, type: 3}
+--- !u!1 &836805661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5980187346111527630, guid: 48ad01ccf6d2129459043c5b9a8f343b, type: 3}
+  m_PrefabInstance: {fileID: 836805660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &836805662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5980187345879820821, guid: 48ad01ccf6d2129459043c5b9a8f343b, type: 3}
+  m_PrefabInstance: {fileID: 836805660}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &853230427
 PrefabInstance:
   m_ObjectHideFlags: 0

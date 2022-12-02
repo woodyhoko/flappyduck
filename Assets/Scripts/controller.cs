@@ -968,10 +968,7 @@ public class controller : MonoBehaviour
                     }
                 }
 
-
-
-
-                Debug.Log("star numb: " + GlobalData.Instance.star_num);
+                //Debug.Log("star numb: " + GlobalData.Instance.star_num);
             }
             if (collider.gameObject.tag == "invisible")
             {
@@ -981,13 +978,12 @@ public class controller : MonoBehaviour
 
                 // Player
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
-
                 Color tempCol = player.GetComponent<Renderer>().material.color;
-                print("player color original: " + tempCol.a);
+                //print("player color original: " + tempCol.a);
                 tempCol.a = .15f;
 
                 player.GetComponent<Renderer>().material.color = tempCol;
-                print("player color change: " + player.GetComponent<Renderer>().material.color.a);
+                //print("player color change: " + player.GetComponent<Renderer>().material.color.a);
 
                 // Cloned cube
                 foreach (GameObject cloned_cube in GlobalData.Instance.cloned_list)

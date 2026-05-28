@@ -70,3 +70,12 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# macOS / IDE artifacts
+.DS_Store
+.zshrc
+.vsconfig
+webgl_sharing
+
+# Crash dumps
+mono_crash.*.json
